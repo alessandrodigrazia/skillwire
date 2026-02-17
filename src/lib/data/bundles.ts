@@ -50,13 +50,13 @@ export const bundles: BundleDetail[] = [
     },
     skillSummaries: [
       {
-        slug: "sales-methodology-pro",
-        name: "Sales Methodology Pro",
+        slug: "ai-b2b-sales-methodology",
+        name: "AI-Powered B2B Sales Methodology",
         emoji: "\uD83D\uDCCA",
         price: 149,
         tagline: {
-          en: "Structured enterprise sales methodology for complex B2B deals.",
-          it: "Metodologia di vendita enterprise strutturata per deal B2B complessi.",
+          en: "AI-powered enterprise sales methodology for complex B2B deals.",
+          it: "Metodologia di vendita enterprise AI-powered per deal B2B complessi.",
         },
       },
       {
@@ -543,8 +543,8 @@ export const bundles: BundleDetail[] = [
       it: "Crea contenuti LinkedIn executive-level che non sembrano scritti da un robot.",
     },
     description: {
-      en: "Build a LinkedIn content machine that sounds authentically you. Draft posts using a proven editorial framework (Content Pipeline Pro), humanize them so they pass any AI detector (HumanWriter), stress-test your messaging before publishing (Janus), and analyze what your competitors are doing (Competitive Ads Extractor). The result: consistent, high-quality LinkedIn content that builds your professional authority.",
-      it: "Costruisci una macchina per contenuti LinkedIn che suona autenticamente come te. Scrivi post usando un framework editoriale collaudato (Content Pipeline Pro), umanizzali in modo che passino qualsiasi AI detector (HumanWriter), stress-testa il tuo messaggio prima di pubblicare (Janus), e analizza cosa fanno i tuoi competitor (Competitive Ads Extractor). Il risultato: contenuti LinkedIn coerenti e di alta qualit\u00e0 che costruiscono la tua autorit\u00e0 professionale.",
+      en: "Build a LinkedIn content machine that sounds authentically you. Draft posts using a proven editorial framework (Content Pipeline Pro), humanize them so they pass any AI detector (HumanWriter), and stress-test your messaging before publishing (Janus). The result: consistent, high-quality LinkedIn content that builds your professional authority.",
+      it: "Costruisci una macchina per contenuti LinkedIn che suona autenticamente come te. Scrivi post usando un framework editoriale collaudato (Content Pipeline Pro), umanizzali in modo che passino qualsiasi AI detector (HumanWriter), e stress-testa il tuo messaggio prima di pubblicare (Janus). Il risultato: contenuti LinkedIn coerenti e di alta qualit\u00e0 che costruiscono la tua autorit\u00e0 professionale.",
     },
     skillSummaries: [
       {
@@ -577,19 +577,9 @@ export const bundles: BundleDetail[] = [
           it: "Sparring partner di analisi critica che stress-testa le tue idee e proposte.",
         },
       },
-      {
-        slug: "competitive-ads-extractor",
-        name: "Competitive Ads Extractor",
-        emoji: "\uD83D\uDD0E",
-        price: 19,
-        tagline: {
-          en: "Extract and analyze competitors\u2019 ads from ad libraries.",
-          it: "Estrai e analizza le ads dei competitor dalle librerie pubblicitarie.",
-        },
-      },
     ],
-    originalPrice: 106,
-    bundlePrice: 79,
+    originalPrice: 87,
+    bundlePrice: 65,
     savingsPercent: 25,
     badge: "premium",
     version: "1.0",
@@ -599,8 +589,8 @@ export const bundles: BundleDetail[] = [
         date: "2026-02-17",
         changes: [
           {
-            en: "Initial release with 4 LinkedIn content creation skills.",
-            it: "Rilascio iniziale con 4 skill per creazione contenuti LinkedIn.",
+            en: "Initial release with 3 LinkedIn content creation skills.",
+            it: "Rilascio iniziale con 3 skill per creazione contenuti LinkedIn.",
           },
         ],
       },

@@ -570,22 +570,22 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["ask-to-andrew", "human-writer"],
   },
   {
-    slug: "sales-methodology-pro",
-    name: "Sales Methodology Pro",
-    technicalName: "var-group-way-of-selling",
+    slug: "ai-b2b-sales-methodology",
+    name: "AI-Powered B2B Sales Methodology",
+    technicalName: "ai-b2b-sales-methodology",
     tagline: {
-      en: "Complete B2B enterprise sales methodology with 3 integrated frameworks",
-      it: "Metodologia completa di vendita B2B enterprise con 3 framework integrati",
+      en: "AI-powered enterprise sales system: MEDDPICC+RR, SPICED, negotiation frameworks, 22 templates",
+      it: "Sistema vendita enterprise AI-powered: MEDDPICC+RR, SPICED, framework negoziali, 22 template",
     },
     category: "sales",
-    tags: ["B2B sales", "enterprise", "negotiation", "SPICED", "qualification", "stakeholder mapping"],
+    tags: ["B2B sales", "enterprise", "MEDDPICC", "SPICED", "negotiation", "BATNA", "qualification", "stakeholder mapping"],
     price: 149,
     currency: "EUR",
     isFree: false,
     isBundleOnly: false,
     badge: "flagship",
     emoji: "\uD83D\uDCCA",
-    filesCount: 52,
+    filesCount: 49,
     launchPhase: 2,
     complexity: 5,
     version: "1.0",
@@ -594,18 +594,18 @@ export const skills: SkillDetail[] = [
         version: "1.0",
         date: "2026-02-17",
         changes: [
-          { en: "Initial release with T.A.S.K., 7-Phase strategic selling, and 5-Phase negotiation", it: "Rilascio iniziale con T.A.S.K., vendita strategica a 7 fasi e negoziazione a 5 fasi" },
+          { en: "Initial release with 4-Phase tactical selling, MEDDPICC+RR qualification, and 5-Phase negotiation", it: "Rilascio iniziale con vendita tattica a 4 fasi, qualificazione MEDDPICC+RR e negoziazione a 5 fasi" },
         ],
       },
     ],
-    bundleSlugs: ["b2b-sales-pro"],
+    bundleSlugs: [],
     metaTitle: {
-      en: "Sales Methodology Pro - Complete B2B Enterprise Sales System",
-      it: "Sales Methodology Pro - Sistema Completo di Vendita B2B Enterprise",
+      en: "AI-Powered B2B Sales Methodology - Enterprise Sales System for Claude Code",
+      it: "AI-Powered B2B Sales Methodology - Sistema Vendita Enterprise per Claude Code",
     },
     metaDescription: {
-      en: "3 integrated frameworks, 168 case studies, 22 templates, 12 executable workflows. The most complete B2B sales methodology available as a Claude Code skill.",
-      it: "3 framework integrati, 168 case study, 22 template, 12 workflow eseguibili. La metodologia di vendita B2B più completa disponibile come skill Claude Code.",
+      en: "MEDDPICC+RR qualification, SPICED discovery, BATNA/ZOPA negotiation, 22 templates, 12 executable workflows, 3 Python scripts. The most complete B2B sales methodology as a Claude Code skill.",
+      it: "Qualificazione MEDDPICC+RR, discovery SPICED, negoziazione BATNA/ZOPA, 22 template, 12 workflow eseguibili, 3 script Python. La metodologia di vendita B2B più completa come skill Claude Code.",
     },
     averageRating: 4.9,
     reviewCount: 6,
@@ -614,19 +614,19 @@ export const skills: SkillDetail[] = [
       it: "La vendita B2B enterprise non è una sola competenza. Sono tre: vendita tattica, gestione strategica del deal e negoziazione. La maggior parte dei corsi ne copre una. Finisci per mettere insieme frammenti di metodologie diverse che non comunicano tra loro.",
     },
     solution: {
-      en: "52 files, 3 integrated frameworks: T.A.S.K. for tactical selling, 7-Phase for strategic deal management, 5-Phase for negotiation. 168 real case studies. SPICED discovery, PQP qualification with 9 weighted criteria, GDEUA stakeholder mapping, Trust Equation, MAAN/ZOPA negotiation. Plus 3 Python scripts for ROI and NPV calculation.",
-      it: "52 file, 3 framework integrati: T.A.S.K. per la vendita tattica, 7 Fasi per la gestione strategica del deal, 5 Fasi per la negoziazione. 168 case study reali. Discovery SPICED, qualificazione PQP con 9 criteri pesati, mappatura stakeholder GDEUA, Trust Equation, negoziazione MAAN/ZOPA. Più 3 script Python per calcolo ROI e NPV.",
+      en: "49 files, 3 integrated frameworks: 4-Phase tactical selling (Trust Building, Discovery, Solution Design, Closing), MEDDPICC+RR strategic qualification with 10 weighted criteria, and 5-Phase negotiation with BATNA/ZOPA analysis. SPICED discovery (Winning by Design), Buying Committee mapping (Champion, Economic Buyer, Technical Buyer, User, Coach), If-Then Trading negotiation. Plus 3 Python scripts for ROI, NPV, and opportunity scoring.",
+      it: "49 file, 3 framework integrati: vendita tattica a 4 fasi (Trust Building, Discovery, Solution Design, Closing), qualificazione strategica MEDDPICC+RR con 10 criteri pesati, e negoziazione a 5 fasi con analisi BATNA/ZOPA. Discovery SPICED (Winning by Design), mappatura Buying Committee (Champion, Economic Buyer, Technical Buyer, User, Coach), negoziazione If-Then Trading. Più 3 script Python per ROI, NPV e scoring opportunità.",
     },
     result: {
       en: "One system that covers the entire sales cycle from first call to signed contract. 12 executable workflows guide you step by step. No more switching between disconnected frameworks.",
       it: "Un unico sistema che copre l'intero ciclo di vendita dalla prima call al contratto firmato. 12 workflow eseguibili ti guidano passo dopo passo. Basta passare da un framework all'altro senza connessione.",
     },
     whatsInside: [
-      { en: "52 files with 3 integrated sales frameworks", it: "52 file con 3 framework di vendita integrati" },
-      { en: "T.A.S.K. tactical selling: discovery, qualification, objection handling", it: "Vendita tattica T.A.S.K.: discovery, qualificazione, gestione obiezioni" },
-      { en: "7-Phase strategic selling: deal strategy from opportunity to close", it: "Vendita strategica a 7 fasi: strategia deal dall'opportunità alla chiusura" },
-      { en: "5-Phase negotiation: MAAN/ZOPA, concession trading, closing tactics", it: "Negoziazione a 5 fasi: MAAN/ZOPA, trading concessioni, tattiche di chiusura" },
-      { en: "168 case studies across industries (manufacturing, pharma, finance, fashion)", it: "168 case study multi-settore (manifatturiero, pharma, finance, fashion)" },
+      { en: "49 files with 3 integrated sales frameworks and 22 ready-to-use templates", it: "49 file con 3 framework di vendita integrati e 22 template pronti all'uso" },
+      { en: "4-Phase tactical selling: Trust Building, SPICED discovery, FAB solution design, strategic closing", it: "Vendita tattica a 4 fasi: Trust Building, discovery SPICED, solution design FAB, closing strategico" },
+      { en: "MEDDPICC+RR qualification: 10-criteria scoring with GO/NO-GO recommendation", it: "Qualificazione MEDDPICC+RR: scoring a 10 criteri con raccomandazione GO/NO-GO" },
+      { en: "5-Phase negotiation: BATNA/ZOPA analysis, If-Then Trading, 5 team roles", it: "Negoziazione a 5 fasi: analisi BATNA/ZOPA, If-Then Trading, 5 ruoli team" },
+      { en: "3 Python scripts for ROI/NPV calculation, opportunity scoring, and SPICED questions", it: "3 script Python per calcolo ROI/NPV, scoring opportunità e domande SPICED" },
     ],
     whoIsThisFor: [
       { en: "B2B sales professionals selling complex, multi-stakeholder deals", it: "Professionisti vendita B2B con deal complessi e multi-stakeholder" },
@@ -644,26 +644,26 @@ export const skills: SkillDetail[] = [
       },
       {
         before: { en: "No structured qualification. Wasting months on deals that will never close", it: "Nessuna qualificazione strutturata. Mesi sprecati su deal che non chiuderanno mai" },
-        after: { en: "PQP qualification with 9 weighted criteria. Kill bad deals early", it: "Qualificazione PQP con 9 criteri pesati. Elimina i deal cattivi subito" },
+        after: { en: "MEDDPICC+RR qualification with 10 weighted criteria. Kill bad deals early", it: "Qualificazione MEDDPICC+RR con 10 criteri pesati. Elimina i deal cattivi subito" },
       },
       {
-        before: { en: "Walking into negotiations without knowing your MAAN or the buyer's ZOPA", it: "Entrare in negoziazione senza conoscere il tuo MAAN o la ZOPA del buyer" },
-        after: { en: "Full negotiation prep: MAAN, ZOPA, concession matrix, closing scenarios", it: "Preparazione negoziale completa: MAAN, ZOPA, matrice concessioni, scenari di chiusura" },
+        before: { en: "Walking into negotiations without knowing your BATNA or the buyer's ZOPA", it: "Entrare in negoziazione senza conoscere il tuo BATNA o la ZOPA del buyer" },
+        after: { en: "Full negotiation prep: BATNA, ZOPA, If-Then Trading matrix, closing scenarios", it: "Preparazione negoziale completa: BATNA, ZOPA, matrice If-Then Trading, scenari di chiusura" },
       },
     ],
     faq: [
       {
         question: { en: "What exactly do I get when I buy this?", it: "Cosa ricevo esattamente quando acquisto?" },
         answer: {
-          en: "A ZIP with 52 files: 3 methodology frameworks, 22 templates, 12 workflows, 168 case studies, 3 Python scripts for ROI/NPV. No subscription.",
-          it: "Un ZIP con 52 file: 3 framework metodologici, 22 template, 12 workflow, 168 case study, 3 script Python per ROI/NPV. Nessun abbonamento.",
+          en: "A ZIP with 49 files: 3 methodology frameworks, 22 templates, 12 workflows, 3 Python scripts for ROI/NPV and opportunity scoring. No subscription.",
+          it: "Un ZIP con 49 file: 3 framework metodologici, 22 template, 12 workflow, 3 script Python per ROI/NPV e scoring opportunità. Nessun abbonamento.",
         },
       },
       {
         question: { en: "Is this based on a specific sales methodology?", it: "Si basa su una metodologia di vendita specifica?" },
         answer: {
-          en: "It integrates elements from MEDDPICC, Challenger, SPIN, and Sandler into 3 original frameworks designed to work together. It is not a copy of any single methodology.",
-          it: "Integra elementi di MEDDPICC, Challenger, SPIN e Sandler in 3 framework originali progettati per funzionare insieme. Non è la copia di una singola metodologia.",
+          en: "It uses established public frameworks: MEDDPICC+RR for qualification, SPICED (Winning by Design) for discovery, BATNA/ZOPA (Fisher & Ury) for negotiation, and the Trust Equation (Maister/Green) for relationship building. All properly attributed.",
+          it: "Usa framework pubblici consolidati: MEDDPICC+RR per la qualificazione, SPICED (Winning by Design) per la discovery, BATNA/ZOPA (Fisher & Ury) per la negoziazione e la Trust Equation (Maister/Green) per le relazioni. Tutti correttamente attribuiti.",
         },
       },
       {
@@ -795,7 +795,7 @@ export const skills: SkillDetail[] = [
         },
       },
     ],
-    relatedSlugs: ["sales-methodology-pro", "janus"],
+    relatedSlugs: ["ai-b2b-sales-methodology", "janus"],
   },
   {
     slug: "deep-research-agent",
@@ -909,7 +909,7 @@ export const skills: SkillDetail[] = [
         },
       },
     ],
-    relatedSlugs: ["janus", "sales-methodology-pro"],
+    relatedSlugs: ["janus", "ai-b2b-sales-methodology"],
   },
   {
     slug: "cv-guru",
@@ -2043,120 +2043,6 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["human-writer", "janus"],
   },
   {
-    slug: "competitive-ads-extractor",
-    name: "Competitive Ads Extractor",
-    technicalName: "competitive-ads-extractor",
-    tagline: {
-      en: "Extract and analyze competitor ads from Facebook and LinkedIn ad libraries",
-      it: "Estrai e analizza le ads dei competitor dalle librerie Facebook e LinkedIn",
-    },
-    category: "content",
-    tags: ["competitor analysis", "ads", "Facebook", "LinkedIn", "Apify"],
-    price: 19,
-    currency: "EUR",
-    isFree: false,
-    isBundleOnly: false,
-    badge: null,
-    emoji: "\uD83D\uDD0E",
-    filesCount: 1,
-    launchPhase: 1,
-    complexity: 1,
-    version: "1.0",
-    changelog: [
-      {
-        version: "1.0",
-        date: "2026-02-17",
-        changes: [
-          { en: "Initial release with Facebook and LinkedIn ad library extraction", it: "Rilascio iniziale con estrazione da librerie ads Facebook e LinkedIn" },
-        ],
-      },
-    ],
-    bundleSlugs: ["linkedin-toolkit"],
-    metaTitle: {
-      en: "Competitive Ads Extractor - Analyze Competitor Ad Strategies",
-      it: "Competitive Ads Extractor - Analizza le Strategie Ads dei Competitor",
-    },
-    metaDescription: {
-      en: "Extract competitor ads from Facebook and LinkedIn libraries. Identify messaging patterns, problems highlighted, creative formats. Powered by Apify.",
-      it: "Estrai le ads dei competitor dalle librerie Facebook e LinkedIn. Identifica pattern di messaging, problemi evidenziati, formati creativi. Powered by Apify.",
-    },
-    averageRating: 4.2,
-    reviewCount: 5,
-    problem: {
-      en: "You know competitors are running ads, but you cannot see their full strategy. Manually browsing ad libraries is tedious. You miss patterns because you look at individual ads instead of the whole campaign. There is no structured way to analyze competitor messaging at scale.",
-      it: "Sai che i competitor stanno facendo ads, ma non riesci a vedere la loro strategia completa. Navigare manualmente le librerie ads è tedioso. Perdi i pattern perché guardi le singole ads invece dell'intera campagna. Non c'è un modo strutturato per analizzare il messaging dei competitor su scala.",
-    },
-    solution: {
-      en: "Uses Apify as scraping engine to extract ads from Facebook and LinkedIn ad libraries. Then analyzes the data: messaging patterns (what problems do they highlight?), creative patterns (video vs image vs carousel), call-to-action trends, and audience targeting signals. Structured output with actionable insights.",
-      it: "Usa Apify come motore di scraping per estrarre le ads dalle librerie Facebook e LinkedIn. Poi analizza i dati: pattern di messaging (quali problemi evidenziano?), pattern creativi (video vs immagine vs carosello), trend delle call-to-action e segnali di targeting audience. Output strutturato con insight azionabili.",
-    },
-    result: {
-      en: "A complete map of competitor ad strategy: what they say, how they say it, and who they target. In 5 minutes instead of 2 hours of manual browsing.",
-      it: "Una mappa completa della strategia ads dei competitor: cosa dicono, come lo dicono e chi targettizzano. In 5 minuti invece di 2 ore di navigazione manuale.",
-    },
-    whatsInside: [
-      { en: "1 file with extraction and analysis logic", it: "1 file con logica di estrazione e analisi" },
-      { en: "Facebook Ad Library extraction via Apify", it: "Estrazione Facebook Ad Library via Apify" },
-      { en: "LinkedIn Ad Library extraction via Apify", it: "Estrazione LinkedIn Ad Library via Apify" },
-      { en: "Messaging pattern analysis: problems, solutions, CTAs", it: "Analisi pattern messaging: problemi, soluzioni, CTA" },
-      { en: "Creative format analysis: video, image, carousel breakdown", it: "Analisi formati creativi: breakdown video, immagine, carosello" },
-    ],
-    whoIsThisFor: [
-      { en: "Marketing teams tracking competitor ad strategies", it: "Team marketing che monitorano le strategie ads dei competitor" },
-      { en: "Copywriters studying competitor messaging patterns", it: "Copywriter che studiano i pattern di messaging dei competitor" },
-      { en: "Sales professionals who need competitive intelligence for pitches", it: "Professionisti vendita che necessitano di intelligence competitiva per i pitch" },
-    ],
-    notFor: {
-      en: "Standalone purchase. Available only in the LinkedIn Toolkit bundle",
-      it: "Acquisto standalone. Disponibile solo nel bundle LinkedIn Toolkit",
-    },
-    beforeAfter: [
-      {
-        before: { en: "Manually browsing ad libraries for 2 hours. Missing patterns", it: "Navigare manualmente le librerie ads per 2 ore. Pattern persi" },
-        after: { en: "Full competitor ad extraction and analysis in 5 minutes", it: "Estrazione e analisi completa delle ads competitor in 5 minuti" },
-      },
-      {
-        before: { en: "Looking at individual ads. No view of the overall strategy", it: "Guardare le singole ads. Nessuna visione della strategia complessiva" },
-        after: { en: "Pattern analysis across all active ads: messaging, creative, targeting", it: "Analisi pattern su tutte le ads attive: messaging, creative, targeting" },
-      },
-      {
-        before: { en: "Gut feeling about what competitors emphasize in their ads", it: "Sensazione a pelle su cosa enfatizzano i competitor nelle loro ads" },
-        after: { en: "Data-backed breakdown of problems highlighted, CTAs used, formats preferred", it: "Breakdown basato sui dati di problemi evidenziati, CTA usate, formati preferiti" },
-      },
-    ],
-    faq: [
-      {
-        question: { en: "What exactly do I get when I buy this?", it: "Cosa ricevo esattamente quando acquisto?" },
-        answer: {
-          en: "This skill is available only in the LinkedIn Toolkit bundle. You get 1 file with the extraction and analysis logic for Facebook and LinkedIn ad libraries.",
-          it: "Questa skill è disponibile solo nel bundle LinkedIn Toolkit. Ricevi 1 file con la logica di estrazione e analisi per le librerie ads Facebook e LinkedIn.",
-        },
-      },
-      {
-        question: { en: "Do I need an Apify account?", it: "Serve un account Apify?" },
-        answer: {
-          en: "Yes. Apify is the scraping engine. A free Apify account gives you limited monthly credits. Paid plans start at $49/month for heavier usage.",
-          it: "Sì. Apify è il motore di scraping. Un account Apify gratuito dà crediti mensili limitati. I piani a pagamento partono da $49/mese per uso più intenso.",
-        },
-      },
-      {
-        question: { en: "Is this legal?", it: "È legale?" },
-        answer: {
-          en: "Yes. Facebook and LinkedIn ad libraries are public by law (EU Digital Services Act). The skill only accesses publicly available data.",
-          it: "Sì. Le librerie ads di Facebook e LinkedIn sono pubbliche per legge (EU Digital Services Act). La skill accede solo a dati pubblicamente disponibili.",
-        },
-      },
-      {
-        question: { en: "Can I get a refund?", it: "Posso ottenere un rimborso?" },
-        answer: {
-          en: "Skills are digital products. All sales are final. We recommend reviewing the skill details carefully before purchasing.",
-          it: "Le skill sono prodotti digitali. Tutte le vendite sono definitive. Ti consigliamo di leggere attentamente i dettagli della skill prima dell'acquisto.",
-        },
-      },
-    ],
-    relatedSlugs: ["content-pipeline-pro", "janus"],
-  },
-  {
     slug: "remotion-best-practices",
     name: "Remotion Best Practices",
     technicalName: "remotion-best-practices",
@@ -2269,120 +2155,6 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["skill-creator-guru", "maia"],
-  },
-  {
-    slug: "meeting-insights-analyzer",
-    name: "Meeting Insights Analyzer",
-    technicalName: "meeting-insights-analyzer",
-    tagline: {
-      en: "Analyze meeting transcripts for behavioral patterns and communication improvement",
-      it: "Analizza le trascrizioni di meeting per pattern comportamentali e miglioramento comunicativo",
-    },
-    category: "sales",
-    tags: ["meetings", "transcripts", "communication", "behavioral analysis"],
-    price: 9,
-    currency: "EUR",
-    isFree: false,
-    isBundleOnly: false,
-    badge: null,
-    emoji: "\uD83C\uDF99\uFE0F",
-    filesCount: 1,
-    launchPhase: 1,
-    complexity: 1,
-    version: "1.0",
-    changelog: [
-      {
-        version: "1.0",
-        date: "2026-02-17",
-        changes: [
-          { en: "Initial release with behavioral pattern analysis and timestamped feedback", it: "Rilascio iniziale con analisi pattern comportamentali e feedback con timestamp" },
-        ],
-      },
-    ],
-    bundleSlugs: [],
-    metaTitle: {
-      en: "Meeting Insights Analyzer - Behavioral Analysis of Meeting Transcripts",
-      it: "Meeting Insights Analyzer - Analisi Comportamentale delle Trascrizioni Meeting",
-    },
-    metaDescription: {
-      en: "Speaking ratio, conflict avoidance, filler words, turn-taking. Timestamped feedback with what/why/how to improve. For sales calls, leadership comms, interviews.",
-      it: "Rapporto parlato, evitamento conflitti, parole riempitivo, turni di parola. Feedback con timestamp su cosa/perché/come migliorare. Per call commerciali, comunicazione leadership, colloqui.",
-    },
-    averageRating: 4.1,
-    reviewCount: 3,
-    problem: {
-      en: "You finish a sales call or leadership meeting and have no idea how you actually performed. Did you talk too much? Did you avoid the hard question? Did you use filler words? Without objective analysis, you repeat the same mistakes in every meeting.",
-      it: "Finisci una call commerciale o un meeting di leadership e non hai idea di come ti sei comportato veramente. Hai parlato troppo? Hai evitato la domanda difficile? Hai usato parole riempitivo? Senza analisi oggettiva, ripeti gli stessi errori in ogni meeting.",
-    },
-    solution: {
-      en: "Feed a meeting transcript and get a behavioral analysis: speaking ratio (how much you talked vs. others), conflict avoidance patterns, filler word frequency, turn-taking dynamics. Every finding comes with a timestamp, an explanation of why it matters, and a specific suggestion for how to improve.",
-      it: "Dai in input una trascrizione del meeting e ottieni un'analisi comportamentale: rapporto parlato (quanto hai parlato vs. gli altri), pattern di evitamento conflitto, frequenza parole riempitivo, dinamiche dei turni di parola. Ogni risultato ha un timestamp, una spiegazione del perché è importante e un suggerimento specifico su come migliorare.",
-    },
-    result: {
-      en: "Objective, timestamped feedback on your meeting performance. You see exactly where you lost the room, dodged a question, or dominated the conversation. Specific, actionable improvements for the next meeting.",
-      it: "Feedback oggettivo con timestamp sulla tua performance nei meeting. Vedi esattamente dove hai perso l'attenzione della sala, schivato una domanda o dominato la conversazione. Miglioramenti specifici e azionabili per il prossimo meeting.",
-    },
-    whatsInside: [
-      { en: "1 file with the complete behavioral analysis framework", it: "1 file con il framework completo di analisi comportamentale" },
-      { en: "Speaking ratio calculator: your talking time vs. total meeting time", it: "Calcolatore rapporto parlato: il tuo tempo di parola vs. tempo totale del meeting" },
-      { en: "Conflict avoidance detector: identifies hedging and topic-dodging", it: "Rilevatore evitamento conflitti: identifica linguaggio evasivo e cambio argomento" },
-      { en: "Filler word tracker: uhm, so, basically, actually, and language-specific fillers", it: "Tracker parole riempitivo: uhm, allora, praticamente, fondamentalmente e filler specifici per lingua" },
-      { en: "Timestamped what/why/how feedback for every finding", it: "Feedback cosa/perché/come con timestamp per ogni risultato" },
-    ],
-    whoIsThisFor: [
-      { en: "Sales professionals who want to improve their call performance", it: "Professionisti vendita che vogliono migliorare la performance nelle call" },
-      { en: "Leaders who want honest feedback on their meeting communication", it: "Leader che vogliono feedback onesto sulla propria comunicazione nei meeting" },
-      { en: "Job candidates practicing for interviews and reviewing their mock sessions", it: "Candidati che si preparano ai colloqui e rivedono le sessioni di prova" },
-    ],
-    notFor: {
-      en: "Meetings without a transcript (you need recorded audio transcribed to text first)",
-      it: "Meeting senza trascrizione (serve prima l'audio registrato trascritto in testo)",
-    },
-    beforeAfter: [
-      {
-        before: { en: "No idea how you performed. Just a vague feeling it went OK", it: "Nessuna idea di come ti sei comportato. Solo una sensazione vaga che è andata bene" },
-        after: { en: "Objective metrics: speaking ratio, filler count, turn-taking score", it: "Metriche oggettive: rapporto parlato, conteggio filler, punteggio turni di parola" },
-      },
-      {
-        before: { en: "Repeating the same communication mistakes in every meeting", it: "Ripetere gli stessi errori di comunicazione in ogni meeting" },
-        after: { en: "Timestamped feedback with specific suggestions for improvement", it: "Feedback con timestamp e suggerimenti specifici per il miglioramento" },
-      },
-      {
-        before: { en: "Paying a communication coach 150 EUR/hour for meeting review", it: "Pagare un coach di comunicazione 150 EUR/ora per review dei meeting" },
-        after: { en: "Behavioral analysis for 9 EUR. Reusable for every meeting", it: "Analisi comportamentale per 9 EUR. Riutilizzabile per ogni meeting" },
-      },
-    ],
-    faq: [
-      {
-        question: { en: "What exactly do I get when I buy this?", it: "Cosa ricevo esattamente quando acquisto?" },
-        answer: {
-          en: "A ZIP with 1 file: the behavioral analysis framework. Feed it a transcript and get a structured report. No subscription.",
-          it: "Un ZIP con 1 file: il framework di analisi comportamentale. Dagli una trascrizione e ottieni un report strutturato. Nessun abbonamento.",
-        },
-      },
-      {
-        question: { en: "What format does the transcript need to be in?", it: "In che formato deve essere la trascrizione?" },
-        answer: {
-          en: "Any text format with speaker labels. Most transcription tools (Otter, Whisper, Teams, Zoom) produce compatible output.",
-          it: "Qualsiasi formato testo con etichette speaker. La maggior parte dei tool di trascrizione (Otter, Whisper, Teams, Zoom) producono output compatibile.",
-        },
-      },
-      {
-        question: { en: "Does it work in languages other than English?", it: "Funziona in lingue diverse dall'inglese?" },
-        answer: {
-          en: "Yes. The behavioral patterns (speaking ratio, turn-taking, conflict avoidance) are language-independent. Filler word detection covers English and Italian.",
-          it: "Sì. I pattern comportamentali (rapporto parlato, turni di parola, evitamento conflitto) sono indipendenti dalla lingua. Il rilevamento parole riempitivo copre inglese e italiano.",
-        },
-      },
-      {
-        question: { en: "Can I get a refund?", it: "Posso ottenere un rimborso?" },
-        answer: {
-          en: "Skills are digital products. All sales are final. We recommend reviewing the skill details carefully before purchasing.",
-          it: "Le skill sono prodotti digitali. Tutte le vendite sono definitive. Ti consigliamo di leggere attentamente i dettagli della skill prima dell'acquisto.",
-        },
-      },
-    ],
-    relatedSlugs: ["janus", "sales-methodology-pro"],
   },
   {
     slug: "nano-banana-guru",

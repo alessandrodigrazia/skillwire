@@ -25,7 +25,7 @@ export function initLemonSqueezy() {
  */
 const VARIANT_MAP: Record<string, string> = {
   // Skills — populate with real variant IDs from LS dashboard
-  // "sales-methodology-pro": "123456",
+  // "ai-b2b-sales-methodology": "123456",
   // "b2b-presentation-builder": "123457",
   // Bundles
   // "b2b-sales-pro": "200001",
