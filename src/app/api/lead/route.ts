@@ -49,7 +49,6 @@ export async function POST(req: NextRequest) {
                   Email: email,
                   Skill: slug,
                   Consent: true,
-                  "Created At": new Date().toISOString(),
                   Locale:
                     req.headers.get("accept-language")?.split(",")[0] || "en",
                 },
