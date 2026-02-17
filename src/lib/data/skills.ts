@@ -2384,6 +2384,120 @@ export const skills: SkillDetail[] = [
     ],
     relatedSlugs: ["janus", "sales-methodology-pro"],
   },
+  {
+    slug: "nano-banana-guru",
+    name: "Nano Banana Guru",
+    technicalName: "nano-banana-guru",
+    tagline: {
+      en: "Proactive prompt engineering consultant for Google's Nano Banana Pro visual reasoning model",
+      it: "Consulente proattivo di prompt engineering per il modello di ragionamento visivo Nano Banana Pro di Google",
+    },
+    category: "devtools",
+    tags: ["visual reasoning", "prompt engineering", "image generation", "Nano Banana Pro", "Google"],
+    price: 29,
+    currency: "EUR",
+    isFree: false,
+    isBundleOnly: false,
+    badge: "new",
+    emoji: "\uD83C\uDF4C",
+    filesCount: 4,
+    launchPhase: 1,
+    complexity: 3,
+    version: "1.0",
+    changelog: [
+      {
+        version: "1.0",
+        date: "2026-02-17",
+        changes: [
+          { en: "Initial release with 8-area prompt canvas, 26 production examples, and video-to-carousel workflow", it: "Rilascio iniziale con canvas prompt a 8 aree, 26 esempi production e workflow video-to-carousel" },
+        ],
+      },
+    ],
+    bundleSlugs: ["claude-code-mastery"],
+    metaTitle: {
+      en: "Nano Banana Guru - Prompt Engineering for Visual AI",
+      it: "Nano Banana Guru - Prompt Engineering per AI Visiva",
+    },
+    metaDescription: {
+      en: "8-area prompt canvas, 26 production-ready examples, trigger detection matrix, JSON templates, and video-to-carousel workflow for Google's Nano Banana Pro.",
+      it: "Canvas prompt a 8 aree, 26 esempi production-ready, matrice di rilevamento trigger, template JSON e workflow video-to-carousel per Nano Banana Pro di Google.",
+    },
+    averageRating: 4.5,
+    reviewCount: 4,
+    problem: {
+      en: "You try to generate images with AI using tag soups like 'dog, park, 4k, realistic' and get generic, inconsistent results. You do not know how to brief a visual reasoning model like a Creative Director. You waste time re-rolling entire images instead of editing what is already 80% correct.",
+      it: "Provi a generare immagini con AI usando tag soup come 'dog, park, 4k, realistic' e ottieni risultati generici e inconsistenti. Non sai come briefare un modello di ragionamento visivo come un Direttore Creativo. Sprechi tempo a rigenerare intere immagini invece di modificare ciò che è già corretto all'80%.",
+    },
+    solution: {
+      en: "An 8-area structured prompt canvas (Intent, Subject, Work Surface, Layout, Style, Components, Constraints, Context) with 26 production-ready examples covering text rendering, character consistency, identity locking, dimensional translation, advanced editing, and structural control. A proactive trigger detection matrix suggests relevant capabilities based on your conversation context. JSON output format for precision.",
+      it: "Un canvas prompt strutturato a 8 aree (Intento, Soggetto, Superficie di lavoro, Layout, Stile, Componenti, Vincoli, Contesto) con 26 esempi production-ready che coprono rendering testo, consistenza personaggi, identity locking, traduzione dimensionale, editing avanzato e controllo strutturale. Una matrice proattiva di rilevamento trigger suggerisce capacità rilevanti in base al contesto della conversazione. Formato output JSON per precisione.",
+    },
+    result: {
+      en: "You go from generic AI images to professional-grade visual artifacts: dashboards, infographics, thumbnails, comics, diagrams, storyboards. The model understands your intent because you brief it like a Creative Director, not a search engine.",
+      it: "Passi da immagini AI generiche ad artefatti visivi professionali: dashboard, infografiche, thumbnail, fumetti, diagrammi, storyboard. Il modello capisce il tuo intento perché lo briefi come un Direttore Creativo, non come un motore di ricerca.",
+    },
+    whatsInside: [
+      { en: "4 files: prompt engineering guide, 26 examples library, work surface templates, interactive architect protocol", it: "4 file: guida prompt engineering, libreria 26 esempi, template superfici di lavoro, protocollo architetto interattivo" },
+      { en: "8-area prompt canvas: structured framework for any visual artifact", it: "Canvas prompt a 8 aree: framework strutturato per qualsiasi artefatto visivo" },
+      { en: "26 production-ready examples: infographics, thumbnails, sprites, 2D-to-3D, editing, storyboards", it: "26 esempi production-ready: infografiche, thumbnail, sprite, 2D-to-3D, editing, storyboard" },
+      { en: "Trigger detection matrix: proactive suggestions based on conversation context", it: "Matrice rilevamento trigger: suggerimenti proattivi basati sul contesto della conversazione" },
+      { en: "Video-to-carousel workflow: transform YouTube videos into visual carousels", it: "Workflow video-to-carousel: trasforma video YouTube in caroselli visivi" },
+    ],
+    whoIsThisFor: [
+      { en: "Content creators who need professional visual artifacts from AI", it: "Content creator che necessitano di artefatti visivi professionali dall'AI" },
+      { en: "Marketers creating thumbnails, infographics, and social media visuals", it: "Marketer che creano thumbnail, infografiche e visual per social media" },
+      { en: "Anyone who tried image generation AI and got disappointed by generic results", it: "Chiunque abbia provato AI di generazione immagini e sia rimasto deluso dai risultati generici" },
+    ],
+    notFor: {
+      en: "Users who need photorealistic photography (Nano Banana Pro excels at structured visual artifacts, not photo replacement)",
+      it: "Utenti che necessitano di fotografia fotorealistica (Nano Banana Pro eccelle negli artefatti visivi strutturati, non nella sostituzione fotografica)",
+    },
+    beforeAfter: [
+      {
+        before: { en: "Tag soups: 'dog, park, 4k, realistic'. Generic, inconsistent results", it: "Tag soup: 'dog, park, 4k, realistic'. Risultati generici e inconsistenti" },
+        after: { en: "Structured 8-area canvas with natural language briefs. Professional, intentional output", it: "Canvas strutturato a 8 aree con brief in linguaggio naturale. Output professionale e intenzionale" },
+      },
+      {
+        before: { en: "Re-rolling entire images when one detail is wrong", it: "Rigenerare intere immagini quando un dettaglio è sbagliato" },
+        after: { en: "Edit, don't re-roll: conversational edits for the 20% that needs fixing", it: "Modifica, non rigenerare: edit conversazionali per il 20% che va corretto" },
+      },
+      {
+        before: { en: "No idea what the model can actually do (text rendering? identity locking? 2D-to-3D?)", it: "Nessuna idea di cosa il modello possa realmente fare (rendering testo? identity locking? 2D-to-3D?)" },
+        after: { en: "26 categorized examples + proactive trigger system that suggests capabilities in context", it: "26 esempi categorizzati + sistema trigger proattivo che suggerisce capacità nel contesto" },
+      },
+    ],
+    faq: [
+      {
+        question: { en: "What exactly do I get when I buy this?", it: "Cosa ricevo esattamente quando acquisto?" },
+        answer: {
+          en: "A ZIP with 4 files: the prompt engineering guide with golden rules and 8-area canvas, a library of 26 production examples, work surface templates in JSON format, and the interactive architect protocol. No subscription.",
+          it: "Un ZIP con 4 file: la guida di prompt engineering con regole d'oro e canvas a 8 aree, una libreria di 26 esempi production, template superfici di lavoro in formato JSON e il protocollo architetto interattivo. Nessun abbonamento.",
+        },
+      },
+      {
+        question: { en: "Do I need a Google API key?", it: "Serve una chiave API Google?" },
+        answer: {
+          en: "Nano Banana Pro is available in Google AI Studio (free) and via the Gemini API. The skill teaches you how to prompt it effectively regardless of which interface you use.",
+          it: "Nano Banana Pro è disponibile in Google AI Studio (gratuito) e tramite l'API Gemini. La skill ti insegna come promptarlo efficacemente indipendentemente dall'interfaccia che usi.",
+        },
+      },
+      {
+        question: { en: "Does this work with other image generation models?", it: "Funziona con altri modelli di generazione immagini?" },
+        answer: {
+          en: "The 8-area canvas and creative director approach work with any model, but the 26 examples and trigger matrix are specifically optimized for Nano Banana Pro's visual reasoning capabilities.",
+          it: "Il canvas a 8 aree e l'approccio da direttore creativo funzionano con qualsiasi modello, ma i 26 esempi e la matrice trigger sono specificamente ottimizzati per le capacità di ragionamento visivo di Nano Banana Pro.",
+        },
+      },
+      {
+        question: { en: "Can I get a refund?", it: "Posso ottenere un rimborso?" },
+        answer: {
+          en: "Skills are digital products. All sales are final. We recommend reviewing the skill details carefully before purchasing.",
+          it: "Le skill sono prodotti digitali. Tutte le vendite sono definitive. Ti consigliamo di leggere attentamente i dettagli della skill prima dell'acquisto.",
+        },
+      },
+    ],
+    relatedSlugs: ["skill-creator-guru", "llm-arena-vs"],
+  },
 ];
 
 export function getSkillBySlug(slug: string): SkillDetail | undefined {

@@ -67,7 +67,7 @@ export function HeroSection() {
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="/skills"
+                href="/skills/skill-creator-guru"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-semibold text-text-primary transition-colors hover:bg-surface"
               >
                 {t("ctaSecondary")}

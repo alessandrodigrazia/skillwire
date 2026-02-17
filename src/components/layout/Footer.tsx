@@ -10,7 +10,7 @@ export function Footer() {
       links: [
         { label: t("allSkills"), href: "/skills" as const },
         { label: t("bundles"), href: "/bundles" as const },
-        { label: t("freeResources"), href: "/skills" as const },
+        { label: t("freeResources"), href: "/skills/skill-creator-guru" as const },
       ],
     },
     {
