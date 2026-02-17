@@ -21,6 +21,7 @@ import {
   categories,
 } from "@/lib/data/skills";
 import { SkillCard } from "@/components/skills/SkillCard";
+import { FreeSkillForm } from "@/components/FreeSkillForm";
 import { useCartStore } from "@/lib/store/cart";
 import { notFound } from "next/navigation";
 
@@ -116,24 +117,35 @@ export default function SkillDetailPage() {
 
             {/* Price + CTA */}
             <div className="flex shrink-0 flex-col items-start gap-4 lg:items-end">
-              <span className="text-4xl font-bold text-accent">
-                &euro;{skill.price}
-              </span>
-              <button
-                onClick={handleAddToCart}
-                disabled={isInCart}
-                className={`inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold transition-colors ${
-                  isInCart
-                    ? "bg-surface-elevated text-text-secondary cursor-default"
-                    : "bg-accent text-bg hover:bg-accent-hover"
-                }`}
-              >
-                <ShoppingCart size={16} />
-                {isInCart ? i18n("inCart") : i18n("addToCart")}
-              </button>
-              <p className="text-xs text-text-secondary">
-                {i18n("guarantee")}
-              </p>
+              {skill.isFree ? (
+                <>
+                  <span className="rounded-full bg-success/10 px-4 py-1.5 text-lg font-bold text-success">
+                    {i18n("freeLabel")}
+                  </span>
+                  <FreeSkillForm slug={skill.slug} />
+                </>
+              ) : (
+                <>
+                  <span className="text-4xl font-bold text-accent">
+                    &euro;{skill.price}
+                  </span>
+                  <button
+                    onClick={handleAddToCart}
+                    disabled={isInCart}
+                    className={`inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-sm font-semibold transition-colors ${
+                      isInCart
+                        ? "bg-surface-elevated text-text-secondary cursor-default"
+                        : "bg-accent text-bg hover:bg-accent-hover"
+                    }`}
+                  >
+                    <ShoppingCart size={16} />
+                    {isInCart ? i18n("inCart") : i18n("addToCart")}
+                  </button>
+                  <p className="text-xs text-text-secondary">
+                    {i18n("guarantee")}
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </motion.div>
@@ -325,24 +337,37 @@ export default function SkillDetailPage() {
               <p className="mt-1 text-sm text-text-secondary">
                 {t(skill.tagline, locale)}
               </p>
-              <p className="mt-4 text-3xl font-bold text-accent">
-                &euro;{skill.price}
-              </p>
-              <button
-                onClick={handleAddToCart}
-                disabled={isInCart}
-                className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold transition-colors ${
-                  isInCart
-                    ? "bg-surface-elevated text-text-secondary cursor-default"
-                    : "bg-accent text-bg hover:bg-accent-hover"
-                }`}
-              >
-                <ShoppingCart size={16} />
-                {isInCart ? i18n("inCart") : i18n("addToCart")}
-              </button>
-              <p className="mt-3 text-center text-xs text-text-secondary">
-                {i18n("guarantee")}
-              </p>
+              {skill.isFree ? (
+                <>
+                  <p className="mt-4 rounded-full bg-success/10 px-4 py-1.5 text-center text-lg font-bold text-success">
+                    {i18n("freeLabel")}
+                  </p>
+                  <div className="mt-4">
+                    <FreeSkillForm slug={skill.slug} />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p className="mt-4 text-3xl font-bold text-accent">
+                    &euro;{skill.price}
+                  </p>
+                  <button
+                    onClick={handleAddToCart}
+                    disabled={isInCart}
+                    className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold transition-colors ${
+                      isInCart
+                        ? "bg-surface-elevated text-text-secondary cursor-default"
+                        : "bg-accent text-bg hover:bg-accent-hover"
+                    }`}
+                  >
+                    <ShoppingCart size={16} />
+                    {isInCart ? i18n("inCart") : i18n("addToCart")}
+                  </button>
+                  <p className="mt-3 text-center text-xs text-text-secondary">
+                    {i18n("guarantee")}
+                  </p>
+                </>
+              )}
 
               {/* Quick specs */}
               <div className="mt-6 space-y-2 border-t border-border pt-4">

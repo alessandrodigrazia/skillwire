@@ -95,7 +95,15 @@
     "specRating": "Valutazione",
     "changelogTitle": "Changelog",
     "faqTitle": "Domande Frequenti",
-    "relatedTitle": "Skill Correlate"
+    "relatedTitle": "Skill Correlate",
+    "freeLabel": "Gratis",
+    "freeEmailPlaceholder": "tua@email.com",
+    "freeConsent": "Accetto di ricevere aggiornamenti sui prodotti da Skillwire",
+    "freeDownloadBtn": "Ottieni Skill Gratis",
+    "freeDownloading": "Elaborazione...",
+    "freeSuccess": "Il tuo download è pronto!",
+    "freeDownloadNow": "Scarica Ora",
+    "freeError": "Qualcosa è andato storto. Riprova."
   },
   "cart": {
     "title": "Il Tuo Carrello",

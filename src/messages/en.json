@@ -95,7 +95,15 @@
     "specRating": "Rating",
     "changelogTitle": "Changelog",
     "faqTitle": "Frequently Asked Questions",
-    "relatedTitle": "Related Skills"
+    "relatedTitle": "Related Skills",
+    "freeLabel": "Free",
+    "freeEmailPlaceholder": "your@email.com",
+    "freeConsent": "I agree to receive product updates from Skillwire",
+    "freeDownloadBtn": "Get Free Skill",
+    "freeDownloading": "Processing...",
+    "freeSuccess": "Your download is ready!",
+    "freeDownloadNow": "Download Now",
+    "freeError": "Something went wrong. Please try again."
   },
   "cart": {
     "title": "Your Cart",
