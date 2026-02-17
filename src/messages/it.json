@@ -125,7 +125,7 @@
     "emailNote": "Controlla la tua email per il link di download e la chiave di licenza.",
     "installGuide": "Serve aiuto per l\u2019installazione? Leggi la nostra guida.",
     "browseMore": "Esplora altre skill",
-    "orderNote": "Domande sul tuo ordine? Scrivici a support@skillwire.ai"
+    "orderNote": "Domande sul tuo ordine? Scrivici a hello@skillwire.ai"
   },
   "howItWorksPage": {
     "title": "Come Funziona",
@@ -387,13 +387,13 @@
     "s2P3": "Problema tecnico: Un problema tecnico ti ha impedito di scaricare il prodotto e non siamo riusciti a risolverlo.",
     "s2P4": "Prodotto errato consegnato: Hai ricevuto un prodotto diverso da quello ordinato.",
     "s3Title": "Come Richiedere un Rimborso",
-    "s3P1": "Per richiedere un rimborso, invia un'email a support@skillwire.ai entro 14 giorni dall'acquisto.",
+    "s3P1": "Per richiedere un rimborso, invia un'email a hello@skillwire.ai entro 14 giorni dall'acquisto.",
     "s3P2": "Includi il numero d'ordine (dall'email di conferma di Lemon Squeezy), il nome del prodotto e una breve descrizione del problema.",
     "s4Title": "Elaborazione",
     "s4P1": "I rimborsi approvati vengono elaborati da Lemon Squeezy, il nostro Merchant of Record. Il rimborso verrà emesso sul metodo di pagamento originale.",
     "s4P2": "Sono necessari dai 5 ai 10 giorni lavorativi affinché il rimborso appaia sul tuo estratto conto, a seconda della tua banca o del fornitore di pagamento.",
     "s5Title": "Contatti",
-    "s5P1": "Per qualsiasi domanda sui rimborsi o sul tuo ordine, contattaci all'indirizzo support@skillwire.ai."
+    "s5P1": "Per qualsiasi domanda sui rimborsi o sul tuo ordine, contattaci all'indirizzo hello@skillwire.ai."
   },
   "disclaimerPage": {
     "title": "Disclaimer",

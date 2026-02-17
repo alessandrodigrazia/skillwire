@@ -125,7 +125,7 @@
     "emailNote": "Check your email for the download link and license key.",
     "installGuide": "Need help installing? Read our guide.",
     "browseMore": "Browse more skills",
-    "orderNote": "Questions about your order? Contact us at support@skillwire.ai"
+    "orderNote": "Questions about your order? Contact us at hello@skillwire.ai"
   },
   "howItWorksPage": {
     "title": "How It Works",
@@ -387,13 +387,13 @@
     "s2P3": "Technical issue: A technical problem prevented you from downloading the product, and we were unable to resolve it.",
     "s2P4": "Wrong product delivered: You received a different product than what you ordered.",
     "s3Title": "How to Request a Refund",
-    "s3P1": "To request a refund, email support@skillwire.ai within 14 days of your purchase.",
+    "s3P1": "To request a refund, email hello@skillwire.ai within 14 days of your purchase.",
     "s3P2": "Please include your order number (from the Lemon Squeezy confirmation email), the product name, and a brief description of the issue.",
     "s4Title": "Processing",
     "s4P1": "Approved refunds are processed by Lemon Squeezy, our Merchant of Record. The refund will be issued to your original payment method.",
     "s4P2": "Please allow 5 to 10 business days for the refund to appear on your statement, depending on your bank or payment provider.",
     "s5Title": "Contact",
-    "s5P1": "For any questions about refunds or your order, contact us at support@skillwire.ai."
+    "s5P1": "For any questions about refunds or your order, contact us at hello@skillwire.ai."
   },
   "disclaimerPage": {
     "title": "Disclaimer",
