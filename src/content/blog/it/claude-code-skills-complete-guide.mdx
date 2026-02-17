@@ -1,0 +1,68 @@
+Se usi Claude Code da un po', avrai notato una cosa: è incredibilmente capace di default, ma non *conosce* il tuo dominio. Non capisce la metodologia di vendita della tua azienda, il tuo stile di scrittura preferito, o come dovrebbero essere strutturati i tuoi workflow n8n.
+
+È qui che entrano in gioco le **skill**.
+
+## Cos'è una Skill di Claude Code?
+
+Una skill è un pacchetto strutturato di file che trasforma Claude da assistente generico a **esperto di dominio**. Pensa a come un medico si specializza in cardiologia o un avvocato in M&A.
+
+Tecnicamente, una skill è una cartella che contiene:
+
+- Un file `SKILL.md` (il set di istruzioni principale)
+- File di supporto: template, esempi, regole di validazione, dati di riferimento
+- Sottocartelle per diversi aspetti della skill
+
+Quando installi una skill, Claude legge questi file come istruzioni e diventa immediatamente competente in quel dominio.
+
+## Perché le Skill Contano
+
+Senza skill, ogni conversazione parte da zero. Spieghi il tuo contesto, le tue preferenze, la tua metodologia. Ogni singola volta. Con le skill, Claude sa già:
+
+- **Il tuo workflow.** I passaggi esatti, gli strumenti e la sequenza che segui.
+- **I tuoi standard.** Com'è fatto un "output di qualità" nel tuo dominio.
+- **La tua terminologia.** Gergo di settore, naming convention interne.
+- **I tuoi vincoli.** Cosa evitare, a cosa dare priorità.
+
+La differenza è drammatica. Una risposta di Claude generico ti dà una prima bozza decente. Una risposta di Claude con skill ti dà qualcosa che puoi effettivamente usare.
+
+## Come Installare una Skill
+
+L'installazione richiede 30 secondi, indipendentemente dalla piattaforma.
+
+### Claude Code (CLI)
+
+Apri il terminale e lancia:
+
+```bash
+# macOS / Linux
+cp -r ~/Downloads/cartella-skill ~/.claude/skills/
+
+# Windows
+xcopy %USERPROFILE%\Downloads\cartella-skill %USERPROFILE%\.claude\skills\ /E /I
+```
+
+### Claude Desktop / claude.ai
+
+1. Apri **Impostazioni**
+2. Vai a **Funzionalità** > **Competenze**
+3. Clicca **Aggiungi**
+4. Carica il file ZIP della skill (contiene la cartella principale con SKILL.md e le sottocartelle)
+
+Fatto. Nessun riavvio necessario. Claude recepisce la skill immediatamente.
+
+## Cosa Rende una Skill di Qualità?
+
+Non tutte le skill sono uguali. Una skill professionale deve avere:
+
+- **Scope chiaro.** Risolve un problema specifico, non tutto.
+- **Contesto ricco.** Abbastanza esempi e template per guidare la qualità dell'output.
+- **Regole di validazione.** Criteri perché Claude verifichi autonomamente il suo lavoro.
+- **Versionamento.** Un numero di versione e un changelog per sapere cosa è cambiato.
+
+Le skill su Skillwire sono progettate da professionisti che le usano quotidianamente. Ognuna è stata raffinata attraverso centinaia di interazioni nel mondo reale.
+
+## Per Iniziare
+
+Se sei nuovo alle skill, inizia con una singola skill che corrisponde al tuo workflow principale. Usala per una settimana. Vedrai rapidamente la differenza tra assistenza AI generica e competenza AI specifica del dominio.
+
+Esplora il catalogo completo per trovare la skill giusta per il tuo lavoro.

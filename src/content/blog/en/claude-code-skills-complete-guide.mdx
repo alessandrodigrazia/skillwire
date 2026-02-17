@@ -1,0 +1,68 @@
+If you've been using Claude Code for a while, you've probably noticed something: it's incredibly capable out of the box, but it doesn't *know* your domain. It doesn't understand your company's sales methodology, your preferred writing style, or how your n8n workflows should be structured.
+
+That's where **skills** come in.
+
+## What Is a Claude Code Skill?
+
+A skill is a structured package of files that transforms Claude from a general-purpose assistant into a **domain expert**. Think of it as giving Claude a specialization. The same way a doctor specializes in cardiology or a lawyer specializes in M&A.
+
+Technically, a skill is a folder containing:
+
+- A `SKILL.md` file (the main instruction set)
+- Supporting files: templates, examples, validation rules, reference data
+- Subfolders for different aspects of the skill
+
+When you install a skill, Claude reads these files as instructions and instantly becomes proficient in that domain.
+
+## Why Skills Matter
+
+Without skills, every conversation starts from zero. You explain your context, your preferences, your methodology. Every single time. With skills, Claude already knows:
+
+- **Your workflow.** The exact steps, tools, and sequence you follow.
+- **Your standards.** What "good output" looks like in your domain.
+- **Your terminology.** Industry jargon, internal naming conventions.
+- **Your constraints.** What to avoid, what to prioritize.
+
+The difference is dramatic. A generic Claude response might give you a decent first draft. A skilled Claude response gives you something you can actually use.
+
+## How to Install a Skill
+
+Installation takes 30 seconds, regardless of the platform.
+
+### Claude Code (CLI)
+
+Open your terminal and run:
+
+```bash
+# macOS / Linux
+cp -r ~/Downloads/skill-folder ~/.claude/skills/
+
+# Windows
+xcopy %USERPROFILE%\Downloads\skill-folder %USERPROFILE%\.claude\skills\ /E /I
+```
+
+### Claude Desktop / claude.ai
+
+1. Open **Settings**
+2. Go to **Features** > **Skills**
+3. Click **Add**
+4. Upload the skill ZIP file (contains the main folder with SKILL.md and subfolders)
+
+That's it. No restart needed. Claude picks up the skill immediately.
+
+## What Makes a Good Skill?
+
+Not all skills are created equal. A professional skill should have:
+
+- **Clear scope.** It solves a specific problem, not everything.
+- **Rich context.** Enough examples and templates to guide output quality.
+- **Validation rules.** Criteria for Claude to self-check its work.
+- **Versioning.** A version number and changelog so you know what changed.
+
+The skills on Skillwire are designed by professionals who use them daily. Each one has been refined through hundreds of real-world interactions.
+
+## Getting Started
+
+If you're new to skills, start with a single skill that matches your primary workflow. Use it for a week. You'll quickly see the difference between generic AI assistance and domain-specific AI expertise.
+
+Browse the full catalog to find the right skill for your work.
