@@ -125,7 +125,19 @@ export default function SkillDetailPage() {
 
             {/* Price + CTA */}
             <div className="flex shrink-0 flex-col items-start gap-4 lg:items-end">
-              {skill.isFree ? (
+              {skill.isBundleOnly ? (
+                <div className="rounded-lg border border-accent/20 bg-accent/5 p-4 text-center">
+                  <p className="mb-3 text-sm text-text-secondary">
+                    {i18n("bundleOnlyNote")}
+                  </p>
+                  <Link
+                    href={`/bundles/${skill.bundleSlugs[0]}` as "/bundles"}
+                    className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover"
+                  >
+                    {i18n("viewBundle")} →
+                  </Link>
+                </div>
+              ) : skill.isFree ? (
                 <>
                   <span className="rounded-full bg-success/10 px-4 py-1.5 text-lg font-bold text-success">
                     {i18n("freeLabel")}
@@ -269,8 +281,19 @@ export default function SkillDetailPage() {
                           ? "Italiano & Inglese"
                           : "English & Italian",
                       ],
-                      [i18n("specCompatibility"), "Claude Free, Pro, Max, Team, Enterprise"],
-                      [i18n("specPlatform"), "macOS, Windows, Linux"],
+                      [i18n("specCompatibility"), skill.compatibleWith],
+                      [
+                        i18n("specPlatform"),
+                        skill.compatibleWith === "Claude Code"
+                          ? locale === "it"
+                            ? "macOS, Linux (solo Claude Code CLI)"
+                            : "macOS, Linux (Claude Code CLI only)"
+                          : skill.compatibleWith === "Claude Code + Desktop"
+                            ? "macOS, Windows, Linux"
+                            : locale === "it"
+                              ? "macOS, Windows, Linux, Web"
+                              : "macOS, Windows, Linux, Web",
+                      ],
                     ].map(([label, value], i) => (
                       <tr
                         key={label}
@@ -288,6 +311,25 @@ export default function SkillDetailPage() {
                 </table>
               </div>
             </Section>
+
+            {/* Prerequisites */}
+            {skill.prerequisites.length > 0 && (
+              <Section title={i18n("prerequisitesTitle")}>
+                <div className="rounded-lg border border-border bg-surface p-4">
+                  <ul className="space-y-2">
+                    {skill.prerequisites.map((req, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-text-secondary"
+                      >
+                        <span className="mt-0.5 shrink-0 text-accent">•</span>
+                        {req}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Section>
+            )}
 
             {/* Changelog */}
             <Section title={i18n("changelogTitle")}>

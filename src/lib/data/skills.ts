@@ -40,6 +40,8 @@ export interface SkillDetail {
   beforeAfter: { before: L; after: L }[];
   faq: { question: L; answer: L }[];
   relatedSlugs: string[];
+  compatibleWith: "Claude Code" | "Claude Code + Desktop" | "All Platforms";
+  prerequisites: string[];
 }
 
 /* Resolve a localized value */
@@ -222,6 +224,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ask-to-vera", "human-writer"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "human-writer",
@@ -337,6 +341,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["janus", "ask-to-andrew"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "janus",
@@ -452,6 +458,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["human-writer", "ask-to-vera"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "ask-to-vera",
@@ -568,6 +576,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ask-to-andrew", "human-writer"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "ai-b2b-sales-methodology",
@@ -682,6 +692,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["b2b-presentation-builder", "janus"],
+  compatibleWith: "Claude Code",
+  prerequisites: ["Python 3.x (optional, for export scripts)"],
   },
   {
     slug: "b2b-presentation-builder",
@@ -796,6 +808,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ai-b2b-sales-methodology", "janus"],
+  compatibleWith: "Claude Code",
+  prerequisites: ["Python 3.x", "python-pptx (pip install python-pptx)"],
   },
   {
     slug: "deep-research-agent",
@@ -910,6 +924,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["janus", "ai-b2b-sales-methodology"],
+  compatibleWith: "Claude Code",
+  prerequisites: [],
   },
   {
     slug: "cv-guru",
@@ -1017,6 +1033,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ask-to-vera", "human-writer"],
+  compatibleWith: "Claude Code",
+  prerequisites: ["Python 3.x", "python-docx (pip install python-docx)"],
   },
   {
     slug: "n8n-ai-workflow-expert",
@@ -1131,6 +1149,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["n8n-docs-live", "n8n-workflow-repository"],
+  compatibleWith: "Claude Code + Desktop",
+  prerequisites: ["n8n account", "n8n-mcp server (recommended, via npx)"],
   },
   {
     slug: "n8n-docs-live",
@@ -1145,7 +1165,7 @@ export const skills: SkillDetail[] = [
     price: 19,
     currency: "EUR",
     isFree: false,
-    isBundleOnly: false,
+    isBundleOnly: true,
     badge: null,
     icon: "book-open",
     filesCount: 16,
@@ -1245,6 +1265,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["n8n-ai-workflow-expert", "n8n-workflow-repository"],
+  compatibleWith: "Claude Code + Desktop",
+  prerequisites: ["n8n account"],
   },
   {
     slug: "n8n-workflow-repository",
@@ -1259,7 +1281,7 @@ export const skills: SkillDetail[] = [
     price: 29,
     currency: "EUR",
     isFree: false,
-    isBundleOnly: false,
+    isBundleOnly: true,
     badge: null,
     icon: "library",
     filesCount: 106,
@@ -1358,6 +1380,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["n8n-ai-workflow-expert", "n8n-docs-live"],
+  compatibleWith: "Claude Code + Desktop",
+  prerequisites: [],
   },
   {
     slug: "iterative-self-critique",
@@ -1472,6 +1496,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["maia", "n8n-ai-workflow-expert"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "skill-creator-guru",
@@ -1586,6 +1612,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["memory-manager", "maia"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "memory-manager",
@@ -1699,6 +1727,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["skill-creator-guru", "maia"],
+  compatibleWith: "Claude Code",
+  prerequisites: [],
   },
   {
     slug: "maia",
@@ -1813,6 +1843,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["llm-arena-vs", "iterative-self-critique"],
+  compatibleWith: "Claude Code",
+  prerequisites: [],
   },
   {
     slug: "llm-arena-vs",
@@ -1927,6 +1959,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["maia", "iterative-self-critique"],
+  compatibleWith: "Claude Code",
+  prerequisites: ["OpenAI Codex CLI (ChatGPT Plus or API key)", "Google Gemini CLI"],
   },
   {
     slug: "content-pipeline-pro",
@@ -2041,6 +2075,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["human-writer", "janus"],
+  compatibleWith: "All Platforms",
+  prerequisites: [],
   },
   {
     slug: "remotion-best-practices",
@@ -2155,6 +2191,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["skill-creator-guru", "maia"],
+  compatibleWith: "Claude Code",
+  prerequisites: ["Node.js 18+", "npm", "ffmpeg (brew install ffmpeg)"],
   },
   {
     slug: "nano-banana-guru",
@@ -2269,6 +2307,8 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["skill-creator-guru", "llm-arena-vs"],
+  compatibleWith: "All Platforms",
+  prerequisites: ["Gemini Advanced account (required for image generation)"],
   },
 ];
 
