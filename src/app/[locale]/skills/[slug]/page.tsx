@@ -23,6 +23,7 @@ import {
 } from "@/lib/data/skills";
 import { SkillCard } from "@/components/skills/SkillCard";
 import { FreeSkillForm } from "@/components/FreeSkillForm";
+import { SkillVideoPlayer } from "@/components/ui/SkillVideoPlayer";
 import { useCartStore } from "@/lib/store/cart";
 import { notFound } from "next/navigation";
 
@@ -169,6 +170,13 @@ export default function SkillDetailPage() {
             </div>
           </div>
         </motion.div>
+
+        {/* Terminal Preview Video */}
+        {skill.hasTerminalVideo && (
+          <div className="mt-8 overflow-hidden rounded-xl border border-border glow-accent">
+            <SkillVideoPlayer slug={skill.slug} locale={locale} />
+          </div>
+        )}
 
         {/* Content sections */}
         <div className="mt-12 grid gap-12 lg:grid-cols-3">

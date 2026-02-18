@@ -42,6 +42,7 @@ export interface SkillDetail {
   relatedSlugs: string[];
   compatibleWith: "Claude Code" | "Claude Code + Desktop" | "All Platforms";
   prerequisites: string[];
+  hasTerminalVideo?: boolean;
 }
 
 /* Resolve a localized value */
@@ -460,6 +461,7 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["human-writer", "ask-to-vera"],
   compatibleWith: "All Platforms",
   prerequisites: [],
+  hasTerminalVideo: true,
   },
   {
     slug: "ask-to-vera",
@@ -694,6 +696,7 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["b2b-presentation-builder", "janus"],
   compatibleWith: "Claude Code",
   prerequisites: ["Python 3.x (optional, for export scripts)"],
+  hasTerminalVideo: true,
   },
   {
     slug: "b2b-presentation-builder",
