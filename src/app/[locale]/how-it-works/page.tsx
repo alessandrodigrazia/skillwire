@@ -65,7 +65,7 @@ export default function HowItWorksPage() {
         </motion.div>
 
         {/* Steps 1 & 2 */}
-        <div className="mt-16 space-y-12">
+        <div className="mt-16 space-y-12 rounded-2xl border border-border bg-surface p-8 glow-accent">
           {[1, 2].map((num, i) => {
             const Icon = steps[i].icon;
             return (

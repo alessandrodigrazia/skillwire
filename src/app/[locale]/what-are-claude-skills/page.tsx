@@ -172,7 +172,7 @@ export default function WhatAreSkillsPage() {
                   return (
                     <div
                       key={i}
-                      className="flex gap-4 rounded-lg border border-border bg-surface p-5"
+                      className="flex gap-4 rounded-lg border border-border bg-surface p-5 glow-accent"
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
                         <BIcon size={20} className="text-accent" />
