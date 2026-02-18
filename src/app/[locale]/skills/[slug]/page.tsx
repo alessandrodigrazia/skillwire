@@ -171,17 +171,17 @@ export default function SkillDetailPage() {
           </div>
         </motion.div>
 
-        {/* Terminal Preview Video */}
-        {skill.hasTerminalVideo && (
-          <div className="mt-8 overflow-hidden rounded-xl border border-border glow-accent">
-            <SkillVideoPlayer slug={skill.slug} locale={locale} />
-          </div>
-        )}
-
         {/* Content sections */}
         <div className="mt-12 grid gap-12 lg:grid-cols-3">
           {/* Main content (2/3) */}
           <div className="space-y-12 lg:col-span-2">
+            {/* Terminal Preview Video */}
+            {skill.hasTerminalVideo && (
+              <div className="overflow-hidden rounded-xl border border-border glow-accent">
+                <SkillVideoPlayer slug={skill.slug} locale={locale} />
+              </div>
+            )}
+
             {/* Problem -> Solution -> Result */}
             <Section title={i18n("problemTitle")}>
               <p className="text-text-secondary leading-relaxed">
