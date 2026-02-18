@@ -54,8 +54,12 @@ export default function SkillDetailPage() {
   };
 
   return (
-    <div className="py-12 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="relative overflow-hidden py-12 sm:py-16">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-accent/5 blur-[120px]" />
+        <div className="absolute right-0 top-1/4 h-[250px] w-[350px] rounded-full bg-accent/3 blur-[100px]" />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-8 flex items-center gap-2 text-sm text-text-secondary">
           <Link
@@ -70,7 +74,7 @@ export default function SkillDetailPage() {
 
         {/* Skill Hero */}
         <motion.div
-          className="rounded-2xl border border-border bg-surface p-8 sm:p-10"
+          className="rounded-2xl border border-border bg-surface p-8 sm:p-10 glow-accent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

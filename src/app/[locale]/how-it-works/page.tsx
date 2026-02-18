@@ -45,8 +45,12 @@ export default function HowItWorksPage() {
   ];
 
   return (
-    <div className="py-16 sm:py-24">
-      <div className="mx-auto max-w-[48rem] px-4 sm:px-6 lg:px-8">
+    <div className="relative overflow-hidden py-16 sm:py-24">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-accent/5 blur-[120px]" />
+        <div className="absolute right-0 top-1/4 h-[250px] w-[350px] rounded-full bg-accent/3 blur-[100px]" />
+      </div>
+      <div className="relative mx-auto max-w-[48rem] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center"
