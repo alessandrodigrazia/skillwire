@@ -1049,7 +1049,7 @@ export const skills: SkillDetail[] = [
     price: 39,
     currency: "EUR",
     isFree: false,
-    isBundleOnly: false,
+    isBundleOnly: true,
     badge: "popular",
     icon: "workflow",
     filesCount: 100,
