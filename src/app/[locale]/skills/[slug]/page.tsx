@@ -13,6 +13,7 @@ import {
   FileText,
   FolderOpen,
 } from "lucide-react";
+import { getIcon } from "@/lib/icon-map";
 import { useState } from "react";
 import {
   getSkillBySlug,
@@ -41,6 +42,7 @@ export default function SkillDetailPage() {
   const isInCart = items.some((i) => i.slug === skill.slug);
   const cat = categories.find((c) => c.slug === skill.category);
   const categoryName = cat ? t(cat.name, locale) : skill.category;
+  const SkillIcon = getIcon(skill.icon);
 
   const handleAddToCart = () => {
     addItem({
@@ -48,7 +50,7 @@ export default function SkillDetailPage() {
       name: skill.name,
       price: skill.price,
       type: "skill",
-      emoji: skill.emoji,
+      icon: skill.icon,
     });
     openCart();
   };
@@ -81,9 +83,11 @@ export default function SkillDetailPage() {
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-[36rem]">
-              {/* Emoji + Category + Version */}
+              {/* Icon + Category + Version */}
               <div className="flex items-center gap-3">
-                <span className="text-5xl">{skill.emoji}</span>
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10">
+                  <SkillIcon size={32} className="text-accent" />
+                </div>
                 <span className="rounded-full border border-border bg-bg px-3 py-1 text-xs font-medium text-text-secondary">
                   {categoryName}
                 </span>
@@ -334,7 +338,9 @@ export default function SkillDetailPage() {
           {/* Sticky sidebar (1/3) */}
           <div className="hidden lg:block">
             <div className="sticky top-24 rounded-xl border border-border bg-surface p-6">
-              <span className="text-3xl">{skill.emoji}</span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+                <SkillIcon size={24} className="text-accent" />
+              </div>
               <h3 className="mt-3 text-lg font-semibold text-text-primary">
                 {skill.name}
               </h3>

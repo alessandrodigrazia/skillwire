@@ -27,7 +27,7 @@ export interface Skill {
   isFree: boolean;
   isBundleOnly: boolean;
   badge: BadgeType;
-  emoji: string;
+  icon: string;
   filesCount: number;
   launchPhase: 1 | 2 | 3;
   complexity: 1 | 2 | 3 | 4 | 5;
@@ -56,5 +56,5 @@ export interface CartItem {
   name: string;
   price: number;
   type: "skill" | "bundle";
-  emoji?: string;
+  icon?: string;
 }

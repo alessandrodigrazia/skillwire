@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { X, Trash2, ShoppingBag, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/lib/store/cart";
 import { motion, AnimatePresence } from "framer-motion";
+import { getIcon } from "@/lib/icon-map";
 
 declare global {
   interface Window {
@@ -122,9 +123,14 @@ export function CartDrawer() {
                       className="flex items-center justify-between rounded-lg border border-border bg-surface p-4"
                     >
                       <div className="flex items-center gap-3">
-                        {item.emoji && (
-                          <span className="text-xl">{item.emoji}</span>
-                        )}
+                        {item.icon && (() => {
+                          const CartIcon = getIcon(item.icon);
+                          return (
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                              <CartIcon size={16} className="text-accent" />
+                            </div>
+                          );
+                        })()}
                         <div>
                           <p className="text-sm font-medium text-text-primary">
                             {item.name}

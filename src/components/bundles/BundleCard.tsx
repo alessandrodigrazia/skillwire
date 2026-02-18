@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import type { BundleDetail } from "@/lib/data/bundles";
 import { t } from "@/lib/data/bundles";
 import { Package } from "lucide-react";
+import { getIcon } from "@/lib/icon-map";
 
 const badgeStyles: Record<string, string> = {
   "best-seller": "bg-accent/10 text-accent border-accent/20",
@@ -36,6 +37,7 @@ interface BundleCardProps {
 export function BundleCard({ bundle, index = 0 }: BundleCardProps) {
   const locale = useLocale();
   const i18n = useTranslations("bundlePage");
+  const BundleIcon = getIcon(bundle.icon);
 
   return (
     <motion.div
@@ -59,8 +61,10 @@ export function BundleCard({ bundle, index = 0 }: BundleCardProps) {
           </span>
         )}
 
-        {/* Emoji */}
-        <span className="text-3xl">{bundle.emoji}</span>
+        {/* Icon */}
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+          <BundleIcon size={24} className="text-accent" />
+        </div>
 
         {/* Name */}
         <h3 className="mt-4 text-base font-semibold text-text-primary">

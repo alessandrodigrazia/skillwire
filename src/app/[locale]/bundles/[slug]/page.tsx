@@ -11,6 +11,7 @@ import {
   Package,
   Star,
 } from "lucide-react";
+import { getIcon } from "@/lib/icon-map";
 import { useState } from "react";
 import { getBundleBySlug, t } from "@/lib/data/bundles";
 import { useCartStore } from "@/lib/store/cart";
@@ -30,6 +31,7 @@ export default function BundleDetailPage() {
 
   const isInCart = items.some((i) => i.slug === bundle.slug);
   const savings = bundle.originalPrice - bundle.bundlePrice;
+  const BundleIcon = getIcon(bundle.icon);
 
   const handleAddToCart = () => {
     addItem({
@@ -37,7 +39,7 @@ export default function BundleDetailPage() {
       name: bundle.name,
       price: bundle.bundlePrice,
       type: "bundle",
-      emoji: bundle.emoji,
+      icon: bundle.icon,
     });
     openCart();
   };
@@ -70,9 +72,11 @@ export default function BundleDetailPage() {
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-[36rem]">
-              {/* Emoji + Badge + Version */}
+              {/* Icon + Badge + Version */}
               <div className="flex items-center gap-3">
-                <span className="text-5xl">{bundle.emoji}</span>
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10">
+                  <BundleIcon size={32} className="text-accent" />
+                </div>
                 <span className="rounded-full border border-border bg-bg px-3 py-1 text-xs font-medium text-text-secondary">
                   Bundle
                 </span>
@@ -154,7 +158,7 @@ export default function BundleDetailPage() {
                     className="rounded-lg border border-border bg-surface p-5"
                   >
                     <div className="flex items-start gap-4">
-                      <span className="text-2xl">{skill.emoji}</span>
+                      {(() => { const SI = getIcon(skill.icon); return <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10"><SI size={20} className="text-accent" /></div>; })()}
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <h4 className="font-semibold text-text-primary">
@@ -185,7 +189,7 @@ export default function BundleDetailPage() {
                         className={i % 2 === 0 ? "bg-surface" : "bg-bg"}
                       >
                         <td className="px-4 py-3 text-text-primary">
-                          <span className="mr-2">{skill.emoji}</span>
+                          {(() => { const SI = getIcon(skill.icon); return <SI size={14} className="mr-2 inline text-accent" />; })()}
                           {skill.name}
                         </td>
                         <td className="px-4 py-3 text-right text-text-secondary">
@@ -288,7 +292,9 @@ export default function BundleDetailPage() {
           {/* Sticky sidebar (1/3) */}
           <div className="hidden lg:block">
             <div className="sticky top-24 rounded-xl border border-border bg-surface p-6">
-              <span className="text-3xl">{bundle.emoji}</span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+                <BundleIcon size={24} className="text-accent" />
+              </div>
               <h3 className="mt-3 text-lg font-semibold text-text-primary">
                 {bundle.name}
               </h3>

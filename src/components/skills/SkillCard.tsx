@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import type { SkillDetail } from "@/lib/data/skills";
 import { t, categories } from "@/lib/data/skills";
+import { getIcon } from "@/lib/icon-map";
 
 const badgeStyles: Record<string, string> = {
   "best-seller": "bg-accent/10 text-accent border-accent/20",
@@ -34,6 +35,7 @@ interface SkillCardProps {
 export function SkillCard({ skill, index = 0 }: SkillCardProps) {
   const locale = useLocale();
   const cat = categories.find((c) => c.slug === skill.category);
+  const SkillIcon = getIcon(skill.icon);
 
   return (
     <motion.div
@@ -56,8 +58,10 @@ export function SkillCard({ skill, index = 0 }: SkillCardProps) {
           </span>
         )}
 
-        {/* Emoji */}
-        <span className="text-3xl">{skill.emoji}</span>
+        {/* Icon */}
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+          <SkillIcon size={24} className="text-accent" />
+        </div>
 
         {/* Name */}
         <h3 className="mt-4 text-base font-semibold text-text-primary">

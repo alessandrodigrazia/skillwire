@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight } from "lucide-react";
+import { getIcon } from "@/lib/icon-map";
 import { useState, useEffect, type ComponentType } from "react";
 import { getArticleBySlug, getAllArticles, t, blogCategories } from "@/lib/data/blog";
 import { getSkillBySlug } from "@/lib/data/skills";
@@ -137,7 +138,7 @@ export default function BlogPostPage() {
               {i18n("relatedSkill")}
             </p>
             <div className="mt-3 flex items-center gap-3">
-              <span className="text-2xl">{relatedSkill.emoji}</span>
+              {(() => { const SI = getIcon(relatedSkill.icon); return <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10"><SI size={20} className="text-accent" /></div>; })()}
               <div>
                 <h3 className="font-semibold text-text-primary">
                   {relatedSkill.name}

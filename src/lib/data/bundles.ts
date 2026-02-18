@@ -5,7 +5,7 @@ type L = { en: string; it: string };
 export interface BundleSkillSummary {
   slug: string;
   name: string;
-  emoji: string;
+  icon: string;
   price: number;
   tagline: L;
 }
@@ -13,7 +13,7 @@ export interface BundleSkillSummary {
 export interface BundleDetail {
   slug: string;
   name: string;
-  emoji: string;
+  icon: string;
   tagline: L;
   description: L;
   skillSummaries: BundleSkillSummary[];
@@ -39,7 +39,7 @@ export const bundles: BundleDetail[] = [
   {
     slug: "b2b-sales-pro",
     name: "B2B Sales Pro System",
-    emoji: "\uD83C\uDFAF",
+    icon: "target",
     tagline: {
       en: "The complete B2B enterprise sales arsenal \u2014 from first call to signed contract.",
       it: "L\u2019intero arsenale del venditore B2B enterprise \u2014 dalla prima call alla firma del contratto.",
@@ -52,7 +52,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "ai-b2b-sales-methodology",
         name: "AI-Powered B2B Sales Methodology",
-        emoji: "\uD83D\uDCCA",
+        icon: "trending-up",
         price: 149,
         tagline: {
           en: "AI-powered enterprise sales methodology for complex B2B deals.",
@@ -62,7 +62,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "b2b-presentation-builder",
         name: "B2B Presentation Builder",
-        emoji: "\uD83D\uDCBB",
+        icon: "layout-template",
         price: 79,
         tagline: {
           en: "Build C-level presentations with ROI focus and multi-persona frameworks.",
@@ -72,7 +72,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "janus",
         name: "Janus",
-        emoji: "\uD83D\uDD2E",
+        icon: "scale",
         price: 29,
         tagline: {
           en: "Critical analysis sparring partner that stress-tests your ideas and proposals.",
@@ -82,7 +82,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "deep-research-agent",
         name: "Deep Research Agent",
-        emoji: "\uD83D\uDD0D",
+        icon: "microscope",
         price: 49,
         tagline: {
           en: "Multi-source deep research with citations and structured reports.",
@@ -161,7 +161,7 @@ export const bundles: BundleDetail[] = [
   {
     slug: "career-navigator",
     name: "Career & Life Navigator",
-    emoji: "\uD83E\uDDED",
+    icon: "map",
     tagline: {
       en: "AI coach for professionals in transition and students choosing their future.",
       it: "Coach AI per professionisti in transizione e studenti che scelgono il futuro.",
@@ -174,7 +174,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "ask-to-vera",
         name: "Vera Career Coach",
-        emoji: "\uD83C\uDF1F",
+        icon: "compass",
         price: 49,
         tagline: {
           en: "AI career & purpose coach for professionals in transition.",
@@ -184,7 +184,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "ask-to-andrew",
         name: "SchoolPath AI",
-        emoji: "\uD83C\uDF93",
+        icon: "graduation-cap",
         price: 29,
         tagline: {
           en: "AI guidance counselor for Italian students choosing their educational path.",
@@ -194,7 +194,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "cv-guru",
         name: "CV Guru",
-        emoji: "\uD83D\uDCDD",
+        icon: "file-text",
         price: 19,
         tagline: {
           en: "CV optimization and interview preparation with ATS-friendly formatting.",
@@ -204,7 +204,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "human-writer",
         name: "HumanWriter",
-        emoji: "\u270D\uFE0F",
+        icon: "pen-line",
         price: 29,
         tagline: {
           en: "Transform AI-generated text into authentic, human-sounding writing.",
@@ -283,7 +283,7 @@ export const bundles: BundleDetail[] = [
   {
     slug: "n8n-power-pack",
     name: "n8n Power Pack",
-    emoji: "\u26A1",
+    icon: "zap",
     tagline: {
       en: "1,500+ workflows, complete docs, and an AI expert for your n8n automations.",
       it: "1.500+ workflow, documentazione completa e un esperto AI per le tue automazioni n8n.",
@@ -296,7 +296,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "n8n-ai-workflow-expert",
         name: "n8n Workflow Expert",
-        emoji: "\uD83E\uDD16",
+        icon: "workflow",
         price: 39,
         tagline: {
           en: "AI expert for creating and optimizing n8n workflows.",
@@ -306,7 +306,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "n8n-docs-live",
         name: "n8n Docs Live",
-        emoji: "\uD83D\uDCDA",
+        icon: "book-open",
         price: 19,
         tagline: {
           en: "Complete n8n documentation accessible directly from your editor.",
@@ -316,7 +316,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "n8n-workflow-repository",
         name: "n8n Workflow Repository",
-        emoji: "\uD83D\uDCC2",
+        icon: "library",
         price: 29,
         tagline: {
           en: "1,486 real-world workflow templates organized by service.",
@@ -326,7 +326,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "iterative-self-critique",
         name: "Iterative Self-Critique",
-        emoji: "\uD83D\uDD04",
+        icon: "refresh-ccw",
         price: 19,
         tagline: {
           en: "Iterative validation for complex planning tasks and workflows.",
@@ -405,7 +405,7 @@ export const bundles: BundleDetail[] = [
   {
     slug: "claude-code-mastery",
     name: "Claude Code Mastery",
-    emoji: "\uD83D\uDE80",
+    icon: "rocket",
     tagline: {
       en: "Everything you need to master Claude Code \u2014 skills, orchestration, multi-AI.",
       it: "Tutto quello che serve per padroneggiare Claude Code \u2014 skill, orchestrazione, multi-AI.",
@@ -418,7 +418,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "skill-creator-guru",
         name: "Skill Creator Guru",
-        emoji: "\uD83D\uDEE0\uFE0F",
+        icon: "hammer",
         price: 19,
         tagline: {
           en: "Comprehensive guide for creating effective Claude Code skills.",
@@ -428,7 +428,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "memory-manager",
         name: "Memory Manager",
-        emoji: "\uD83E\uDDE0",
+        icon: "brain",
         price: 9,
         tagline: {
           en: "Persistent cross-session memory system for Claude Code.",
@@ -438,7 +438,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "maia",
         name: "MaIA",
-        emoji: "\uD83D\uDD17",
+        icon: "network",
         price: 19,
         tagline: {
           en: "Multi-Agent Intelligence Architecture for complex projects.",
@@ -448,7 +448,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "llm-arena-vs",
         name: "LLM Arena VS",
-        emoji: "\u2694\uFE0F",
+        icon: "swords",
         price: 9,
         tagline: {
           en: "Multi-AI orchestration combining Claude, GPT, and Gemini.",
@@ -458,7 +458,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "iterative-self-critique",
         name: "Iterative Self-Critique",
-        emoji: "\uD83D\uDD04",
+        icon: "refresh-ccw",
         price: 19,
         tagline: {
           en: "Iterative validation for complex planning tasks.",
@@ -537,7 +537,7 @@ export const bundles: BundleDetail[] = [
   {
     slug: "linkedin-toolkit",
     name: "LinkedIn Thought Leadership Toolkit",
-    emoji: "\uD83D\uDCF1",
+    icon: "linkedin",
     tagline: {
       en: "Create executive-level LinkedIn content that doesn\u2019t sound AI-generated.",
       it: "Crea contenuti LinkedIn executive-level che non sembrano scritti da un robot.",
@@ -550,7 +550,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "content-pipeline-pro",
         name: "Content Pipeline Pro",
-        emoji: "\uD83D\uDCF0",
+        icon: "layers",
         price: 29,
         tagline: {
           en: "Editorial framework for transforming content into LinkedIn posts.",
@@ -560,7 +560,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "human-writer",
         name: "HumanWriter",
-        emoji: "\u270D\uFE0F",
+        icon: "pen-line",
         price: 29,
         tagline: {
           en: "Transform AI-generated text into authentic, human-sounding writing.",
@@ -570,7 +570,7 @@ export const bundles: BundleDetail[] = [
       {
         slug: "janus",
         name: "Janus",
-        emoji: "\uD83D\uDD2E",
+        icon: "scale",
         price: 29,
         tagline: {
           en: "Critical analysis sparring partner that stress-tests your ideas and proposals.",
