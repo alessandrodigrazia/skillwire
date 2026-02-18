@@ -389,7 +389,19 @@ export default function SkillDetailPage() {
               <p className="mt-1 text-sm text-text-secondary">
                 {t(skill.tagline, locale)}
               </p>
-              {skill.isFree ? (
+              {skill.isBundleOnly ? (
+                <div className="mt-4 rounded-lg border border-accent/20 bg-accent/5 p-3 text-center">
+                  <p className="mb-2 text-xs text-text-secondary">
+                    {i18n("bundleOnlyNote")}
+                  </p>
+                  <Link
+                    href={`/bundles/${skill.bundleSlugs[0]}` as "/bundles"}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover"
+                  >
+                    {i18n("viewBundle")} →
+                  </Link>
+                </div>
+              ) : skill.isFree ? (
                 <>
                   <p className="mt-4 rounded-full bg-success/10 px-4 py-1.5 text-center text-lg font-bold text-success">
                     {i18n("freeLabel")}
@@ -452,7 +464,13 @@ export default function SkillDetailPage() {
                   <span className="text-text-secondary">
                     {i18n("specPlatform")}
                   </span>
-                  <span className="text-text-primary">All</span>
+                  <span className="text-text-primary">
+                    {skill.compatibleWith === "Claude Code"
+                      ? "CLI only"
+                      : skill.compatibleWith === "Claude Code + Desktop"
+                        ? "CLI + Desktop"
+                        : "All"}
+                  </span>
                 </div>
               </div>
             </div>
