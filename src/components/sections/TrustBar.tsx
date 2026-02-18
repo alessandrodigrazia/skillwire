@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Terminal, Monitor, AppWindow, Laptop } from "lucide-react";
 
-const icons = [Terminal, Monitor, AppWindow, Laptop];
+const icons = [AppWindow, Monitor, Laptop, Terminal];
 
 export function TrustBar() {
   const t = useTranslations("trustBar");

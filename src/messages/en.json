@@ -24,7 +24,7 @@
   },
   "trustBar": {
     "label": "Compatible with",
-    "items": ["Claude Code", "Claude Desktop", "claude.ai", "Cowork"]
+    "items": ["claude.ai", "Claude Desktop", "Claude Cowork", "Claude Code"]
   },
   "featuredSkills": {
     "eyebrow": "Featured Skills",

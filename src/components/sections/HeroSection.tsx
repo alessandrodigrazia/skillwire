@@ -1,12 +1,13 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
   const t = useTranslations("hero");
+  const locale = useLocale();
 
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
@@ -75,34 +76,21 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right: Terminal / Code block */}
+          {/* Right: Terminal Video */}
           <motion.div
-            className="relative"
+            className="relative glow-accent rounded-xl overflow-hidden"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glow-accent rounded-xl border border-border bg-surface p-1">
-              {/* Terminal header */}
-              <div className="flex items-center gap-2 rounded-t-lg border-b border-border bg-bg px-4 py-3">
-                <div className="h-3 w-3 rounded-full bg-[#FF5F57]" />
-                <div className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
-                <div className="h-3 w-3 rounded-full bg-[#28C840]" />
-                <span className="ml-2 text-xs text-text-secondary">
-                  Terminal
-                </span>
-              </div>
-              {/* Terminal body */}
-              <div className="rounded-b-lg bg-bg p-5 font-mono text-sm leading-7">
-                <p className="text-text-secondary">{t("terminalLine1")}</p>
-                <p className="text-text-secondary">{t("terminalLine2")}</p>
-                <p className="text-success">{t("terminalLine3")}</p>
-                <p className="text-success">{t("terminalLine4")}</p>
-                <p className="mt-2 text-text-secondary">
-                  <span className="animate-pulse text-accent">_</span>
-                </p>
-              </div>
-            </div>
+            <video
+              src={`/videos/hero-${locale}.mp4`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full block"
+            />
           </motion.div>
         </div>
       </div>
