@@ -3,8 +3,6 @@ import { verifyWebhookSignature, getSlugByPlanId } from "@/lib/whop";
 import { generateDownloadToken, DOWNLOADABLE_SLUGS } from "@/lib/download";
 import { getSkillBySlug } from "@/lib/data/skills";
 import { getBundleBySlug } from "@/lib/data/bundles";
-import { Resend } from "resend";
-
 /**
  * Whop webhook handler.
  * Listens for payment and membership events.
@@ -149,9 +147,12 @@ export async function POST(request: Request) {
 
   try {
     const payload = JSON.parse(rawBody);
-    const eventType: string = payload.type ?? payload.event ?? "";
+    const rawEvent: string = payload.type ?? payload.event ?? payload.action ?? "";
+    // Normalize: Whop V5 sends underscores (payment_succeeded),
+    // newer versions may use dots (payment.succeeded). Accept both.
+    const eventType = rawEvent.replace(/_/g, ".");
 
-    console.log("[whop-webhook] event:", eventType);
+    console.log("[whop-webhook] event:", rawEvent, "→ normalized:", eventType);
 
     if (eventType === "payment.succeeded") {
       const payment = payload.data;
