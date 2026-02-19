@@ -1517,8 +1517,8 @@ export const skills: SkillDetail[] = [
     name: "Skill Creator Guru",
     technicalName: "skill-creator-guru",
     tagline: {
-      en: "The complete guide to building, packaging, and distributing Claude Code skills",
-      it: "La guida completa per creare, impacchettare e distribuire skill per Claude Code",
+      en: "Anthropic's skill-creator, supercharged with PRD methodology and production-tested best practices",
+      it: "La skill-creator di Anthropic, potenziata con metodologia PRD e best practice testate in produzione",
     },
     category: "devtools",
     tags: ["skill creation", "SKILL.md", "best practices", "packaging"],
@@ -1543,33 +1543,33 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "Skill Creator Guru - Build Professional Claude Code Skills",
-      it: "Skill Creator Guru - Crea Skill Professionali per Claude Code",
+      en: "Skill Creator Guru - Anthropic's Skill-Creator Enhanced with PRD & Best Practices",
+      it: "Skill Creator Guru - La Skill-Creator di Anthropic Potenziata con PRD e Best Practice",
     },
     metaDescription: {
-      en: "SKILL.md structure, design patterns, bundled resources, progressive disclosure, validation, and packaging for distribution. Python scripts included.",
-      it: "Struttura SKILL.md, design pattern, risorse bundle, progressive disclosure, validazione e packaging per distribuzione. Script Python inclusi.",
+      en: "Builds on Anthropic's original skill-creator with PRD methodology, 4 quality pillars, token optimization, anti-patterns, security audit, and months of daily production experience. Free.",
+      it: "Estende la skill-creator originale di Anthropic con metodologia PRD, 4 pilastri di qualità, ottimizzazione token, anti-pattern, audit sicurezza e mesi di esperienza quotidiana in produzione. Gratis.",
     },
     averageRating: 0,
     reviewCount: 0,
     problem: {
-      en: "You have expertise worth sharing, but Claude Code skill creation has no official documentation. You do not know the SKILL.md structure, how to bundle resources, or how to make skills that work reliably across environments. Most homemade skills are just long prompts that break when the context changes.",
-      it: "Hai competenze che vale la pena condividere, ma la creazione di skill per Claude Code non ha documentazione ufficiale. Non conosci la struttura SKILL.md, come includere risorse, o come creare skill che funzionino in modo affidabile in ambienti diversi. La maggior parte delle skill fatte in casa sono solo prompt lunghi che si rompono quando il contesto cambia.",
+      en: "Anthropic's original skill-creator covers the basics — 6 steps, SKILL.md structure, init and package scripts — but stops there. No guidance on designing complex skills, no quality framework, no token optimization strategy, no security considerations. You end up with skills that work but are not production-grade: bloated context windows, no error handling, no versioning, no PRD to align on requirements before writing a single line.",
+      it: "La skill-creator originale di Anthropic copre le basi — 6 step, struttura SKILL.md, script di init e package — ma si ferma lì. Nessuna guida per progettare skill complesse, nessun framework di qualità, nessuna strategia di ottimizzazione token, nessuna considerazione sulla sicurezza. Il risultato sono skill che funzionano ma non sono production-grade: finestre di contesto gonfiate, nessuna gestione errori, nessun versioning, nessun PRD per allinearsi sui requisiti prima di scrivere una singola riga.",
     },
     solution: {
-      en: "8 files covering everything: SKILL.md anatomy, design patterns (progressive disclosure, conditional logic, memory hooks), bundled resources (scripts, references, assets), validation checklists, and packaging for distribution. Three Python scripts handle init, package, and validate. Real examples from production skills.",
-      it: "8 file che coprono tutto: anatomia SKILL.md, design pattern (progressive disclosure, logica condizionale, hook di memoria), risorse bundle (script, reference, asset), checklist di validazione e packaging per distribuzione. Tre script Python gestiscono init, package e validate. Esempi reali da skill in produzione.",
+      en: "Skill Creator Guru takes Anthropic's foundation and adds everything learned from building 25+ production skills daily for months. A 7-step process (vs the original 6) with a dedicated PRD step for complex skills. Four Pillars of Quality framework (Effectiveness, Efficiency, Robustness, Safety). Token budget optimization with progressive disclosure costs. 7 documented anti-patterns. Security audit checklist for third-party skills. Extended Thinking vs Think Tool guidance. Common skill patterns (workflow, task, reference, capabilities). Plus the same 3 Python scripts for init, package, and validate.",
+      it: "Skill Creator Guru prende le fondamenta di Anthropic e aggiunge tutto ciò che si impara costruendo 25+ skill in produzione quotidianamente per mesi. Un processo a 7 step (vs i 6 originali) con uno step PRD dedicato per skill complesse. Framework Four Pillars of Quality (Effectiveness, Efficiency, Robustness, Safety). Ottimizzazione budget token con costi di progressive disclosure. 7 anti-pattern documentati. Checklist audit sicurezza per skill di terze parti. Guida Extended Thinking vs Think Tool. Pattern comuni per skill (workflow, task, reference, capabilities). Più gli stessi 3 script Python per init, package e validate.",
     },
     result: {
-      en: "You go from idea to distributable skill in hours, not days. The skill works in any Claude Code environment. Resources load correctly. Progressive disclosure keeps the context window clean.",
-      it: "Passi dall'idea alla skill distribuibile in ore, non giorni. La skill funziona in qualsiasi ambiente Claude Code. Le risorse si caricano correttamente. Il progressive disclosure mantiene pulita la finestra di contesto.",
+      en: "You create skills that are not just functional but production-grade. The PRD methodology catches requirement gaps before you write code. The quality pillars give you a framework to evaluate every skill. Token optimization keeps your skills fast and cost-effective. You know exactly what to avoid and what patterns to follow — tested across 25+ real skills used daily.",
+      it: "Crei skill che non sono solo funzionali, ma production-grade. La metodologia PRD intercetta i gap nei requisiti prima di scrivere codice. I pilastri di qualità ti danno un framework per valutare ogni skill. L'ottimizzazione token mantiene le skill veloci e cost-effective. Sai esattamente cosa evitare e quali pattern seguire — testati su 25+ skill reali usate quotidianamente.",
     },
     whatsInside: [
-      { en: "8 files: skill creation guide, patterns, and packaging tools", it: "8 file: guida creazione skill, pattern e strumenti di packaging" },
-      { en: "SKILL.md anatomy: structure, sections, conditional blocks, slash commands", it: "Anatomia SKILL.md: struttura, sezioni, blocchi condizionali, comandi slash" },
-      { en: "Design patterns: progressive disclosure, memory hooks, resource loading", it: "Design pattern: progressive disclosure, hook di memoria, caricamento risorse" },
-      { en: "Python scripts: init (scaffold), package (ZIP), validate (check structure)", it: "Script Python: init (scaffold), package (ZIP), validate (verifica struttura)" },
-      { en: "Real examples from 25+ production skills", it: "Esempi reali da 25+ skill in produzione" },
+      { en: "8 files: enhanced guide, best practices, patterns, testing guide, and 3 Python scripts", it: "8 file: guida potenziata, best practice, pattern, guida test e 3 script Python" },
+      { en: "PRD methodology: full template for designing complex skills before coding", it: "Metodologia PRD: template completo per progettare skill complesse prima di scrivere codice" },
+      { en: "Four Pillars of Quality: evaluation framework (Effectiveness, Efficiency, Robustness, Safety)", it: "Four Pillars of Quality: framework di valutazione (Effectiveness, Efficiency, Robustness, Safety)" },
+      { en: "7 anti-patterns to avoid + token budget optimization + security audit checklist", it: "7 anti-pattern da evitare + ottimizzazione budget token + checklist audit sicurezza" },
+      { en: "Everything from Anthropic's original plus months of daily production experience", it: "Tutto ciò che è nell'originale di Anthropic più mesi di esperienza quotidiana in produzione" },
     ],
     whoIsThisFor: [
       { en: "Developers who want to create and sell Claude Code skills", it: "Developer che vogliono creare e vendere skill per Claude Code" },
@@ -1582,24 +1582,24 @@ export const skills: SkillDetail[] = [
     },
     beforeAfter: [
       {
-        before: { en: "Skills are just long prompts that break when the context changes", it: "Le skill sono solo prompt lunghi che si rompono quando il contesto cambia" },
-        after: { en: "Structured SKILL.md with progressive disclosure and conditional logic", it: "SKILL.md strutturato con progressive disclosure e logica condizionale" },
+        before: { en: "Anthropic's original: 6 steps, basic SKILL.md structure, no design methodology", it: "Originale di Anthropic: 6 step, struttura SKILL.md base, nessuna metodologia di design" },
+        after: { en: "7-step process with dedicated PRD step, quality pillars, and production-tested patterns", it: "Processo a 7 step con step PRD dedicato, pilastri di qualità e pattern testati in produzione" },
       },
       {
-        before: { en: "No standard way to bundle scripts, references, or assets with a skill", it: "Nessun modo standard per includere script, reference o asset con una skill" },
-        after: { en: "Bundled resources pattern: scripts/, references/, assets/ with loading rules", it: "Pattern risorse bundle: scripts/, references/, assets/ con regole di caricamento" },
+        before: { en: "No guidance on token costs, context window management, or skill efficiency", it: "Nessuna guida su costi token, gestione finestra di contesto o efficienza skill" },
+        after: { en: "Token budget optimization with progressive disclosure costs and loading strategies", it: "Ottimizzazione budget token con costi di progressive disclosure e strategie di caricamento" },
       },
       {
-        before: { en: "Manual packaging. Forgetting files. Breaking paths across environments", it: "Packaging manuale. File dimenticati. Path che si rompono tra ambienti diversi" },
-        after: { en: "Python scripts for init, package, and validate. One command, done", it: "Script Python per init, package e validate. Un comando, fatto" },
+        before: { en: "No quality framework — skills work but you cannot evaluate how well", it: "Nessun framework di qualità — le skill funzionano ma non puoi valutare quanto bene" },
+        after: { en: "Four Pillars of Quality + 7 anti-patterns + security audit checklist", it: "Four Pillars of Quality + 7 anti-pattern + checklist audit sicurezza" },
       },
     ],
     faq: [
       {
-        question: { en: "What exactly do I get when I buy this?", it: "Cosa ricevo esattamente quando acquisto?" },
+        question: { en: "How is this different from Anthropic's built-in skill-creator?", it: "In cosa si differenzia dalla skill-creator integrata di Anthropic?" },
         answer: {
-          en: "A ZIP with 8 files: the skill creation guide, design pattern reference, 3 Python utility scripts, and real-world examples. No subscription.",
-          it: "Un ZIP con 8 file: la guida alla creazione skill, reference design pattern, 3 script Python di utilità ed esempi reali. Nessun abbonamento.",
+          en: "Anthropic's original is a lean 6-step guide (~1,200 words) covering basic SKILL.md structure. Skill Creator Guru is 4x larger, adds a PRD methodology for complex skills, a quality evaluation framework, token optimization strategies, 7 documented anti-patterns, security audit checklist, and patterns extracted from 25+ production skills built daily over months.",
+          it: "L'originale di Anthropic è una guida sintetica a 6 step (~1.200 parole) che copre la struttura base di SKILL.md. Skill Creator Guru è 4 volte più grande, aggiunge una metodologia PRD per skill complesse, un framework di valutazione qualità, strategie di ottimizzazione token, 7 anti-pattern documentati, checklist audit sicurezza e pattern estratti da 25+ skill in produzione costruite quotidianamente per mesi.",
         },
       },
       {
