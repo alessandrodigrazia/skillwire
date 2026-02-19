@@ -72,7 +72,15 @@ export default function ThankYouClient({ downloadUrl }: ThankYouClientProps) {
           {/* Email */}
           <div className="flex items-start gap-4 rounded-lg border border-border bg-surface p-5">
             <Mail className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-            <p className="text-sm text-text-secondary">{t("emailNote")}</p>
+            <p className="text-sm text-text-secondary">
+              {t("emailNote")}{" "}
+              <Link
+                href="/retrieve"
+                className="text-accent underline underline-offset-2 hover:text-accent-hover"
+              >
+                {t("retrieveLinkLabel")}
+              </Link>
+            </p>
           </div>
 
           {/* Install guide */}

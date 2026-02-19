@@ -135,7 +135,8 @@
     "subtitle": "Il tuo acquisto è confermato.",
     "downloadReady": "La tua skill è pronta. Scaricala ora:",
     "downloadBtn": "Scarica ZIP",
-    "emailNote": "Controlla la tua email per il link di download e la chiave di licenza.",
+    "emailNote": "Ti abbiamo inviato il link di download via email. Non l'hai ricevuta?",
+    "retrieveLinkLabel": "Recupera il download qui",
     "installGuide": "Serve aiuto per l’installazione? Leggi la nostra guida.",
     "browseMore": "Esplora altre skill",
     "orderNote": "Domande sul tuo ordine? Scrivici a hello@skillwire.ai"
@@ -426,5 +427,19 @@
     "s5Title": "Modifiche a Questo Disclaimer",
     "s5P1": "Potremmo aggiornare questo disclaimer di tanto in tanto. Eventuali modifiche verranno pubblicate su questa pagina con una data di revisione aggiornata.",
     "s5P2": "L'uso continuato di Skillwire dopo la pubblicazione delle modifiche costituisce accettazione del disclaimer aggiornato."
+  },
+  "retrieve": {
+    "title": "Recupera il tuo download",
+    "subtitle": "Inserisci l'email usata durante il checkout per ottenere i tuoi link di download.",
+    "emailLabel": "Email di acquisto",
+    "emailPlaceholder": "tu@esempio.com",
+    "submit": "Cerca i miei acquisti",
+    "loading": "Ricerca acquisti in corso…",
+    "noResults": "Nessun acquisto trovato per questa email. Assicurati di usare la stessa email del checkout.",
+    "resultsTitle": "I tuoi download",
+    "resultsNote": "I link scadono dopo 7 giorni. Puoi rigenerarli in qualsiasi momento da questa pagina.",
+    "downloadBtn": "Scarica ZIP",
+    "errorGeneric": "Qualcosa è andato storto. Riprova.",
+    "errorUnavailable": "Servizio temporaneamente non disponibile. Contatta hello@skillwire.ai"
   }
 }

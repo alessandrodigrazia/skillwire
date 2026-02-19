@@ -130,7 +130,8 @@
     "subtitle": "Your purchase is confirmed.",
     "downloadReady": "Your skill is ready. Download it now:",
     "downloadBtn": "Download ZIP",
-    "emailNote": "Check your email for the download link and license key.",
+    "emailNote": "We've sent your download link to your email. Didn't receive it?",
+    "retrieveLinkLabel": "Retrieve your download here",
     "installGuide": "Need help installing? Read our guide.",
     "browseMore": "Browse more skills",
     "orderNote": "Questions about your order? Contact us at hello@skillwire.ai"
@@ -421,5 +422,19 @@
     "s5Title": "Changes to This Disclaimer",
     "s5P1": "We may update this disclaimer from time to time. Any changes will be posted on this page with an updated revision date.",
     "s5P2": "Continued use of Skillwire after changes are posted constitutes acceptance of the revised disclaimer."
+  },
+  "retrieve": {
+    "title": "Retrieve your download",
+    "subtitle": "Enter the email address you used during checkout to get your download links.",
+    "emailLabel": "Purchase email",
+    "emailPlaceholder": "you@example.com",
+    "submit": "Find my downloads",
+    "loading": "Looking up your purchases…",
+    "noResults": "No purchases found for this email. Make sure you're using the same email used during checkout.",
+    "resultsTitle": "Your downloads",
+    "resultsNote": "Download links expire in 7 days. You can regenerate them at any time from this page.",
+    "downloadBtn": "Download ZIP",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorUnavailable": "Service temporarily unavailable. Please contact hello@skillwire.ai"
   }
 }
