@@ -5,6 +5,7 @@ import { Link, usePathname } from "@/i18n/routing";
 import { ShoppingCart, Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { useCartStore } from "@/lib/store/cart";
+import Image from "next/image";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -23,10 +24,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-text-primary">
-            Skillwire
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo-terminal.png"
+            alt="Skillwire.ai"
+            width={160}
+            height={90}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
