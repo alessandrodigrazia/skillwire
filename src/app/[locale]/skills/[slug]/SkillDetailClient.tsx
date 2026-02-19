@@ -31,6 +31,7 @@ export default function SkillDetailClient() {
   const params = useParams();
   const slug = params.slug as string;
   const i18n = useTranslations("skillDetail");
+  const tCart = useTranslations("cart");
   const locale = useLocale();
   const skill = getSkillBySlug(slug);
   const { addItem, openCart, items } = useCartStore();
@@ -165,9 +166,14 @@ export default function SkillDetailClient() {
                 </>
               ) : (
                 <>
-                  <span className="text-4xl font-bold text-accent">
-                    &euro;{skill.price}
-                  </span>
+                  <div className="flex flex-col items-start lg:items-end gap-0.5">
+                    <span className="text-4xl font-bold text-accent">
+                      &euro;{skill.price}
+                    </span>
+                    <span className="text-xs text-text-secondary">
+                      {tCart("vatNote")}
+                    </span>
+                  </div>
                   <button
                     onClick={handleAddToCart}
                     disabled={isInCart}
@@ -440,6 +446,9 @@ export default function SkillDetailClient() {
                 <>
                   <p className="mt-4 text-3xl font-bold text-accent">
                     &euro;{skill.price}
+                  </p>
+                  <p className="text-xs text-text-secondary">
+                    {tCart("vatNote")}
                   </p>
                   <button
                     onClick={handleAddToCart}

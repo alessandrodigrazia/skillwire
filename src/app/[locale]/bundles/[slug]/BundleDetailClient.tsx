@@ -22,6 +22,7 @@ export default function BundleDetailClient() {
   const params = useParams();
   const slug = params.slug as string;
   const i18n = useTranslations("bundlePage");
+  const tCart = useTranslations("cart");
   const locale = useLocale();
   const bundle = getBundleBySlug(slug);
   const { addItem, openCart, items } = useCartStore();
@@ -112,12 +113,17 @@ export default function BundleDetailClient() {
 
             {/* Price + CTA */}
             <div className="flex shrink-0 flex-col items-start gap-4 lg:items-end">
-              <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-bold text-accent">
-                  &euro;{bundle.bundlePrice}
-                </span>
-                <span className="text-xl text-text-secondary line-through">
-                  &euro;{bundle.originalPrice}
+              <div className="flex flex-col items-start lg:items-end gap-0.5">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl font-bold text-accent">
+                    &euro;{bundle.bundlePrice}
+                  </span>
+                  <span className="text-xl text-text-secondary line-through">
+                    &euro;{bundle.originalPrice}
+                  </span>
+                </div>
+                <span className="text-xs text-text-secondary">
+                  {tCart("vatNote")}
                 </span>
               </div>
               <button
@@ -317,12 +323,17 @@ export default function BundleDetailClient() {
               <p className="mt-1 text-sm text-text-secondary">
                 {t(bundle.tagline, locale)}
               </p>
-              <div className="mt-4 flex items-baseline gap-2">
-                <p className="text-3xl font-bold text-accent">
-                  &euro;{bundle.bundlePrice}
-                </p>
-                <p className="text-sm text-text-secondary line-through">
-                  &euro;{bundle.originalPrice}
+              <div className="mt-4">
+                <div className="flex items-baseline gap-2">
+                  <p className="text-3xl font-bold text-accent">
+                    &euro;{bundle.bundlePrice}
+                  </p>
+                  <p className="text-sm text-text-secondary line-through">
+                    &euro;{bundle.originalPrice}
+                  </p>
+                </div>
+                <p className="mt-0.5 text-xs text-text-secondary">
+                  {tCart("vatNote")}
                 </p>
               </div>
               <button
