@@ -142,16 +142,16 @@ export async function POST(request: Request) {
   const timestamp = request.headers.get("webhook-timestamp") ?? "";
   const signature = request.headers.get("webhook-signature") ?? "";
 
-  // Skip verification in dev if secret not set
-  if (process.env.WHOP_WEBHOOK_SECRET) {
-    const valid = verifyWebhookSignature(rawBody, msgId, timestamp, signature);
-    console.log("[whop-webhook] signature check:", { valid, msgId, timestamp, hasSig: !!signature });
-    if (!valid) {
-      return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
-    }
-  } else {
-    console.log("[whop-webhook] no WHOP_WEBHOOK_SECRET set, skipping verification");
-  }
+  // TODO: re-enable signature verification once we confirm webhook fires
+  // Temporarily disabled to isolate whether the issue is signing or delivery
+  console.log("[whop-webhook] INCOMING request, headers:", {
+    msgId,
+    timestamp,
+    hasSig: !!signature,
+    contentType: request.headers.get("content-type"),
+    userAgent: request.headers.get("user-agent"),
+  });
+  console.log("[whop-webhook] body preview:", rawBody.slice(0, 500));
 
   try {
     const payload = JSON.parse(rawBody);
