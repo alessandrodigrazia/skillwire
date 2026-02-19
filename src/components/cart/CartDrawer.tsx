@@ -7,16 +7,6 @@ import { useCartStore } from "@/lib/store/cart";
 import { motion, AnimatePresence } from "framer-motion";
 import { getIcon } from "@/lib/icon-map";
 
-declare global {
-  interface Window {
-    LemonSqueezy?: {
-      Url: {
-        Open: (url: string) => void;
-      };
-    };
-  }
-}
-
 export function CartDrawer() {
   const t = useTranslations("cart");
   const locale = useLocale();
@@ -55,12 +45,7 @@ export function CartDrawer() {
         return;
       }
 
-      // Open LS overlay if lemon.js is loaded, otherwise redirect
-      if (window.LemonSqueezy) {
-        window.LemonSqueezy.Url.Open(data.checkoutUrl);
-      } else {
-        window.location.href = data.checkoutUrl;
-      }
+      window.location.href = data.checkoutUrl;
     } catch {
       setCheckoutError(t("checkoutError"));
     } finally {
