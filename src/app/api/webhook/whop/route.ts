@@ -69,7 +69,7 @@ async function sendDownloadEmail(email: string, slug: string) {
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="text-align:center;padding-bottom:24px;">
-                    <div style="display:inline-block;background:#0ff4c620;border-radius:50%;width:64px;height:64px;line-height:64px;text-align:center;font-size:28px;">✅</div>
+                    <div style="display:inline-block;background:#F59E0B20;border-radius:50%;width:64px;height:64px;line-height:64px;text-align:center;font-size:28px;">✅</div>
                   </td>
                 </tr>
               </table>
@@ -87,7 +87,7 @@ async function sendDownloadEmail(email: string, slug: string) {
                 <tr>
                   <td style="text-align:center;padding-bottom:24px;">
                     <a href="${downloadUrl}"
-                       style="display:inline-block;background:#0ff4c6;color:#0a0a0a;font-size:15px;font-weight:700;text-decoration:none;padding:14px 32px;border-radius:10px;">
+                       style="display:inline-block;background:#F59E0B;color:#0a0a0a;font-size:15px;font-weight:700;text-decoration:none;padding:14px 32px;border-radius:10px;">
                       ⬇ Download ${productName}
                     </a>
                   </td>
@@ -97,7 +97,7 @@ async function sendDownloadEmail(email: string, slug: string) {
               <!-- Expiry note -->
               <p style="margin:0 0 32px;font-size:13px;color:#666;text-align:center;">
                 This link expires in 7 days. If it expires, visit
-                <a href="${APP_URL}/en/retrieve" style="color:#0ff4c6;text-decoration:none;">${APP_URL.replace("https://", "")}/en/retrieve</a>
+                <a href="${APP_URL}/en/retrieve" style="color:#F59E0B;text-decoration:none;">${APP_URL.replace("https://", "")}/en/retrieve</a>
                 to generate a new one.
               </p>
 
@@ -107,12 +107,12 @@ async function sendDownloadEmail(email: string, slug: string) {
               <!-- Install guide -->
               <p style="margin:0 0 8px;font-size:14px;color:#888;">
                 📖 <strong style="color:#f0f0f0;">First time?</strong>
-                Follow the <a href="${howItWorksUrl}" style="color:#0ff4c6;text-decoration:none;">installation guide</a>
+                Follow the <a href="${howItWorksUrl}" style="color:#F59E0B;text-decoration:none;">installation guide</a>
                 to set up your skill in Claude Code.
               </p>
               <p style="margin:0;font-size:13px;color:#666;">
                 Questions? Reply to this email or contact
-                <a href="mailto:hello@skillwire.ai" style="color:#0ff4c6;text-decoration:none;">hello@skillwire.ai</a>
+                <a href="mailto:hello@skillwire.ai" style="color:#F59E0B;text-decoration:none;">hello@skillwire.ai</a>
               </p>
             </td>
           </tr>

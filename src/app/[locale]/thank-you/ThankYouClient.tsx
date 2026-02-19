@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ import {
   BookOpen,
   ArrowRight,
 } from "lucide-react";
+import { useCartStore } from "@/lib/store/cart";
 
 interface ThankYouClientProps {
   downloadUrl?: string;
@@ -17,6 +19,11 @@ interface ThankYouClientProps {
 
 export default function ThankYouClient({ downloadUrl }: ThankYouClientProps) {
   const t = useTranslations("thankYou");
+  const clearCart = useCartStore((s) => s.clearCart);
+
+  useEffect(() => {
+    clearCart();
+  }, [clearCart]);
 
   return (
     <div className="py-16 sm:py-24">
