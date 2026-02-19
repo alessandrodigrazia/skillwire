@@ -48,20 +48,20 @@ export function CheckoutOverlay({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 p-4"
+        className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-black/70 p-0 sm:p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="relative w-full max-w-lg rounded-2xl border border-border bg-bg shadow-2xl"
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          className="relative flex w-full max-w-lg flex-col rounded-t-2xl sm:rounded-2xl border border-border bg-bg shadow-2xl max-h-[100dvh] sm:max-h-[90vh]"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
         >
-          {/* Header */}
-          <div className="flex items-center justify-between border-b border-border px-6 py-4">
+          {/* Header — sticky */}
+          <div className="flex shrink-0 items-center justify-between border-b border-border px-6 py-4">
             <h3 className="text-lg font-semibold text-text-primary">
               {t("checkout")}
             </h3>
@@ -74,11 +74,11 @@ export function CheckoutOverlay({
             </button>
           </div>
 
-          {/* Body */}
-          <div className="relative min-h-[300px] px-6 py-4">
+          {/* Body — scrollable */}
+          <div className="relative min-h-[300px] flex-1 overflow-y-auto px-4 py-4 sm:px-6">
             {/* Loading overlay — shown until iframe is ready */}
             {checkoutState === "loading" && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-b-2xl bg-bg">
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-bg">
                 <Loader2 size={28} className="animate-spin text-accent" />
                 <p className="text-sm text-text-secondary">
                   {t("loadingCheckout")}
