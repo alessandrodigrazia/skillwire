@@ -16,6 +16,7 @@ import { useState } from "react";
 import { getBundleBySlug, t } from "@/lib/data/bundles";
 import { useCartStore } from "@/lib/store/cart";
 import { notFound } from "next/navigation";
+import { SkillVideoPlayer } from "@/components/ui/SkillVideoPlayer";
 
 export default function BundleDetailPage() {
   const params = useParams();
@@ -137,6 +138,21 @@ export default function BundleDetailPage() {
             </div>
           </div>
         </motion.div>
+
+        {/* Terminal Video Preview */}
+        {bundle.hasTerminalVideo && (
+          <div className="mt-8">
+            <div className="glow-accent overflow-hidden rounded-xl border border-border">
+              <div className="flex items-center gap-2 border-b border-border bg-bg px-4 py-3">
+                <div className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+                <div className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
+                <div className="h-3 w-3 rounded-full bg-[#28C840]" />
+                <span className="ml-2 text-xs text-text-secondary">Terminal</span>
+              </div>
+              <SkillVideoPlayer slug={bundle.slug} locale={locale} />
+            </div>
+          </div>
+        )}
 
         {/* Content sections */}
         <div className="mt-12 grid gap-12 lg:grid-cols-3">

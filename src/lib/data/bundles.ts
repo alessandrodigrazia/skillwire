@@ -27,6 +27,7 @@ export interface BundleDetail {
   faq: { question: L; answer: L }[];
   metaTitle: L;
   metaDescription: L;
+  hasTerminalVideo?: boolean;
 }
 
 /* Resolve a localized value */
@@ -155,6 +156,7 @@ export const bundles: BundleDetail[] = [
       en: "4 professional skills for B2B enterprise sales: methodology, presentations, critical analysis, and deep research. Save 19%.",
       it: "4 skill professionali per vendita B2B enterprise: metodologia, presentazioni, analisi critica e ricerca approfondita. Risparmia il 19%.",
     },
+  hasTerminalVideo: true,
   },
 
   /* ─── Bundle 2: Career & Life Navigator ─── */
@@ -277,6 +279,7 @@ export const bundles: BundleDetail[] = [
       en: "4 AI-powered skills for career coaching, school guidance, CV optimization, and authentic writing. Save 37%.",
       it: "4 skill AI per career coaching, orientamento scolastico, ottimizzazione CV e scrittura autentica. Risparmia il 37%.",
     },
+  hasTerminalVideo: true,
   },
 
   /* ─── Bundle 3: n8n Power Pack ─── */
@@ -399,6 +402,7 @@ export const bundles: BundleDetail[] = [
       en: "4 skills for n8n automation: workflow expert, live docs, 1,486 templates, and validation. Save 35%.",
       it: "4 skill per automazione n8n: esperto workflow, docs live, 1.486 template e validazione. Risparmia il 35%.",
     },
+  hasTerminalVideo: true,
   },
 
   /* ─── Bundle 4: Claude Code Mastery ─── */
@@ -531,6 +535,7 @@ export const bundles: BundleDetail[] = [
       en: "5 skills to master Claude Code: skill creation, memory, multi-agent, multi-AI, and validation. Save 48%.",
       it: "5 skill per padroneggiare Claude Code: creazione skill, memoria, multi-agente, multi-AI e validazione. Risparmia il 48%.",
     },
+  hasTerminalVideo: true,
   },
 
   /* ─── Bundle 5: LinkedIn Thought Leadership Toolkit ─── */
@@ -643,6 +648,7 @@ export const bundles: BundleDetail[] = [
       en: "4 skills for LinkedIn content: editorial framework, humanization, critical review, and competitor analysis. Save 25%.",
       it: "4 skill per contenuti LinkedIn: framework editoriale, umanizzazione, review critica e analisi competitor. Risparmia il 25%.",
     },
+  hasTerminalVideo: true,
   },
 ];
 
