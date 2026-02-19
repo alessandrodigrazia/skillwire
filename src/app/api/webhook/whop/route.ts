@@ -131,6 +131,10 @@ async function sendDownloadEmail(email: string, slug: string) {
   });
 }
 
+export async function GET() {
+  return NextResponse.json({ status: "ok", service: "whop-webhook" });
+}
+
 export async function POST(request: Request) {
   const rawBody = await request.text();
 
@@ -140,9 +144,13 @@ export async function POST(request: Request) {
 
   // Skip verification in dev if secret not set
   if (process.env.WHOP_WEBHOOK_SECRET) {
-    if (!verifyWebhookSignature(rawBody, msgId, timestamp, signature)) {
+    const valid = verifyWebhookSignature(rawBody, msgId, timestamp, signature);
+    console.log("[whop-webhook] signature check:", { valid, msgId, timestamp, hasSig: !!signature });
+    if (!valid) {
       return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
     }
+  } else {
+    console.log("[whop-webhook] no WHOP_WEBHOOK_SECRET set, skipping verification");
   }
 
   try {
@@ -176,7 +184,7 @@ export async function POST(request: Request) {
       }
     }
 
-    if (eventType === "membership.went_valid") {
+    if (eventType === "membership.went.valid" || eventType === "membership.activated") {
       const membership = payload.data;
       const planId = membership?.plan ?? membership?.plan_id ?? membership?.plan?.id;
       const email = membership?.user?.email ?? membership?.email;

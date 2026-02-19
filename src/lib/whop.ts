@@ -75,11 +75,15 @@ export function verifyWebhookSignature(
   const secret = process.env.WHOP_WEBHOOK_SECRET;
   if (!secret) return false;
 
-  // Secret is base64-encoded, optionally prefixed with "whsec_"
-  const secretBytes = Buffer.from(
-    secret.startsWith("whsec_") ? secret.slice(6) : secret,
-    "base64"
-  );
+  // Whop secrets: "ws_{hex}" format. Standard Webhooks: "whsec_{base64}" format.
+  let secretBytes: Buffer;
+  if (secret.startsWith("whsec_")) {
+    secretBytes = Buffer.from(secret.slice(6), "base64");
+  } else if (secret.startsWith("ws_")) {
+    secretBytes = Buffer.from(secret.slice(3), "hex");
+  } else {
+    secretBytes = Buffer.from(secret, "base64");
+  }
 
   // Sign: "{msgId}.{timestamp}.{rawBody}"
   const toSign = `${msgId}.${timestamp}.${rawBody}`;
