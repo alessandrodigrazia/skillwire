@@ -26,11 +26,11 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-terminal.png"
+            src="/logo-header.png"
             alt="Skillwire.ai"
-            width={160}
-            height={90}
-            className="h-9 w-auto"
+            width={315}
+            height={54}
+            className="h-8 w-auto"
             priority
           />
         </Link>
