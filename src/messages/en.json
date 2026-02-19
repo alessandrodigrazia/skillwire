@@ -128,6 +128,8 @@
   "thankYou": {
     "title": "Thank You!",
     "subtitle": "Your purchase is confirmed.",
+    "downloadReady": "Your skill is ready. Download it now:",
+    "downloadBtn": "Download ZIP",
     "emailNote": "Check your email for the download link and license key.",
     "installGuide": "Need help installing? Read our guide.",
     "browseMore": "Browse more skills",

@@ -37,15 +37,25 @@ export function getPlanId(slug: string): string | null {
   return WHOP_PLAN_MAP[slug] ?? null;
 }
 
+/** Reverse map: plan_id → slug */
+export const PLAN_SLUG_MAP: Record<string, string> = Object.fromEntries(
+  Object.entries(WHOP_PLAN_MAP).map(([slug, planId]) => [planId, slug])
+);
+
+export function getSlugByPlanId(planId: string): string | null {
+  return PLAN_SLUG_MAP[planId] ?? null;
+}
+
 /**
  * Returns the Whop checkout URL for a plan.
- * Format: https://whop.com/checkout/{planId}/
- *
- * Optional: append ?redirect_url=... for post-purchase redirect.
+ * Passes plan_id as ?p= in the redirect URL so the thank-you page
+ * can show the correct download link without extra API calls.
  */
 export function getCheckoutUrl(planId: string, locale = "en"): string {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai";
-  const redirectUrl = encodeURIComponent(`${appUrl}/${locale}/thank-you`);
+  const redirectUrl = encodeURIComponent(
+    `${appUrl}/${locale}/thank-you?p=${planId}`
+  );
   return `https://whop.com/checkout/${planId}/?redirect_url=${redirectUrl}`;
 }
 
