@@ -23,7 +23,11 @@ function getProductName(slug: string): string {
 }
 
 async function sendDownloadEmail(email: string, slug: string) {
-  if (!process.env.RESEND_API_KEY) return;
+  console.log("[whop-webhook] sendDownloadEmail called:", { email, slug });
+  if (!process.env.RESEND_API_KEY) {
+    console.log("[whop-webhook] RESEND_API_KEY not set, skipping email");
+    return;
+  }
 
   const { Resend } = await import("resend");
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -33,7 +37,7 @@ async function sendDownloadEmail(email: string, slug: string) {
   const downloadUrl = `${APP_URL}${url}`;
   const howItWorksUrl = `${APP_URL}/en/how-it-works`;
 
-  await resend.emails.send({
+  const result = await resend.emails.send({
     from: "Skillwire <noreply@skillwire.ai>",
     to: email,
     subject: `Your download is ready — ${productName}`,
@@ -129,6 +133,7 @@ async function sendDownloadEmail(email: string, slug: string) {
 </body>
 </html>`,
   });
+  console.log("[whop-webhook] Resend result:", JSON.stringify(result));
 }
 
 export async function GET() {
@@ -164,8 +169,8 @@ export async function POST(request: Request) {
 
     if (eventType === "payment.succeeded") {
       const payment = payload.data;
-      const planId = payment?.plan ?? payment?.plan_id ?? payment?.plan?.id;
-      const email = payment?.email ?? payment?.user?.email;
+      const planId = payment?.plan_id ?? payment?.plan ?? payment?.plan?.id;
+      const email = payment?.user_email ?? payment?.email ?? payment?.user?.email;
 
       console.log("[whop-webhook] Payment succeeded:", {
         id: payment?.id,
@@ -186,8 +191,8 @@ export async function POST(request: Request) {
 
     if (eventType === "membership.went.valid" || eventType === "membership.activated") {
       const membership = payload.data;
-      const planId = membership?.plan ?? membership?.plan_id ?? membership?.plan?.id;
-      const email = membership?.user?.email ?? membership?.email;
+      const planId = membership?.plan_id ?? membership?.plan ?? membership?.plan?.id;
+      const email = membership?.user_email ?? membership?.email ?? membership?.user?.email;
 
       console.log("[whop-webhook] Membership activated:", {
         id: membership?.id,
