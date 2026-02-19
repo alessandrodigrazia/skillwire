@@ -56,7 +56,7 @@ export function getCheckoutUrl(planId: string, locale = "en"): string {
   const redirectUrl = encodeURIComponent(
     `${appUrl}/${locale}/thank-you?p=${planId}`
   );
-  return `https://whop.com/checkout/${planId}/?redirect_url=${redirectUrl}`;
+  return `https://whop.com/checkout/${planId}/?redirect_url=${redirectUrl}&returnUrl=${redirectUrl}`;
 }
 
 /**
