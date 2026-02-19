@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { notFound } from "next/navigation";
@@ -19,6 +20,50 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isIt = locale === "it";
+
+  return {
+    metadataBase: new URL("https://skillwire.ai"),
+    title: isIt
+      ? "Skillwire — Skill Professionali per Claude Code"
+      : "Skillwire — Professional Skills for Claude Code",
+    description: isIt
+      ? "Acquista una volta, usa per sempre. Skill production-ready per Claude Code — dalla metodologia di vendita B2B al coaching professionale all'automazione workflow."
+      : "Buy once, use forever. Production-ready skills for Claude Code — from B2B sales methodology to career coaching to workflow automation.",
+    openGraph: {
+      siteName: "Skillwire",
+      locale: locale === "it" ? "it_IT" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/logo.png",
+          width: 512,
+          height: 512,
+          alt: "Skillwire",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@skillwireai",
+    },
+    alternates: {
+      canonical: `https://skillwire.ai/${locale}`,
+      languages: {
+        en: "https://skillwire.ai/en",
+        it: "https://skillwire.ai/it",
+        "x-default": "https://skillwire.ai/en",
+      },
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

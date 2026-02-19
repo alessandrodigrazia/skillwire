@@ -1,0 +1,87 @@
+# Skillwire
+
+> Professional skill packs for Claude Code. Buy once, use forever.
+
+Skillwire is a marketplace of production-ready skill packs for Claude Code — the AI coding CLI by Anthropic.
+Each skill is a structured system: SKILL.md + reference files + templates + workflows.
+Not single prompts — complete professional tools built by practitioners.
+
+Built by Alessandro Di Grazia, Sales & GTM Leader at iSquared (Var Group).
+Contact: hello@skillwire.ai
+
+---
+
+## Skills Catalog (19 skills)
+
+### Sales & Business
+- [AI-Powered B2B Sales Methodology](/en/skills/ai-b2b-sales-methodology) — €149 — The complete B2B enterprise sales system for AI-augmented sellers
+- [B2B Presentation Builder](/en/skills/b2b-presentation-builder) — €79 — C-level presentations that close deals
+- [Janus](/en/skills/janus) — €29 — Critical analysis sparring partner that stress-tests ideas and proposals
+- [Deep Research Agent](/en/skills/deep-research-agent) — €49 — Multi-source research with citations
+
+### Career & Coaching
+- [Vera Career Coach](/en/skills/ask-to-vera) — €49 — Career and purpose coach for professionals 25-55
+- [SchoolPath AI](/en/skills/ask-to-andrew) — €29 — School and university guidance for Italian students
+- [CV Guru](/en/skills/cv-guru) — €19 — CV optimization and interview preparation
+
+### Content & Writing
+- [HumanWriter](/en/skills/human-writer) — €29 — AI text humanization and anti-detection optimization
+- [Content Pipeline Pro](/en/skills/content-pipeline-pro) — €29 — Multi-channel content production system
+- [Nano Banana Guru](/en/skills/nano-banana-guru) — €29 — Visual reasoning prompt engineering for Nano Banana Pro
+
+### Automation
+- [n8n Workflow Expert](/en/skills/n8n-ai-workflow-expert) — €39 — AI workflow creation and optimization in n8n
+- [n8n Docs Live](/en/skills/n8n-docs-live) — €19 — Live n8n documentation access
+- [n8n Workflow Repository](/en/skills/n8n-workflow-repository) — €29 — 1,486 real-world n8n workflow templates
+
+### Developer Tools
+- [Iterative Self-Critique](/en/skills/iterative-self-critique) — €19 — Self-critique system for complex planning and architecture
+- [Memory Manager](/en/skills/memory-manager) — €9 — Persistent cross-session memory for Claude Code skills
+- [MaIA](/en/skills/maia) — €19 — Multi-agent intelligence architecture for complex projects
+- [LLM Arena VS](/en/skills/llm-arena-vs) — €9 — Multi-AI orchestration (Claude + GPT + Gemini)
+- [Remotion Best Practices](/en/skills/remotion-best-practices) — €29 — Production-grade video creation in React/Remotion
+- [Skill Creator Guru](/en/skills/skill-creator-guru) — Free — Guide for creating effective Claude Code skills
+
+---
+
+## Bundles (5 bundles)
+
+- [B2B Sales Pro System](/en/bundles/b2b-sales-pro) — €249 — Complete B2B sales cycle: research, methodology, stress-test, presentation
+- [Career & Life Navigator](/en/bundles/career-navigator) — €79 — Career coaching, school guidance, CV, and human writing
+- [n8n Power Pack](/en/bundles/n8n-power-pack) — €69 — Full n8n automation stack: expert + docs + templates + critique
+- [Claude Code Mastery](/en/bundles/claude-code-mastery) — €39 — Core developer tools for advanced Claude Code usage
+- [LinkedIn Thought Leadership Toolkit](/en/bundles/linkedin-toolkit) — €65 — Content creation pipeline for LinkedIn thought leaders
+
+---
+
+## Education & Resources
+
+- [What Are Claude Skills?](/en/what-are-claude-skills) — Complete guide to Claude Code skill packs
+- [How It Works](/en/how-it-works) — Installation and usage walkthrough
+- [Blog](/en/blog) — Articles on Claude Code skills, AI tools, and workflow automation
+
+### Blog Articles
+- [Claude Code Skills: The Complete Guide](/en/blog/claude-code-skills-complete-guide)
+- [5 Workflows That Save 10+ Hours a Week with Claude Code Skills](/en/blog/claude-skills-workflows-time-saving)
+- [How to Create Your Own Claude Code Skill (Step-by-Step)](/en/blog/how-to-create-claude-code-skill)
+
+---
+
+## Technical Details
+
+- Skills are installed via Claude Code CLI in seconds: place SKILL.md in ~/.claude/skills/
+- Compatible with: Claude Code (macOS, Linux), Claude Desktop (Windows, macOS, Linux)
+- All skills include: SKILL.md, reference files, templates, examples
+- Languages: English and Italian (bilingual skills)
+- License: single-user lifetime license, buy once use forever
+
+---
+
+## About Skillwire
+
+Skillwire was created by Alessandro Di Grazia, a Sales & GTM Leader with 15+ years in enterprise B2B.
+The skills are built from real professional practice — not theoretical prompts.
+Each skill has been used in production before being published on the marketplace.
+
+Website: https://skillwire.ai
+Twitter: @skillwireai
