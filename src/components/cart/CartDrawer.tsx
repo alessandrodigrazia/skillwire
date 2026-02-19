@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { X, Trash2, ShoppingBag, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/lib/store/cart";
 import { motion, AnimatePresence } from "framer-motion";
 import { getIcon } from "@/lib/icon-map";
+import { CheckoutOverlay } from "./CheckoutOverlay";
 
 export function CartDrawer() {
   const t = useTranslations("cart");
@@ -22,6 +24,11 @@ export function CartDrawer() {
     setCheckingOut,
     setCheckoutError,
   } = useCartStore();
+
+  const [checkoutSession, setCheckoutSession] = useState<{
+    sessionId: string;
+    planId: string;
+  } | null>(null);
 
   async function handleCheckout() {
     setCheckoutError(null);
@@ -45,7 +52,14 @@ export function CartDrawer() {
         return;
       }
 
-      window.location.href = data.checkoutUrl;
+      // Use embedded checkout if session available, fallback to redirect
+      if (data.sessionId) {
+        const planId = data.checkoutUrl?.match(/plan_[A-Za-z0-9]+/)?.[0] ?? "";
+        setCheckoutSession({ sessionId: data.sessionId, planId });
+        closeCart();
+      } else {
+        window.location.href = data.checkoutUrl;
+      }
     } catch {
       setCheckoutError(t("checkoutError"));
     } finally {
@@ -54,6 +68,16 @@ export function CartDrawer() {
   }
 
   return (
+    <>
+      {/* Embedded checkout overlay */}
+      {checkoutSession && (
+        <CheckoutOverlay
+          sessionId={checkoutSession.sessionId}
+          planId={checkoutSession.planId}
+          onClose={() => setCheckoutSession(null)}
+        />
+      )}
+
     <AnimatePresence>
       {isOpen && (
         <>
@@ -193,5 +217,6 @@ export function CartDrawer() {
         </>
       )}
     </AnimatePresence>
+    </>
   );
 }

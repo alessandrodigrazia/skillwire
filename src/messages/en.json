@@ -123,7 +123,8 @@
     "secure": "Secure payment via Whop",
     "checkingOut": "Processing...",
     "checkoutError": "Something went wrong. Please try again.",
-    "notConfigured": "Checkout is not available yet. Coming soon!"
+    "notConfigured": "Checkout is not available yet. Coming soon!",
+    "loadingCheckout": "Loading secure checkout..."
   },
   "thankYou": {
     "title": "Thank You!",

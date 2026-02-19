@@ -46,7 +46,10 @@ export async function POST(request: Request) {
         if (res.ok) {
           const data = await res.json();
           if (data.purchase_url) {
-            return NextResponse.json({ checkoutUrl: data.purchase_url });
+            return NextResponse.json({
+              checkoutUrl: data.purchase_url,
+              sessionId: data.id,
+            });
           }
         }
 

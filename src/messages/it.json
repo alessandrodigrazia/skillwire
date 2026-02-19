@@ -128,7 +128,8 @@
     "secure": "Pagamento sicuro via Whop",
     "checkingOut": "Elaborazione...",
     "checkoutError": "Qualcosa è andato storto. Riprova.",
-    "notConfigured": "Il checkout non è ancora disponibile. Prossimamente!"
+    "notConfigured": "Il checkout non è ancora disponibile. Prossimamente!",
+    "loadingCheckout": "Caricamento pagamento sicuro..."
   },
   "thankYou": {
     "title": "Grazie!",
