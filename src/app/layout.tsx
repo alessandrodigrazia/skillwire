@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Skillwire — Professional Skills for Claude Code",
   description:
     "Buy once, use forever. Production-ready skills for Claude Code — from B2B sales methodology to career coaching to workflow automation.",
+  verification: {
+    google: "rtSt3UA9uAWJZmeYXnFjn-sMSVMMK4FePmmCN4wLPtI",
+  },
 };
 
 const organizationSchema = {
