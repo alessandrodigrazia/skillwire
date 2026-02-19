@@ -155,7 +155,7 @@ export async function POST(request: Request) {
 
     if (eventType === "payment.succeeded") {
       const payment = payload.data;
-      const planId = payment?.plan_id ?? payment?.plan?.id;
+      const planId = payment?.plan ?? payment?.plan_id ?? payment?.plan?.id;
       const email = payment?.email ?? payment?.user?.email;
 
       console.log("[whop-webhook] Payment succeeded:", {
@@ -177,7 +177,7 @@ export async function POST(request: Request) {
 
     if (eventType === "membership.went_valid") {
       const membership = payload.data;
-      const planId = membership?.plan_id ?? membership?.plan?.id;
+      const planId = membership?.plan ?? membership?.plan_id ?? membership?.plan?.id;
       const email = membership?.user?.email ?? membership?.email;
 
       console.log("[whop-webhook] Membership activated:", {

@@ -74,7 +74,9 @@ export async function POST(request: Request) {
 
         if (memberEmail.toLowerCase() !== normalizedEmail) continue;
 
+        // Whop API returns `plan` as a string ID (not a nested object)
         const planId =
+          (m.plan as string) ??
           (m.plan_id as string) ??
           ((m.plan as Record<string, unknown>)?.id as string);
         if (!planId) continue;
