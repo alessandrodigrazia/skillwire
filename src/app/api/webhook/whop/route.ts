@@ -55,7 +55,7 @@ async function sendDownloadEmail(email: string, slug: string) {
           <!-- Logo -->
           <tr>
             <td style="padding-bottom:32px;text-align:center;">
-              <span style="font-size:24px;font-weight:700;color:#f0f0f0;letter-spacing:-0.5px;">Skillwire</span>
+              <img src="${APP_URL}/logo-header.png" alt="Skillwire" width="158" height="24" style="display:inline-block;border:0;">
             </td>
           </tr>
 
