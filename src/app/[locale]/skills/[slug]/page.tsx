@@ -14,7 +14,7 @@ import {
   FolderOpen,
 } from "lucide-react";
 import { getIcon } from "@/lib/icon-map";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   getSkillBySlug,
   getRelatedSkills,
@@ -44,6 +44,18 @@ export default function SkillDetailPage() {
   const cat = categories.find((c) => c.slug === skill.category);
   const categoryName = cat ? t(cat.name, locale) : skill.category;
   const SkillIcon = getIcon(skill.icon);
+
+  const [ratingData, setRatingData] = useState<{
+    averageRating: number | null;
+    reviewCount: number;
+  }>({ averageRating: null, reviewCount: 0 });
+
+  useEffect(() => {
+    fetch(`/api/review?slug=${skill.slug}`)
+      .then((r) => r.json())
+      .then((d) => setRatingData(d))
+      .catch(() => {});
+  }, [skill.slug]);
 
   const handleAddToCart = () => {
     addItem({
@@ -117,10 +129,16 @@ export default function SkillDetailPage() {
                   <FolderOpen size={14} />
                   {categoryName}
                 </span>
-                <span className="flex items-center gap-1">
-                  <Star size={14} className="fill-accent text-accent" />
-                  {skill.averageRating} ({skill.reviewCount})
-                </span>
+                {ratingData.reviewCount > 0 ? (
+                  <span className="flex items-center gap-1">
+                    <Star size={14} className="fill-accent text-accent" />
+                    {ratingData.averageRating?.toFixed(1)} ({ratingData.reviewCount})
+                  </span>
+                ) : (
+                  <span className="text-xs text-text-secondary">
+                    {i18n("ratingNew")}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -464,8 +482,14 @@ export default function SkillDetailPage() {
                     {i18n("specRating")}
                   </span>
                   <span className="flex items-center gap-1 text-text-primary">
-                    <Star size={12} className="fill-accent text-accent" />
-                    {skill.averageRating}
+                    {ratingData.reviewCount > 0 ? (
+                      <>
+                        <Star size={12} className="fill-accent text-accent" />
+                        {ratingData.averageRating?.toFixed(1)}
+                      </>
+                    ) : (
+                      i18n("ratingNew")
+                    )}
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-xs">

@@ -106,7 +106,10 @@
     "freeDownloading": "Processing...",
     "freeSuccess": "Your download is ready!",
     "freeDownloadNow": "Download Now",
-    "freeError": "Something went wrong. Please try again."
+    "freeError": "Something went wrong. Please try again.",
+    "rateSkill": "How would you rate this skill?",
+    "ratingThanks": "Thanks for your feedback!",
+    "ratingNew": "New"
   },
   "cart": {
     "title": "Your Cart",

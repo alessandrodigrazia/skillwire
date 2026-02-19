@@ -106,7 +106,10 @@
     "freeDownloading": "Elaborazione...",
     "freeSuccess": "Il tuo download è pronto!",
     "freeDownloadNow": "Scarica Ora",
-    "freeError": "Qualcosa è andato storto. Riprova."
+    "freeError": "Qualcosa è andato storto. Riprova.",
+    "rateSkill": "Come valuti questa skill?",
+    "ratingThanks": "Grazie per il tuo feedback!",
+    "ratingNew": "Nuova"
   },
   "cart": {
     "title": "Il Tuo Carrello",
