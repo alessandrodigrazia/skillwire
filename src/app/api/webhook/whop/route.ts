@@ -3,13 +3,14 @@ import { verifyWebhookSignature, getSlugByPlanId } from "@/lib/whop";
 import { generateDownloadToken, DOWNLOADABLE_SLUGS } from "@/lib/download";
 import { getSkillBySlug } from "@/lib/data/skills";
 import { getBundleBySlug } from "@/lib/data/bundles";
+
 /**
  * Whop webhook handler.
- * Listens for payment and membership events.
+ * Listens for payment and membership events (V5 API format).
  *
  * Configure in Whop Dashboard > Developer > Webhooks:
  *   URL: https://skillwire.ai/api/webhook/whop
- *   Events: payment.succeeded, membership.went_valid
+ *   Events: payment_succeeded, membership_went_valid
  */
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillwire.ai";
@@ -23,9 +24,8 @@ function getProductName(slug: string): string {
 }
 
 async function sendDownloadEmail(email: string, slug: string) {
-  console.log("[whop-webhook] sendDownloadEmail called:", { email, slug });
   if (!process.env.RESEND_API_KEY) {
-    console.log("[whop-webhook] RESEND_API_KEY not set, skipping email");
+    console.warn("[whop-webhook] RESEND_API_KEY not set, skipping email");
     return;
   }
 
@@ -37,7 +37,7 @@ async function sendDownloadEmail(email: string, slug: string) {
   const downloadUrl = `${APP_URL}${url}`;
   const howItWorksUrl = `${APP_URL}/en/how-it-works`;
 
-  const result = await resend.emails.send({
+  await resend.emails.send({
     from: "Skillwire <noreply@skillwire.ai>",
     to: email,
     subject: `Your download is ready — ${productName}`,
@@ -97,7 +97,7 @@ async function sendDownloadEmail(email: string, slug: string) {
               <!-- Expiry note -->
               <p style="margin:0 0 32px;font-size:13px;color:#666;text-align:center;">
                 This link expires in 7 days. If it expires, visit
-                <a href="${APP_URL}/en/retrieve" style="color:#0ff4c6;text-decoration:none;">${APP_URL.replace("https://","")}/en/retrieve</a>
+                <a href="${APP_URL}/en/retrieve" style="color:#0ff4c6;text-decoration:none;">${APP_URL.replace("https://", "")}/en/retrieve</a>
                 to generate a new one.
               </p>
 
@@ -133,7 +133,6 @@ async function sendDownloadEmail(email: string, slug: string) {
 </body>
 </html>`,
   });
-  console.log("[whop-webhook] Resend result:", JSON.stringify(result));
 }
 
 export async function GET() {
@@ -147,71 +146,52 @@ export async function POST(request: Request) {
   const timestamp = request.headers.get("webhook-timestamp") ?? "";
   const signature = request.headers.get("webhook-signature") ?? "";
 
-  // TODO: re-enable signature verification once we confirm webhook fires
-  // Temporarily disabled to isolate whether the issue is signing or delivery
-  console.log("[whop-webhook] INCOMING request, headers:", {
-    msgId,
-    timestamp,
-    hasSig: !!signature,
-    contentType: request.headers.get("content-type"),
-    userAgent: request.headers.get("user-agent"),
-  });
-  console.log("[whop-webhook] body preview:", rawBody.slice(0, 500));
+  if (process.env.WHOP_WEBHOOK_SECRET) {
+    if (!verifyWebhookSignature(rawBody, msgId, timestamp, signature)) {
+      console.warn("[whop-webhook] Invalid signature");
+      return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+    }
+  }
 
   try {
     const payload = JSON.parse(rawBody);
-    const rawEvent: string = payload.type ?? payload.event ?? payload.action ?? "";
-    // Normalize: Whop V5 sends underscores (payment_succeeded),
-    // newer versions may use dots (payment.succeeded). Accept both.
+    // Whop V5 uses "action", normalize underscores to dots for matching
+    const rawEvent: string = payload.action ?? payload.type ?? payload.event ?? "";
     const eventType = rawEvent.replace(/_/g, ".");
 
-    console.log("[whop-webhook] event:", rawEvent, "→ normalized:", eventType);
+    console.log("[whop-webhook] event:", rawEvent);
 
     if (eventType === "payment.succeeded") {
       const payment = payload.data;
-      const planId = payment?.plan_id ?? payment?.plan ?? payment?.plan?.id;
-      const email = payment?.user_email ?? payment?.email ?? payment?.user?.email;
-
-      console.log("[whop-webhook] Payment succeeded:", {
-        id: payment?.id,
-        planId,
-        email,
-        total: payment?.total,
-        currency: payment?.currency,
-      });
+      const planId = payment?.plan_id ?? payment?.plan;
+      const email = payment?.user_email ?? payment?.email;
 
       if (planId && email) {
         const slug = getSlugByPlanId(planId);
         if (slug && DOWNLOADABLE_SLUGS.has(slug)) {
           await sendDownloadEmail(email, slug);
-          console.log("[whop-webhook] Download email sent to:", email, "for:", slug);
+          console.log("[whop-webhook] Email sent to:", email, "for:", slug);
         }
       }
     }
 
     if (eventType === "membership.went.valid" || eventType === "membership.activated") {
       const membership = payload.data;
-      const planId = membership?.plan_id ?? membership?.plan ?? membership?.plan?.id;
-      const email = membership?.user_email ?? membership?.email ?? membership?.user?.email;
-
-      console.log("[whop-webhook] Membership activated:", {
-        id: membership?.id,
-        planId,
-        email,
-      });
+      const planId = membership?.plan_id ?? membership?.plan;
+      const email = membership?.user_email ?? membership?.email;
 
       if (planId && email) {
         const slug = getSlugByPlanId(planId);
         if (slug && DOWNLOADABLE_SLUGS.has(slug)) {
           await sendDownloadEmail(email, slug);
-          console.log("[whop-webhook] Download email sent to:", email, "for:", slug);
+          console.log("[whop-webhook] Email sent to:", email, "for:", slug);
         }
       }
     }
 
     return NextResponse.json({ received: true });
   } catch (err) {
-    console.error("[whop-webhook] Parse error:", err);
+    console.error("[whop-webhook] Error:", err);
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 }
