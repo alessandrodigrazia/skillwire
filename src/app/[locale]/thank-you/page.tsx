@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { getSlugByPlanId } from "@/lib/whop";
 import { generateDownloadToken, DOWNLOADABLE_SLUGS } from "@/lib/download";
 import ThankYouClient from "./ThankYouClient";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 type SearchParams = { p?: string };
 
