@@ -114,7 +114,11 @@
     "freeError": "Qualcosa è andato storto. Riprova.",
     "rateSkill": "Come valuti questa skill?",
     "ratingThanks": "Grazie per il tuo feedback!",
-    "ratingNew": "Nuova"
+    "ratingNew": "Nuova",
+    "reviewPlaceholder": "Raccontaci la tua esperienza...",
+    "submitReview": "Invia Recensione",
+    "submittingReview": "Invio in corso...",
+    "reviewThanks": "Grazie per la tua recensione!"
   },
   "cart": {
     "title": "Il Tuo Carrello",
@@ -141,10 +145,14 @@
     "installGuide": "Serve aiuto per l’installazione? Leggi la nostra guida.",
     "browseMore": "Esplora altre skill",
     "orderNote": "Domande sul tuo ordine? Scrivici a hello@skillwire.ai",
-    "rateTitle": "Com’è stata la tua esperienza?",
+    "rateTitle": "Lascia una recensione",
+    "rateSubtitle": "Il tuo feedback ci aiuta a migliorare e aiuta gli altri a scegliere.",
+    "commentPlaceholder": "Raccontaci la tua esperienza...",
+    "submitReview": "Invia Recensione",
+    "submittingReview": "Invio in corso...",
     "rateImprove": "Grazie per il tuo feedback sincero. Lo useremo per migliorare.",
     "promoTitle": "Felici che ti sia piaciuta!",
-    "promoSubtitle": "Ecco il 15% di sconto sulla prossima skill come ringraziamento:",
+    "promoSubtitle": "Ecco il tuo codice sconto del 15% \u2014 valido su tutti i tuoi acquisti futuri:",
     "promoCopy": "Copia codice",
     "promoCopied": "Copiato!"
   },

@@ -12,7 +12,7 @@ function getAirtableConfig() {
 // POST — save a new rating
 export async function POST(req: NextRequest) {
   try {
-    const { slug, rating, source = "free" } = await req.json();
+    const { slug, rating, source = "free", comment } = await req.json();
 
     if (!slug || typeof rating !== "number" || rating < 1 || rating > 5) {
       return NextResponse.json(
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    await fetch(`https://api.airtable.com/v0/${baseId}/${AIRTABLE_TABLE}`, {
+    const atRes = await fetch(`https://api.airtable.com/v0/${baseId}/${AIRTABLE_TABLE}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${pat}`,
@@ -47,13 +47,22 @@ export async function POST(req: NextRequest) {
               Skill: slug,
               Rating: Math.round(rating),
               Source: source,
+              ...(comment && typeof comment === "string"
+                ? { Comment: comment.trim().slice(0, 2000) }
+                : {}),
             },
           },
         ],
       }),
     });
 
-    return NextResponse.json({ success: true });
+    let recordId: string | undefined;
+    if (atRes.ok) {
+      const atData = await atRes.json();
+      recordId = atData.records?.[0]?.id;
+    }
+
+    return NextResponse.json({ success: true, recordId });
   } catch {
     return NextResponse.json(
       { error: "Internal server error" },
@@ -107,5 +116,48 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ averageRating: average, reviewCount: ratings.length });
   } catch {
     return NextResponse.json({ averageRating: null, reviewCount: 0 });
+  }
+}
+
+// PATCH — add a comment to an existing review record
+export async function PATCH(req: NextRequest) {
+  try {
+    const { recordId, comment } = await req.json();
+
+    if (!recordId || typeof comment !== "string" || !comment.trim()) {
+      return NextResponse.json(
+        { error: "recordId and non-empty comment required" },
+        { status: 400 }
+      );
+    }
+
+    const { pat, baseId, ready } = getAirtableConfig();
+    if (!ready) {
+      return NextResponse.json(
+        { error: "Rating service not configured" },
+        { status: 503 }
+      );
+    }
+
+    await fetch(
+      `https://api.airtable.com/v0/${baseId}/${AIRTABLE_TABLE}/${recordId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${pat}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fields: { Comment: comment.trim().slice(0, 2000) },
+        }),
+      }
+    );
+
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }

@@ -109,7 +109,11 @@
     "freeError": "Something went wrong. Please try again.",
     "rateSkill": "How would you rate this skill?",
     "ratingThanks": "Thanks for your feedback!",
-    "ratingNew": "New"
+    "ratingNew": "New",
+    "reviewPlaceholder": "Tell us about your experience...",
+    "submitReview": "Submit Review",
+    "submittingReview": "Submitting...",
+    "reviewThanks": "Thanks for your review!"
   },
   "cart": {
     "title": "Your Cart",
@@ -136,10 +140,14 @@
     "installGuide": "Need help installing? Read our guide.",
     "browseMore": "Browse more skills",
     "orderNote": "Questions about your order? Contact us at hello@skillwire.ai",
-    "rateTitle": "How was your experience?",
+    "rateTitle": "Leave a review",
+    "rateSubtitle": "Your feedback helps us improve and helps others choose.",
+    "commentPlaceholder": "Tell us about your experience...",
+    "submitReview": "Submit Review",
+    "submittingReview": "Submitting...",
     "rateImprove": "Thanks for your honest feedback. We'll use it to improve.",
     "promoTitle": "Glad you enjoyed it!",
-    "promoSubtitle": "Here's 15% off your next skill as a thank you:",
+    "promoSubtitle": "Here's your 15% discount code \u2014 valid on all future purchases:",
     "promoCopy": "Copy code",
     "promoCopied": "Copied!"
   },

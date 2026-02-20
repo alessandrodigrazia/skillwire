@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Download, Mail, Loader2 } from "lucide-react";
+import { Download, Mail, Loader2, Send, CheckCircle2 } from "lucide-react";
 import { StarRating } from "@/components/ui/StarRating";
 
 type Status = "idle" | "loading" | "success" | "error";
+type ReviewStatus = "idle" | "submitting" | "done";
 
 export function FreeSkillForm({ slug }: { slug: string }) {
   const t = useTranslations("skillDetail");
@@ -14,7 +15,13 @@ export function FreeSkillForm({ slug }: { slug: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [downloadUrl, setDownloadUrl] = useState("");
 
+  // Review form state
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [reviewStatus, setReviewStatus] = useState<ReviewStatus>("idle");
+
   const isValid = email.includes("@") && email.includes(".") && consent;
+  const canSubmitReview = rating > 0 && comment.trim().length > 0 && reviewStatus === "idle";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,6 +46,26 @@ export function FreeSkillForm({ slug }: { slug: string }) {
     }
   };
 
+  const handleSubmitReview = useCallback(async () => {
+    if (!canSubmitReview) return;
+    setReviewStatus("submitting");
+    try {
+      await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug,
+          rating,
+          comment: comment.trim(),
+          source: "free",
+        }),
+      });
+    } catch {
+      // still show thanks on error
+    }
+    setReviewStatus("done");
+  }, [canSubmitReview, slug, rating, comment]);
+
   if (status === "success") {
     return (
       <div className="space-y-4">
@@ -51,13 +78,57 @@ export function FreeSkillForm({ slug }: { slug: string }) {
           <Download size={16} />
           {t("freeDownloadNow")}
         </a>
-        <div className="border-t border-border pt-3">
-          <StarRating
-            slug={slug}
-            source="free"
-            label={t("rateSkill")}
-            thanksMessage={t("ratingThanks")}
-          />
+
+        {/* Review form */}
+        <div className="border-t border-border pt-4">
+          {reviewStatus === "done" ? (
+            <div className="flex items-center gap-2 text-sm text-success">
+              <CheckCircle2 size={16} />
+              {t("reviewThanks")}
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <p className="text-sm font-medium text-text-primary">
+                {t("rateSkill")}
+              </p>
+              <StarRating
+                value={rating}
+                onChange={setRating}
+                disabled={reviewStatus === "submitting"}
+                size={24}
+              />
+              <textarea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                placeholder={t("reviewPlaceholder")}
+                disabled={reviewStatus === "submitting"}
+                maxLength={2000}
+                rows={3}
+                className="w-full resize-none rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text-primary outline-none placeholder:text-text-secondary focus:border-accent/50 disabled:opacity-50"
+              />
+              <button
+                onClick={handleSubmitReview}
+                disabled={!canSubmitReview}
+                className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors ${
+                  canSubmitReview
+                    ? "bg-accent text-bg hover:bg-accent-hover"
+                    : "bg-surface-elevated text-text-secondary cursor-not-allowed"
+                }`}
+              >
+                {reviewStatus === "submitting" ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    {t("submittingReview")}
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} />
+                    {t("submitReview")}
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );

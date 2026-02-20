@@ -13,12 +13,16 @@ import {
   Gift,
   Copy,
   Check,
+  Loader2,
+  Send,
 } from "lucide-react";
 import { useCartStore } from "@/lib/store/cart";
 import { StarRating } from "@/components/ui/StarRating";
 
 const PROMO_CODE = "THANKS15";
 const PROMO_MIN_RATING = 4;
+
+type ReviewState = "form" | "submitting" | "high" | "low";
 
 interface ThankYouClientProps {
   downloadUrl?: string;
@@ -28,16 +32,36 @@ interface ThankYouClientProps {
 export default function ThankYouClient({ downloadUrl, slug }: ThankYouClientProps) {
   const t = useTranslations("thankYou");
   const clearCart = useCartStore((s) => s.clearCart);
-  const [ratingState, setRatingState] = useState<"pending" | "high" | "low">("pending");
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [reviewState, setReviewState] = useState<ReviewState>("form");
   const [copied, setCopied] = useState(false);
+
+  const canSubmit = rating > 0 && comment.trim().length > 0 && reviewState === "form";
 
   useEffect(() => {
     clearCart();
   }, [clearCart]);
 
-  const handleRatingSubmitted = useCallback((rating: number) => {
-    setRatingState(rating >= PROMO_MIN_RATING ? "high" : "low");
-  }, []);
+  const handleSubmitReview = useCallback(async () => {
+    if (!slug || !canSubmit) return;
+    setReviewState("submitting");
+    try {
+      await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          slug,
+          rating,
+          comment: comment.trim(),
+          source: "purchase",
+        }),
+      });
+      setReviewState(rating >= PROMO_MIN_RATING ? "high" : "low");
+    } catch {
+      setReviewState(rating >= PROMO_MIN_RATING ? "high" : "low");
+    }
+  }, [slug, canSubmit, rating, comment]);
 
   const handleCopyCode = useCallback(() => {
     navigator.clipboard.writeText(PROMO_CODE);
@@ -89,7 +113,7 @@ export default function ThankYouClient({ downloadUrl, slug }: ThankYouClientProp
           </motion.div>
         )}
 
-        {/* Rating section — only for purchased skills */}
+        {/* Review section — only for purchased skills */}
         {slug && (
           <motion.div
             className="mt-8"
@@ -98,23 +122,71 @@ export default function ThankYouClient({ downloadUrl, slug }: ThankYouClientProp
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="rounded-xl border border-border bg-surface p-6">
-              {ratingState === "pending" && (
-                <div className="text-center">
-                  <p className="mb-3 text-sm font-medium text-text-primary">
-                    {t("rateTitle")}
-                  </p>
-                  <div className="flex justify-center">
-                    <StarRating
-                      slug={slug}
-                      source="purchase"
-                      onRatingSubmitted={handleRatingSubmitted}
-                    />
-                  </div>
-                </div>
-              )}
-
               <AnimatePresence mode="wait">
-                {ratingState === "high" && (
+                {(reviewState === "form" || reviewState === "submitting") && (
+                  <motion.div
+                    key="review-form"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-4"
+                  >
+                    <div className="text-center">
+                      <p className="text-sm font-medium text-text-primary">
+                        {t("rateTitle")}
+                      </p>
+                      <p className="mt-1 text-xs text-text-secondary">
+                        {t("rateSubtitle")}
+                      </p>
+                    </div>
+
+                    {/* Stars */}
+                    <div className="flex justify-center">
+                      <StarRating
+                        value={rating}
+                        onChange={setRating}
+                        disabled={reviewState === "submitting"}
+                        size={28}
+                      />
+                    </div>
+
+                    {/* Comment textarea */}
+                    <textarea
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                      placeholder={t("commentPlaceholder")}
+                      disabled={reviewState === "submitting"}
+                      maxLength={2000}
+                      rows={3}
+                      className="w-full resize-none rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-text-primary outline-none placeholder:text-text-secondary focus:border-accent/50 disabled:opacity-50"
+                    />
+
+                    {/* Submit button */}
+                    <button
+                      onClick={handleSubmitReview}
+                      disabled={!canSubmit}
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors ${
+                        canSubmit
+                          ? "bg-accent text-bg hover:bg-accent-hover"
+                          : "bg-surface-elevated text-text-secondary cursor-not-allowed"
+                      }`}
+                    >
+                      {reviewState === "submitting" ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          {t("submittingReview")}
+                        </>
+                      ) : (
+                        <>
+                          <Send size={16} />
+                          {t("submitReview")}
+                        </>
+                      )}
+                    </button>
+                  </motion.div>
+                )}
+
+                {reviewState === "high" && (
                   <motion.div
                     key="promo"
                     initial={{ opacity: 0, y: 10 }}
@@ -149,7 +221,7 @@ export default function ThankYouClient({ downloadUrl, slug }: ThankYouClientProp
                   </motion.div>
                 )}
 
-                {ratingState === "low" && (
+                {reviewState === "low" && (
                   <motion.div
                     key="thanks"
                     initial={{ opacity: 0, y: 10 }}
