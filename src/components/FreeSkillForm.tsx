@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Download, Mail, Loader2, Star } from "lucide-react";
+import { Download, Mail, Loader2 } from "lucide-react";
+import { StarRating } from "@/components/ui/StarRating";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -12,9 +13,6 @@ export function FreeSkillForm({ slug }: { slug: string }) {
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [downloadUrl, setDownloadUrl] = useState("");
-  const [hoverRating, setHoverRating] = useState(0);
-  const [selectedRating, setSelectedRating] = useState(0);
-  const [ratingSubmitted, setRatingSubmitted] = useState(false);
 
   const isValid = email.includes("@") && email.includes(".") && consent;
 
@@ -41,24 +39,7 @@ export function FreeSkillForm({ slug }: { slug: string }) {
     }
   };
 
-  const handleStarClick = async (rating: number) => {
-    if (ratingSubmitted || selectedRating > 0) return;
-    setSelectedRating(rating);
-    try {
-      await fetch("/api/review", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug, rating, source: "free" }),
-      });
-    } catch {
-      // non-blocking
-    } finally {
-      setRatingSubmitted(true);
-    }
-  };
-
   if (status === "success") {
-    const displayRating = hoverRating || selectedRating;
     return (
       <div className="space-y-4">
         <p className="text-sm font-medium text-success">{t("freeSuccess")}</p>
@@ -71,35 +52,12 @@ export function FreeSkillForm({ slug }: { slug: string }) {
           {t("freeDownloadNow")}
         </a>
         <div className="border-t border-border pt-3">
-          {ratingSubmitted ? (
-            <p className="text-xs text-text-secondary">{t("ratingThanks")}</p>
-          ) : (
-            <>
-              <p className="mb-2 text-xs text-text-secondary">{t("rateSkill")}</p>
-              <div className="flex gap-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    onClick={() => handleStarClick(star)}
-                    onMouseEnter={() => setHoverRating(star)}
-                    onMouseLeave={() => setHoverRating(0)}
-                    className="transition-transform hover:scale-110"
-                    aria-label={`${star} star`}
-                  >
-                    <Star
-                      size={20}
-                      className={
-                        star <= displayRating
-                          ? "fill-accent text-accent"
-                          : "text-border"
-                      }
-                    />
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
+          <StarRating
+            slug={slug}
+            source="free"
+            label={t("rateSkill")}
+            thanksMessage={t("ratingThanks")}
+          />
         </div>
       </div>
     );

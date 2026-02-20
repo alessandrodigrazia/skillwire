@@ -1,29 +1,49 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2,
   Mail,
   Download,
   BookOpen,
   ArrowRight,
+  Gift,
+  Copy,
+  Check,
 } from "lucide-react";
 import { useCartStore } from "@/lib/store/cart";
+import { StarRating } from "@/components/ui/StarRating";
+
+const PROMO_CODE = "THANKS15";
+const PROMO_MIN_RATING = 4;
 
 interface ThankYouClientProps {
   downloadUrl?: string;
+  slug?: string;
 }
 
-export default function ThankYouClient({ downloadUrl }: ThankYouClientProps) {
+export default function ThankYouClient({ downloadUrl, slug }: ThankYouClientProps) {
   const t = useTranslations("thankYou");
   const clearCart = useCartStore((s) => s.clearCart);
+  const [ratingState, setRatingState] = useState<"pending" | "high" | "low">("pending");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     clearCart();
   }, [clearCart]);
+
+  const handleRatingSubmitted = useCallback((rating: number) => {
+    setRatingState(rating >= PROMO_MIN_RATING ? "high" : "low");
+  }, []);
+
+  const handleCopyCode = useCallback(() => {
+    navigator.clipboard.writeText(PROMO_CODE);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, []);
 
   return (
     <div className="py-16 sm:py-24">
@@ -65,6 +85,83 @@ export default function ThankYouClient({ downloadUrl }: ThankYouClientProps) {
                 <Download size={16} />
                 {t("downloadBtn")}
               </a>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Rating section — only for purchased skills */}
+        {slug && (
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="rounded-xl border border-border bg-surface p-6">
+              {ratingState === "pending" && (
+                <div className="text-center">
+                  <p className="mb-3 text-sm font-medium text-text-primary">
+                    {t("rateTitle")}
+                  </p>
+                  <div className="flex justify-center">
+                    <StarRating
+                      slug={slug}
+                      source="purchase"
+                      onRatingSubmitted={handleRatingSubmitted}
+                    />
+                  </div>
+                </div>
+              )}
+
+              <AnimatePresence mode="wait">
+                {ratingState === "high" && (
+                  <motion.div
+                    key="promo"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center"
+                  >
+                    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-accent/10">
+                      <Gift size={20} className="text-accent" />
+                    </div>
+                    <p className="mb-1 text-sm font-medium text-text-primary">
+                      {t("promoTitle")}
+                    </p>
+                    <p className="mb-3 text-xs text-text-secondary">
+                      {t("promoSubtitle")}
+                    </p>
+                    <div className="mx-auto flex max-w-[240px] items-center justify-between rounded-lg border border-accent/30 bg-accent/5 px-4 py-2.5">
+                      <span className="font-mono text-sm font-bold tracking-wider text-accent">
+                        {PROMO_CODE}
+                      </span>
+                      <button
+                        onClick={handleCopyCode}
+                        className="ml-3 rounded-md p-1.5 text-text-secondary transition-colors hover:bg-surface hover:text-text-primary"
+                        aria-label={copied ? t("promoCopied") : t("promoCopy")}
+                      >
+                        {copied ? (
+                          <Check size={16} className="text-accent" />
+                        ) : (
+                          <Copy size={16} />
+                        )}
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+
+                {ratingState === "low" && (
+                  <motion.div
+                    key="thanks"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center"
+                  >
+                    <p className="text-sm text-text-secondary">
+                      {t("rateImprove")}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         )}

@@ -26,5 +26,7 @@ export default async function ThankYouPage({
     }
   }
 
-  return <ThankYouClient downloadUrl={downloadUrl} />;
+  const slug = planId ? getSlugByPlanId(planId) ?? undefined : undefined;
+
+  return <ThankYouClient downloadUrl={downloadUrl} slug={slug} />;
 }

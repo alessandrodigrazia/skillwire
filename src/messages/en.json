@@ -135,7 +135,13 @@
     "retrieveLinkLabel": "Retrieve your download here",
     "installGuide": "Need help installing? Read our guide.",
     "browseMore": "Browse more skills",
-    "orderNote": "Questions about your order? Contact us at hello@skillwire.ai"
+    "orderNote": "Questions about your order? Contact us at hello@skillwire.ai",
+    "rateTitle": "How was your experience?",
+    "rateImprove": "Thanks for your honest feedback. We'll use it to improve.",
+    "promoTitle": "Glad you enjoyed it!",
+    "promoSubtitle": "Here's 15% off your next skill as a thank you:",
+    "promoCopy": "Copy code",
+    "promoCopied": "Copied!"
   },
   "howItWorksPage": {
     "title": "How It Works",

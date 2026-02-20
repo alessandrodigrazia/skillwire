@@ -136,11 +136,17 @@
     "subtitle": "Il tuo acquisto è confermato.",
     "downloadReady": "La tua skill è pronta. Scaricala ora:",
     "downloadBtn": "Scarica ZIP",
-    "emailNote": "Ti abbiamo inviato il link di download via email. Non l'hai ricevuta?",
+    "emailNote": "Ti abbiamo inviato il link di download via email. Non l’hai ricevuta?",
     "retrieveLinkLabel": "Recupera il download qui",
     "installGuide": "Serve aiuto per l’installazione? Leggi la nostra guida.",
     "browseMore": "Esplora altre skill",
-    "orderNote": "Domande sul tuo ordine? Scrivici a hello@skillwire.ai"
+    "orderNote": "Domande sul tuo ordine? Scrivici a hello@skillwire.ai",
+    "rateTitle": "Com’è stata la tua esperienza?",
+    "rateImprove": "Grazie per il tuo feedback sincero. Lo useremo per migliorare.",
+    "promoTitle": "Felici che ti sia piaciuta!",
+    "promoSubtitle": "Ecco il 15% di sconto sulla prossima skill come ringraziamento:",
+    "promoCopy": "Copia codice",
+    "promoCopied": "Copiato!"
   },
   "howItWorksPage": {
     "title": "Come Funziona",
