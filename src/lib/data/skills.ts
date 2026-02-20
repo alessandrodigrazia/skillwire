@@ -1997,8 +1997,15 @@ export const skills: SkillDetail[] = [
     filesCount: 8,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-02-20",
+        changes: [
+          { en: "Updated Gemini Pro model references from gemini-3-pro-preview to gemini-3.1-pro-preview across all subagent commands, selector, and capabilities docs", it: "Aggiornati i riferimenti al modello Gemini Pro da gemini-3-pro-preview a gemini-3.1-pro-preview in tutti i comandi subagenti, selettore e documentazione capabilities" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
