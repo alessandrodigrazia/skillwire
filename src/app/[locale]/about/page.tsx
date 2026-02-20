@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail, Award, Clock, Users } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Award, Clock, Users, BookOpen } from "lucide-react";
 
 export default function AboutPage() {
   const t = useTranslations("aboutPage");
@@ -72,6 +72,34 @@ export default function AboutPage() {
               <p className="leading-relaxed text-text-secondary">
                 {t("creatorBio3")}
               </p>
+            </div>
+
+            {/* Books */}
+            <div className="mt-8">
+              <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-text-secondary">
+                <BookOpen size={16} className="text-accent" />
+                {t("creatorBooksTitle")}
+              </h4>
+              <div className="mt-3 flex flex-col gap-2">
+                <a
+                  href={t("creatorBook1Link")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2 text-sm leading-relaxed text-text-secondary transition-colors hover:text-accent"
+                >
+                  <span className="mt-0.5 shrink-0 text-accent/60 transition-colors group-hover:text-accent">&#8250;</span>
+                  <span className="underline decoration-border underline-offset-2 transition-colors group-hover:decoration-accent">{t("creatorBook1Title")}</span>
+                </a>
+                <a
+                  href={t("creatorBook2Link")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-2 text-sm leading-relaxed text-text-secondary transition-colors hover:text-accent"
+                >
+                  <span className="mt-0.5 shrink-0 text-accent/60 transition-colors group-hover:text-accent">&#8250;</span>
+                  <span className="underline decoration-border underline-offset-2 transition-colors group-hover:decoration-accent">{t("creatorBook2Title")}</span>
+                </a>
+              </div>
             </div>
 
             {/* Stats */}
