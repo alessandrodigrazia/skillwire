@@ -83,27 +83,27 @@ export const articles: BlogArticle[] = [
   {
     slug: "stress-test-business-plan-with-ai",
     title: {
-      en: "How to Stress-Test Your Business Plan with AI",
-      it: "Come Stress-Testare il Tuo Business Plan con l\u2019AI",
+      en: "How to Stress-Test Your Business Plan Before the Room Does It for You",
+      it: "Come stress-testare il tuo business plan prima che lo faccia la sala riunioni",
     },
     excerpt: {
-      en: "Before pitching investors or launching a product, run your plan through an AI sparring partner that finds the weak spots you can\u2019t see.",
-      it: "Prima di presentare agli investitori o lanciare un prodotto, sottoponi il tuo piano a uno sparring partner AI che trova i punti deboli che non riesci a vedere.",
+      en: "Your business plan looks solid. So did the one that collapsed at the first investor question. Here's a structured framework for finding the holes before someone else does.",
+      it: "Il tuo business plan sembra solido. Anche quello che \u00e8 crollato alla prima domanda dell'investitore. Ecco un framework strutturato per trovare le falle prima che lo faccia qualcun altro.",
     },
     category: "insight",
-    tags: ["business-plan", "janus", "critical-thinking", "strategy"],
+    tags: ["business-plan", "janus", "critical-thinking", "strategy", "stress-test"],
     author: "Alessandro Di Grazia",
-    publishedAt: "2026-02-12",
-    readingTime: 4,
+    publishedAt: "2026-02-20",
+    readingTime: 7,
     coverEmoji: "\uD83D\uDD2E",
     relatedSkillSlug: "janus",
     metaTitle: {
-      en: "How to Stress-Test Your Business Plan with AI \u2014 Skillwire Blog",
-      it: "Come Stress-Testare il Tuo Business Plan con l\u2019AI \u2014 Skillwire Blog",
+      en: "How to Stress-Test Your Business Plan with AI | Skillwire Blog",
+      it: "Come stress-testare il tuo business plan con l'AI | Skillwire Blog",
     },
     metaDescription: {
-      en: "Use an AI critical analysis tool to find blind spots in your business plan before stakeholders do.",
-      it: "Usa uno strumento di analisi critica AI per trovare i punti ciechi nel tuo business plan prima che lo facciano gli stakeholder.",
+      en: "Traditional feedback is too polite, too busy, and too biased to find the real problems. A structured stress test with severity scoring finds them in minutes.",
+      it: "Il feedback tradizionale \u00e8 troppo gentile, troppo frettoloso e troppo parziale per trovare i problemi reali. Uno stress test strutturato con scoring di gravit\u00e0 li trova in minuti.",
     },
   },
   {
