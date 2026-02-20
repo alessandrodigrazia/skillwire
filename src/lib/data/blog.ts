@@ -133,6 +133,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "ai-editorial-pipeline-linkedin",
+    title: {
+      en: "Why Your LinkedIn Content Sounds Like Everyone Else's",
+      it: "Perch\u00e9 i tuoi contenuti LinkedIn sembrano quelli di tutti gli altri",
+    },
+    excerpt: {
+      en: "The bottleneck isn't writing speed. It's the gap between reading something worth sharing and turning it into a post that sounds like you. Here's how an editorial pipeline closes that gap.",
+      it: "Il collo di bottiglia non \u00e8 la velocit\u00e0 di scrittura. \u00c8 il divario tra leggere qualcosa che vale la pena condividere e trasformarlo in un post che suona come te. Ecco come una pipeline editoriale colma quel vuoto.",
+    },
+    category: "insight",
+    tags: ["linkedin", "content-pipeline", "editorial", "ai-agents", "thought-leadership"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83D\uDCDD",
+    relatedSkillSlug: "content-pipeline-pro",
+    metaTitle: {
+      en: "Why Your LinkedIn Content Sounds Like Everyone Else's | Skillwire Blog",
+      it: "Perch\u00e9 i tuoi contenuti LinkedIn sembrano quelli di tutti gli altri | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Consistent LinkedIn publishing requires more than writing fast. Learn why editorial pipelines with specialized agents produce better content than single-prompt approaches.",
+      it: "Pubblicare su LinkedIn con costanza richiede pi\u00f9 della velocit\u00e0 di scrittura. Scopri perch\u00e9 le pipeline editoriali con agenti specializzati producono contenuti migliori degli approcci a singolo prompt.",
+    },
+  },
+  {
     slug: "when-you-know-you-need-a-career-change",
     title: {
       en: "When You Know You Need a Change But Can\u2019t Figure Out What",
