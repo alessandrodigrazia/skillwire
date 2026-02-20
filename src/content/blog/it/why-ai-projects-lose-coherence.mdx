@@ -1,0 +1,73 @@
+Il mese scorso ho usato Claude per costruire un'analisi competitiva per un cliente. Dodici sezioni che coprivano posizionamento di mercato, modelli di pricing, gap di prodotto e raccomandazioni strategiche. Le prime quattro sezioni erano eccellenti. Osservazioni precise, buona struttura, framework coerente.
+
+La sezione cinque ha iniziato a riusare frasi della sezione due senza riconoscere che erano lo stesso insight. La sezione sette ha introdotto una dimensione competitiva che contraddiceva il framework della sezione tre. Alla sezione dieci, l'analisi pricing faceva riferimento a dati di mercato che erano gi\u00e0 stati scartati come obsoleti nella sezione quattro.
+
+Ho intercettato tutto. Perch\u00e9 stavo rileggendo ogni paragrafo, incrociando le affermazioni con le sezioni precedenti, e tenendo traccia mentalmente di quali decisioni di framework fossero ancora valide. Ho speso pi\u00f9 tempo a verificare di quanto ne avrei impiegato a scrivere l'analisi da solo.
+
+## Il problema della deriva
+
+I progetti complessi seguono uno schema prevedibile con l'AI. I primi step sono forti perch\u00e9 il contesto completo sta nella finestra di attenzione del modello. Man mano che il progetto cresce, le decisioni precedenti scivolano fuori fuoco. L'AI non le dimentica in senso tecnico. Le deprioritizza. Le informazioni nuove pesano pi\u00f9 di quelle vecchie.
+
+Questo crea un tipo specifico di fallimento: qualit\u00e0 locale con incoerenza globale. Ogni sezione si legge bene da sola. Le contraddizioni diventano visibili solo quando leggi le sezioni una accanto all'altra. Il che significa che qualcuno deve farlo. E di solito, quel qualcuno sei tu.
+
+Per un documento di cinque pagine, \u00e8 fastidioso. Per un report di venti pagine, un design di sistema multi-componente, o un deliverable di ricerca con requisiti di verifica delle fonti, diventa il costo dominante del progetto.
+
+## Perch\u00e9 chiedere di dividere in step non basta
+
+La risposta ovvia \u00e8 chiedere a Claude di dividere il progetto in step. Lo far\u00e0. Produce liste numerate pulite. Step uno, step due, step tre. Il piano sembra ragionevole.
+
+Il problema \u00e8 cosa succede durante l'esecuzione. Non esiste un meccanismo per verificare che lo step quattro sia coerente con lo step due. Nessun checkpoint dove l'output viene rivisto prima che parta lo step successivo. Nessun gate di qualit\u00e0 che controlli se le affermazioni sono documentate, se il framework \u00e8 ancora coerente, se i livelli di confidenza corrispondono alle evidenze.
+
+Gli step sono sequenziali solo in apparenza. In realt\u00e0, ogni step riparte fresco, con qualsiasi contesto sia pi\u00f9 prominente nella finestra. Gli step precedenti sbiadiscono. I presupposti vanno alla deriva. Allo step sette, stai costruendo su fondamenta che potrebbero essersi spostate senza che nessuno se ne accorgesse.
+
+Lo sviluppo software ha risolto questo problema decenni fa. Code review, pipeline CI/CD, test di integrazione, delivery basata su milestone. Nessuno rilascia un sistema a dieci componenti scrivendo tutto il codice in una sola seduta e sperando nella coerenza. I componenti vengono costruiti, testati, rivisti e integrati attraverso un processo strutturato.
+
+L'esecuzione dei progetti AI non ha nulla di quella struttura. Hai un prompt e un output. Tutto ci\u00f2 che sta tra quei due punti \u00e8 invisibile.
+
+## Come appare la struttura
+
+Un approccio strutturato ai progetti AI complessi richiede tre cose: scomposizione, validazione e gestione del contesto.
+
+**Scomposizione** significa dividere il progetto in ruoli, non solo in step. Un'analisi di mercato richiede un ricercatore, un analista, un costruttore di framework e qualcuno che integri i pezzi. Ogni ruolo ha requisiti di contesto diversi, criteri di qualit\u00e0 diversi e output diversi. Una lista di step non cattura tutto questo. Un'architettura basata sui ruoli s\u00ec.
+
+**Validazione** significa controlli qualit\u00e0 tra le fasi. Quando il ricercatore finisce di raccogliere dati, qualcuno verifica che le fonti siano fresche, che le affermazioni siano citate, che i dati corrispondano ai requisiti del progetto. Quando l'analista produce insight, qualcuno controlla che non contraddicano il framework. Questi controlli avvengono prima che la fase successiva parta, non dopo che l'intero progetto \u00e8 finito.
+
+**Gestione del contesto** significa tenere le informazioni organizzate lungo tutto il progetto. L'obiettivo originale non dovrebbe sbiadire man mano che il progetto cresce. Gli output approvati delle fasi iniziali dovrebbero restare accessibili alle fasi successive. Il dettaglio completo dovrebbe essere recuperabile quando serve, ma i riassunti dovrebbero essere il default per mantenere gestibile la finestra di contesto.
+
+## Il pattern multi-agente
+
+Questi tre requisiti si mappano naturalmente su un'architettura multi-agente. Invece di una singola sessione AI che fa tutto, il progetto viene distribuito tra agenti specializzati.
+
+Un agente genesis valida che l'obiettivo sia chiaro prima che qualsiasi lavoro inizi. Un agente architetto progetta il team: quali specialisti servono, cosa produce ciascuno, e come si collegano gli output. Gli agenti specialisti eseguono il loro dominio. Un agente QA rivede ogni output contro criteri specifici. Se qualcosa va cambiato a met\u00e0 progetto, un orchestratore aggiusta il piano senza scartare il lavoro completato. Un assembler integra il deliverable finale.
+
+L'intuizione chiave \u00e8 che l'agente QA non sei tu. Nell'approccio tradizionale a sessione singola, tu sei il reparto qualit\u00e0. Leggi ogni paragrafo. Intercetti ogni contraddizione. Verifichi ogni fonte. In un'architettura multi-agente, la verifica qualit\u00e0 \u00e8 un ruolo definito con criteri espliciti. L'agente QA controlla quattro cose prima che qualsiasi output ti raggiunga: freschezza delle fonti, attualit\u00e0 delle affermazioni, allineamento con le specifiche del progetto, e livelli di confidenza sulle asserzioni.
+
+Tu continui ad approvare le milestone. Ma stai rivendo output curati che hanno gi\u00e0 superato la validazione, non testo grezzo che potrebbe contenere contraddizioni invisibili.
+
+## I livelli di contesto in pratica
+
+Il problema della gestione del contesto \u00e8 il pezzo meno ovvio ma pi\u00f9 importante.
+
+Un progetto lungo accumula informazioni. Alla fase sei di un progetto da dodici fasi, c'\u00e8 troppo dettaglio perch\u00e9 un singolo agente lo tenga in contesto. Senza gestione, gli agenti iniziano a lavorare con informazioni parziali. Da l\u00ec arriva la deriva.
+
+Un approccio a tre livelli funziona. Il livello uno contiene l'obiettivo originale e i file di riferimento. Non cambia mai. Il livello due contiene riassunti degli output approvati, compatti abbastanza da stare nel contesto di ogni agente. Il livello tre contiene gli output approvati completi, accessibili quando un agente ha bisogno di dettaglio ma non caricati di default.
+
+Ogni agente vede i livelli uno e due. Un agente carica contenuto del livello tre solo quando il suo task richiede specificamente dettaglio da una fase precedente. Questo mantiene la finestra di contesto focalizzata garantendo che nessuna informazione vada persa.
+
+## Gestire le incognite
+
+I progetti ad alta intensit\u00e0 di ricerca sbattono contro un muro ricorrente: alcune informazioni non esistono o non si trovano. Il comportamento standard dell'AI \u00e8 o inventare qualcosa, o fare un caveat cos\u00ec vago che l'output diventa inutile.
+
+Un protocollo di onest\u00e0 computazionale gestisce la cosa esplicitamente. Dopo due tentativi di ricerca falliti, l'agente tagga il gap, spiega i tentativi fatti, e fornisce un'ipotesi chiaramente etichettata. L'agente QA valuta l'ipotesi separatamente dalla disponibilit\u00e0 delle fonti. Una stima ragionevole della dimensione del mercato, chiaramente marcata come non verificata, \u00e8 pi\u00f9 utile di un numero dal tono autorevole proveniente da una fonte allucinata.
+
+Il punto \u00e8 la trasparenza. Sai cosa \u00e8 verificato, cosa \u00e8 stimato e cosa manca. Su queste informazioni puoi agire. Un paragrafo dal tono sicuro che potrebbe essere sbagliato \u00e8 informazione di cui non puoi fidarti.
+
+## L'effetto compounding
+
+Il valore dell'esecuzione strutturata non \u00e8 visibile su un singolo deliverable. Diventa chiaro nel corso delle settimane.
+
+Un report da dodici sezioni costruito con gate di qualit\u00e0 e gestione del contesto richiede circa lo stesso tempo di uno costruito senza struttura, se conti il tempo di correzione. La differenza \u00e8 che le correzioni avvengono durante l'esecuzione, non dopo. Intercetti i problemi alla fase tre invece di scoprirli alla fase dodici.
+
+Su pi\u00f9 progetti, il pattern si accumula. Emergono template di progetto. I criteri QA si affinano. L'agente architetto migliora nella scomposizione perch\u00e9 ha precedenti dai progetti precedenti. Ogni progetto costruisce sulla maturit\u00e0 di processo di quelli prima.
+
+MaIA implementa questo pattern per Claude Code con otto tipi di agente, quattro gate di validazione, tre livelli di contesto e supervisione utente basata su milestone. Nove file, 19 EUR, e i tuoi progetti complessi smettono di andare alla deriva al terzo step.

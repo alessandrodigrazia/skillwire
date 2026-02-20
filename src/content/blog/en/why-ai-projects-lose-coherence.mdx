@@ -1,0 +1,73 @@
+Last month I used Claude to build a competitive analysis for a client. Twelve sections covering market positioning, pricing models, product gaps, and strategic recommendations. The first four sections were excellent. Sharp observations, good structure, coherent framework.
+
+Section five started reusing phrases from section two without acknowledging they were the same insight. Section seven introduced a competitive dimension that contradicted the framework from section three. By section ten, the pricing analysis referenced market data that had already been dismissed as outdated in section four.
+
+I caught all of it. Because I was reading every paragraph, cross-referencing claims against earlier sections, and mentally tracking which framework decisions were still valid. I spent more time checking than I would have spent writing the analysis myself.
+
+## The drift problem
+
+Complex projects follow a predictable pattern with AI. The first few steps are strong because the full context fits in the model's attention window. As the project grows, earlier decisions slip out of focus. The AI doesn't forget them in a technical sense. It deprioritizes them. New information gets more weight than old information.
+
+This creates a specific kind of failure: local quality with global incoherence. Each section reads well on its own. The contradictions only become visible when you read sections side by side. Which means someone has to do that. And usually, that someone is you.
+
+For a five-page document, this is annoying. For a twenty-page report, a multi-component system design, or a research deliverable with source verification requirements, it becomes the dominant cost of the project.
+
+## Why asking for steps doesn't help
+
+The obvious response is to ask Claude to break the project into steps. It will. It produces clean numbered lists. Step one, step two, step three. The plan looks reasonable.
+
+The problem is what happens during execution. There's no mechanism to verify that step four is consistent with step two. No checkpoint where the output gets reviewed before the next step starts. No quality gate that checks whether claims are sourced, whether the framework is still coherent, whether confidence levels match the evidence.
+
+The steps are sequential in appearance only. In reality, each step starts fresh, with whatever context happens to be most prominent in the window. Earlier steps fade. Assumptions drift. By step seven, you're building on a foundation that may have shifted without anyone noticing.
+
+Software development solved this problem decades ago. Code reviews, CI/CD pipelines, integration tests, milestone-based delivery. Nobody ships a ten-component system by writing all the code in one sitting and hoping for coherence. The components get built, tested, reviewed, and integrated through a structured process.
+
+AI project execution has none of that structure. You get a prompt and an output. Everything between those two points is invisible.
+
+## What structure looks like
+
+A structured approach to complex AI projects needs three things: decomposition, validation, and context management.
+
+**Decomposition** means breaking the project into roles, not just steps. A market analysis needs a researcher, an analyst, a framework builder, and someone to integrate the pieces. Each role has different context requirements, different quality criteria, and different outputs. A step list doesn't capture this. A role-based architecture does.
+
+**Validation** means quality checks between phases. When the researcher finishes gathering data, someone verifies that the sources are fresh, that the claims are cited, and that the data matches the project requirements. When the analyst produces insights, someone checks that they don't contradict the framework. These checks happen before the next phase starts, not after the entire project is done.
+
+**Context management** means keeping information organized across a long project. The original objective shouldn't fade as the project grows. Approved outputs from early phases should stay accessible to later phases. Full detail should be retrievable when needed, but summaries should be the default to keep the context window manageable.
+
+## The multi-agent pattern
+
+These three requirements map naturally to a multi-agent architecture. Instead of one AI session doing everything, the project gets distributed across specialized agents.
+
+A genesis agent validates that the objective is clear before any work starts. An architect agent designs the team: which specialists are needed, what each one produces, and how the outputs connect. Specialist agents execute their domains. A QA agent reviews every output against specific criteria. If something needs changing mid-project, an orchestrator adjusts the plan without discarding completed work. An assembler integrates the final deliverable.
+
+The key insight is that the QA agent is not the user. In a traditional single-session approach, you are the QA department. You read every paragraph. You catch every contradiction. You verify every source. In a multi-agent architecture, quality verification is a defined role with explicit criteria. The QA agent checks four things before any output reaches you: source freshness, recency of claims, alignment with project specs, and confidence levels on assertions.
+
+You still approve milestones. But you're reviewing curated outputs that have already passed validation, not raw text that might contain invisible contradictions.
+
+## Context layers in practice
+
+The context management problem is the least obvious but most important piece.
+
+A long project accumulates information. By phase six of a twelve-phase project, there's too much detail for any single agent to hold in context. Without management, agents start working with partial information. That's where the drift comes from.
+
+A three-layer approach works. Layer one holds the original objective and any reference files. It never changes. Layer two holds summaries of approved outputs, compact enough to fit in every agent's context. Layer three holds the full approved outputs, accessible when an agent needs detail but not loaded by default.
+
+Every agent sees layers one and two. An agent only loads layer three content when its task specifically requires detail from an earlier phase. This keeps the context window focused while ensuring no information is lost.
+
+## Handling the unknowns
+
+Research-intensive projects hit a common wall: some information doesn't exist or can't be found. The standard AI behavior is to either make something up or hedge so vaguely that the output is useless.
+
+A computational honesty protocol handles this explicitly. After two search attempts fail, the agent tags the gap, explains the search attempts, and provides a clearly labeled hypothesis. The QA agent evaluates the hypothesis separately from source availability. A reasonable estimate of market size, clearly marked as unverified, is more useful than an authoritative-sounding number from a hallucinated source.
+
+The point is transparency. You know what's verified, what's estimated, and what's missing. That's information you can act on. A confident-sounding paragraph that might be wrong is information you can't trust.
+
+## The compounding effect
+
+The value of structured project execution isn't visible on a single deliverable. It becomes clear over weeks.
+
+A twelve-section report built with quality gates and context management takes roughly the same time as one built without structure, if you count the correction time. The difference is that corrections happen during execution instead of after. You catch problems at phase three instead of discovering them at phase twelve.
+
+Over multiple projects, the pattern compounds. Project templates emerge. QA criteria get refined. The architect agent gets better at decomposition because it has precedent from earlier projects. Each project builds on the process maturity of the ones before it.
+
+MaIA implements this pattern for Claude Code with eight agent types, four validation gates, three context layers, and milestone-based user supervision. Nine files, 19 EUR, and your complex projects stop drifting at step three.

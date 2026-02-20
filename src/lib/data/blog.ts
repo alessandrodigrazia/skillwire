@@ -289,6 +289,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "why-ai-projects-lose-coherence",
+    title: {
+      en: "Why AI Projects Lose Coherence After Step Three",
+      it: "Perch\u00e9 i progetti AI perdono coerenza dopo il terzo step",
+    },
+    excerpt: {
+      en: "You start a complex project with Claude. The first three steps are brilliant. By step five, the AI contradicts step two. By step eight, you're correcting more than creating. The problem isn't capability. It's the absence of project structure.",
+      it: "Inizi un progetto complesso con Claude. I primi tre step sono brillanti. Allo step cinque, l'AI contraddice lo step due. Allo step otto, correggi pi\u00f9 di quanto crei. Il problema non \u00e8 la capacit\u00e0. \u00c8 l'assenza di struttura progettuale.",
+    },
+    category: "insight",
+    tags: ["multi-agent", "AI-projects", "quality-assurance", "orchestration", "Claude-Code"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83C\uDFD7\uFE0F",
+    relatedSkillSlug: "maia",
+    metaTitle: {
+      en: "Why AI Projects Lose Coherence After Step Three | Skillwire Blog",
+      it: "Perch\u00e9 i progetti AI perdono coerenza dopo il terzo step | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Complex AI projects drift because there's no structure between steps. No quality checks, no context management, no milestone control. Software development solved this decades ago. AI project execution hasn't.",
+      it: "I progetti AI complessi vanno alla deriva perch\u00e9 non c'\u00e8 struttura tra gli step. Nessun controllo qualit\u00e0, nessuna gestione del contesto, nessun controllo delle milestone. Lo sviluppo software lo ha risolto decenni fa. L'esecuzione dei progetti AI no.",
+    },
+  },
+  {
     slug: "the-n8n-knowledge-gap",
     title: {
       en: "Why Building n8n Workflows Takes 10x Longer Than It Should",
