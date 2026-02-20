@@ -263,6 +263,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "the-n8n-knowledge-gap",
+    title: {
+      en: "Why Building n8n Workflows Takes 10x Longer Than It Should",
+      it: "Perch\u00e9 costruire workflow n8n richiede 10 volte pi\u00f9 tempo del dovuto",
+    },
+    excerpt: {
+      en: "The bottleneck in n8n automation isn't the building. It's the searching: docs in one tab, community forums in another, Stack Overflow in a third. The knowledge exists. It's just scattered across a hundred sources.",
+      it: "Il collo di bottiglia nell'automazione n8n non \u00e8 la costruzione. \u00c8 la ricerca: docs in un tab, forum community in un altro, Stack Overflow in un terzo. La conoscenza esiste. \u00c8 solo sparsa su cento fonti diverse.",
+    },
+    category: "insight",
+    tags: ["n8n", "workflow-automation", "AI-workflows", "no-code", "productivity"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 7,
+    coverEmoji: "\u26A1",
+    relatedSkillSlug: "n8n-ai-workflow-expert",
+    metaTitle: {
+      en: "Why n8n Workflows Take 10x Longer Than They Should | Skillwire Blog",
+      it: "Perch\u00e9 i workflow n8n richiedono 10x pi\u00f9 tempo del dovuto | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "n8n documentation is scattered across hundreds of pages. AI workflow patterns are buried in forums. A knowledge system inside your editor changes the equation.",
+      it: "La documentazione n8n \u00e8 sparsa su centinaia di pagine. I pattern workflow AI sono sepolti nei forum. Un sistema di conoscenza dentro il tuo editor cambia l'equazione.",
+    },
+  },
+  {
     slug: "why-your-ai-plan-breaks-at-step-four",
     title: {
       en: "Why Your AI Plan Breaks at Step Four",

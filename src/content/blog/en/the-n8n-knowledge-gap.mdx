@@ -1,0 +1,57 @@
+I timed myself last week while building an n8n workflow. The workflow itself was straightforward: watch a Google Sheet for new rows, validate the data, create a HubSpot contact, send a Slack notification. Four nodes. Should take twenty minutes.
+
+It took two hours and twelve minutes. Forty minutes of that was actual building: connecting nodes, writing expressions, testing the flow. The remaining ninety minutes was searching. Searching n8n docs for the correct Google Sheets trigger configuration. Searching community forums for why the HubSpot node kept returning a 422 error (missing required field that wasn't in the basic docs). Searching Stack Overflow for expression syntax to format a date from the sheet into HubSpot's expected format.
+
+The knowledge existed. Every answer was out there somewhere. Finding it was the bottleneck.
+
+## The scattered knowledge problem
+
+n8n has excellent documentation for individual nodes. The problem is scale. There are over 400 integrations. Each has configuration options, authentication requirements, and quirks that the basic docs don't always cover. The AI-specific nodes (Agent, Chain, Tool, Memory, Embeddings) have their own documentation that's newer and less complete.
+
+Community knowledge fills the gaps. Someone on the forum figured out that the HubSpot node needs the `lifecyclestage` field even though it's not marked as required. Someone else posted a working expression for date formatting between Google Sheets and CRM systems. Someone built a template for the exact Slack notification pattern you need.
+
+All of this knowledge is valuable. None of it is in one place. You toggle between five browser tabs, each with a different piece of the puzzle. Each tab switch costs focus. Each search interruption breaks your building flow. The cognitive overhead compounds across the session.
+
+## AI workflow patterns: the hidden layer
+
+The knowledge gap gets worse for AI-powered workflows. Building an n8n workflow with an AI Agent node, a vector store for RAG, tool calling nodes, and memory management is qualitatively different from building a simple sync workflow. The patterns aren't obvious from the node documentation.
+
+How do you chain an Agent node with a Tool node so the agent can search your database? The docs show the node interface. They don't show the six different patterns people use in production, which ones work for which use cases, or which credential configurations avoid the silent failures that waste hours.
+
+545 AI workflow patterns exist across the community. They cover agent chains, retrieval-augmented generation, tool calling setups, conversation memory, embedding pipelines, and classification workflows. Each pattern has been built, tested, debugged, and refined by someone who hit the same walls you're about to hit.
+
+These patterns are scattered across forum posts, blog articles, YouTube videos, and GitHub repos. No single source organizes them. No search interface lets you find "agent with tool calling that queries a PostgreSQL database" and get a working template.
+
+## The template problem
+
+n8n's community template library is one of the platform's strengths. Thousands of workflows, contributed by users worldwide. The problem is discoverability.
+
+Searching the library for "HubSpot to Slack" returns dozens of results. Some use deprecated nodes. Some were built for n8n version 0.x and don't work on 1.x. Some are simple enough to be useless as examples. Some are so complex you can't extract the pattern you need. There's no metadata telling you node count, complexity level, or credential requirements before you open each one.
+
+You end up spending fifteen minutes evaluating templates to save twenty minutes of building. If the first three templates don't match, you give up and build from scratch. The community's collective knowledge goes unused.
+
+The same pattern applies in reverse: you build a workflow, debug it, get it working, and the knowledge stays in your n8n instance. The next person who needs the same integration starts from zero.
+
+## What changes when the knowledge lives inside your editor
+
+The equation shifts when you don't have to leave your editor to access documentation, patterns, and templates. Instead of five browser tabs and a dozen search queries, you describe what you need and the relevant knowledge comes to you.
+
+Three types of knowledge cover most n8n building scenarios.
+
+**Reference knowledge**: how each node works, what it expects, what it produces, what goes wrong. This is documentation, but organized for fast lookup instead of browsing. The Switch node handles empty arrays by routing to the fallback output. The HTTP Request node needs specific header formatting for OAuth2 Bearer tokens. The IF node evaluates truthy values differently than JavaScript. Knowing these details before you encounter the error saves the debugging cycle.
+
+**Pattern knowledge**: how nodes combine for specific outcomes. The "CRM sync with deduplication" pattern is different from the "webhook-triggered notification" pattern. AI workflow patterns are a category of their own: the agent-with-tools pattern, the RAG retrieval pattern, the classification-then-routing pattern. Each has a structure that works and variations that cause subtle bugs.
+
+**Template knowledge**: complete workflows that someone has already built and tested. Not just the node connections, but the credential requirements, the expression syntax, the error handling, and the edge cases. Starting from a tested template and adapting it is fundamentally faster than starting from an empty canvas.
+
+## The n8n Power Pack
+
+The n8n Power Pack bundles three skills that bring all three knowledge types into Claude Code.
+
+**n8n Workflow Expert** (100 files, 2.6M characters) is the brain. It knows every n8n node, 545 AI workflow patterns, and has intelligent routing to the other two skills. You describe what you need. It builds the workflow using proven patterns and correct configurations.
+
+**n8n Docs Live** (16 files) is the reference. Official n8n documentation indexed and searchable from inside Claude Code. No browser tabs. No context switching. A live fallback queries the official site for anything not in the local index.
+
+**n8n Workflow Repository** (98 files, 1,486 templates) is the library. Real-world workflow templates with rich metadata: services used, node count, complexity rating, credential requirements. Searchable by service name, integration type, or workflow pattern.
+
+The three skills work together. When the Expert builds a workflow, it checks the Repository for matching templates and consults Docs Live for node specifics. The result is a workflow built on real patterns instead of generic guesses. The two-hour building session becomes twenty minutes of actual building.
