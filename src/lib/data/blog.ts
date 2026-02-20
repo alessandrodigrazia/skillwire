@@ -263,6 +263,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "choosing-a-school-with-zero-data",
+    title: {
+      en: "Choosing a School With Zero Data",
+      it: "Scegliere una scuola con zero dati",
+    },
+    excerpt: {
+      en: "Italian families face two education decisions that shape the next decade. Most make them based on open day impressions and what the neighbors' kids chose. Employment data exists. Almost nobody uses it.",
+      it: "Le famiglie italiane affrontano due decisioni scolastiche che condizionano il prossimo decennio. La maggior parte le prende in base alle impressioni degli open day e a cosa hanno scelto i figli dei vicini. I dati occupazionali esistono. Quasi nessuno li usa.",
+    },
+    category: "insight",
+    tags: ["school-choice", "RIASEC", "Italian-education", "orientation", "career-data"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83C\uDF93",
+    relatedSkillSlug: "ask-to-andrew",
+    metaTitle: {
+      en: "Choosing a School With Zero Data | Skillwire Blog",
+      it: "Scegliere una scuola con zero dati | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Italian families choose schools based on open days and word of mouth. RIASEC assessments and Almalaurea employment data exist but rarely reach the families who need them most.",
+      it: "Le famiglie italiane scelgono le scuole in base agli open day e al passaparola. Assessment RIASEC e dati occupazionali Almalaurea esistono ma raramente raggiungono chi ne ha pi\u00f9 bisogno.",
+    },
+  },
+  {
     slug: "why-your-b2b-deck-loses-the-room",
     title: {
       en: "Why Your B2B Deck Loses the Room in the First Five Slides",
