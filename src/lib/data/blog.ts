@@ -132,6 +132,32 @@ export const articles: BlogArticle[] = [
       it: "I deal enterprise falliscono quando framework scollegati creano buchi tra discovery, qualificazione e negoziazione. Scopri come un sistema integrato previene le perdite di pipeline.",
     },
   },
+  {
+    slug: "when-you-know-you-need-a-career-change",
+    title: {
+      en: "When You Know You Need a Change But Can\u2019t Figure Out What",
+      it: "Quando sai che hai bisogno di un cambiamento ma non riesci a capire quale",
+    },
+    excerpt: {
+      en: "Free personality tests give you a label. Validated career assessments give you a direction. Here's the difference, and why it matters when your career feels stuck.",
+      it: "I test di personalit\u00e0 gratuiti ti danno un'etichetta. Gli assessment di carriera validati ti danno una direzione. Ecco la differenza, e perch\u00e9 conta quando la tua carriera sembra bloccata.",
+    },
+    category: "insight",
+    tags: ["career-coaching", "career-change", "assessments", "job-crafting", "purpose"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83E\uDDED",
+    relatedSkillSlug: "ask-to-vera",
+    metaTitle: {
+      en: "When You Know You Need a Career Change | Skillwire Blog",
+      it: "Quando sai che hai bisogno di un cambiamento di carriera | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Career dissatisfaction has three patterns. Knowing which one you're in changes what you should do next. Evidence-based assessments vs. generic career advice.",
+      it: "L'insoddisfazione professionale ha tre pattern. Sapere in quale ti trovi cambia quello che dovresti fare. Assessment validati vs. consigli di carriera generici.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
