@@ -1,0 +1,51 @@
+Last month I asked Claude to plan a database migration from MySQL to PostgreSQL. Six steps, clean sequencing, clear rationale for each one. I started executing. Step three failed because it tried to create foreign key constraints pointing to a table that step five was supposed to set up. I reordered, fixed the dependency, ran again. Step four failed because the connection pooling configuration needed to happen before the schema migration, not after.
+
+The plan read perfectly. Each step was well-written, logically explained, and completely wrong in its ordering.
+
+## The planning accuracy problem
+
+This isn't a Claude problem. It's an LLM problem. Google DeepMind published research in 2025 specifically about this: when you ask a large language model to generate multi-step plans for complex tasks, accuracy sits around 50%. Half the plans contain ordering errors, missing preconditions, or impossible dependencies.
+
+The failure mode is specific and consistent. LLMs are excellent at generating steps that individually make sense. They're poor at tracking the cumulative state changes across those steps. Step three assumes a database table exists. But that table gets created in step five. The model didn't track that the table didn't exist yet at step three. Each step looks reasonable in isolation. The sequence falls apart.
+
+This matters most for tasks where execution is expensive: database migrations that require downtime windows, infrastructure changes that affect production, workflow automations that route real data. Finding the broken dependency after running three steps of a six-step migration costs hours. Finding it before you start costs minutes.
+
+## Why rereading doesn't catch it
+
+The natural response is to reread the plan carefully before executing. This rarely works, for the same reason proofreading your own writing rarely catches errors. Your brain fills in what should be there instead of seeing what actually is there. You read "create foreign keys" and your brain assumes the referenced tables exist because it seems obvious they should. The plan flows well. The logic sounds right. The precondition was never met.
+
+Professional software teams solved this problem decades ago with code review, test suites, and CI pipelines. Nobody ships code that only the author looked at. But AI-generated plans get executed after a quick skim by the same person who requested them.
+
+## The DeepMind solution: structured self-critique
+
+The DeepMind paper proposes a straightforward fix: before executing a plan, run a structured critique against it. Not a vague "does this look right?" but a systematic three-step validation for every action in the plan.
+
+Step one: for each action, identify what must be true before it can execute. These are preconditions. "Create foreign key on orders.customer_id" has a precondition: the customers table must exist. "Send Slack notification" has a precondition: the Slack webhook URL must be configured.
+
+Step two: verify that previous actions in the plan actually satisfy each precondition. Does any step before the foreign key creation actually create the customers table? If yes, is it in the right order? If no, the plan has a gap.
+
+Step three: calculate the resulting state after each action completes. After "create customers table," the state now includes: customers table exists. This state propagates forward and affects what subsequent steps can do.
+
+Run these three checks across every action. If a precondition fails, revise the plan and re-critique. Iterate until the plan passes or you hit a maximum iteration count. DeepMind measured the result: accuracy on planning tasks jumped from roughly 50% to 90%.
+
+## Where the gap is widest
+
+Three domains produce the most broken AI plans, because they have the most hidden dependencies.
+
+**Workflow automation.** An n8n or Zapier workflow has ordering constraints that aren't obvious from the step descriptions. A webhook trigger must be the first node. API nodes need credentials configured before they can run. IF nodes need the field they're evaluating to exist in the input. Miss any of these and the workflow activates but fails silently or returns a cryptic error.
+
+**Database migrations.** CREATE TABLE must precede any INSERT. Foreign keys require the referenced table to exist. Indexes should follow bulk inserts (creating them before costs much more time). Permission grants must precede user operations. The dependency chain in a real migration can be ten layers deep.
+
+**System architecture.** Service A calls Service B, which calls Service C. If your deployment plan brings up A before B, every request fails. If your API contract assumes a field that the upstream service doesn't provide yet, integration tests pass locally and fail in staging. Circular dependencies are the worst: A needs B, B needs C, C needs A, and no deployment order works without breaking the cycle.
+
+## Domain templates close the last gap
+
+The Plan-Critique-Revise loop works generically for any planning task. But it works significantly better with domain-specific knowledge. A generic critique might miss that an n8n webhook needs to be the first node. A domain-aware critique catches it immediately.
+
+This is why effective implementations include domain templates: pre-built collections of preconditions, effects, and constraints for specific planning contexts. An n8n template encodes what the system requires. A migration template encodes database ordering rules. An architecture template encodes service dependency patterns. The templates turn the generic "check preconditions" instruction into a concrete checklist.
+
+## Applying this in practice
+
+Iterative Self-Critique packages the DeepMind methodology with three ready-made domain templates (n8n, database migration, system architecture). You describe what you need planned. The skill generates the plan, runs the structured critique, identifies broken preconditions, and revises automatically. Most plans converge in two or three iterations. The result is a plan that has actually been validated against its own dependencies, not just one that reads well.
+
+At 19 EUR for five files, it costs less than the hour you'd spend debugging a migration plan that looked right but wasn't.

@@ -1,0 +1,51 @@
+Il mese scorso ho chiesto a Claude di pianificare una migrazione database da MySQL a PostgreSQL. Sei step, sequenziamento pulito, motivazione chiara per ognuno. Ho iniziato a eseguire. Lo step tre è fallito perché tentava di creare vincoli di foreign key verso una tabella che lo step cinque avrebbe dovuto impostare. Ho riordinato, corretto la dipendenza, eseguito di nuovo. Lo step quattro è fallito perché la configurazione del connection pooling doveva avvenire prima della migrazione dello schema, non dopo.
+
+Il piano si leggeva alla perfezione. Ogni step era ben scritto, spiegato con logica, e completamente sbagliato nell'ordinamento.
+
+## Il problema dell'accuratezza nel planning
+
+Non è un problema di Claude. È un problema degli LLM. Google DeepMind ha pubblicato una ricerca nel 2025 proprio su questo: quando chiedi a un modello linguistico di generare piani multi-step per task complessi, l'accuratezza si attesta intorno al 50%. Metà dei piani contiene errori di ordinamento, precondizioni mancanti o dipendenze impossibili.
+
+La modalità di fallimento è specifica e consistente. Gli LLM sono eccellenti nel generare step che singolarmente hanno senso. Sono scarsi nel tracciare i cambiamenti di stato cumulativi tra quegli step. Lo step tre presume che una tabella database esista. Ma quella tabella viene creata allo step cinque. Il modello non ha tracciato che la tabella non esisteva ancora allo step tre. Ogni passaggio sembra ragionevole in isolamento. La sequenza crolla.
+
+Questo conta di più per i task dove l'esecuzione è costosa: migrazioni database che richiedono finestre di downtime, cambiamenti infrastrutturali che impattano la produzione, automazioni workflow che instradano dati reali. Trovare la dipendenza rotta dopo aver eseguito tre step di una migrazione a sei step costa ore. Trovarla prima di iniziare costa minuti.
+
+## Perché rileggere non funziona
+
+La risposta naturale è rileggere attentamente il piano prima di eseguirlo. Raramente funziona, per lo stesso motivo per cui rileggere i propri testi raramente intercetta gli errori. Il cervello riempie quello che dovrebbe esserci invece di vedere quello che c'è davvero. Leggi "crea foreign key" e il tuo cervello assume che le tabelle referenziate esistano perché sembra ovvio che debbano. Il piano scorre bene. La logica suona giusta. La precondizione non è mai stata soddisfatta.
+
+I team di sviluppo professionali hanno risolto questo problema decenni fa con code review, suite di test e pipeline CI. Nessuno pubblica codice che solo l'autore ha controllato. I piani generati dall'AI invece vengono eseguiti dopo una lettura veloce dalla stessa persona che li ha richiesti.
+
+## La soluzione DeepMind: self-critique strutturata
+
+Il paper DeepMind propone un rimedio diretto: prima di eseguire un piano, far girare una critica strutturata. Non un generico "sembra giusto?" ma una validazione sistematica a tre step per ogni azione nel piano.
+
+Step uno: per ogni azione, identificare cosa deve essere vero prima che possa essere eseguita. Queste sono le precondizioni. "Crea foreign key su orders.customer_id" ha una precondizione: la tabella customers deve esistere. "Invia notifica Slack" ha una precondizione: il webhook URL Slack deve essere configurato.
+
+Step due: verificare che le azioni precedenti nel piano soddisfino effettivamente ogni precondizione. Qualche step prima della creazione della foreign key crea effettivamente la tabella customers? Se sì, è nell'ordine giusto? Se no, il piano ha un buco.
+
+Step tre: calcolare lo stato risultante dopo che ogni azione si completa. Dopo "crea tabella customers", lo stato ora include: tabella customers esiste. Questo stato si propaga in avanti e influenza cosa gli step successivi possono fare.
+
+Esegui questi tre controlli su ogni azione. Se una precondizione fallisce, rivedi il piano e ri-critica. Itera finché il piano passa o raggiungi un numero massimo di iterazioni. DeepMind ha misurato il risultato: l'accuratezza sui task di planning è saltata da circa il 50% al 90%.
+
+## Dove il divario è più ampio
+
+Tre domini producono i piani AI più problematici, perché hanno le dipendenze nascoste più numerose.
+
+**Automazione workflow.** Un workflow n8n o Zapier ha vincoli di ordinamento che non sono ovvi dalla descrizione degli step. Un trigger webhook deve essere il primo nodo. I nodi API hanno bisogno di credenziali configurate prima di poter funzionare. I nodi IF hanno bisogno che il campo valutato esista nell'input. Manca uno qualsiasi di questi e il workflow si attiva ma fallisce silenziosamente o restituisce un errore criptico.
+
+**Migrazioni database.** CREATE TABLE deve precedere qualsiasi INSERT. Le foreign key richiedono che la tabella referenziata esista. Gli indici dovrebbero seguire gli inserimenti massivi (crearli prima costa molto più tempo). I grant dei permessi devono precedere le operazioni utente. La catena di dipendenze in una migrazione reale può essere profonda dieci livelli.
+
+**Architettura sistemi.** Il Servizio A chiama il Servizio B, che chiama il Servizio C. Se il tuo piano di deployment porta su A prima di B, ogni richiesta fallisce. Se il tuo contratto API assume un campo che il servizio upstream non fornisce ancora, i test di integrazione passano in locale e falliscono in staging. Le dipendenze circolari sono il caso peggiore: A ha bisogno di B, B ha bisogno di C, C ha bisogno di A, e nessun ordine di deployment funziona senza spezzare il ciclo.
+
+## I template di dominio chiudono l'ultimo gap
+
+Il ciclo Plan-Critique-Revise funziona genericamente per qualsiasi task di planning. Funziona significativamente meglio con conoscenza specifica del dominio. Una critica generica potrebbe non accorgersi che un webhook n8n deve essere il primo nodo. Una critica consapevole del dominio lo intercetta immediatamente.
+
+Per questo le implementazioni efficaci includono template di dominio: raccolte predefinite di precondizioni, effetti e vincoli per contesti di planning specifici. Un template n8n codifica i requisiti del sistema. Un template migrazione codifica le regole di ordinamento database. Un template architettura codifica i pattern di dipendenza tra servizi. I template trasformano l'istruzione generica "controlla le precondizioni" in una checklist concreta.
+
+## Applicare tutto questo in pratica
+
+Iterative Self-Critique impacchetta la metodologia DeepMind con tre template di dominio pronti all'uso (n8n, migrazione database, architettura sistemi). Descrivi cosa hai bisogno di pianificare. La skill genera il piano, esegue la critica strutturata, identifica le precondizioni rotte e rivede automaticamente. La maggior parte dei piani converge in due o tre iterazioni. Il risultato è un piano che è stato effettivamente validato contro le proprie dipendenze, non solo uno che si legge bene.
+
+A 19 EUR per cinque file, costa meno dell'ora che spenderesti a debuggare un piano di migrazione che sembrava corretto ma non lo era.

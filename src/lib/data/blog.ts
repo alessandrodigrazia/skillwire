@@ -263,6 +263,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "why-your-ai-plan-breaks-at-step-four",
+    title: {
+      en: "Why Your AI Plan Breaks at Step Four",
+      it: "Perch\u00e9 il tuo piano AI si rompe al quarto step",
+    },
+    excerpt: {
+      en: "AI-generated plans read beautifully. Then you execute them and step three depends on something that step five was supposed to create. Google DeepMind measured the problem: 50% accuracy on complex planning. Here's the fix.",
+      it: "I piani generati dall'AI si leggono benissimo. Poi li esegui e lo step tre dipende da qualcosa che lo step cinque avrebbe dovuto creare. Google DeepMind ha misurato il problema: 50% di accuratezza sul planning complesso. Ecco la soluzione.",
+    },
+    category: "insight",
+    tags: ["AI-planning", "self-critique", "DeepMind", "validation", "n8n", "architecture"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83D\uDD04",
+    relatedSkillSlug: "iterative-self-critique",
+    metaTitle: {
+      en: "Why Your AI Plan Breaks at Step Four | Skillwire Blog",
+      it: "Perch\u00e9 il tuo piano AI si rompe al quarto step | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "LLMs plan at 50% accuracy on complex tasks. Google DeepMind's Plan-Critique-Revise pattern doubles that. How structured self-critique catches broken dependencies before execution.",
+      it: "Gli LLM pianificano con il 50% di accuratezza sui task complessi. Il pattern Plan-Critique-Revise di DeepMind raddoppia quel numero. Come la self-critique strutturata intercetta le dipendenze rotte prima dell'esecuzione.",
+    },
+  },
+  {
     slug: "choosing-a-school-with-zero-data",
     title: {
       en: "Choosing a School With Zero Data",
