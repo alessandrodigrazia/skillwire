@@ -28,8 +28,8 @@ export function Header() {
           <Image
             src="/logo-header.png"
             alt="Skillwire.ai"
-            width={315}
-            height={54}
+            width={399}
+            height={96}
             className="h-8 w-auto"
             priority
           />

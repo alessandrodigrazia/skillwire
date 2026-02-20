@@ -44,9 +44,9 @@ export async function generateMetadata({
       images: [
         {
           url: "/logo.png",
-          width: 512,
-          height: 512,
-          alt: "Skillwire",
+          width: 1200,
+          height: 630,
+          alt: "Skillwire - Professional Skills for Claude Code",
         },
       ],
     },
