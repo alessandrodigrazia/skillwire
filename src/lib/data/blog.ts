@@ -159,6 +159,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "ai-research-without-sources-is-fiction",
+    title: {
+      en: "AI Research Without Sources Is Just Sophisticated Fiction",
+      it: "La ricerca AI senza fonti \u00e8 solo narrativa sofisticata",
+    },
+    excerpt: {
+      en: "You asked your AI for market research. It gave you two thousand words of confident analysis and zero citations. Here's why that's a problem, and what structured research actually looks like.",
+      it: "Hai chiesto al tuo AI una ricerca di mercato. Ti ha dato duemila parole di analisi sicura di s\u00e9 e zero citazioni. Ecco perch\u00e9 \u00e8 un problema, e come appare una ricerca strutturata per davvero.",
+    },
+    category: "insight",
+    tags: ["deep-research", "citations", "methodology", "ai-tools", "graph-of-thoughts"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 7,
+    coverEmoji: "\uD83D\uDD2C",
+    relatedSkillSlug: "deep-research-agent",
+    metaTitle: {
+      en: "AI Research Without Sources Is Just Fiction | Skillwire Blog",
+      it: "La ricerca AI senza fonti \u00e8 solo narrativa | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "AI produces confident text without citations. Learn why unsourced research is dangerous for professionals and how structured methodologies fix the problem.",
+      it: "L'AI produce testo convincente senza citazioni. Perch\u00e9 la ricerca senza fonti \u00e8 pericolosa per i professionisti e come le metodologie strutturate risolvono il problema.",
+    },
+  },
+  {
     slug: "when-you-know-you-need-a-career-change",
     title: {
       en: "When You Know You Need a Change But Can\u2019t Figure Out What",

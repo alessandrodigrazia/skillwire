@@ -1,0 +1,69 @@
+A colleague sent me a "competitive analysis" last month. Twelve pages. Clean formatting. Confident tone throughout. Market share percentages, growth projections, strategic positioning statements for four competitors.
+
+I asked where the 34% market share figure for Competitor B came from. He didn't know. He'd asked an AI assistant for the analysis, and the AI had produced it with the authority of a McKinsey partner and the sourcing rigor of a bar conversation.
+
+The number was wrong. Not slightly off. Wrong by a factor of two. And that analysis was headed for a client presentation.
+
+## The confidence problem
+
+AI models are trained to produce fluent, confident text. That training objective doesn't distinguish between "I found this in a Gartner report" and "I'm generating a plausible-sounding number." The output looks identical in both cases. Clean prose. No hedging. No footnotes.
+
+For creative writing, that's fine. For professional research, it's a liability.
+
+The danger isn't that AI produces garbage. The danger is that it produces garbage that reads like expert analysis. A human researcher who doesn't know something says "I need to check that." An AI model that doesn't know something generates a specific number with two decimal places and moves on.
+
+## What goes wrong without structure
+
+Three failure patterns show up repeatedly when professionals use AI for research without a methodology.
+
+**Single-source dependency.** The model finds one data point and builds the entire argument around it. You get a persuasive narrative supported by evidence that, when traced back, originates from a single blog post written by someone with no particular expertise. One source isn't research. It's an anecdote.
+
+**Conflict erasure.** When two sources disagree, unstructured AI picks the one that fits the narrative better and ignores the other. You never see the disagreement. The model doesn't flag it. The resulting text reads as if there's consensus when there isn't.
+
+**Circular sourcing.** AI-generated content now feeds back into training data and web search results. A claim that started as AI fabrication gets cited by a blog, which gets indexed by a search engine, which gets retrieved by another AI as "evidence." The claim reinforces itself without ever touching reality.
+
+## What structured research looks like
+
+Academic research has had a methodology for centuries. Source hierarchy. Peer review. Citation standards. Replication requirements. Professional research borrows from this playbook: you define a question, plan your approach, gather evidence from ranked sources, verify claims across independent sources, and document everything.
+
+The challenge with AI isn't that it can't follow this process. The challenge is that, without explicit instructions, it won't. Left to its defaults, Claude will give you an essay. Told to follow a research protocol, it produces something fundamentally different.
+
+Structured AI research has distinct phases. The question gets pinned down before any searching begins. Sources get ranked by credibility: primary documentation and peer-reviewed research first, industry analyst reports second, quality journalism third. Everything else gets treated with skepticism.
+
+The critical phase most people skip is triangulation: checking whether independent sources confirm the same claim. If only one source mentions a specific statistic, that statistic gets flagged rather than presented as fact. If two sources contradict each other, both positions appear in the final output with explicit attribution.
+
+## Graph-of-Thoughts: branching research
+
+Linear research follows a chain: question, search, find something, search more, write. This works for simple topics. For complex questions, it creates a funnel effect where early search results bias everything that follows.
+
+Graph-of-Thoughts, a methodology published by ETH Zurich at AAAI 2024, treats research differently. Instead of one chain, the investigation branches into parallel tracks. A question about AI adoption in manufacturing might split into three simultaneous investigations: technology use cases, ROI evidence, and adoption barriers. Each branch operates independently, accessing different source pools. The results merge later, during synthesis.
+
+This matters because it prevents the early-source bias problem. Branch A might find optimistic adoption numbers. Branch B might find sobering ROI data. Branch C might find organizational barriers that explain why the gap exists. The final report reflects all three perspectives instead of whichever one the model encountered first.
+
+## Citations as accountability
+
+A citation isn't decoration. It's a contract between the writer and the reader: "I got this from here, and you can check."
+
+Inline citations serve two purposes. The obvious one is verification. The less obvious one is quality control during writing. When every claim needs a source, unsupported claims become visible immediately. "The market is growing rapidly" stops being acceptable when you have to attach a number and a citation. Either you have the data or you don't. The citation requirement forces precision.
+
+The bibliography at the end isn't an afterthought. It's a credibility map. A reader can scan it in thirty seconds and assess whether the research rests on solid ground: Gartner reports, company filings, peer-reviewed studies. Or on shaky ground: blog posts, press releases, and content marketing pieces disguised as analysis.
+
+## The self-critique step most people skip
+
+Professional researchers review their own work before submission. They check for gaps. They look for confirmation bias. They ask whether they've given fair weight to conflicting evidence.
+
+AI can do this too, but only if you tell it to. A dedicated critique phase after drafting catches problems that the writing phase creates: overreliance on a single source, unsupported generalizations, logical leaps that feel smooth but don't hold up. The critique doesn't need to be perfect. It needs to exist. Even an imperfect self-review catches the worst errors.
+
+## The real cost of unsourced research
+
+The professional cost isn't abstract. A sales director who presents competitor intelligence based on fabricated numbers loses credibility with the prospect and internally. A consultant who delivers a market analysis with invented statistics faces liability questions. A product manager who builds a business case on unchecked projections wastes the team's time when the numbers collapse under scrutiny.
+
+The fix is straightforward: don't send out research without sources. And if the tool you're using for research can't produce sources, change the methodology, not the standard.
+
+## Building this into your workflow
+
+Deep Research Agent applies this entire protocol automatically. You provide the question. The skill handles scope definition, parallel research planning, source gathering with credibility ranking, claim triangulation, cited drafting, self-critique, and final packaging with executive summary and bibliography.
+
+It won't work for every question. Quick lookups don't need a seven-phase pipeline. But for the research that ends up in presentations, proposals, and strategic documents, the difference between cited and uncited work is the difference between credibility and risk.
+
+At 49 euros, it costs less than the hour you'd spend explaining to a client why that number in your report turned out to be wrong.
