@@ -289,6 +289,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "you-are-prompting-image-ai-wrong",
+    title: {
+      en: "You Are Prompting Image AI Wrong",
+      it: "Stai promptando l'AI visiva nel modo sbagliato",
+    },
+    excerpt: {
+      en: "\"Futuristic city, neon, 4k, cinematic.\" You type it and get the same image everyone else gets. The model can produce professional infographics, consistent character series, and architectural renders from floor plans. You just never learned how to ask.",
+      it: "\"Citt\u00e0 futuristica, neon, 4k, cinematico.\" Lo scrivi e ottieni la stessa immagine che ottengono tutti. Il modello pu\u00f2 produrre infografiche professionali, serie di personaggi consistenti, e render architettonici da planimetrie. Non hai mai imparato come chiedere.",
+    },
+    category: "insight",
+    tags: ["visual-AI", "prompt-engineering", "Nano-Banana-Pro", "image-generation", "creative-direction"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83C\uDFA8",
+    relatedSkillSlug: "nano-banana-guru",
+    metaTitle: {
+      en: "You Are Prompting Image AI Wrong | Skillwire Blog",
+      it: "Stai promptando l'AI visiva nel modo sbagliato | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Tag soups produce generic AI images. Structured briefs produce professional visual artifacts. The difference is how you talk to the model, not which model you use.",
+      it: "Le zuppe di tag producono immagini AI generiche. I brief strutturati producono artefatti visivi professionali. La differenza \u00e8 come parli al modello, non quale modello usi.",
+    },
+  },
+  {
     slug: "the-gap-between-rendering-and-motion-design",
     title: {
       en: "The Gap Between Rendering a Video and Making One That Looks Good",

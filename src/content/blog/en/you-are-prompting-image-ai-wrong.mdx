@@ -1,0 +1,71 @@
+I asked Google's Nano Banana Pro to create an infographic about remote work trends. My prompt: "infographic, remote work, statistics, modern, blue."
+
+The result was a vaguely blue rectangle with random numbers scattered across it, clip-art-style icons, and text that was either too small to read or too large to fit. It looked like someone had described "infographic" to a model that had seen a few but never understood how they worked.
+
+I rewrote the prompt. This time I specified: a vertical infographic for LinkedIn (1080x1350px), three sections with clear visual hierarchy, specific statistics I wanted displayed (43% of US workers remote in 2025, 67% higher productivity, $11,000 annual savings per employee), a dark navy background with amber accent for key numbers, Inter font for headers and system font for body text, no stock imagery, data presented as minimal bar charts with labeled axes.
+
+Same model. Same free tier. The result was a professional infographic I could have posted without editing. The difference was not the model. It was the prompt.
+
+## The tag soup problem
+
+Most people prompt image AI the way they used to search Google in 2005: a list of keywords separated by commas. "Dog, park, sunset, 4k, realistic, cinematic lighting, bokeh." This worked passably with early diffusion models because those models literally mapped keywords to visual features through cross-attention mechanisms.
+
+Modern visual reasoning models like Nano Banana Pro work differently. They understand intent, composition, physics, and spatial relationships. They can reason about what belongs in a scene based on context. When you throw a tag soup at a reasoning model, you're giving it fragments when it can process complete sentences.
+
+The analogy is briefing a human designer. You wouldn't walk up to a graphic designer and say "dog, park, 4k, realistic." You'd say: "I need a hero image for a pet wellness blog. A golden retriever sitting in a park during golden hour. The dog should be the focal point, slightly off-center. Soft background blur. Warm tones. The image needs to work at 1200x630px for Open Graph previews."
+
+The designer would produce something intentional. The tag soup produces something generic.
+
+## What visual reasoning models actually understand
+
+Nano Banana Pro operates on seven distinct visual reasoning engines. Most users only discover one or two by accident.
+
+The **Layout Engine** understands grids, columns, spatial hierarchies, and zone-based compositions. Tell it "three equal columns with the center column 1.5x wider" and it delivers. Tell it "modern layout" and you get whatever the training data averaged.
+
+The **Typography Engine** treats text as a design element, not an afterthought. It can render readable text at small sizes with proper hierarchy. Headers in bold at 24pt, subheaders at 16pt, body at 12pt. Specify it and you get it. Leave it unspecified and you get random text sizing.
+
+The **Data Visualization Engine** converts numbers into visual charts. Give it actual data points and chart types (bar, pie, line) and it renders them accurately. Most users don't know this capability exists because they've never tried providing numbers in a prompt.
+
+The **Representation Transformer Engine** can switch visual surfaces while preserving content relationships. Give it a 2D floor plan and ask for a 3D interior render. Give it a wireframe and ask for a finished UI. Give it a sketch and ask for a polished illustration.
+
+The **Brand and Identity Engine** can apply and maintain brand consistency. Provide reference images and it locks the visual identity across multiple generations. Up to fourteen reference images for character consistency, six with high fidelity.
+
+These capabilities exist in the model right now. They don't activate by accident. They activate when you prompt with structure.
+
+## The 8-area canvas
+
+Structured prompting for visual AI follows eight areas, in order. Skipping any area leaves the model guessing.
+
+**Intent and Goal.** Why does this image exist? Who will see it? "A LinkedIn carousel card explaining the benefits of async communication for distributed teams." This single sentence tells the model the platform (LinkedIn, so specific dimensions), the format (carousel card, so text-heavy layout), the audience (professional), and the content domain (workplace communication).
+
+**Subject and Content.** What specific content should appear? Not "remote work" but "three statistics: 43% remote, 67% productivity increase, $11k annual savings. Each with a source citation in small text below."
+
+**Work Surface.** What type of artifact is this? A dashboard, a comic strip, a blueprint, a thumbnail, a storyboard? Each work surface has different conventions. A dashboard has KPI cards and charts. A comic strip has panels with consistent characters. A blueprint has technical annotations. Naming the surface activates the model's understanding of that convention.
+
+**Layout and Structure.** Spatial organization with specific ratios. "Top 25% for the header. Middle 50% divided into three equal columns. Bottom 25% for the call to action." Spatial ratios give the model concrete constraints instead of vague "well-organized."
+
+**Style and Aesthetics.** Color palette in hex codes (not color names), typography choices, visual mood. "#1a1a2e background, #e94560 accent, #eaeaea text" produces consistent results. "Dark and modern" produces whatever the model infers.
+
+**Components and Details.** Specific elements that must appear. Icons, charts, images, labels. "A minimal bar chart showing year-over-year growth. A circular avatar placeholder in the top left. An arrow icon linking sections."
+
+**Constraints.** What must NOT happen. "No stock photography. No gradients. No text smaller than 10pt. No more than four colors." Negative constraints are as important as positive specifications. Without them, the model fills gaps with whatever it estimates you might want.
+
+**Context and Source Material.** Reference images, brand guidelines, data sources. "Style consistent with the attached reference image. Data sourced from Buffer's 2025 State of Remote Work report."
+
+## Edit, don't re-roll
+
+The most expensive habit in AI image generation is regenerating from scratch every time something is wrong.
+
+Visual reasoning models support conversational editing. If the image is 80% right but the text color is wrong, you say "change the text to white" and the model edits the existing image. If the layout is good but one element is misplaced, you say "move the chart to the right column." If the overall composition works but the mood is off, you say "make the background warmer, shift toward amber tones."
+
+Each re-roll burns the entire image and starts over. Conversational edits preserve what works and fix what doesn't. The time savings compound across a session. Ten images with two edits each takes a fraction of the time of ten images with three re-rolls each.
+
+## Discovery through triggers
+
+The biggest barrier to using visual AI's full capabilities is not knowing what it can do. You can't ask for identity locking if you've never heard of identity locking. You can't request dimensional translation if you don't know the model converts 2D floor plans into 3D renders.
+
+A proactive system that watches your conversation and suggests capabilities solves this. Mention "carousel" and the system notes that identity locking can keep characters consistent across all images. Mention "data" and it suggests the data visualization engine with search grounding for real-time numbers. Mention "old photo" and it flags colorization and restoration capabilities.
+
+Discovery happens in context, not in documentation. You find out what the model can do at the moment you need it, not during a reading session you'll forget by next week.
+
+Nano Banana Guru packages this approach for Claude Code: the 8-area prompt canvas, 26 production-ready examples across every visual category, a proactive trigger detection matrix, JSON work surface templates, and a video-to-carousel workflow. Four files, 29 EUR, and your AI images stop looking like everyone else's.
