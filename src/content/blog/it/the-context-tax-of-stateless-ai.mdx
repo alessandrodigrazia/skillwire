@@ -1,0 +1,67 @@
+La settimana scorsa ho tracciato una cosa. Ogni volta che aprivo Claude Code per un progetto ricorrente, passavo i primi cinque-otto minuti a fornire contesto. "Questo è il deal Acme. La decision maker è Claudia Bianchi, HR Director. Budget 500k per il Q1. Il blocco è il CTO che vuole un POC prima. L'ultima sessione abbiamo preparato la proposta."
+
+Cinque sessioni al giorno. Sei minuti medi di setup contesto. Sono trenta minuti al giorno solo a ri-spiegare cose che Claude sapeva già ieri.
+
+Ho iniziato a chiamarla la tassa del contesto.
+
+## Perché le sessioni AI sono stateless
+
+Claude Code non persiste nulla tra le sessioni. Quando chiudi un terminale o inizi una nuova conversazione, tutto dalla sessione precedente sparisce. Il cliente di cui hai discusso, i dettagli del progetto che hai fornito, le preferenze che hai stabilito. Tutto perso.
+
+È una scelta di design, non un bug. Le sessioni stateless sono più semplici, più prevedibili e evitano complicazioni di privacy. Per i professionisti che usano strumenti AI su lavoro ricorrente, il costo è reale e si accumula.
+
+Un commerciale che segue otto deal passa tempo a ristabilire contesto per ognuno. Un coach che lavora con clienti di ritorno spiega la storia degli assessment ogni sessione. Un content creator ri-descrive la propria voce e preferenze di stile per ogni nuovo pezzo. Uno sviluppatore ri-spiega l'architettura del progetto ogni volta che ha bisogno di aiuto.
+
+La tassa del contesto non è visibile in nessuna dashboard. Nessuno traccia "tempo passato a ri-fornire contesto all'AI". Sommalo su un mese e stai guardando dieci-quindici ore di pura ripetizione.
+
+## Il workaround del file di testo
+
+La maggior parte dei power user arriva alla stessa soluzione in modo indipendente: un file di testo. Crei un documento con il contesto essenziale per ogni progetto o cliente. A inizio sessione, lo incolli. Claude lo legge e riparte da lì.
+
+Funziona. È anche manuale, disordinato e non scala. Dopo qualche settimana hai quindici file di contesto. Alcuni sono obsoleti perché hai dimenticato di aggiornarli dopo l'ultima sessione. Alcuni sono troppo lunghi perché hai continuato ad aggiungere senza togliere. Alcuni duplicano informazioni perché lo stesso stakeholder appare in tre file progetto diversi.
+
+L'approccio file di testo risolve il problema immediato (Claude non sa di Acme) creando problemi di manutenzione (tenere aggiornati quindici file di contesto è un lavoro a sé).
+
+## Come appare la memoria strutturata
+
+L'alternativa ai dump di contesto una tantum è la memoria strutturata: informazioni salvate in un formato consistente, organizzate per tipo e caricate automaticamente quando rilevanti.
+
+Tre categorie coprono la maggior parte dei casi d'uso professionali.
+
+**Persone.** Clienti, stakeholder, membri del team. I loro ruoli, preferenze, risultati di assessment, relazioni con i progetti. Quando menzioni "Claudia" in una sessione, il sistema sa già che è l'HR Director di Acme, che preferisce la comunicazione diretta, e che il suo obiettivo Q1 è ridurre il turnover del 10%.
+
+**Progetti.** Deal, iniziative, lavori in corso. Status, timeline, stakeholder, deliverable, blocchi. Quando inizi a lavorare sul deal Acme, il sistema carica lo stato corrente, la proposta che hai preparato la settimana scorsa e il requisito POC del CTO.
+
+**Preferenze.** I tuoi pattern ricorrenti. Stile comunicativo, scelte di formattazione, anti-pattern da evitare. Quando una skill genera output, sa già che preferisci elenchi puntati ai paragrafi, che scrivi con tono diretto, e che non usi mai i punti esclamativi.
+
+La differenza chiave rispetto al file di testo è la gestione del ciclo di vita. La memoria strutturata può essere aggiornata a fine sessione (consolidamento), cercata per query (recall), e ripulita quando le informazioni diventano obsolete (forget). Si carica automaticamente quando la skill rilevante parte, senza che tu incolli nulla.
+
+## Storage distribuito vs centralizzato
+
+Una decisione di design cambia tutto: dove vive la memoria.
+
+La memoria centralizzata (un unico grande file per tutto) sembra più semplice ma diventa un problema velocemente. Dopo un mese, il file è migliaia di righe. Ogni skill carica l'intero contesto anche quando ha bisogno solo delle informazioni di un cliente. Il tempo di caricamento aumenta. La rilevanza diminuisce. Stai pagando token per la storia di un deal commerciale quando stai facendo lavoro di contenuti.
+
+La memoria distribuita dà a ogni skill il proprio storage. La skill sales ricorda clienti e deal. La skill coaching ricorda le storie degli assessment. La skill contenuti ricorda le preferenze di voce. Quando una skill si carica, legge solo la propria memoria. Nessuna contaminazione incrociata. Nessun bloat. Una skill che non ha bisogno di memoria non paga per la memoria.
+
+Questo rispecchia come funziona la conoscenza professionale nella realtà. Un CRM commerciale non salva il tuo calendario editoriale. Una piattaforma di coaching non traccia la tua pipeline deal. La separazione delle responsabilità si applica alla memoria AI esattamente come si applica all'architettura software.
+
+## La questione privacy
+
+La persistenza della memoria solleva una domanda ovvia: dove finiscono i dati?
+
+Per professionisti che lavorano con informazioni sui clienti, dettagli di deal e assessment personali, la risposta conta. Memoria che si sincronizza su un servizio cloud di terzi crea problemi di compliance e fiducia. Memoria che resta sulla tua macchina locale no.
+
+File JSON locali nelle cartelle delle tue skill sono l'approccio più semplice. Nulla esce dalla tua macchina. Nessuna chiamata API a servizi esterni. Nessuna raccolta dati. Se sincronizzi la tua configurazione Claude via OneDrive o Dropbox, la memoria ti segue tra i dispositivi tramite la tua sincronizzazione cloud esistente, non tramite una nuova.
+
+Controlli espliciti di salvataggio e cancellazione completano il quadro. Il consolidamento della memoria chiede conferma prima di salvare qualsiasi cosa. I comandi forget rimuovono elementi specifici. Puoi anche cancellare i file direttamente. In qualsiasi momento, sai esattamente cosa c'è salvato perché puoi leggere il JSON.
+
+## Far compound le skill
+
+Il valore reale della memoria persistente non è risparmiare cinque minuti per sessione. È l'effetto compounding.
+
+Una skill con tre settimane di contesto accumulato su un cliente produce output migliore di una che parte da zero. Conosce le preferenze comunicative del cliente, le decisioni passate, le priorità correnti. L'output è più rilevante dalla prima interazione di ogni sessione.
+
+Questa è la differenza tra uno strumento AI che usi e uno strumento AI che lavora per te. Il primo richiede istruzioni costanti. Il secondo ha già assorbito le istruzioni e costruisce su di esse.
+
+Memory Manager implementa questo pattern per qualsiasi skill Claude Code: storage distribuito con tre tipi di memoria, cinque comandi slash per la gestione del ciclo di vita, auto-load all'avvio della skill e una guida integrazione per aggiungere memoria alle tue skill. Quattro file, 9 EUR, e le tue skill smettono di dimenticare.

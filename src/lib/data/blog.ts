@@ -263,6 +263,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "the-context-tax-of-stateless-ai",
+    title: {
+      en: "The Context Tax: Why You Spend 20% of Every AI Session Repeating Yourself",
+      it: "La tassa del contesto: perch\u00e9 passi il 20% di ogni sessione AI a ripeterti",
+    },
+    excerpt: {
+      en: "You told Claude about the Acme deal on Monday. On Tuesday it had no idea what Acme was. By Thursday you were keeping a text file to paste at the start of every session. The problem has a name: stateless sessions.",
+      it: "Luned\u00ec hai parlato a Claude del deal Acme. Marted\u00ec non sapeva cos'era Acme. Gioved\u00ec tenevi un file di testo da incollare a inizio di ogni sessione. Il problema ha un nome: sessioni stateless.",
+    },
+    category: "insight",
+    tags: ["claude-code", "memory", "persistence", "productivity", "workflow"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83E\uDDE0",
+    relatedSkillSlug: "memory-manager",
+    metaTitle: {
+      en: "The Context Tax of Stateless AI | Skillwire Blog",
+      it: "La tassa del contesto dell'AI stateless | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Every Claude Code session starts from zero. You re-explain context, clients, projects. The cost compounds daily. Here's what persistent memory looks like in practice.",
+      it: "Ogni sessione Claude Code parte da zero. Ri-spieghi contesto, clienti, progetti. Il costo si accumula ogni giorno. Ecco come funziona la memoria persistente in pratica.",
+    },
+  },
+  {
     slug: "the-n8n-knowledge-gap",
     title: {
       en: "Why Building n8n Workflows Takes 10x Longer Than It Should",

@@ -1,0 +1,67 @@
+Last week I tracked something. Every time I opened Claude Code for a recurring project, I spent the first five to eight minutes providing context. "This is the Acme deal. The decision maker is Claudia Bianchi, HR Director. Budget is 500k for Q1. The blocker is the CTO who wants a POC first. Last session we drafted the proposal."
+
+Five sessions per day. Six minutes average context setup. That's thirty minutes per day just re-explaining things Claude already knew yesterday.
+
+I started calling it the context tax.
+
+## Why AI sessions are stateless
+
+Claude Code doesn't persist anything between sessions. When you close a terminal or start a new conversation, everything from the previous session disappears. The client you discussed, the project details you provided, the preferences you established. All gone.
+
+This is a design choice, not a bug. Stateless sessions are simpler, more predictable, and avoid privacy complications. But for professionals who use AI tools on recurring work, the cost is real and compounding.
+
+A sales professional tracking eight deals spends time re-establishing context for each one. A coach working with returning clients explains their assessment history every session. A content creator re-describes their voice and style preferences with each new piece. A developer re-explains the project architecture every time they need help.
+
+The context tax isn't visible on any dashboard. Nobody tracks "time spent re-providing context to AI." But add it up over a month and you're looking at ten to fifteen hours of pure repetition.
+
+## The text file workaround
+
+Most power users arrive at the same solution independently: a text file. You create a document with the essential context for each project or client. At the start of every session, you paste it in. Claude reads it and picks up from there.
+
+This works. It's also manual, messy, and doesn't scale. After a few weeks you have fifteen context files. Some are outdated because you forgot to update them after the last session. Some are too long because you kept adding without removing. Some duplicate information because the same stakeholder appears in three different project files.
+
+The text file approach solves the immediate problem (Claude doesn't know about Acme) while creating maintenance problems (keeping fifteen context files current is a job in itself).
+
+## What structured memory looks like
+
+The alternative to one-off context dumps is structured memory: information stored in a consistent format, organized by type, and loaded automatically when relevant.
+
+Three categories cover most professional use cases.
+
+**People.** Clients, stakeholders, team members. Their roles, preferences, assessment results, relationship to projects. When you mention "Claudia" in a session, the system already knows she's the HR Director at Acme, that she prefers direct communication, and that her Q1 objective is reducing turnover by 10%.
+
+**Projects.** Deals, initiatives, ongoing work. Status, timeline, stakeholders, deliverables, blockers. When you start working on the Acme deal, the system loads the current status, the proposal you drafted last week, and the CTO's POC requirement.
+
+**Preferences.** Your recurring patterns. Communication style, formatting choices, anti-patterns to avoid. When a skill generates output, it already knows you prefer bullet points over paragraphs, that you write in a direct tone, and that you never use exclamation marks.
+
+The key difference from a text file is lifecycle management. Structured memory can be updated at the end of every session (consolidation), searched by query (recall), and cleaned up when information becomes outdated (forget). It loads automatically when the relevant skill starts, without you pasting anything.
+
+## Distributed vs centralized storage
+
+One design decision changes everything: where the memory lives.
+
+Centralized memory (one big file for everything) seems simpler but becomes a problem fast. After a month, the file is thousands of lines. Every skill loads the entire context even when it only needs one client's information. Loading time increases. Relevance decreases. You're paying tokens for a sales deal's history when you're doing content work.
+
+Distributed memory gives each skill its own storage. The sales skill remembers clients and deals. The coaching skill remembers assessment histories. The content skill remembers voice preferences. When a skill loads, it reads only its own memory. No cross-contamination. No bloat. A skill that doesn't need memory doesn't pay for memory.
+
+This mirrors how professional knowledge actually works. A sales CRM doesn't store your editorial calendar. A coaching platform doesn't track your deal pipeline. Separation of concerns applies to AI memory just as it applies to software architecture.
+
+## The privacy question
+
+Memory persistence raises an obvious question: where does the data go?
+
+For professionals working with client information, deal details, and personal assessments, the answer matters. Memory that syncs to a third-party cloud service creates compliance and trust issues. Memory that stays on your local machine doesn't.
+
+Local JSON files under your skill folders are the simplest approach. Nothing leaves your machine. No API calls to external services. No data collection. If you sync your Claude configuration via OneDrive or Dropbox, the memory follows you across devices through your existing cloud sync, not through a new one.
+
+Explicit save-and-delete controls complete the picture. Memory consolidation asks for confirmation before saving anything. Forget commands remove specific items. You can also delete the files directly. At any point, you know exactly what's stored because you can read the JSON.
+
+## Making skills compound
+
+The real value of persistent memory isn't saving five minutes per session. It's the compounding effect.
+
+A skill with three weeks of accumulated context about a client produces better output than one starting from zero. It knows the client's communication preferences, their past decisions, their current priorities. The output is more relevant from the first interaction of every session.
+
+This is the difference between an AI tool you use and an AI tool that works for you. The first requires constant instruction. The second has already absorbed the instruction and builds on it.
+
+Memory Manager implements this pattern for any Claude Code skill: distributed storage with three memory types, five slash commands for lifecycle management, auto-load at skill start, and an integration guide for adding memory to your own skills. Four files, 9 EUR, and your skills stop forgetting.
