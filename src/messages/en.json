@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Skillwire — Professional Skills for Claude",
-    "description": "Buy once, use forever. Production-ready skills for Claude — from B2B sales methodology to career coaching to workflow automation. Works with Claude Code, Desktop, and claude.ai."
+    "title": "Skillwire | Professional Skills for Claude",
+    "description": "Buy once, use forever. Production-ready skills for Claude: B2B sales methodology, career coaching, workflow automation. Works with Claude Code, Desktop, and claude.ai."
   },
   "nav": {
     "skills": "Skills",
@@ -14,7 +14,7 @@
   "hero": {
     "badge": "Built for Claude",
     "title": "Wire your AI with professional skills",
-    "subtitle": "Production-ready skills for Claude — crafted by a practitioner, not a prompt factory. Buy once, use forever, get results from day one.",
+    "subtitle": "Production-ready skills for Claude, crafted by a practitioner, not a prompt factory. Buy once, use forever, get results from day one.",
     "cta": "Browse Skills",
     "ctaSecondary": "Get a free skill",
     "terminalLine1": "$ claude skill install skillwire/b2b-sales",

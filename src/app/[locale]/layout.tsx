@@ -32,11 +32,11 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://skillwire.ai"),
     title: isIt
-      ? "Skillwire — Skill Professionali per Claude Code"
-      : "Skillwire — Professional Skills for Claude Code",
+      ? "Skillwire | Skill Professionali per Claude Code"
+      : "Skillwire | Professional Skills for Claude Code",
     description: isIt
-      ? "Acquista una volta, usa per sempre. Skill production-ready per Claude Code — dalla metodologia di vendita B2B al coaching professionale all'automazione workflow."
-      : "Buy once, use forever. Production-ready skills for Claude Code — from B2B sales methodology to career coaching to workflow automation.",
+      ? "Acquista una volta, usa per sempre. Skill production-ready per Claude Code: metodologia di vendita B2B, coaching professionale, automazione workflow."
+      : "Buy once, use forever. Production-ready skills for Claude Code: B2B sales methodology, career coaching, workflow automation.",
     openGraph: {
       siteName: "Skillwire",
       locale: locale === "it" ? "it_IT" : "en_US",

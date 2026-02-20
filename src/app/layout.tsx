@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Skillwire — Professional Skills for Claude Code",
+  title: "Skillwire | Professional Skills for Claude Code",
   description:
-    "Buy once, use forever. Production-ready skills for Claude Code — from B2B sales methodology to career coaching to workflow automation.",
+    "Buy once, use forever. Production-ready skills for Claude Code: B2B sales methodology, career coaching, workflow automation.",
   verification: {
     google: "rtSt3UA9uAWJZmeYXnFjn-sMSVMMK4FePmmCN4wLPtI",
   },

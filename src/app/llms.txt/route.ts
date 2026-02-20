@@ -24,7 +24,7 @@ export function GET() {
     .map(({ name, skills: catSkills }) => {
       const lines = catSkills.map((s) => {
         const price = s.isFree ? "Free" : `€${s.price}`;
-        return `- [${s.name}](/en/skills/${s.slug}) — ${price} — ${s.tagline.en}`;
+        return `- [${s.name}](/en/skills/${s.slug}) | ${price} | ${s.tagline.en}`;
       });
       return [`### ${name}`, ...lines].join("\n");
     })
@@ -33,7 +33,7 @@ export function GET() {
   const bundlesSection = bundles
     .map(
       (b) =>
-        `- [${b.name}](/en/bundles/${b.slug}) — €${b.bundlePrice} — ${b.tagline.en}`
+        `- [${b.name}](/en/bundles/${b.slug}) | €${b.bundlePrice} | ${b.tagline.en}`
     )
     .join("\n");
 
@@ -46,9 +46,9 @@ export function GET() {
     "",
     "> Professional skill packs for Claude Code. Buy once, use forever.",
     "",
-    "Skillwire is a marketplace of production-ready skill packs for Claude Code — the AI coding CLI by Anthropic.",
+    "Skillwire is a marketplace of production-ready skill packs for Claude Code, the AI coding CLI by Anthropic.",
     "Each skill is a structured system: SKILL.md + reference files + templates + workflows.",
-    "Not single prompts — complete professional tools built by practitioners.",
+    "Not single prompts. Complete professional tools built by practitioners.",
     "",
     "Built by Alessandro Di Grazia, Sales & GTM Leader at iSquared (Var Group).",
     "Contact: hello@skillwire.ai",
@@ -69,9 +69,9 @@ export function GET() {
     "",
     "## Education & Resources",
     "",
-    "- [What Are Claude Skills?](/en/what-are-claude-skills) — Complete guide to Claude Code skill packs",
-    "- [How It Works](/en/how-it-works) — Installation and usage walkthrough",
-    "- [Blog](/en/blog) — Articles on Claude Code skills, AI tools, and workflow automation",
+    "- [What Are Claude Skills?](/en/what-are-claude-skills) | Complete guide to Claude Code skill packs",
+    "- [How It Works](/en/how-it-works) | Installation and usage walkthrough",
+    "- [Blog](/en/blog) | Articles on Claude Code skills, AI tools, and workflow automation",
     "",
     "### Blog Articles",
     "",
@@ -92,7 +92,7 @@ export function GET() {
     "## About Skillwire",
     "",
     "Skillwire was created by Alessandro Di Grazia, a Sales & GTM Leader with 15+ years in enterprise B2B.",
-    "The skills are built from real professional practice — not theoretical prompts.",
+    "The skills are built from real professional practice, not theoretical prompts.",
     "Each skill has been used in production before being published on the marketplace.",
     "",
     "Website: https://skillwire.ai",
