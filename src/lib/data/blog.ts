@@ -262,6 +262,32 @@ export const articles: BlogArticle[] = [
       it: "Oltre le basi di Anthropic: metodologia PRD, ottimizzazione token, pilastri di qualit\u00e0 e anti-pattern per costruire skill Claude Code pronte per la produzione.",
     },
   },
+  {
+    slug: "why-your-b2b-deck-loses-the-room",
+    title: {
+      en: "Why Your B2B Deck Loses the Room in the First Five Slides",
+      it: "Perch\u00e9 il tuo deck B2B perde la sala nelle prime cinque slide",
+    },
+    excerpt: {
+      en: "The CFO checks email on slide three. The CIO loses interest on slide five. Your deck is well-built. It's just built for no one in particular.",
+      it: "Il CFO controlla le email alla slide tre. Il CIO perde interesse alla slide cinque. Il tuo deck \u00e8 ben fatto. Semplicemente non \u00e8 fatto per nessuno in particolare.",
+    },
+    category: "insight",
+    tags: ["B2B-sales", "presentations", "C-level", "Challenger", "storytelling"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 7,
+    coverEmoji: "\uD83C\uDFAF",
+    relatedSkillSlug: "b2b-presentation-builder",
+    metaTitle: {
+      en: "Why Your B2B Deck Loses the Room | Skillwire Blog",
+      it: "Perch\u00e9 il tuo deck B2B perde la sala | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Generic decks fail because they serve no specific audience. Learn how structural and narrative frameworks solve the multi-stakeholder presentation problem.",
+      it: "I deck generici falliscono perch\u00e9 non servono nessun audience specifico. Come i framework strutturali e narrativi risolvono il problema delle presentazioni multi-stakeholder.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
