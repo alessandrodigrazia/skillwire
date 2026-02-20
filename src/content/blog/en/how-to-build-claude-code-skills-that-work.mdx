@@ -1,0 +1,79 @@
+I've built over 25 Claude Code skills in the past few months. Some of them work exactly as intended on the first use. Others took three rewrites to get right. The difference was never the code. It was the design decisions made before writing the first line of SKILL.md.
+
+Anthropic's documentation gives you the structure. Six steps, a clean template, scripts for scaffolding and packaging. That's enough to create a working skill. It's not enough to create a good one.
+
+## The first question nobody asks
+
+Before writing anything, you need to answer: what type of skill is this?
+
+Four patterns cover most use cases. **Workflow skills** guide the user through a multi-step process (like a CV optimization pipeline or a sales qualification framework). **Task skills** handle a single focused operation (like humanizing AI text or generating a specific output). **Reference skills** provide structured knowledge that Claude can consult during any conversation (like documentation or methodology files). **Capability skills** extend what Claude can do by adding new tools or integrations.
+
+Each pattern has different requirements for file structure, token budget, and testing. A workflow skill needs session state management and clear phase transitions. A task skill needs precise input/output specs. A reference skill needs careful organization so Claude can find the right section quickly. Mixing patterns without realizing it creates skills that try to do everything and do nothing well.
+
+## The token budget problem
+
+Every file in your skill loads into Claude's context window when the skill activates. That context window has a cost: money and speed. A 50,000-token skill costs more per interaction than a 5,000-token one, and responds noticeably slower.
+
+Most first-time skill builders make the same mistake: they dump everything into one massive SKILL.md file. Every instruction, every example, every edge case, every reference. The result is a 15,000-word document that Claude reads entirely before doing anything, even if the user's request only needs 10% of that content.
+
+The fix is progressive disclosure. Put the core instructions in SKILL.md (the file that always loads). Put detailed references in separate files under `references/` that Claude pulls in only when needed. Put templates and assets in `assets/` for on-demand access.
+
+Here's a rough budget framework:
+
+- SKILL.md: 2,000-5,000 tokens. Core workflow, triggers, quick-start, anti-patterns.
+- References: 1,000-10,000 tokens each. Detailed methodology, examples, edge cases.
+- Assets: variable. Templates, data files, scripts.
+
+The skill costs the SKILL.md tokens on every activation. Reference files cost tokens only when Claude decides to read them. That difference adds up across hundreds of uses.
+
+## Designing before coding
+
+For simple skills (under 3 files, single task), you can start writing SKILL.md directly. For anything complex, skip that impulse and write a PRD first.
+
+A skill PRD answers five questions:
+
+1. **Who uses this and when?** Not "developers" or "professionals." Specific: "A sales director who just finished a discovery call and needs to update the MEDDPICC qualification score before the pipeline review meeting." The specificity determines every design decision that follows.
+
+2. **What inputs does it need?** List every piece of information the skill requires. Which ones come from the user? Which ones come from files? Which ones require web access or MCP servers?
+
+3. **What does it produce?** Define the output format before writing instructions. Is it a Markdown report? JSON data? A DOCX file? Multiple deliverables? Knowing the output shapes the entire workflow.
+
+4. **What can go wrong?** Common failure modes: missing inputs, ambiguous requests, edge cases in the domain, context window overflow for large documents. Each failure needs a graceful fallback.
+
+5. **How do you test it?** Write three test scenarios before coding: one happy path, one with missing inputs, one edge case. If you can't define tests, the requirements aren't clear enough.
+
+This takes 30 minutes. It saves three rewrites.
+
+## The four quality pillars
+
+After building dozens of skills, a pattern emerged. The ones that worked well in production scored high on four dimensions.
+
+**Effectiveness**: does the skill do what the user needs? Not what the creator thought the user needs. Test with real users doing real tasks, not synthetic examples.
+
+**Efficiency**: does it use tokens wisely? Does it activate references only when needed? Does it respond in a reasonable time? A skill that takes three minutes to produce a one-paragraph answer has an efficiency problem.
+
+**Robustness**: does it handle unexpected inputs gracefully? What happens when the user provides a document in the wrong format, asks for something outside the skill's scope, or interrupts mid-workflow? The skill shouldn't crash. It should redirect.
+
+**Safety**: does it have guardrails? Can the skill be tricked into producing harmful content? Does it properly handle sensitive data (personal information, financial data, health records)? A security audit checklist catches issues before users find them.
+
+## Seven anti-patterns to avoid
+
+1. **The everything file.** One massive SKILL.md with 15,000 words. Split it. Core instructions in SKILL.md, details in references.
+
+2. **The invisible skill.** No trigger keywords in the description. Claude doesn't know when to activate it. Users have to remember the exact name and invoke it manually every time.
+
+3. **The over-prompter.** Repeating the same instruction five different ways "for emphasis." Claude reads it once. Redundancy wastes tokens.
+
+4. **The assumption skill.** No error handling for missing inputs. The skill assumes the user always provides everything perfectly. They don't.
+
+5. **The generic output.** Instructions that say "generate a comprehensive report" without defining structure, length, sections, or format. The output quality depends entirely on Claude's interpretation.
+
+6. **The context hog.** Loading 20 reference files on every activation. Use conditional loading: read the reference only when the user's request matches a specific pattern.
+
+7. **The untested skill.** Published without running through three different scenarios. The first user finds the bug you didn't test for.
+
+## From documentation to production
+
+The gap between Anthropic's documentation and a production-quality skill is the same gap you find in any craft: the basics get you started, experience gets you to quality. The PRD methodology, token optimization, quality pillars, and anti-pattern list compress months of trial and error into a structured approach.
+
+Skill Creator Guru packages all of this into a free skill: 8 files with the complete methodology, from PRD template to security audit checklist, plus the same Python scripts Anthropic provides for init, package, and validate. It's free because the best way to grow a skill marketplace is to help people build skills worth selling.

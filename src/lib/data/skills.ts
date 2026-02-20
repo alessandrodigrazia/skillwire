@@ -1697,10 +1697,10 @@ export const skills: SkillDetail[] = [
         },
       },
       {
-        question: { en: "Can I get a refund?", it: "Posso ottenere un rimborso?" },
+        question: { en: "Why is it free?", it: "Perch\u00e9 \u00e8 gratuita?" },
         answer: {
-          en: "Skills are digital products. All sales are final. We recommend reviewing the skill details carefully before purchasing.",
-          it: "Le skill sono prodotti digitali. Tutte le vendite sono definitive. Ti consigliamo di leggere attentamente i dettagli della skill prima dell'acquisto.",
+          en: "Because the best way to grow a skill marketplace is to help people build good skills. If you create something worth selling, Skillwire is where you'd sell it. The incentives align.",
+          it: "Perch\u00e9 il modo migliore per far crescere un marketplace di skill \u00e8 aiutare le persone a costruirne di buone. Se crei qualcosa che vale la pena vendere, Skillwire \u00e8 dove lo venderesti. Gli incentivi sono allineati.",
         },
       },
     ],

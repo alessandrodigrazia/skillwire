@@ -236,6 +236,32 @@ export const articles: BlogArticle[] = [
       it: "L'insoddisfazione professionale ha tre pattern. Sapere in quale ti trovi cambia quello che dovresti fare. Assessment validati vs. consigli di carriera generici.",
     },
   },
+  {
+    slug: "how-to-build-claude-code-skills-that-work",
+    title: {
+      en: "How to Build Claude Code Skills That Actually Work",
+      it: "Come costruire skill per Claude Code che funzionano davvero",
+    },
+    excerpt: {
+      en: "Anthropic gives you the basics. Six steps, a SKILL.md template, done. But building a skill that works reliably in production requires answering questions the documentation doesn't cover.",
+      it: "Anthropic ti d\u00e0 le basi. Sei step, un template SKILL.md, fatto. Costruire una skill che funzioni in modo affidabile in produzione richiede per\u00f2 risposte a domande che la documentazione non copre.",
+    },
+    category: "tutorial",
+    tags: ["claude-code", "skills", "skill-creation", "SKILL.md", "best-practices"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 7,
+    coverEmoji: "\uD83D\uDD28",
+    relatedSkillSlug: "skill-creator-guru",
+    metaTitle: {
+      en: "How to Build Claude Code Skills That Work | Skillwire Blog",
+      it: "Come costruire skill per Claude Code che funzionano | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Beyond Anthropic's basics: PRD methodology, token optimization, quality pillars, and anti-patterns for building production-grade Claude Code skills.",
+      it: "Oltre le basi di Anthropic: metodologia PRD, ottimizzazione token, pilastri di qualit\u00e0 e anti-pattern per costruire skill Claude Code pronte per la produzione.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

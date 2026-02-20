@@ -1,0 +1,79 @@
+Ho costruito oltre 25 skill per Claude Code negli ultimi mesi. Alcune funzionano esattamente come previsto al primo utilizzo. Altre hanno richiesto tre riscritture prima di funzionare bene. La differenza non era mai il codice. Erano le decisioni di progettazione prese prima di scrivere la prima riga di SKILL.md.
+
+La documentazione di Anthropic ti dà la struttura. Sei step, un template pulito, script per scaffolding e packaging. Abbastanza per creare una skill funzionante. Non abbastanza per crearne una buona.
+
+## La prima domanda che nessuno fa
+
+Prima di scrivere qualsiasi cosa, serve rispondere: che tipo di skill è questa?
+
+Quattro pattern coprono la maggior parte dei casi d'uso. Le **skill workflow** guidano l'utente attraverso un processo a più fasi (come una pipeline di ottimizzazione CV o un framework di qualificazione vendite). Le **skill task** gestiscono una singola operazione focalizzata (come umanizzare un testo AI o generare un output specifico). Le **skill reference** forniscono conoscenza strutturata che Claude può consultare durante qualsiasi conversazione (come documentazione o file di metodologia). Le **skill capability** estendono cosa Claude può fare aggiungendo nuovi strumenti o integrazioni.
+
+Ogni pattern ha requisiti diversi per struttura file, budget token e testing. Una skill workflow necessita della gestione dello stato di sessione e transizioni di fase chiare. Una skill task necessita di specifiche input/output precise. Una skill reference necessita di organizzazione attenta perché Claude trovi la sezione giusta velocemente. Mescolare i pattern senza rendersene conto crea skill che provano a fare tutto e non fanno nulla bene.
+
+## Il problema del budget token
+
+Ogni file nella tua skill viene caricato nella finestra di contesto di Claude quando la skill si attiva. Quella finestra di contesto ha un costo: denaro e velocità. Una skill da 50.000 token costa di più per interazione rispetto a una da 5.000, e risponde notevolmente più lenta.
+
+La maggior parte dei creatori alla prima esperienza commette lo stesso errore: riversa tutto in un unico file SKILL.md massiccio. Ogni istruzione, ogni esempio, ogni caso limite, ogni riferimento. Il risultato è un documento da 15.000 parole che Claude legge interamente prima di fare qualsiasi cosa, anche se la richiesta dell'utente ha bisogno solo del 10% di quel contenuto.
+
+La soluzione è la progressive disclosure. Metti le istruzioni fondamentali in SKILL.md (il file che si carica sempre). Metti i riferimenti dettagliati in file separati sotto `references/` che Claude recupera solo quando servono. Metti template e asset in `assets/` per accesso on-demand.
+
+Un framework di budget approssimativo:
+
+- SKILL.md: 2.000-5.000 token. Workflow principale, trigger, quick-start, anti-pattern.
+- References: 1.000-10.000 token ciascuno. Metodologia dettagliata, esempi, casi limite.
+- Assets: variabile. Template, file dati, script.
+
+La skill costa i token di SKILL.md ad ogni attivazione. I file reference costano token solo quando Claude decide di leggerli. Quella differenza si accumula su centinaia di utilizzi.
+
+## Progettare prima di scrivere codice
+
+Per skill semplici (sotto 3 file, task singolo), puoi iniziare a scrivere SKILL.md direttamente. Per qualsiasi cosa complessa, resisti all'impulso e scrivi prima un PRD.
+
+Un PRD per skill risponde a cinque domande:
+
+1. **Chi la usa e quando?** Non "developer" o "professionisti." Specifico: "Un direttore vendite che ha appena finito una discovery call e deve aggiornare il punteggio di qualificazione MEDDPICC prima della riunione di pipeline review." La specificità determina ogni decisione di design successiva.
+
+2. **Quali input servono?** Elenca ogni informazione che la skill richiede. Quali vengono dall'utente? Quali dai file? Quali richiedono accesso web o server MCP?
+
+3. **Cosa produce?** Definisci il formato di output prima di scrivere le istruzioni. È un report Markdown? Dati JSON? Un file DOCX? Più deliverable? Conoscere l'output modella l'intero workflow.
+
+4. **Cosa può andare storto?** Modalità di fallimento comuni: input mancanti, richieste ambigue, casi limite nel dominio, overflow della finestra di contesto per documenti grandi. Ogni fallimento ha bisogno di un fallback controllato.
+
+5. **Come si testa?** Scrivi tre scenari di test prima di scrivere codice: un percorso felice, uno con input mancanti, un caso limite. Se non riesci a definire i test, i requisiti non sono abbastanza chiari.
+
+Richiede 30 minuti. Ne risparmia tre riscritture.
+
+## I quattro pilastri della qualità
+
+Dopo aver costruito decine di skill, è emerso un pattern. Quelle che funzionavano bene in produzione ottenevano punteggi alti su quattro dimensioni.
+
+**Effectiveness**: la skill fa quello che serve all'utente? Non quello che il creatore pensava servisse all'utente. Testa con utenti reali che fanno task reali, non esempi sintetici.
+
+**Efficiency**: usa i token in modo intelligente? Attiva i riferimenti solo quando servono? Risponde in tempo ragionevole? Una skill che impiega tre minuti per produrre un paragrafo ha un problema di efficienza.
+
+**Robustness**: gestisce input inattesi con grazia? Cosa succede quando l'utente fornisce un documento nel formato sbagliato, chiede qualcosa fuori dallo scope della skill, o interrompe a metà workflow? La skill non deve bloccarsi. Deve reindirizzare.
+
+**Safety**: ha dei guardrail? La skill può essere ingannata per produrre contenuti dannosi? Gestisce correttamente dati sensibili (informazioni personali, dati finanziari, cartelle cliniche)? Una checklist di audit sicurezza intercetta i problemi prima che li trovino gli utenti.
+
+## Sette anti-pattern da evitare
+
+1. **Il file-monstre.** Un unico SKILL.md con 15.000 parole. Dividilo. Istruzioni core in SKILL.md, dettagli nei riferimenti.
+
+2. **La skill invisibile.** Nessuna keyword di trigger nella descrizione. Claude non sa quando attivarla. Gli utenti devono ricordare il nome esatto e invocarla manualmente ogni volta.
+
+3. **L'over-prompter.** Ripetere la stessa istruzione in cinque modi diversi "per enfasi." Claude la legge una volta. La ridondanza spreca token.
+
+4. **La skill presuntuosa.** Nessuna gestione errori per input mancanti. La skill presume che l'utente fornisca sempre tutto perfettamente. Non succede.
+
+5. **L'output generico.** Istruzioni che dicono "genera un report completo" senza definire struttura, lunghezza, sezioni o formato. La qualità dell'output dipende interamente dall'interpretazione di Claude.
+
+6. **Il divoratore di contesto.** Caricare 20 file di riferimento ad ogni attivazione. Usa caricamento condizionale: leggi il riferimento solo quando la richiesta dell'utente corrisponde a un pattern specifico.
+
+7. **La skill non testata.** Pubblicata senza averla provata con tre scenari diversi. Il primo utente trova il bug che non hai testato.
+
+## Dalla documentazione alla produzione
+
+Il gap tra la documentazione di Anthropic e una skill di qualità produttiva è lo stesso gap che trovi in qualsiasi mestiere: le basi ti fanno partire, l'esperienza ti porta alla qualità. La metodologia PRD, l'ottimizzazione token, i pilastri di qualità e la lista di anti-pattern comprimono mesi di tentativi ed errori in un approccio strutturato.
+
+Skill Creator Guru impacchetta tutto questo in una skill gratuita: 8 file con la metodologia completa, dal template PRD alla checklist audit sicurezza, più gli stessi script Python che Anthropic fornisce per init, package e validate. È gratis perché il modo migliore per far crescere un marketplace di skill è aiutare le persone a costruirne di buone.
