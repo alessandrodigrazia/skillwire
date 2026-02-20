@@ -185,6 +185,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "why-your-cv-never-reaches-a-human",
+    title: {
+      en: "Why Your CV Never Reaches a Human",
+      it: "Perch\u00e9 il tuo CV non arriva mai a un umano",
+    },
+    excerpt: {
+      en: "75% of CVs are rejected by ATS software before a recruiter sees them. The problem isn't your experience. It's the six-second filter your document fails before a human even opens the file.",
+      it: "Il 75% dei CV viene scartato dal software ATS prima che un recruiter li veda. Il problema non \u00e8 la tua esperienza. \u00c8 il filtro dei sei secondi che il tuo documento non supera prima ancora che un umano apra il file.",
+    },
+    category: "guide",
+    tags: ["CV", "ATS", "job-search", "interview", "STAR", "career"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83D\uDCC4",
+    relatedSkillSlug: "cv-guru",
+    metaTitle: {
+      en: "Why Your CV Never Reaches a Human | Skillwire Blog",
+      it: "Perch\u00e9 il tuo CV non arriva mai a un umano | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "ATS filters reject most CVs before recruiters see them. Learn how automated screening works, what kills your application, and how to fix it.",
+      it: "I filtri ATS scartano la maggior parte dei CV prima che i recruiter li vedano. Come funziona lo screening automatico, cosa uccide la tua candidatura e come correggerlo.",
+    },
+  },
+  {
     slug: "when-you-know-you-need-a-career-change",
     title: {
       en: "When You Know You Need a Change But Can\u2019t Figure Out What",
