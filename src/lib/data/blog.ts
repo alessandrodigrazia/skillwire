@@ -106,6 +106,32 @@ export const articles: BlogArticle[] = [
       it: "Usa uno strumento di analisi critica AI per trovare i punti ciechi nel tuo business plan prima che lo facciano gli stakeholder.",
     },
   },
+  {
+    slug: "why-enterprise-deals-keep-slipping",
+    title: {
+      en: "Why Your Enterprise Deals Keep Slipping",
+      it: "Perch\u00e9 i tuoi deal enterprise continuano a slittare",
+    },
+    excerpt: {
+      en: "Enterprise deals don't fail at the negotiation table. They fail two stages earlier, when disconnected sales frameworks let critical intelligence slip through the gaps.",
+      it: "I deal enterprise non falliscono al tavolo negoziale. Falliscono due fasi prima, quando framework di vendita scollegati lasciano sfuggire informazioni critiche tra le fasi.",
+    },
+    category: "insight",
+    tags: ["B2B-sales", "MEDDPICC", "enterprise-sales", "qualification", "negotiation"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 7,
+    coverEmoji: "\uD83D\uDCC9",
+    relatedSkillSlug: "ai-b2b-sales-methodology",
+    metaTitle: {
+      en: "Why Your Enterprise Deals Keep Slipping | Skillwire Blog",
+      it: "Perch\u00e9 i tuoi deal enterprise continuano a slittare | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Enterprise deals fail when disconnected sales frameworks create gaps between discovery, qualification, and negotiation. Learn how an integrated system prevents pipeline leaks.",
+      it: "I deal enterprise falliscono quando framework scollegati creano buchi tra discovery, qualificazione e negoziazione. Scopri come un sistema integrato previene le perdite di pipeline.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
