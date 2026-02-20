@@ -3,11 +3,12 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
-import { skills } from "@/lib/data/skills";
+import { getFeaturedSkills } from "@/lib/data/skills";
 import { SkillCard } from "@/components/skills/SkillCard";
 
 export function FeaturedSkills() {
   const t = useTranslations("featuredSkills");
+  const featured = getFeaturedSkills();
 
   return (
     <section className="py-20 sm:py-28">
@@ -27,7 +28,7 @@ export function FeaturedSkills() {
 
         {/* Skill cards grid */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {skills.map((skill, i) => (
+          {featured.map((skill, i) => (
             <SkillCard key={skill.slug} skill={skill} index={i} />
           ))}
         </div>

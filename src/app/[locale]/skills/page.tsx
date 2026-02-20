@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Search, SlidersHorizontal } from "lucide-react";
-import { skills, categories, t } from "@/lib/data/skills";
+import { skills, categories, t, getSkillsSorted } from "@/lib/data/skills";
 import { SkillCard } from "@/components/skills/SkillCard";
 import type { CategorySlug } from "@/types";
 
@@ -20,7 +20,7 @@ export default function SkillCatalogPage() {
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredSkills = useMemo(() => {
-    let result = [...skills];
+    let result = getSkillsSorted();
 
     // Category filter
     if (activeCategory !== "all") {

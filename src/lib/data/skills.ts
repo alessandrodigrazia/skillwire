@@ -103,6 +103,48 @@ export const categories: {
   },
 ];
 
+/* ── Curated ordering ─────────────────────────────────── */
+
+export const FEATURED_SLUGS = [
+  "human-writer",
+  "ai-b2b-sales-methodology",
+  "ask-to-vera",
+  "content-pipeline-pro",
+  "janus",
+  "deep-research-agent",
+  "cv-guru",
+  "skill-creator-guru",
+] as const;
+
+const CATALOG_ORDER = [
+  ...FEATURED_SLUGS,
+  "b2b-presentation-builder",
+  "ask-to-andrew",
+  "iterative-self-critique",
+  "n8n-ai-workflow-expert",
+  "n8n-docs-live",
+  "n8n-workflow-repository",
+  "memory-manager",
+  "maia",
+  "llm-arena-vs",
+  "remotion-best-practices",
+  "nano-banana-guru",
+] as const;
+
+const catalogIndex = new Map<string, number>(CATALOG_ORDER.map((slug, i) => [slug, i]));
+
+export function getFeaturedSkills(): SkillDetail[] {
+  return FEATURED_SLUGS.map((slug) => skills.find((s) => s.slug === slug)!);
+}
+
+export function getSkillsSorted(): SkillDetail[] {
+  return [...skills].sort(
+    (a, b) => (catalogIndex.get(a.slug) ?? 99) - (catalogIndex.get(b.slug) ?? 99)
+  );
+}
+
+/* ── Skills data ──────────────────────────────────────── */
+
 export const skills: SkillDetail[] = [
   {
     slug: "ask-to-andrew",
