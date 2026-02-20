@@ -1,0 +1,69 @@
+Two months ago I asked Claude to recommend an authentication architecture for a new project. JWT with refresh tokens, stateless backend, Redis for session blacklisting. The recommendation was detailed, well-reasoned, and I implemented it.
+
+Three weeks into development, I hit a problem. The refresh token rotation logic created a race condition when two tabs were open simultaneously. Both tabs would try to refresh at the same time, one would succeed and invalidate the old token, and the second tab would get locked out.
+
+I described the problem to GPT. Its first response mentioned the race condition specifically and recommended a grace period on token rotation. An approach Claude hadn't considered because its recommendation assumed single-tab usage.
+
+The knowledge existed. It was in a different model.
+
+## The blind spot problem
+
+Every AI model has blind spots. This isn't a flaw in any particular model. It's a structural property of how large language models work. Different training data, different optimization objectives, different architectural choices produce different reasoning patterns.
+
+Claude tends to be thorough on edge cases but sometimes over-engineers solutions. GPT has broad coverage but can present hallucinated details with high confidence. Gemini excels at data-heavy analysis but occasionally loses coherence in long reasoning chains.
+
+These aren't fixed properties. They shift with model versions, task types, and context length. The point isn't which model is better overall. The point is that using a single model means you inherit all of its blind spots without knowing which ones you're inheriting.
+
+For low-stakes tasks, this doesn't matter. A single model's blind spots on a draft email or a code snippet are unlikely to cause problems. For architecture decisions, strategic analyses, research deliverables, or anything you'll spend weeks building on, a single model's blind spot can become an expensive mistake.
+
+## The manual workaround
+
+Power users discover the workaround quickly: run the same prompt through multiple models. Open Claude in one tab, ChatGPT in another, Gemini in a third. Paste the question. Read three answers. Compare.
+
+This works for simple questions. For complex analyses, it falls apart. The context doesn't transfer between tabs. Each model starts from scratch. If you want Model B to react to Model A's output, you copy-paste the response, which loses formatting and often exceeds the character limits of the destination. If Model A references a file you uploaded, Model B doesn't have access to it.
+
+The comparison step is the real bottleneck. Three models produce three responses of different lengths, different structures, and different levels of specificity. Reading them sequentially means holding Model A's reasoning in your head while reading Model B's, then comparing both against Model C's. For a five-paragraph answer, that's feasible. For a multi-page analysis, it's cognitive overload.
+
+And when models disagree, you have no framework for resolution. Is Model A right because it's more detailed? Is Model B right because it cited a source? Is Model C right because its reasoning chain is simpler? Without a structured comparison, you default to whichever answer sounds more confident, which is not a reliable heuristic.
+
+## What structured multi-model looks like
+
+The alternative to tab-switching is a system where models share context, Claude acts as the primary analyst, and disagreements get surfaced through a protocol instead of through your short-term memory.
+
+**Shared context** means all models work from the same information. A workspace file holds the task description, the files being analyzed, Claude's primary analysis, specific questions for other models, and their responses. Every model reads and writes to the same document. No copy-paste. No context loss.
+
+**Intelligent routing** means the right model gets the right task. Not every question needs three perspectives. A coding question goes to the model with the strongest benchmark on code (GPT-5.2 Codex scores highest on SWE-bench). A multimodal analysis goes to Gemini Pro. A quick factual lookup goes to the fastest model (Gemini Flash at a quarter of the cost). The primary analyst decides which subagent to call based on task type, not habit.
+
+**Disagreement protocol** means conflicts become information instead of confusion. When two models disagree, the protocol captures what each claims, what evidence supports each position, and where the reasoning diverges. Instead of guessing which answer sounds better, you see the exact point of disagreement and decide based on evidence.
+
+## When consensus signals confidence
+
+The real value of multi-model analysis isn't finding the right answer. It's calibrating confidence.
+
+When three models independently reach the same conclusion through different reasoning paths, your confidence in that conclusion should be high. They didn't copy each other. They arrived at the same place from different starting points.
+
+When two models agree and one disagrees, you've found a boundary. The dissenting model might have spotted something the others missed, or it might have a blind spot they don't share. Either way, you know where to investigate further.
+
+When all three disagree, you've found a genuinely hard question. One where the available evidence supports multiple conclusions. That's valuable information too. It tells you that committing to any single answer without more evidence is premature.
+
+This is triangulation applied to AI reasoning. The same logic that surveyors use to determine a position from multiple reference points. Any single measurement can be off. Three measurements that converge give you confidence. Three measurements that diverge tell you to measure again.
+
+## Persistent sessions and compounding
+
+Multi-model analysis is most useful when it carries over between sessions. A complex project might need three rounds of multi-model review: initial architecture, implementation decisions, and final validation.
+
+Without persistence, each round starts from scratch. You re-explain the project, re-establish the context, and re-run the comparison. With persistent sessions, the workspace file holds the accumulated analysis. Round two builds on round one. Round three references specific disagreements from round two.
+
+The subagent CLIs (Codex and Gemini) support session management. Named sessions can be saved and resumed. The workspace file persists on disk. When you return to a multi-model analysis after a break, the context is waiting.
+
+## The cost question
+
+Running three models costs more than running one. This is the obvious objection. The answer depends on what you're working on.
+
+For a draft email, using three models is waste. For an architecture decision that affects the next three months of development, the cost of three API calls is negligible compared to the cost of discovering a flaw three weeks into implementation.
+
+The routing system addresses this directly. You don't run all three models on every question. Claude handles the primary analysis. It calls subagents only when it identifies gaps: a coding question that benefits from GPT's strength, a data analysis that Gemini handles better, a reasoning check where a second perspective adds value. Most questions get one model. High-stakes questions get three.
+
+Gemini Flash runs at roughly a quarter of the cost of the Pro models. For factual lookups and quick validations, it provides a second perspective without significant cost overhead.
+
+LLM Arena VS implements this pattern for Claude Code: shared workspace, four CLI subagent types, structured disagreement protocol, persistent sessions, and quality gates for integrated outputs. Eight files, 9 EUR, and your high-stakes decisions get three perspectives instead of one.

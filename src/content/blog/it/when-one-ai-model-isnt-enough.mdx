@@ -1,0 +1,69 @@
+Due mesi fa ho chiesto a Claude di raccomandare un'architettura di autenticazione per un nuovo progetto. JWT con refresh token, backend stateless, Redis per il blacklisting delle sessioni. La raccomandazione era dettagliata, ben ragionata, e l'ho implementata.
+
+Tre settimane dopo, durante lo sviluppo, ho incontrato un problema. La logica di rotazione del refresh token creava una race condition quando due tab erano aperti contemporaneamente. Entrambi i tab provavano a fare il refresh allo stesso tempo, uno riusciva e invalidava il vecchio token, e il secondo tab restava bloccato fuori.
+
+Ho descritto il problema a GPT. La sua prima risposta menzionava la race condition specificamente e raccomandava un grace period sulla rotazione dei token. Un approccio che Claude non aveva considerato perch\u00e9 la sua raccomandazione assumeva un utilizzo a tab singolo.
+
+La conoscenza esisteva. Stava in un modello diverso.
+
+## Il problema dei punti ciechi
+
+Ogni modello AI ha punti ciechi. Non \u00e8 un difetto di un modello particolare. \u00c8 una propriet\u00e0 strutturale di come funzionano i modelli linguistici di grandi dimensioni. Dati di training diversi, obiettivi di ottimizzazione diversi, scelte architetturali diverse producono pattern di ragionamento diversi.
+
+Claude tende a essere meticoloso sui casi limite ma a volte sovra-ingegnerizza le soluzioni. GPT ha copertura ampia ma pu\u00f2 presentare dettagli allucinati con alta confidenza. Gemini eccelle nell'analisi pesante sui dati ma occasionalmente perde coerenza nelle catene di ragionamento lunghe.
+
+Queste non sono propriet\u00e0 fisse. Cambiano con le versioni dei modelli, i tipi di task e la lunghezza del contesto. Il punto non \u00e8 quale modello sia migliore in assoluto. Il punto \u00e8 che usare un singolo modello significa ereditare tutti i suoi punti ciechi senza sapere quali stai ereditando.
+
+Per task a bassa posta, non importa. I punti ciechi di un singolo modello su una bozza di email o uno snippet di codice difficilmente causano problemi. Per decisioni architetturali, analisi strategiche, deliverable di ricerca, o qualsiasi cosa su cui costruirai per settimane, il punto cieco di un singolo modello pu\u00f2 diventare un errore costoso.
+
+## Il workaround manuale
+
+Gli utenti avanzati scoprono il workaround velocemente: eseguire lo stesso prompt su pi\u00f9 modelli. Apri Claude in un tab, ChatGPT in un altro, Gemini in un terzo. Incolla la domanda. Leggi tre risposte. Confronta.
+
+Funziona per domande semplici. Per analisi complesse, crolla. Il contesto non si trasferisce tra i tab. Ogni modello parte da zero. Se vuoi che il Modello B reagisca all'output del Modello A, copi-incolli la risposta, perdendo formattazione e spesso sforando i limiti di caratteri della destinazione. Se il Modello A fa riferimento a un file che hai caricato, il Modello B non vi ha accesso.
+
+Il confronto \u00e8 il vero collo di bottiglia. Tre modelli producono tre risposte di lunghezze diverse, strutture diverse e livelli di specificit\u00e0 diversi. Leggerle in sequenza significa tenere in testa il ragionamento del Modello A mentre leggi quello del Modello B, poi confrontare entrambi con il Modello C. Per una risposta di cinque paragrafi, fattibile. Per un'analisi di pi\u00f9 pagine, \u00e8 sovraccarico cognitivo.
+
+E quando i modelli sono in disaccordo, non hai un framework per la risoluzione. Il Modello A ha ragione perch\u00e9 \u00e8 pi\u00f9 dettagliato? Il Modello B ha ragione perch\u00e9 ha citato una fonte? Il Modello C ha ragione perch\u00e9 la sua catena di ragionamento \u00e8 pi\u00f9 semplice? Senza un confronto strutturato, ti affidi alla risposta che suona pi\u00f9 sicura. Che non \u00e8 un'euristica affidabile.
+
+## Come appare il multi-modello strutturato
+
+L'alternativa al cambio di tab \u00e8 un sistema dove i modelli condividono il contesto, Claude fa da analista primario, e i disaccordi emergono attraverso un protocollo invece che attraverso la tua memoria a breve termine.
+
+**Contesto condiviso** significa che tutti i modelli lavorano dalle stesse informazioni. Un file workspace contiene la descrizione del task, i file sotto analisi, l'analisi primaria di Claude, le domande specifiche per gli altri modelli, e le loro risposte. Ogni modello legge e scrive sullo stesso documento. Niente copia-incolla. Nessuna perdita di contesto.
+
+**Routing intelligente** significa che il modello giusto riceve il task giusto. Non ogni domanda ha bisogno di tre prospettive. Una domanda di coding va al modello col benchmark pi\u00f9 forte sul codice (GPT-5.2 Codex ha il punteggio pi\u00f9 alto su SWE-bench). Un'analisi multimodale va a Gemini Pro. Un lookup fattuale veloce va al modello pi\u00f9 rapido (Gemini Flash a un quarto del costo). L'analista primario decide quale subagente chiamare in base al tipo di task, non all'abitudine.
+
+**Protocollo di disaccordo** significa che i conflitti diventano informazione invece che confusione. Quando due modelli sono in disaccordo, il protocollo cattura cosa afferma ciascuno, quali evidenze supportano ogni posizione, e dove il ragionamento diverge. Invece di indovinare quale risposta suona meglio, vedi l'esatto punto di disaccordo e decidi basandoti sulle evidenze.
+
+## Quando il consenso segnala confidenza
+
+Il vero valore dell'analisi multi-modello non \u00e8 trovare la risposta giusta. \u00c8 calibrare la confidenza.
+
+Quando tre modelli raggiungono indipendentemente la stessa conclusione attraverso percorsi di ragionamento diversi, la tua confidenza in quella conclusione dovrebbe essere alta. Non si sono copiati a vicenda. Sono arrivati allo stesso punto partendo da punti di partenza diversi.
+
+Quando due modelli concordano e uno dissente, hai trovato un confine. Il modello dissenziente potrebbe aver notato qualcosa che gli altri hanno perso, o potrebbe avere un punto cieco che gli altri non condividono. In entrambi i casi, sai dove indagare.
+
+Quando tutti e tre dissentono, hai trovato una domanda genuinamente difficile. Una dove le evidenze disponibili supportano conclusioni multiple. Anche questa \u00e8 informazione preziosa. Ti dice che impegnarsi su una singola risposta senza ulteriori evidenze \u00e8 prematuro.
+
+Questa \u00e8 triangolazione applicata al ragionamento AI. La stessa logica che i topografi usano per determinare una posizione da pi\u00f9 punti di riferimento. Una singola misurazione pu\u00f2 essere sbagliata. Tre misurazioni che convergono danno confidenza. Tre misurazioni che divergono dicono di misurare ancora.
+
+## Sessioni persistenti ed effetto compounding
+
+L'analisi multi-modello \u00e8 pi\u00f9 utile quando si trasferisce tra le sessioni. Un progetto complesso potrebbe aver bisogno di tre round di revisione multi-modello: architettura iniziale, decisioni di implementazione, e validazione finale.
+
+Senza persistenza, ogni round riparte da zero. Ri-spieghi il progetto, ri-stabilisci il contesto, ri-esegui il confronto. Con le sessioni persistenti, il file workspace mantiene l'analisi accumulata. Il round due costruisce sul round uno. Il round tre fa riferimento a disaccordi specifici del round due.
+
+Le CLI dei subagenti (Codex e Gemini) supportano la gestione delle sessioni. Le sessioni con nome possono essere salvate e riprese. Il file workspace persiste su disco. Quando torni a un'analisi multi-modello dopo una pausa, il contesto ti aspetta.
+
+## La questione costi
+
+Eseguire tre modelli costa pi\u00f9 di eseguirne uno. \u00c8 l'obiezione ovvia. La risposta dipende da cosa stai lavorando.
+
+Per una bozza di email, usare tre modelli \u00e8 spreco. Per una decisione architetturale che influenza i prossimi tre mesi di sviluppo, il costo di tre chiamate API \u00e8 trascurabile rispetto al costo di scoprire un difetto tre settimane dopo l'implementazione.
+
+Il sistema di routing affronta la questione direttamente. Non esegui tutti e tre i modelli su ogni domanda. Claude gestisce l'analisi primaria. Chiama i subagenti solo quando identifica gap: una domanda di coding che beneficia della forza di GPT, un'analisi dati che Gemini gestisce meglio, un controllo di ragionamento dove una seconda prospettiva aggiunge valore. La maggior parte delle domande riceve un modello. Le domande ad alta posta ne ricevono tre.
+
+Gemini Flash gira a circa un quarto del costo dei modelli Pro. Per lookup fattuali e validazioni rapide, fornisce una seconda prospettiva senza costi aggiuntivi significativi.
+
+LLM Arena VS implementa questo pattern per Claude Code: workspace condiviso, quattro tipi di subagente CLI, protocollo di disaccordo strutturato, sessioni persistenti, e quality gates per gli output integrati. Otto file, 9 EUR, e le tue decisioni ad alto impatto ottengono tre prospettive invece di una.
