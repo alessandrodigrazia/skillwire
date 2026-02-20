@@ -1,0 +1,65 @@
+I spent two weeks building a product demo video with Remotion. The framework is elegant: write React components, render them frame by frame, export MP4. As a developer, the workflow felt natural. JSX for layout, hooks for state, TypeScript for everything.
+
+The result was technically correct and visually dead. Every element faded in at the same speed. Text appeared and sat there. Scene transitions were basic cuts. The video looked like someone had exported a slide deck with animation presets turned on.
+
+I showed it to a designer friend. She watched fifteen seconds and said: "This needs springs, stagger, and breathing." I didn't know what any of those words meant in a motion design context.
+
+## The knowledge gap Remotion doesn't close
+
+Remotion's documentation is excellent for what it covers. You learn how to use `spring()`, `interpolate()`, `<Sequence>`, and the rest of the API. The docs show you the function signatures, the parameters, the return values. You can make things move.
+
+What the docs don't cover is when and why. When should an element enter with a spring that overshoots its target versus one that settles smoothly? Why does a three-frame stagger between list items look alive while zero stagger looks robotic? How fast should a scene transition be relative to the content density of the next scene?
+
+These are motion design questions, not API questions. The API is the instrument. Motion design is knowing how to play it.
+
+This gap is why most developer-made Remotion videos share the same aesthetic: technically functional but visually flat. The elements move. They don't communicate. There's motion but no design behind it.
+
+## What "better" actually means
+
+After spending time studying production-grade short-form video ads (specifically the output of TopView.ai, which generates promotional videos at scale), patterns emerged that explained the quality gap.
+
+**Springs with personality.** Production videos never use linear motion. Every element enters with a spring curve, but not the same one. A hero headline might overshoot by 15% then settle back, creating a "punch" effect. A subtitle might use a heavily damped spring that slides into place smoothly. A call-to-action button might bounce twice before resting. Each spring communicates something different about the element's importance and energy.
+
+**Stagger timing.** When five bullet points appear, they don't appear simultaneously and they don't appear one at a time with equal spacing. The first item has a longer delay (establishing the pattern), subsequent items follow at tight intervals (building momentum), and the last item has a slightly longer gap (signaling completion). The formula matters: 3-8 frames initial delay, 8 frames between items, 20 frames before the final item. These numbers come from watching what works, not from mathematical theory.
+
+**Breathing pauses.** A sixty-second video with constant motion is exhausting. The viewer's eye needs rest points. A half-second pause between scenes (where nothing moves but the background subtly shifts) gives the visual cortex time to process what it just saw. Without breathing pauses, every scene blurs into the next and the viewer disengages around second fifteen.
+
+**Narrative arcs.** A video is not a list of scenes. It's a story with structure. A three-act video has a hook (first five seconds), development (middle section), and resolution (final five seconds). A six-act video adds a problem statement, a turning point, and a climax. The pacing changes with the act: hooks are fast, development is measured, climaxes are punchy.
+
+## The kinetic typography gap
+
+Text animation is where the gap between developer and designer output is most visible.
+
+Developer approach: text fades in, maybe slides up, duration 300ms. Designer approach: a highlight box scales from zero width to full width behind the text (using scaleX, not width, to avoid layout shifts). Or words insert one at a time, each character with a spring animation. Or text stacks vertically at 0.8 line-height so lines overlap slightly, creating visual density. Or text renders as stroke first, then fills with color from left to right.
+
+None of these techniques are hard to implement in React. They use the same `interpolate()` and `spring()` functions you already know. The knowledge gap is knowing that these techniques exist and knowing when to use which one. A headline uses the highlight box. A list uses staggered word insertion. A statistic uses the stroke-to-fill wipe. A quote uses the vertical stack.
+
+## Transitions beyond cuts and fades
+
+The default Remotion transition is a cut: scene A ends, scene B starts. The next level is a cross-dissolve. Most developer videos stop there.
+
+Production videos use transitions that have narrative meaning. A camera push (zooming into the current scene before the next one appears) creates a sense of diving deeper into the topic. A Ken Burns effect (slow zoom with slight pan) adds cinematic quality to static images. A diagonal slice reveals the next scene from a corner, creating visual energy. A center-open mask (circular or rectangular) focuses attention on a specific element before expanding to reveal the full scene.
+
+Each transition communicates something different. A camera push says "let's go deeper." A Ken Burns says "let's contemplate this." A diagonal slice says "here's the next thing, fast." Choosing the right transition for the right moment is a creative decision that requires understanding the content, not just the API.
+
+## Color and mood as a system
+
+Production videos don't pick colors randomly. They use a dual accent system: a primary accent for emphasis and a secondary accent for supporting elements. The background isn't a flat color but a layered composition: a base color, a subtle gradient, glassmorphism panels, or a fluid blob animation that adds organic movement.
+
+Semantic colors carry meaning. Green for positive outcomes. Red for problems. Blue for neutral information. The color transitions between scenes signal mood shifts. Moving from a blue-toned problem scene to a green-toned solution scene creates an unconscious sense of resolution.
+
+These decisions happen before writing a single line of code. The config-first approach defines a COLORS object, a SPRINGS preset library, SCENE_FRAMES for timing, and FPS as a project constant. Every component reads from the config. Changing the mood of the entire video means changing one object, not hunting through fifty components.
+
+## The two-layer approach
+
+Solving the motion design gap requires two distinct types of knowledge.
+
+API knowledge tells you what Remotion can do. How `spring()` parameters affect the curve. How `<Sequence>` handles timing and premounting. How audio visualization works. How 3D components integrate via Three.js. This is reference material, useful every time you use a feature.
+
+Creative knowledge tells you what you should do. When to overshoot. How much to stagger. Where to breathe. Which transition matches which narrative beat. This is design intuition codified into rules that a developer can follow and an AI assistant can apply.
+
+Combining both layers means your Remotion workflow changes. Instead of "make this text appear," you think in terms of "this headline enters with punch (spring with overshoot), followed by supporting text (staggered insertion, damped spring), with a breathing pause before the next scene (half-second hold), transitioning via camera push into the deeper explanation."
+
+The code is still React. The thinking is motion design.
+
+Remotion Best Practices packages both layers for Claude Code: 36 API rule files covering every Remotion feature, plus 6 creative motion design rule files with 69 principles extracted from 12 production-grade video prompts. 43 files, 29 EUR, and your Remotion videos close the gap between "it renders" and "it looks professional."

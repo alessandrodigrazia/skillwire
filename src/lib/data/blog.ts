@@ -289,6 +289,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "the-gap-between-rendering-and-motion-design",
+    title: {
+      en: "The Gap Between Rendering a Video and Making One That Looks Good",
+      it: "Il gap tra renderizzare un video e farne uno che sembra professionale",
+    },
+    excerpt: {
+      en: "Your Remotion video renders. It also looks like a PowerPoint that learned to move. The problem isn't the framework. It's the missing layer between API knowledge and motion design intuition.",
+      it: "Il tuo video Remotion renderizza. Sembra anche un PowerPoint che ha imparato a muoversi. Il problema non \u00e8 il framework. \u00c8 il livello mancante tra la conoscenza delle API e l'intuizione di motion design.",
+    },
+    category: "insight",
+    tags: ["Remotion", "React", "video", "motion-design", "animation", "programmatic-video"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-20",
+    readingTime: 6,
+    coverEmoji: "\uD83C\uDFAC",
+    relatedSkillSlug: "remotion-best-practices",
+    metaTitle: {
+      en: "The Gap Between Rendering and Motion Design | Skillwire Blog",
+      it: "Il gap tra renderizzare e fare motion design | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Remotion gives you React-based video creation. What it doesn't give you is motion design knowledge: when to use spring with overshoot, why stagger timing matters, how narrative arcs keep viewers engaged.",
+      it: "Remotion ti d\u00e0 la creazione video basata su React. Quello che non ti d\u00e0 \u00e8 la conoscenza di motion design: quando usare spring con overshoot, perch\u00e9 il timing sfalsato conta, come gli archi narrativi tengono agganciati gli spettatori.",
+    },
+  },
+  {
     slug: "why-ai-projects-lose-coherence",
     title: {
       en: "Why AI Projects Lose Coherence After Step Three",
