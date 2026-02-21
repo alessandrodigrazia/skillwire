@@ -1,50 +1,50 @@
 Tre mesi fa il mio CLAUDE.md aveva quattro righe. Nome, ruolo, due progetti attivi. Quello che fanno tutti: copiano il template dal tutorial, scrivono le basi e partono. Claude funzionava. Rispondeva. Faceva cose.
 
-Oggi quel file ha duecento righe. Claude apre una sessione e sa chi sono, su quali deal sto lavorando, quali skill ho installato, come preferisco comunicare, e quanto valore ha generato la settimana scorsa. Non gli ho spiegato niente. Lo sapeva gia.
+Oggi quel file ha duecento righe. Claude apre una sessione e sa chi sono, su quali deal sto lavorando, quali skill ho installato, come preferisco comunicare, e quanto valore ha generato la settimana scorsa. Non gli ho spiegato niente. Lo sapeva già.
 
-La differenza tra queste due versioni non e un plugin. Non e un aggiornamento software. E un ecosistema di file che lavorano insieme e si migliorano da soli.
+La differenza tra queste due versioni non è un plugin. Non è un aggiornamento software. È un ecosistema di file che lavorano insieme e si migliorano da soli.
 
 ## Il problema che nessuno misura
 
-Prova a calcolare una cosa. Quanti minuti passi a inizio sessione a spiegare contesto che Claude conosceva ieri? Il cliente di cui hai parlato lunedi. Il progetto che hai discusso giovedi. Le preferenze di formattazione che hai stabilito la settimana scorsa.
+Prova a calcolare una cosa. Quanti minuti passi a inizio sessione a spiegare contesto che Claude conosceva ieri? Il cliente di cui hai parlato lunedì. Il progetto che hai discusso giovedì. Le preferenze di formattazione che hai stabilito la settimana scorsa.
 
 Cinque sessioni al giorno, sei minuti medi di setup. Trenta minuti al giorno di ripetizione pura. In un mese diventano dieci-quindici ore. E nessuno le traccia.
 
-Questo succede perche la maggior parte degli utenti Claude Code ha un setup minimo. Un CLAUDE.md copiato da un tutorial. Nessun log delle sessioni. Nessun agente che gestisca la chiusura. Nessun modo per sapere quanto tempo Claude risparmia. Usano il dieci percento delle capacita dello strumento e pensano che sia tutto qui.
+Questo succede perché la maggior parte degli utenti Claude Code ha un setup minimo. Un CLAUDE.md copiato da un tutorial. Nessun log delle sessioni. Nessun agente che gestisca la chiusura. Nessun modo per sapere quanto tempo Claude risparmia. Usano il dieci percento delle capacità dello strumento e pensano che sia tutto qui.
 
 ## I cinque pezzi mancanti
 
 Un workspace professionale per Claude Code ha cinque componenti che il tutorial non menziona.
 
-**Context files personalizzati.** Non quattro righe generiche. Un CLAUDE.md che descrive i tuoi progetti attivi, i tuoi strumenti, le tue preferenze operative. Un PROFILE.md con il tuo background, il tuo stile comunicativo, i tuoi pattern decisionali. Claude li legge a ogni avvio e parte da dove avevi lasciato.
+**Context file personalizzati.** Non quattro righe generiche. Un CLAUDE.md che descrive i tuoi progetti attivi, i tuoi strumenti, le tue preferenze operative. Un PROFILE.md con il tuo background, il tuo stile comunicativo, i tuoi pattern decisionali. Claude li legge a ogni avvio e parte da dove avevi lasciato.
 
-**Gestione sessioni.** Un SESSION_LOG che registra cosa hai fatto, quando, con quale risultato. Non per burocrazia. Per dare a Claude la memoria che le sessioni stateless gli tolgono. Apri una nuova conversazione e il log degli ultimi tre giorni e gia nel contesto.
+**Gestione sessioni.** Un SESSION_LOG che registra cosa hai fatto, quando, con quale risultato. Non per burocrazia. Per dare a Claude la memoria che le sessioni stateless gli tolgono. Apri una nuova conversazione e il log degli ultimi tre giorni è già nel contesto.
 
 **Agenti specializzati.** Un session-closer che alla fine di ogni sessione salva il contesto, registra il valore generato e suggerisce miglioramenti. Un deal-reviewer per i commerciali. Un code-reviewer per gli sviluppatori. Un content-checker per chi fa marketing. Agenti che lavorano mentre tu ti concentri sul risultato.
 
-**Server MCP.** MarkItDown per analizzare PDF e Word senza convertirli a mano. Playwright per navigare siti web e fare screenshot. Zapier per collegare Gmail, Calendar, Sheets. Ogni server aggiunge capacita operative concrete che Claude non ha da solo.
+**Server MCP.** MarkItDown per analizzare PDF e Word senza convertirli a mano. Playwright per navigare siti web e fare screenshot. Zapier per collegare Gmail, Calendar, Sheets. Ogni server aggiunge capacità operative concrete che Claude non ha da solo.
 
 **Ciclo di auto-miglioramento.** Un file WORKSPACE_IMPROVEMENTS dove il session-closer scrive suggerimenti per ottimizzare il tuo setup. Un SESSION_VALUE_LOG che traccia le ore risparmiate con la tua tariffa oraria come benchmark. Dopo tre settimane hai dati reali su quanto vale il tuo investimento.
 
-## Perche il questionario non funziona
+## Perché il questionario non funziona
 
-Il modo classico per personalizzare un setup e fare domande. Qual e il tuo ruolo? In che settore lavori? Che strumenti usi? Quindici domande, cinque minuti, risposte generiche.
+Il modo classico per personalizzare un setup è fare domande. Qual è il tuo ruolo? In che settore lavori? Che strumenti usi? Quindici domande, cinque minuti, risposte generiche.
 
-Il problema e che le persone non descrivono bene se stesse. Un sales director dice "faccio vendita B2B" e non menziona che segue otto deal in parallelo, che il suo blocco principale e il CTO del cliente che vuole un POC, e che passa il trenta percento del tempo a preparare deck per il C-level.
+Il problema è che le persone non descrivono bene sé stesse. Un sales director dice "faccio vendita B2B" e non menziona che segue otto deal in parallelo, che il suo blocco principale è il CTO del cliente che vuole un POC, e che passa il trenta percento del tempo a preparare deck per il C-level.
 
-Queste informazioni esistono gia. Stanno nel CV, nel profilo LinkedIn, nel sito aziendale, nei documenti di lavoro recenti. Un sistema che legge quei documenti costruisce un profilo piu accurato di qualsiasi questionario.
+Queste informazioni esistono già. Stanno nel CV, nel profilo LinkedIn, nel sito aziendale, nei documenti di lavoro recenti. Un sistema che legge quei documenti costruisce un profilo più accurato di qualsiasi questionario.
 
 Claude Code ha i tool per farlo nativamente. Read apre PDF, Word, file di testo. WebFetch recupera pagine web pubbliche. Glob scansiona la cartella di lavoro. Non servono plugin aggiuntivi. Basta chiedere all'utente di condividere i propri documenti e lasciare che Claude faccia il lavoro di estrazione.
 
 ## Il ciclo che si alimenta da solo
 
-Il pezzo che cambia tutto e il ciclo di chiusura sessione.
+Il pezzo che cambia tutto è il ciclo di chiusura sessione.
 
 Finisci di lavorare. Invece di chiudere il terminale, invochi il session-closer. In due minuti fa tre cose: aggiorna il SESSION_LOG con un sommario di quello che hai fatto, calcola il valore generato (ore risparmiate per la tua tariffa oraria), e scrive suggerimenti in WORKSPACE_IMPROVEMENTS.
 
 Dopo una settimana il file dei miglioramenti ha cinque o sei voci. "Aggiungere la lista dei deal attivi nel CLAUDE.md." "Creare un agente per la review delle proposte commerciali." "Integrare il server MCP Zapier per leggere il calendario da Claude."
 
-Dopo tre settimane, il workspace e irriconoscibile rispetto al punto di partenza. Claude ti conosce meglio del tuo CRM. E non hai mantenuto nulla a mano: il session-closer ha fatto tutto come effetto collaterale della chiusura sessione.
+Dopo tre settimane, il workspace è irriconoscibile rispetto al punto di partenza. Claude ti conosce meglio del tuo CRM. E non hai mantenuto nulla a mano: il session-closer ha fatto tutto come effetto collaterale della chiusura sessione.
 
 ## Da dove partire
 
@@ -52,4 +52,4 @@ Costruire questo ecosistema da zero richiede tempo. Decidere la struttura delle 
 
 Workspace Architect automatizza l'intero processo. Otto fasi guidate, venticinque-trentacinque minuti, ventiquattro file personalizzati sul tuo profilo e ruolo. Il setup parte dai tuoi documenti reali, non da domande generiche. A fine percorso hai un workspace professionale che si migliora da solo, un session-closer funzionante, e una roadmap per i mesi successivi.
 
-Ventiquattro file, 49 EUR. Una sola esecuzione, benefici che si accumulano ogni sessione.
+Ventiquattro file. Una sola esecuzione, benefici che si accumulano ogni sessione.
