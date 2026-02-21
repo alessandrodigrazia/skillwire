@@ -114,7 +114,6 @@ export const FEATURED_SLUGS = [
   "janus",
   "deep-research-agent",
   "cv-guru",
-  "skill-creator-guru",
 ] as const;
 
 const CATALOG_ORDER = [
@@ -284,7 +283,7 @@ export const skills: SkillDetail[] = [
     currency: "EUR",
     isFree: false,
     isBundleOnly: false,
-    badge: "best-seller",
+    badge: "new",
     icon: "pen-line",
     filesCount: 7,
     launchPhase: 1,
@@ -2489,7 +2488,7 @@ export const skills: SkillDetail[] = [
     currency: "EUR",
     isFree: false,
     isBundleOnly: false,
-    badge: "new",
+    badge: "best-seller",
     icon: "layout-dashboard",
     filesCount: 24,
     launchPhase: 1,
