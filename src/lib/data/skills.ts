@@ -2480,8 +2480,8 @@ export const skills: SkillDetail[] = [
     name: "Workspace Architect",
     technicalName: "workspace-architect",
     tagline: {
-      en: "Turn Claude Code into a professional operating system in 30 minutes. Guided setup for context, sessions, agents, and ROI tracking. 49 EUR.",
-      it: "Trasforma Claude Code in un sistema operativo professionale in 30 minuti. Setup guidato per contesto, sessioni, agenti e tracking ROI. 49 EUR.",
+      en: "Turn Claude Code into a professional operating system in 30 minutes. Guided setup for context, sessions, agents, and ROI tracking.",
+      it: "Trasforma Claude Code in un sistema operativo professionale in 30 minuti. Setup guidato per contesto, sessioni, agenti e tracking ROI.",
     },
     category: "devtools",
     tags: ["setup", "ecosystem", "workspace", "session-management", "onboarding"],
