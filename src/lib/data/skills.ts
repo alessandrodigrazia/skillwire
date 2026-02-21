@@ -106,6 +106,7 @@ export const categories: {
 /* ── Curated ordering ─────────────────────────────────── */
 
 export const FEATURED_SLUGS = [
+  "workspace-architect",
   "human-writer",
   "ai-b2b-sales-methodology",
   "ask-to-vera",
@@ -125,7 +126,6 @@ const CATALOG_ORDER = [
   "n8n-docs-live",
   "n8n-workflow-repository",
   "memory-manager",
-  "workspace-architect",
   "maia",
   "llm-arena-vs",
   "remotion-best-practices",
