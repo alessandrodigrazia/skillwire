@@ -471,6 +471,32 @@ export const articles: BlogArticle[] = [
     },
   },
   {
+    slug: "from-chatbot-to-operating-system",
+    title: {
+      en: "From Chatbot to Operating System: What Happens When Claude Code Remembers Everything",
+      it: "Da chatbot a sistema operativo: cosa succede quando Claude Code ricorda tutto",
+    },
+    excerpt: {
+      en: "Your CLAUDE.md has four lines. No session logs, no agents, no tracking. You are running a professional tool on a sticky note. Here is what a complete workspace looks like and how to build one in thirty minutes.",
+      it: "Il tuo CLAUDE.md ha quattro righe. Nessun log delle sessioni, nessun agente, nessun tracking. Stai usando uno strumento professionale con un post-it. Ecco come appare un workspace completo e come costruirne uno in trenta minuti.",
+    },
+    category: "insight",
+    tags: ["claude-code", "workspace", "setup", "session-management", "productivity", "ecosystem"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-21",
+    readingTime: 7,
+    coverEmoji: "\uD83C\uDFD7\uFE0F",
+    relatedSkillSlug: "workspace-architect",
+    metaTitle: {
+      en: "From Chatbot to Operating System: Building a Complete Claude Code Workspace | Skillwire Blog",
+      it: "Da chatbot a sistema operativo: costruire un workspace Claude Code completo | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "Most Claude Code users run on a four-line CLAUDE.md. A complete workspace adds session management, agents, ROI tracking, and self-improvement. Here is the difference it makes.",
+      it: "La maggior parte degli utenti Claude Code lavora con un CLAUDE.md di quattro righe. Un workspace completo aggiunge gestione sessioni, agenti, tracking ROI e auto-miglioramento. Ecco che differenza fa.",
+    },
+  },
+  {
     slug: "why-your-b2b-deck-loses-the-room",
     title: {
       en: "Why Your B2B Deck Loses the Room in the First Five Slides",

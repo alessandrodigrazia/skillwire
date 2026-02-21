@@ -125,6 +125,7 @@ const CATALOG_ORDER = [
   "n8n-docs-live",
   "n8n-workflow-repository",
   "memory-manager",
+  "workspace-architect",
   "maia",
   "llm-arena-vs",
   "remotion-best-practices",
@@ -2472,6 +2473,131 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["skill-creator-guru", "llm-arena-vs"],
   compatibleWith: "All Platforms",
   prerequisites: ["Gemini Advanced account (required for image generation)"],
+  hasTerminalVideo: true,
+  },
+  {
+    slug: "workspace-architect",
+    name: "Workspace Architect",
+    technicalName: "workspace-architect",
+    tagline: {
+      en: "Turn Claude Code into a professional operating system in 30 minutes. Guided setup for context, sessions, agents, and ROI tracking. 49 EUR.",
+      it: "Trasforma Claude Code in un sistema operativo professionale in 30 minuti. Setup guidato per contesto, sessioni, agenti e tracking ROI. 49 EUR.",
+    },
+    category: "devtools",
+    tags: ["setup", "ecosystem", "workspace", "session-management", "onboarding"],
+    price: 49,
+    currency: "EUR",
+    isFree: false,
+    isBundleOnly: false,
+    badge: "new",
+    icon: "layout-dashboard",
+    filesCount: 24,
+    launchPhase: 1,
+    complexity: 4,
+    version: "1.0",
+    changelog: [
+      {
+        version: "1.0",
+        date: "2026-02-21",
+        changes: [
+          { en: "Initial release with 8-phase guided setup, Document Intelligence, and 6 role profiles", it: "Rilascio iniziale con setup guidato a 8 fasi, Document Intelligence e 6 profili ruolo" },
+        ],
+      },
+    ],
+    bundleSlugs: ["claude-code-mastery"],
+    metaTitle: {
+      en: "Workspace Architect: Professional Claude Code Setup in 30 Minutes",
+      it: "Workspace Architect: setup professionale di Claude Code in 30 minuti",
+    },
+    metaDescription: {
+      en: "Stop copying CLAUDE.md from tutorials. Workspace Architect reads your CV, LinkedIn, and company site, then builds a complete workspace with session management, agents, MCP servers, and ROI tracking.",
+      it: "Basta copiare CLAUDE.md dai tutorial. Workspace Architect legge il tuo CV, LinkedIn e sito aziendale, poi costruisce un workspace completo con gestione sessioni, agenti, server MCP e tracking ROI.",
+    },
+    averageRating: 0,
+    reviewCount: 0,
+    problem: {
+      en: "You installed Claude Code. You copied a CLAUDE.md from a tutorial. It has your name, your role, and maybe three lines about your projects. Every session starts from zero. You explain the same context again. You close the terminal and everything disappears: what you discussed, what you decided, what worked. There are no agents handling review tasks for you. No session logs tracking what happened last Tuesday. No way to know if Claude saved you two hours or twenty this month. You are using a professional tool with a sticky note for configuration.",
+      it: "Hai installato Claude Code. Hai copiato un CLAUDE.md da un tutorial. Contiene il tuo nome, il tuo ruolo e forse tre righe sui tuoi progetti. Ogni sessione riparte da zero. Rispieghi lo stesso contesto di nuovo. Chiudi il terminale e tutto sparisce: cosa hai discusso, cosa hai deciso, cosa ha funzionato. Nessun agente gestisce le review al posto tuo. Nessun log delle sessioni tiene traccia di cosa sia successo marted\u00ec scorso. Nessun modo per sapere se Claude ti ha fatto risparmiare due ore o venti questo mese. Stai usando uno strumento professionale con un post-it come configurazione.",
+    },
+    solution: {
+      en: "Workspace Architect runs a guided setup in eight phases. Phase one is the real differentiator: instead of asking you fifteen generic questions, it reads your actual documents. Drop your CV, paste your LinkedIn URL, point it to your company website. Claude extracts your role, seniority, industry, communication style, and current projects from the source material. Then it confirms what it found and fills the gaps with targeted questions. From there, it generates everything: a CLAUDE.md that actually describes your work, a PROFILE.md with your professional identity, session management files (SESSION_LOG, WORKSPACE_IMPROVEMENTS, SESSION_VALUE_LOG, TODO_BACKLOG), working agents customized for your role (a session-closer for everyone, plus a deal-reviewer for sales, a code-reviewer for developers, a content-checker for marketers), MCP server recommendations with guided installation, and a growth roadmap from basic to autonomous workspace. Twenty-four files, all personalized. One execution.",
+      it: "Workspace Architect esegue un setup guidato in otto fasi. La prima fase \u00e8 il vero elemento distintivo: invece di farti quindici domande generiche, legge i tuoi documenti reali. Fornisci il CV, incolla l'URL del tuo profilo LinkedIn, indica il sito della tua azienda. Claude estrae ruolo, seniority, settore, stile comunicativo e progetti correnti direttamente dal materiale originale. Poi conferma quello che ha trovato e colma le lacune con domande mirate. Da l\u00ec, genera tutto: un CLAUDE.md che descrive davvero il tuo lavoro, un PROFILE.md con la tua identit\u00e0 professionale, file di gestione sessioni (SESSION_LOG, WORKSPACE_IMPROVEMENTS, SESSION_VALUE_LOG, TODO_BACKLOG), agenti funzionanti personalizzati per il tuo ruolo (un session-closer per tutti, pi\u00f9 un deal-reviewer per i commerciali, un code-reviewer per gli sviluppatori, un content-checker per il marketing), raccomandazioni di server MCP con installazione guidata e una roadmap di crescita dal workspace base a quello autonomo. Ventiquattro file, tutti personalizzati. Una sola esecuzione.",
+    },
+    result: {
+      en: "After thirty minutes you have a workspace that knows who you are. Claude opens a session and already understands your role, your projects, your communication preferences. When you finish working, the session-closer agent saves what happened, logs the value generated, and suggests improvements to your setup. After three weeks, your WORKSPACE_IMPROVEMENTS file has a dozen concrete suggestions. Your SESSION_VALUE_LOG shows exactly how many hours Claude saved you. Your CLAUDE.md has evolved from four lines to two hundred. The workspace gets better every time you use it, without you maintaining anything manually.",
+      it: "Dopo trenta minuti hai un workspace che sa chi sei. Claude apre una sessione e comprende gi\u00e0 il tuo ruolo, i tuoi progetti, le tue preferenze comunicative. Quando finisci di lavorare, l'agente session-closer salva quello che \u00e8 successo, registra il valore generato e suggerisce miglioramenti al tuo setup. Dopo tre settimane, il file WORKSPACE_IMPROVEMENTS contiene una dozzina di suggerimenti concreti. Il SESSION_VALUE_LOG mostra esattamente quante ore Claude ti ha fatto risparmiare. Il tuo CLAUDE.md \u00e8 passato da quattro righe a duecento. Il workspace migliora ogni volta che lo usi, senza che tu debba mantenere nulla a mano.",
+    },
+    whatsInside: [
+      { en: "Document Intelligence: Claude reads your CV, LinkedIn, company site, and existing CLAUDE.md to build your profile automatically", it: "Document Intelligence: Claude legge il tuo CV, LinkedIn, sito aziendale e CLAUDE.md esistente per costruire il tuo profilo in automatico" },
+      { en: "6 personalized templates: CLAUDE.md, PROFILE.md, SESSION_LOG, WORKSPACE_IMPROVEMENTS, SESSION_VALUE_LOG, TODO_BACKLOG", it: "6 template personalizzati: CLAUDE.md, PROFILE.md, SESSION_LOG, WORKSPACE_IMPROVEMENTS, SESSION_VALUE_LOG, TODO_BACKLOG" },
+      { en: "Role-specific agents: session-closer (universal) plus deal-reviewer, code-reviewer, content-checker, spec-reviewer, or decision-challenger based on your profile", it: "Agenti specifici per ruolo: session-closer (universale) pi\u00f9 deal-reviewer, code-reviewer, content-checker, spec-reviewer o decision-challenger in base al tuo profilo" },
+      { en: "MCP server setup guide with three tiers: universal (MarkItDown, Playwright, Word), role-based (Zapier, Apify), and specialized (n8n)", it: "Guida setup server MCP su tre livelli: universali (MarkItDown, Playwright, Word), basati sul ruolo (Zapier, Apify) e specializzati (n8n)" },
+      { en: "6 role profiles with tailored defaults: sales, developer, marketing, product manager, executive, freelancer", it: "6 profili ruolo con impostazioni predefinite: sales, developer, marketing, product manager, executive, freelancer" },
+      { en: "Growth roadmap from Level 1 (Basic) to Level 4 (Autonomous) with weekly milestones", it: "Roadmap di crescita dal Livello 1 (Base) al Livello 4 (Autonomo) con milestone settimanali" },
+      { en: "Architecture guide explaining why each component exists and how they connect", it: "Guida architetturale che spiega perch\u00e9 ogni componente esiste e come si collegano" },
+      { en: "24 files total, complexity 4/5, one-time guided execution", it: "24 file totali, complessit\u00e0 4/5, esecuzione guidata una tantum" },
+    ],
+    whoIsThisFor: [
+      { en: "Claude Code users who copied a CLAUDE.md from a tutorial and know they are leaving capability on the table", it: "Utenti Claude Code che hanno copiato un CLAUDE.md da un tutorial e sanno di non sfruttare il potenziale dello strumento" },
+      { en: "Professionals who use Claude daily for recurring work (sales, consulting, content, development) and want sessions that build on each other", it: "Professionisti che usano Claude ogni giorno per lavoro ricorrente (vendite, consulenza, contenuti, sviluppo) e vogliono sessioni che costruiscano l'una sull'altra" },
+      { en: "Team leads evaluating Claude Code for their team who need a repeatable onboarding process", it: "Team lead che valutano Claude Code per il proprio team e hanno bisogno di un processo di onboarding ripetibile" },
+      { en: "Anyone who spends five minutes at the start of every session re-explaining context that Claude already knew yesterday", it: "Chiunque passi cinque minuti a inizio di ogni sessione a rispiegare contesto che Claude conosceva gi\u00e0 ieri" },
+    ],
+    notFor: {
+      en: "Workspace Architect requires Claude Code (the CLI tool, not claude.ai). If you only use the web interface, the generated files and agents have nowhere to live. It also requires willingness to share professional context (CV, LinkedIn, or project details) for the personalization to work. If you want a static template to copy-paste, this is overbuilt for your needs.",
+      it: "Workspace Architect richiede Claude Code (il tool CLI, non claude.ai). Se usi solo l'interfaccia web, i file e gli agenti generati non hanno dove vivere. Richiede anche la disponibilit\u00e0 a condividere contesto professionale (CV, LinkedIn o dettagli progetto) perch\u00e9 la personalizzazione funzioni. Se cerchi un template statico da copiare e incollare, questo strumento \u00e8 sovradimensionato per le tue esigenze.",
+    },
+    beforeAfter: [
+      {
+        before: { en: "A four-line CLAUDE.md copied from a tutorial that says your name and role", it: "Un CLAUDE.md di quattro righe copiato da un tutorial con il tuo nome e ruolo" },
+        after: { en: "A two-hundred-line CLAUDE.md extracted from your CV, LinkedIn, and company site with projects, preferences, and workflow details", it: "Un CLAUDE.md di duecento righe estratto dal tuo CV, LinkedIn e sito aziendale con progetti, preferenze e dettagli del workflow" },
+      },
+      {
+        before: { en: "Every session starts from zero: you re-explain context, projects, and preferences each time", it: "Ogni sessione riparte da zero: rispieghi contesto, progetti e preferenze ogni volta" },
+        after: { en: "Sessions build on each other: session-closer saves context, logs value, and feeds improvements back into the workspace", it: "Le sessioni costruiscono l'una sull'altra: il session-closer salva il contesto, registra il valore e riporta i miglioramenti nel workspace" },
+      },
+      {
+        before: { en: "No agents: you handle every review, quality check, and closing task manually", it: "Nessun agente: gestisci ogni review, controllo qualit\u00e0 e chiusura manualmente" },
+        after: { en: "Role-specific agents handle reviews, session closing, and quality checks while you focus on the work", it: "Agenti specifici per ruolo gestiscono review, chiusura sessioni e controlli qualit\u00e0 mentre tu ti concentri sul lavoro" },
+      },
+      {
+        before: { en: "No idea whether Claude saves you two hours or twenty per month", it: "Nessuna idea se Claude ti fa risparmiare due ore o venti al mese" },
+        after: { en: "SESSION_VALUE_LOG tracks time saved per session with your actual hourly rate as benchmark", it: "SESSION_VALUE_LOG traccia il tempo risparmiato per sessione con la tua tariffa oraria reale come benchmark" },
+      },
+    ],
+    faq: [
+      {
+        question: { en: "What do I get when I buy this?", it: "Cosa ricevo quando acquisto?" },
+        answer: {
+          en: "A ZIP with 24 files: the main SKILL.md workflow, 6 customizable templates (CLAUDE.md, PROFILE.md, session management files), 6 agent templates for different roles, a document intelligence reference, a discovery question bank, an architecture guide, 6 role profiles, a growth roadmap, and MCP server installation guides across three tiers. You run the skill once and it generates your entire workspace.",
+          it: "Un file ZIP con 24 file: il workflow principale SKILL.md, 6 template personalizzabili (CLAUDE.md, PROFILE.md, file di gestione sessioni), 6 template agenti per ruoli diversi, un riferimento per la document intelligence, una banca domande di discovery, una guida architetturale, 6 profili ruolo, una roadmap di crescita e guide per l'installazione di server MCP su tre livelli. Esegui la skill una volta e genera l'intero workspace.",
+        },
+      },
+      {
+        question: { en: "Do I need technical experience with Claude Code?", it: "Serve esperienza tecnica con Claude Code?" },
+        answer: {
+          en: "No. The skill guides you through every step with explanations. If you can install a Claude Code skill (one command), you can run Workspace Architect. It adapts to your experience level: beginners get more guidance, advanced users get faster paths.",
+          it: "No. La skill ti guida in ogni passaggio con spiegazioni. Se sai installare una skill Claude Code (un comando), puoi eseguire Workspace Architect. Si adatta al tuo livello: i principianti ricevono pi\u00f9 indicazioni, gli utenti avanzati percorsi pi\u00f9 rapidi.",
+        },
+      },
+      {
+        question: { en: "I already have a CLAUDE.md. Will this overwrite it?", it: "Ho gi\u00e0 un CLAUDE.md. Verr\u00e0 sovrascritto?" },
+        answer: {
+          en: "No. Workspace Architect detects existing files and activates upgrade mode. It analyzes what you already have, shows a gap analysis (what's configured, what's missing), and proposes additions without touching your existing content. You approve every change before it happens.",
+          it: "No. Workspace Architect rileva i file esistenti e attiva la modalit\u00e0 upgrade. Analizza quello che hai gi\u00e0, mostra un'analisi dei gap (cosa \u00e8 configurato, cosa manca) e propone aggiunte senza toccare il contenuto esistente. Approvi ogni modifica prima che venga applicata.",
+        },
+      },
+      {
+        question: { en: "How long does the setup take?", it: "Quanto tempo richiede il setup?" },
+        answer: {
+          en: "Twenty-five to thirty-five minutes for the complete guided setup. Phase 1 (Document Intelligence) takes three to five minutes if you provide documents, less if you skip it. The heaviest phase is MCP server installation, which is optional. After the initial setup, the workspace maintains itself through the session-closer agent.",
+          it: "Venticinque-trentacinque minuti per il setup guidato completo. La Fase 1 (Document Intelligence) richiede tre-cinque minuti se fornisci documenti, meno se la salti. La fase pi\u00f9 impegnativa \u00e8 l'installazione dei server MCP, che \u00e8 opzionale. Dopo il setup iniziale, il workspace si mantiene da solo attraverso l'agente session-closer.",
+        },
+      },
+    ],
+    relatedSlugs: ["skill-creator-guru", "memory-manager", "llm-arena-vs", "janus"],
+  compatibleWith: "Claude Code",
+  prerequisites: [],
   hasTerminalVideo: true,
   },
 ];
