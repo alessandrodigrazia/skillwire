@@ -110,7 +110,7 @@ export const FEATURED_SLUGS = [
   "human-writer",
   "ai-b2b-sales-methodology",
   "ask-to-vera",
-  "content-pipeline-pro",
+  "meeting-insights-analyzer",
   "janus",
   "deep-research-agent",
   "cv-guru",
@@ -118,6 +118,7 @@ export const FEATURED_SLUGS = [
 
 const CATALOG_ORDER = [
   ...FEATURED_SLUGS,
+  "content-pipeline-pro",
   "b2b-presentation-builder",
   "ask-to-andrew",
   "iterative-self-critique",
@@ -2598,6 +2599,127 @@ export const skills: SkillDetail[] = [
   compatibleWith: "Claude Code",
   prerequisites: [],
   hasTerminalVideo: true,
+  },
+  {
+    slug: "meeting-insights-analyzer",
+    name: "Meeting Insights Analyzer",
+    technicalName: "meeting-insights-analyzer",
+    tagline: {
+      en: "Turn every meeting recording into a personal coaching session. CEI score, pattern detection, and an HTML dashboard in minutes.",
+      it: "Trasforma ogni registrazione meeting in una sessione di coaching su te stesso. Punteggio CEI, pattern rilevati e dashboard HTML in minuti.",
+    },
+    category: "career",
+    tags: ["communication", "meeting-analysis", "coaching", "transcript", "public-speaking"],
+    price: 29,
+    currency: "EUR",
+    isFree: false,
+    isBundleOnly: false,
+    badge: "new",
+    icon: "mic",
+    filesCount: 5,
+    launchPhase: 1,
+    complexity: 3,
+    version: "1.0",
+    changelog: [
+      {
+        version: "1.0",
+        date: "2026-02-22",
+        changes: [
+          { en: "Initial release with CEI scoring, 5 pattern categories, HTML dashboard, and longitudinal memory", it: "Rilascio iniziale con scoring CEI, 5 categorie pattern, dashboard HTML e memoria longitudinale" },
+        ],
+      },
+    ],
+    bundleSlugs: [],
+    metaTitle: {
+      en: "Meeting Insights Analyzer: Communication Coaching from Your Transcripts",
+      it: "Meeting Insights Analyzer: coaching comunicativo dalle tue trascrizioni",
+    },
+    metaDescription: {
+      en: "Upload a meeting transcript and get a Communication Effectiveness Index, timestamped patterns, an interactive HTML dashboard, and a coaching card. Supports 4 languages.",
+      it: "Carica una trascrizione meeting e ricevi un Communication Effectiveness Index, pattern con timestamp, una dashboard HTML interattiva e una coaching card. 4 lingue supportate.",
+    },
+    averageRating: 0,
+    reviewCount: 0,
+    problem: {
+      en: "You have dozens of recorded meetings sitting in a folder. You transcribed them. You never opened the transcripts again. The feedback that could make you a better communicator is in those files and you never touched it. Nobody tells you that you hedge every difficult point with 'I think' and 'maybe'. Nobody tells you that you dominate 70 percent of airtime in one-on-ones. Nobody tells you that you end most meetings without naming a clear next step. The recordings are there. The data is there. Nobody reads it.",
+      it: "Hai decine di meeting registrati in una cartella. Li hai trascritti. Non hai mai riaperto le trascrizioni. Il feedback che potrebbe renderti un comunicatore migliore \u00e8 in quei file e non l'hai mai toccato. Nessuno ti dice che attutisci ogni punto difficile con 'forse' e 'mi sembra'. Nessuno ti dice che occupi il 70% del tempo di parola nei tuoi one-to-one. Nessuno ti dice che concludi la maggior parte dei meeting senza nominare un'azione concreta. Le registrazioni ci sono. I dati ci sono. Nessuno li legge.",
+    },
+    solution: {
+      en: "Meeting Insights Analyzer reads any transcript format -- VTT, SRT, plain text, Word, or Markdown -- and runs a structured analysis across five communication dimensions. It measures how well you listen, how often you hedge instead of asserting, whether you speak too much or too little for the meeting type, how many filler words you use per minute, and whether meetings end with a clear next step. Each finding comes with timestamped examples: the exact moment, what happened, why it matters, and what you could have done differently. The final output is an interactive HTML dashboard you can share with a coach or keep for yourself, and a coaching card that fits in a pocket. Every analysis is stored so you can track how your Communication Effectiveness Index changes over weeks and months.",
+      it: "Meeting Insights Analyzer legge qualsiasi formato di trascrizione -- VTT, SRT, testo semplice, Word o Markdown -- e conduce un'analisi strutturata su cinque dimensioni comunicative. Misura quanto ascolti bene, quanto spesso attutisci invece di affermare, se parli troppo o troppo poco per il tipo di riunione, quante parole riempitive usi al minuto e se guidi i meeting verso risultati chiari. Ogni evidenza arriva con esempi timestampati: il momento esatto, cosa \u00e8 successo, perch\u00e9 conta e cosa avresti potuto fare diversamente. Alla fine genera una dashboard HTML interattiva che puoi condividere con un coach o tenere per te, e una coaching card tascabile. Ogni analisi viene memorizzata per tracciare come il tuo Communication Effectiveness Index cambia nel corso di settimane e mesi.",
+    },
+    result: {
+      en: "After the first analysis you know exactly where your communication breaks down. After five analyses you have a trend line. After ten, you can show a coach or manager a documented improvement curve with numbers. The CEI score tells you whether you are Excellent, Good, Developing, or Needs Work -- and the category breakdown shows which dimension to focus on first. Most people who run this analysis are surprised by two things: how much they hedge under pressure, and how unbalanced their speaking ratio is. The surprise lasts one session. After that, you have something to work on with a number attached.",
+      it: "Dopo la prima analisi sai esattamente dove si rompe la tua comunicazione. Dopo cinque analisi hai una linea di tendenza. Dopo dieci, puoi mostrare a un coach o a un manager una curva di miglioramento documentata con numeri. Il punteggio CEI ti dice se sei Eccellente, Buono, In sviluppo o Necessita di lavoro -- e il dettaglio per categoria mostra su quale dimensione concentrarsi prima. La maggior parte delle persone che eseguono questa analisi \u00e8 sorpresa da due cose: quanto si proteggano sotto pressione e quanto sia sbilanciato il loro speaking ratio. La sorpresa dura una sessione. Dopo, hai qualcosa su cui lavorare con un numero attaccato.",
+    },
+    whatsInside: [
+      { en: "Communication Effectiveness Index (CEI) scored 0 to 100 with label: Excellent, Good, Developing, or Needs Work", it: "Communication Effectiveness Index (CEI) da 0 a 100 con etichetta: Eccellente, Buono, In sviluppo o Necessita di lavoro" },
+      { en: "5-category analysis: Active Listening, Conflict Avoidance, Speaking Balance, Filler Words, and Facilitation", it: "Analisi a 5 categorie: Active Listening, Conflict Avoidance, Speaking Balance, Filler Words e Facilitation" },
+      { en: "Timestamped pattern examples with context, explanation, and suggested alternative for each finding", it: "Esempi di pattern con timestamp, contesto, spiegazione e alternativa suggerita per ogni evidenza" },
+      { en: "Interactive HTML dashboard with radar, doughnut, and bar charts -- exportable and shareable with a coach", it: "Dashboard HTML interattiva con grafico radar, doughnut e barre -- esportabile e condivisibile con un coach" },
+      { en: "Coaching card: strengths to keep, behaviors to avoid, and one focus area for the next session", it: "Coaching card: punti di forza da mantenere, comportamenti da evitare e un'area di focus per la prossima sessione" },
+      { en: "Filler word detection and per-minute rate across 4 languages: Italian, English, Spanish, French", it: "Rilevamento parole riempitive con frequenza al minuto in 4 lingue: italiano, inglese, spagnolo, francese" },
+      { en: "Meeting-type benchmarks for 5 formats: one-on-one, team meeting, presentation, negotiation, peer sync", it: "Benchmark per tipo di riunione in 5 format: one-on-one, team meeting, presentazione, negoziazione, peer sync" },
+      { en: "Longitudinal memory: stores each analysis and shows how your CEI evolves session after session", it: "Memoria longitudinale: registra ogni analisi e mostra come il CEI evolve sessione dopo sessione" },
+    ],
+    whoIsThisFor: [
+      { en: "Professionals who record and transcribe meetings but never analyze their own communication patterns", it: "Professionisti che registrano e trascrivono i meeting ma non analizzano mai i propri pattern comunicativi" },
+      { en: "Sales reps who want to know if they talk too much on calls and where they lose control of the conversation", it: "Sales rep che vogliono sapere se parlano troppo nelle call e dove perdono il controllo della conversazione" },
+      { en: "Managers who facilitate team meetings and want to improve facilitation and next-step clarity", it: "Manager che facilitano team meeting e vogliono migliorare la facilitazione e la chiarezza sulle azioni" },
+      { en: "Anyone working with an executive coach who wants objective data instead of self-reported impressions", it: "Chiunque lavori con un executive coach e voglia dati oggettivi invece di impressioni auto-riferite" },
+    ],
+    notFor: {
+      en: "This skill analyzes communication behavior, not content quality. It will not tell you whether your argument was persuasive or your strategy was correct. It also requires a transcript: audio or video files without text cannot be processed directly. If you do not record or transcribe meetings, there is nothing for this skill to analyze.",
+      it: "Questa skill analizza il comportamento comunicativo, non la qualit\u00e0 del contenuto. Non ti dir\u00e0 se il tuo argomento era persuasivo o la tua strategia corretta. Richiede anche una trascrizione: file audio o video senza testo non possono essere elaborati direttamente. Se non registri o trascrivi i meeting, non c'\u00e8 nulla che questa skill possa analizzare.",
+    },
+    beforeAfter: [
+      {
+        before: { en: "Transcripts sitting unread in a folder for weeks after each meeting", it: "Trascrizioni che restano non lette in una cartella per settimane dopo ogni meeting" },
+        after: { en: "Every transcript becomes a structured coaching report with scores, patterns, and an interactive dashboard", it: "Ogni trascrizione diventa un report di coaching strutturato con punteggi, pattern e dashboard interattiva" },
+      },
+      {
+        before: { en: "Vague sense that something goes wrong in difficult conversations, but no data to point to", it: "Vaga sensazione che qualcosa vada storto nelle conversazioni difficili, ma nessun dato su cui puntare" },
+        after: { en: "Exact timestamps showing when and why communication broke down, with alternative approaches for each instance", it: "Timestamp esatti che mostrano quando e perch\u00e9 la comunicazione si \u00e8 interrotta, con approcci alternativi per ogni caso" },
+      },
+      {
+        before: { en: "Self-reported impression when asked how a meeting went", it: "Impressione auto-riferita quando ti chiedono com'\u00e8 andato un meeting" },
+        after: { en: "CEI score with trend line across multiple meetings, shareable with a coach or manager", it: "Punteggio CEI con linea di tendenza su pi\u00f9 meeting, condivisibile con un coach o manager" },
+      },
+    ],
+    faq: [
+      {
+        question: { en: "What transcript formats does this support?", it: "Quali formati di trascrizione supporta?" },
+        answer: {
+          en: "VTT (WebVTT), SRT (subtitle), plain text, Markdown, and Word documents. Any format that contains speaker labels and timestamps works best. Plain text without speaker labels still works for single-speaker analysis.",
+          it: "VTT (WebVTT), SRT (sottotitoli), testo semplice, Markdown e documenti Word. Qualsiasi formato che contenga etichette speaker e timestamp funziona al meglio. Il testo semplice senza etichette speaker funziona comunque per l'analisi a singolo speaker.",
+        },
+      },
+      {
+        question: { en: "Do I need to transcribe meetings myself?", it: "Devo trascrivere i meeting da solo?" },
+        answer: {
+          en: "No. If your meeting platform (Teams, Zoom, Google Meet) produces an automatic transcript, paste it in directly. If you record audio separately, any transcription service works. The skill accepts whatever text output you already have.",
+          it: "No. Se la tua piattaforma di meeting (Teams, Zoom, Google Meet) produce una trascrizione automatica, incollala direttamente. Se registri audio separatamente, qualsiasi servizio di trascrizione funziona. La skill accetta qualsiasi output di testo tu abbia gi\u00e0.",
+        },
+      },
+      {
+        question: { en: "Does it work in Claude Desktop and claude.ai?", it: "Funziona in Claude Desktop e claude.ai?" },
+        answer: {
+          en: "Yes. In Claude Code, the HTML dashboard is saved as a file you can open in any browser. In Claude Desktop and claude.ai, it is generated as an artifact you can view inside the interface. The analysis report and coaching card work in all three environments.",
+          it: "S\u00ec. In Claude Code, la dashboard HTML viene salvata come file che puoi aprire in qualsiasi browser. In Claude Desktop e claude.ai, viene generata come artifact che puoi visualizzare nell'interfaccia. Il report di analisi e la coaching card funzionano in tutti e tre gli ambienti.",
+        },
+      },
+      {
+        question: { en: "Can it compare multiple meetings over time?", it: "Pu\u00f2 confrontare pi\u00f9 meeting nel tempo?" },
+        answer: {
+          en: "Yes. Each analysis is saved in a longitudinal log linked to the speaker. The next time you run an analysis for the same speaker, it shows CEI history, score evolution, and which patterns improved or persisted. You can ask for a trend report across the last five or ten sessions.",
+          it: "S\u00ec. Ogni analisi viene salvata in un log longitudinale collegato allo speaker. La volta successiva che esegui un'analisi per lo stesso speaker, mostra la cronologia CEI, l'evoluzione del punteggio e quali pattern sono migliorati o persistono. Puoi richiedere un report di tendenza sulle ultime cinque o dieci sessioni.",
+        },
+      },
+    ],
+    relatedSlugs: ["human-writer", "cv-guru", "memory-manager", "janus"],
+    compatibleWith: "Claude Code + Desktop",
+    prerequisites: [],
+    hasTerminalVideo: true,
   },
 ];
 

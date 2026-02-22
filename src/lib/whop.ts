@@ -26,6 +26,7 @@ export const WHOP_PLAN_MAP: Record<string, string> = {
   "remotion-best-practices": "plan_5YYWJZhbnfF99",
   "nano-banana-guru": "plan_8fUkM9kpesAK2",
   "workspace-architect": "plan_CGUQAu3tBDug1",
+  "meeting-insights-analyzer": "WHOP_PLAN_ID_PLACEHOLDER", // TODO: sostituire con plan_id reale dopo creazione su dashboard Whop
   // Bundles
   "b2b-sales-pro": "plan_CZQCeLL1eGNKg",
   "career-navigator": "plan_9JaBuhfFbNKzy",

@@ -522,6 +522,32 @@ export const articles: BlogArticle[] = [
       it: "I deck generici falliscono perch\u00e9 non servono nessun audience specifico. Come i framework strutturali e narrativi risolvono il problema delle presentazioni multi-stakeholder.",
     },
   },
+  {
+    slug: "communication-patterns-hidden-in-your-meetings",
+    title: {
+      en: "The Communication Patterns Hiding in Your Meeting Recordings",
+      it: "I pattern comunicativi nascosti nelle tue registrazioni meeting",
+    },
+    excerpt: {
+      en: "You transcribe your meetings. You never open those transcripts again. The feedback that could make you a better communicator is sitting in those files waiting to be read.",
+      it: "Trascrivi i tuoi meeting. Non riapri mai quelle trascrizioni. Il feedback che potrebbe renderti un comunicatore migliore \u00e8 in quei file ad aspettare di essere letto.",
+    },
+    category: "insight",
+    tags: ["communication", "meeting-analysis", "coaching", "transcript", "self-improvement"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-22",
+    readingTime: 6,
+    coverEmoji: "\uD83C\uDFA4",
+    relatedSkillSlug: "meeting-insights-analyzer",
+    metaTitle: {
+      en: "The Communication Patterns Hiding in Your Meeting Recordings | Skillwire Blog",
+      it: "I pattern comunicativi nascosti nelle tue registrazioni meeting | Skillwire Blog",
+    },
+    metaDescription: {
+      en: "You transcribe meetings but never analyze them. Here is what a structured analysis of your transcripts reveals about your communication habits -- and how to track improvement over time.",
+      it: "Trascrivi i meeting ma non li analizzi mai. Ecco cosa rivela un'analisi strutturata delle tue trascrizioni sui tuoi pattern comunicativi -- e come tracciare il miglioramento nel tempo.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
