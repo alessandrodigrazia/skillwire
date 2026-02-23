@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBundleBySlug } from "@/lib/data/bundles";
+import { buildBundleProductSchema } from "@/lib/structured-data";
 import BundleDetailClient from "./BundleDetailClient";
 
 type Params = { locale: string; slug: string };
@@ -27,6 +28,14 @@ export async function generateMetadata({
       description,
       type: "website",
       url,
+      images: [
+        {
+          url: `https://skillwire.ai/${locale}/bundles/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${title} | Skillwire`,
+        },
+      ],
     },
     alternates: {
       canonical: url,
@@ -47,19 +56,13 @@ export default async function BundleDetailPage({
   const bundle = getBundleBySlug(slug);
   if (!bundle) notFound();
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
+  const productSchema = buildBundleProductSchema({
+    slug: bundle.slug,
     name: bundle.name,
     description: bundle.metaDescription.en,
-    brand: { "@type": "Brand", name: "Skillwire" },
-    offers: {
-      "@type": "Offer",
-      price: bundle.bundlePrice,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-  };
+    price: bundle.bundlePrice,
+    imageUrl: `https://skillwire.ai/en/bundles/${bundle.slug}/opengraph-image`,
+  });
 
   const faqSchema =
     bundle.faq.length > 0

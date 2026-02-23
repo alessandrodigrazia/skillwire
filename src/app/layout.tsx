@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Skillwire | Professional Skills for Claude Code",
+  title: "Skillwire | Professional Skills for Claude by Anthropic",
   description:
-    "Buy once, use forever. Production-ready skills for Claude Code: B2B sales methodology, career coaching, workflow automation.",
+    "Buy once, use forever. Production-ready skills for Claude by Anthropic: B2B sales methodology, career coaching, workflow automation.",
   verification: {
     google: "rtSt3UA9uAWJZmeYXnFjn-sMSVMMK4FePmmCN4wLPtI",
   },
@@ -17,7 +17,7 @@ const organizationSchema = {
   url: "https://skillwire.ai",
   logo: "https://skillwire.ai/logo.png",
   description:
-    "Professional skill packs for Claude Code. Buy once, use forever.",
+    "Professional skill packs for Claude by Anthropic. Buy once, use forever.",
   sameAs: ["https://twitter.com/skillwireai"],
 };
 

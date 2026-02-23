@@ -301,8 +301,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["career-navigator", "linkedin-toolkit"],
     metaTitle: {
-      en: "HumanWriter: Make Every AI-Written Text Sound Human",
-      it: "HumanWriter: fai suonare umano ogni testo scritto con l'AI",
+      en: "HumanWriter | Make Every AI-Written Text Sound Human",
+      it: "HumanWriter | Fai Suonare Umano Ogni Testo Scritto con l'AI",
     },
     metaDescription: {
       en: "200+ AI patterns per language detected and corrected. 4 severity tiers, model-specific detection. The only bilingual IT/EN humanization tool for Claude.",
@@ -424,8 +424,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["b2b-sales-pro", "linkedin-toolkit"],
     metaTitle: {
-      en: "Janus: Critical Analysis Sparring Partner for Claude Code",
-      it: "Janus: sparring partner di analisi critica per Claude Code",
+      en: "Janus | Critical Analysis Sparring Partner for Claude Code",
+      it: "Janus | Sparring Partner di Analisi Critica per Claude Code",
     },
     metaDescription: {
       en: "Find the holes in your business plan before investors do. 5 analysis dimensions, 10 specialized scenarios, severity scoring. Built for people who prefer truth over encouragement.",
@@ -547,8 +547,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["career-navigator"],
     metaTitle: {
-      en: "Vera Career Coach: AI Career Coaching with Validated Assessments",
-      it: "Vera Career Coach: career coaching AI con assessment validati",
+      en: "Vera Career Coach | AI Career Coaching with Validated Assessments",
+      it: "Vera Career Coach | Career Coaching AI con Assessment Validati",
     },
     metaDescription: {
       en: "8-session career coaching with PERMA, Career Anchors, and UWES-9. Three branches: Job Crafting, Career Transition, Purpose Discovery. Safety screening included.",
@@ -669,8 +669,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: [],
     metaTitle: {
-      en: "AI B2B Sales Methodology: Complete Enterprise Sales System",
-      it: "Metodologia vendita B2B AI: sistema enterprise completo",
+      en: "AI B2B Sales Methodology | Complete Enterprise Sales System",
+      it: "Metodologia Vendita B2B AI | Sistema Enterprise Completo",
     },
     metaDescription: {
       en: "Three integrated B2B sales frameworks: MEDDPICC+RR qualification, SPICED discovery, BATNA/ZOPA negotiation. 49 files, 22 templates, 12 workflows built from 20 years of enterprise sales.",
@@ -1649,8 +1649,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "Skill Creator Guru - Anthropic's Skill-Creator Enhanced with PRD & Best Practices",
-      it: "Skill Creator Guru - La Skill-Creator di Anthropic Potenziata con PRD e Best Practice",
+      en: "Skill Creator Guru | Anthropic's Skill-Creator Enhanced with PRD & Best Practices",
+      it: "Skill Creator Guru | La Skill-Creator di Anthropic Potenziata con PRD e Best Practice",
     },
     metaDescription: {
       en: "Builds on Anthropic's original skill-creator with PRD methodology, 4 quality pillars, token optimization, anti-patterns, security audit, and months of daily production experience. Free.",
@@ -1888,8 +1888,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "MaIA - Multi-Agent Architecture for Complex AI Projects",
-      it: "MaIA - Architettura Multi-Agente per Progetti AI Complessi",
+      en: "MaIA | Multi-Agent Architecture for Complex AI Projects",
+      it: "MaIA | Architettura Multi-Agente per Progetti AI Complessi",
     },
     metaDescription: {
       en: "Turn complex projects into structured workflows with 8 agent types, 4 QA gates, and milestone-by-milestone control. For work too big for one Claude session.",
@@ -2017,8 +2017,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "LLM Arena VS - Run Claude, ChatGPT, Gemini Together",
-      it: "LLM Arena VS - Claude, ChatGPT e Gemini Insieme",
+      en: "LLM Arena VS | Run Claude, ChatGPT, Gemini Together",
+      it: "LLM Arena VS | Claude, ChatGPT e Gemini Insieme",
     },
     metaDescription: {
       en: "Run Claude, ChatGPT, and Gemini on the same task from VS Code. Shared workspace, disagreement protocol, persistent sessions. Three perspectives, one decision.",
@@ -2139,8 +2139,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["linkedin-toolkit"],
     metaTitle: {
-      en: "Content Pipeline Pro: Editorial AI Pipeline for LinkedIn",
-      it: "Content Pipeline Pro: pipeline editoriale AI per LinkedIn",
+      en: "Content Pipeline Pro | Editorial AI Pipeline for LinkedIn",
+      it: "Content Pipeline Pro | Pipeline Editoriale AI per LinkedIn",
     },
     metaDescription: {
       en: "Seven AI agents turn raw articles into publish-ready LinkedIn posts. Adaptive onboarding, 4 specialized writers, 3-phase QA. From 60 minutes to 10.",
@@ -2262,8 +2262,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: [],
     metaTitle: {
-      en: "Remotion Best Practices - From Animated Slides to Real Videos",
-      it: "Remotion Best Practices - Da slide animate a video veri",
+      en: "Remotion Best Practices | From Animated Slides to Real Videos",
+      it: "Remotion Best Practices | Da Slide Animate a Video Veri",
     },
     metaDescription: {
       en: "43 rule files covering every Remotion API plus motion design principles from 12 production prompts. Spring presets, kinetic typography, narrative arcs, creative transitions.",
@@ -2384,8 +2384,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "Nano Banana Guru - Visual AI Prompt Engineering That Works",
-      it: "Nano Banana Guru - Prompt Engineering per AI Visiva Che Funziona",
+      en: "Nano Banana Guru | Visual AI Prompt Engineering That Works",
+      it: "Nano Banana Guru | Prompt Engineering per AI Visiva Che Funziona",
     },
     metaDescription: {
       en: "Go from generic AI images to professional visual artifacts. 8-area prompt canvas, 26 production examples, proactive trigger system. For Google Nano Banana Pro.",
@@ -2506,8 +2506,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["claude-code-mastery"],
     metaTitle: {
-      en: "Workspace Architect: Professional Claude Code Setup in 30 Minutes",
-      it: "Workspace Architect: setup professionale di Claude Code in 30 minuti",
+      en: "Workspace Architect | Professional Claude Code Setup in 30 Minutes",
+      it: "Workspace Architect | Setup Professionale di Claude Code in 30 Minuti",
     },
     metaDescription: {
       en: "Stop copying CLAUDE.md from tutorials. Workspace Architect reads your CV, LinkedIn, and company site, then builds a complete workspace with session management, agents, MCP servers, and ROI tracking.",
@@ -2631,8 +2631,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: [],
     metaTitle: {
-      en: "Meeting Insights Analyzer: Communication Coaching from Your Transcripts",
-      it: "Meeting Insights Analyzer: coaching comunicativo dalle tue trascrizioni",
+      en: "Meeting Insights Analyzer | Communication Coaching from Your Transcripts",
+      it: "Meeting Insights Analyzer | Coaching Comunicativo dalle Tue Trascrizioni",
     },
     metaDescription: {
       en: "Upload a meeting transcript and get a Communication Effectiveness Index, timestamped patterns, an interactive HTML dashboard, and a coaching card. Supports 4 languages.",

@@ -149,8 +149,8 @@ export const bundles: BundleDetail[] = [
       },
     ],
     metaTitle: {
-      en: "B2B Sales Pro System \u2014 Complete Enterprise Sales Toolkit",
-      it: "B2B Sales Pro System \u2014 Toolkit Completo Vendita Enterprise",
+      en: "B2B Sales Pro System | Complete Enterprise Sales Toolkit",
+      it: "B2B Sales Pro System | Toolkit Completo Vendita Enterprise",
     },
     metaDescription: {
       en: "4 professional skills for B2B enterprise sales: methodology, presentations, critical analysis, and deep research. Save 19%.",
@@ -272,8 +272,8 @@ export const bundles: BundleDetail[] = [
       },
     ],
     metaTitle: {
-      en: "Career & Life Navigator \u2014 Complete Career Coaching Toolkit",
-      it: "Career & Life Navigator \u2014 Toolkit Completo di Career Coaching",
+      en: "Career & Life Navigator | Complete Career Coaching Toolkit",
+      it: "Career & Life Navigator | Toolkit Completo di Career Coaching",
     },
     metaDescription: {
       en: "4 AI-powered skills for career coaching, school guidance, CV optimization, and authentic writing. Save 37%.",
@@ -395,8 +395,8 @@ export const bundles: BundleDetail[] = [
       },
     ],
     metaTitle: {
-      en: "n8n Power Pack \u2014 Complete n8n Automation Toolkit",
-      it: "n8n Power Pack \u2014 Toolkit Completo per Automazione n8n",
+      en: "n8n Power Pack | Complete n8n Automation Toolkit",
+      it: "n8n Power Pack | Toolkit Completo per Automazione n8n",
     },
     metaDescription: {
       en: "4 skills for n8n automation: workflow expert, live docs, 1,486 templates, and validation. Save 35%.",
@@ -528,8 +528,8 @@ export const bundles: BundleDetail[] = [
       },
     ],
     metaTitle: {
-      en: "Claude Code Mastery \u2014 Power User Toolkit",
-      it: "Claude Code Mastery \u2014 Toolkit Power User",
+      en: "Claude Code Mastery | Power User Toolkit",
+      it: "Claude Code Mastery | Toolkit Power User",
     },
     metaDescription: {
       en: "5 skills to master Claude Code: skill creation, memory, multi-agent, multi-AI, and validation. Save 48%.",
@@ -641,8 +641,8 @@ export const bundles: BundleDetail[] = [
       },
     ],
     metaTitle: {
-      en: "LinkedIn Thought Leadership Toolkit \u2014 Professional Content System",
-      it: "LinkedIn Thought Leadership Toolkit \u2014 Sistema di Contenuti Professionali",
+      en: "LinkedIn Thought Leadership Toolkit | Professional Content System",
+      it: "LinkedIn Thought Leadership Toolkit | Sistema di Contenuti Professionali",
     },
     metaDescription: {
       en: "4 skills for LinkedIn content: editorial framework, humanization, critical review, and competitor analysis. Save 25%.",

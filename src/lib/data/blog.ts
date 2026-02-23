@@ -46,8 +46,8 @@ export const articles: BlogArticle[] = [
     readingTime: 6,
     coverEmoji: "\uD83D\uDCDA",
     metaTitle: {
-      en: "Claude Code Skills: The Complete Guide \u2014 Skillwire Blog",
-      it: "Le Skill di Claude Code: La Guida Completa \u2014 Skillwire Blog",
+      en: "Claude Code Skills | The Complete Guide",
+      it: "Le Skill di Claude Code | La Guida Completa",
     },
     metaDescription: {
       en: "Learn what Claude Code skills are, how they transform your AI assistant into a domain expert, and how to install them in seconds.",
@@ -72,8 +72,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\u270D\uFE0F",
     relatedSkillSlug: "human-writer",
     metaTitle: {
-      en: "How to Make AI Writing Sound Human | Skillwire Blog",
-      it: "Come far suonare umana la scrittura AI | Skillwire Blog",
+      en: "How to Make AI Writing Sound Human",
+      it: "Come far suonare umana la scrittura AI",
     },
     metaDescription: {
       en: "AI writing has patterns your eyes miss. Learn the frequency data, structural tells, and model-specific signatures that give away AI text, plus how to fix them.",
@@ -98,8 +98,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDD2E",
     relatedSkillSlug: "janus",
     metaTitle: {
-      en: "How to Stress-Test Your Business Plan with AI | Skillwire Blog",
-      it: "Come stress-testare il tuo business plan con l'AI | Skillwire Blog",
+      en: "How to Stress-Test Your Business Plan with AI",
+      it: "Come stress-testare il tuo business plan con l'AI",
     },
     metaDescription: {
       en: "Traditional feedback is too polite, too busy, and too biased to find the real problems. A structured stress test with severity scoring finds them in minutes.",
@@ -124,8 +124,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDCC9",
     relatedSkillSlug: "ai-b2b-sales-methodology",
     metaTitle: {
-      en: "Why Your Enterprise Deals Keep Slipping | Skillwire Blog",
-      it: "Perch\u00e9 i tuoi deal enterprise continuano a slittare | Skillwire Blog",
+      en: "Why Your Enterprise Deals Keep Slipping",
+      it: "Perch\u00e9 i tuoi deal enterprise continuano a slittare",
     },
     metaDescription: {
       en: "Enterprise deals fail when disconnected sales frameworks create gaps between discovery, qualification, and negotiation. Learn how an integrated system prevents pipeline leaks.",
@@ -150,8 +150,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDCDD",
     relatedSkillSlug: "content-pipeline-pro",
     metaTitle: {
-      en: "Why Your LinkedIn Content Sounds Like Everyone Else's | Skillwire Blog",
-      it: "Perch\u00e9 i tuoi contenuti LinkedIn sembrano quelli di tutti gli altri | Skillwire Blog",
+      en: "Why Your LinkedIn Content Sounds Like Everyone Else's",
+      it: "Perch\u00e9 i tuoi contenuti LinkedIn sembrano quelli di tutti gli altri",
     },
     metaDescription: {
       en: "Consistent LinkedIn publishing requires more than writing fast. Learn why editorial pipelines with specialized agents produce better content than single-prompt approaches.",
@@ -176,8 +176,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDD2C",
     relatedSkillSlug: "deep-research-agent",
     metaTitle: {
-      en: "AI Research Without Sources Is Just Fiction | Skillwire Blog",
-      it: "La ricerca AI senza fonti \u00e8 solo narrativa | Skillwire Blog",
+      en: "AI Research Without Sources Is Just Fiction",
+      it: "La ricerca AI senza fonti \u00e8 solo narrativa",
     },
     metaDescription: {
       en: "AI produces confident text without citations. Learn why unsourced research is dangerous for professionals and how structured methodologies fix the problem.",
@@ -202,8 +202,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDCC4",
     relatedSkillSlug: "cv-guru",
     metaTitle: {
-      en: "Why Your CV Never Reaches a Human | Skillwire Blog",
-      it: "Perch\u00e9 il tuo CV non arriva mai a un umano | Skillwire Blog",
+      en: "Why Your CV Never Reaches a Human",
+      it: "Perch\u00e9 il tuo CV non arriva mai a un umano",
     },
     metaDescription: {
       en: "ATS filters reject most CVs before recruiters see them. Learn how automated screening works, what kills your application, and how to fix it.",
@@ -228,8 +228,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83E\uDDED",
     relatedSkillSlug: "ask-to-vera",
     metaTitle: {
-      en: "When You Know You Need a Career Change | Skillwire Blog",
-      it: "Quando sai che hai bisogno di un cambiamento di carriera | Skillwire Blog",
+      en: "When You Know You Need a Career Change",
+      it: "Quando sai che hai bisogno di un cambiamento di carriera",
     },
     metaDescription: {
       en: "Career dissatisfaction has three patterns. Knowing which one you're in changes what you should do next. Evidence-based assessments vs. generic career advice.",
@@ -254,8 +254,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDD28",
     relatedSkillSlug: "skill-creator-guru",
     metaTitle: {
-      en: "How to Build Claude Code Skills That Work | Skillwire Blog",
-      it: "Come costruire skill per Claude Code che funzionano | Skillwire Blog",
+      en: "How to Build Claude Code Skills That Work",
+      it: "Come costruire skill per Claude Code che funzionano",
     },
     metaDescription: {
       en: "Beyond Anthropic's basics: PRD methodology, token optimization, quality pillars, and anti-patterns for building production-grade Claude Code skills.",
@@ -280,8 +280,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83E\uDDE0",
     relatedSkillSlug: "memory-manager",
     metaTitle: {
-      en: "The Context Tax of Stateless AI | Skillwire Blog",
-      it: "La tassa del contesto dell'AI stateless | Skillwire Blog",
+      en: "The Context Tax of Stateless AI",
+      it: "La tassa del contesto dell'AI stateless",
     },
     metaDescription: {
       en: "Every Claude Code session starts from zero. You re-explain context, clients, projects. The cost compounds daily. Here's what persistent memory looks like in practice.",
@@ -306,8 +306,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFA8",
     relatedSkillSlug: "nano-banana-guru",
     metaTitle: {
-      en: "You Are Prompting Image AI Wrong | Skillwire Blog",
-      it: "Stai promptando l'AI visiva nel modo sbagliato | Skillwire Blog",
+      en: "You Are Prompting Image AI Wrong",
+      it: "Stai promptando l'AI visiva nel modo sbagliato",
     },
     metaDescription: {
       en: "Tag soups produce generic AI images. Structured briefs produce professional visual artifacts. The difference is how you talk to the model, not which model you use.",
@@ -332,8 +332,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFAC",
     relatedSkillSlug: "remotion-best-practices",
     metaTitle: {
-      en: "The Gap Between Rendering and Motion Design | Skillwire Blog",
-      it: "Il gap tra renderizzare e fare motion design | Skillwire Blog",
+      en: "The Gap Between Rendering and Motion Design",
+      it: "Il gap tra renderizzare e fare motion design",
     },
     metaDescription: {
       en: "Remotion gives you React-based video creation. What it doesn't give you is motion design knowledge: when to use spring with overshoot, why stagger timing matters, how narrative arcs keep viewers engaged.",
@@ -358,8 +358,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFD7\uFE0F",
     relatedSkillSlug: "maia",
     metaTitle: {
-      en: "Why AI Projects Lose Coherence After Step Three | Skillwire Blog",
-      it: "Perch\u00e9 i progetti AI perdono coerenza dopo il terzo step | Skillwire Blog",
+      en: "Why AI Projects Lose Coherence After Step Three",
+      it: "Perch\u00e9 i progetti AI perdono coerenza dopo il terzo step",
     },
     metaDescription: {
       en: "Complex AI projects drift because there's no structure between steps. No quality checks, no context management, no milestone control. Software development solved this decades ago. AI project execution hasn't.",
@@ -384,8 +384,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\u2694\uFE0F",
     relatedSkillSlug: "llm-arena-vs",
     metaTitle: {
-      en: "When One AI Model Isn't Enough | Skillwire Blog",
-      it: "Quando un solo modello AI non basta | Skillwire Blog",
+      en: "When One AI Model Isn't Enough",
+      it: "Quando un solo modello AI non basta",
     },
     metaDescription: {
       en: "Every AI model has blind spots. Claude reasons differently from GPT, which reasons differently from Gemini. Running all three on the same task reveals what no single model shows you.",
@@ -410,8 +410,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\u26A1",
     relatedSkillSlug: "n8n-ai-workflow-expert",
     metaTitle: {
-      en: "Why n8n Workflows Take 10x Longer Than They Should | Skillwire Blog",
-      it: "Perch\u00e9 i workflow n8n richiedono 10x pi\u00f9 tempo del dovuto | Skillwire Blog",
+      en: "Why n8n Workflows Take 10x Longer Than They Should",
+      it: "Perch\u00e9 i workflow n8n richiedono 10x pi\u00f9 tempo del dovuto",
     },
     metaDescription: {
       en: "n8n documentation is scattered across hundreds of pages. AI workflow patterns are buried in forums. A knowledge system inside your editor changes the equation.",
@@ -436,8 +436,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDD04",
     relatedSkillSlug: "iterative-self-critique",
     metaTitle: {
-      en: "Why Your AI Plan Breaks at Step Four | Skillwire Blog",
-      it: "Perch\u00e9 il tuo piano AI si rompe al quarto step | Skillwire Blog",
+      en: "Why Your AI Plan Breaks at Step Four",
+      it: "Perch\u00e9 il tuo piano AI si rompe al quarto step",
     },
     metaDescription: {
       en: "LLMs plan at 50% accuracy on complex tasks. Google DeepMind's Plan-Critique-Revise pattern doubles that. How structured self-critique catches broken dependencies before execution.",
@@ -462,8 +462,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDF93",
     relatedSkillSlug: "ask-to-andrew",
     metaTitle: {
-      en: "Choosing a School With Zero Data | Skillwire Blog",
-      it: "Scegliere una scuola con zero dati | Skillwire Blog",
+      en: "Choosing a School With Zero Data",
+      it: "Scegliere una scuola con zero dati",
     },
     metaDescription: {
       en: "Italian families choose schools based on open days and word of mouth. RIASEC assessments and Almalaurea employment data exist but rarely reach the families who need them most.",
@@ -488,8 +488,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFD7\uFE0F",
     relatedSkillSlug: "workspace-architect",
     metaTitle: {
-      en: "From Chatbot to Operating System: Building a Complete Claude Code Workspace | Skillwire Blog",
-      it: "Da chatbot a sistema operativo: costruire un workspace Claude Code completo | Skillwire Blog",
+      en: "From Chatbot to Operating System | Building a Complete Claude Code Workspace",
+      it: "Da Chatbot a Sistema Operativo | Costruire un Workspace Claude Code Completo",
     },
     metaDescription: {
       en: "Most Claude Code users run on a four-line CLAUDE.md. A complete workspace adds session management, agents, ROI tracking, and self-improvement. Here is the difference it makes.",
@@ -514,8 +514,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFAF",
     relatedSkillSlug: "b2b-presentation-builder",
     metaTitle: {
-      en: "Why Your B2B Deck Loses the Room | Skillwire Blog",
-      it: "Perch\u00e9 il tuo deck B2B perde la sala | Skillwire Blog",
+      en: "Why Your B2B Deck Loses the Room",
+      it: "Perch\u00e9 il tuo deck B2B perde la sala",
     },
     metaDescription: {
       en: "Generic decks fail because they serve no specific audience. Learn how structural and narrative frameworks solve the multi-stakeholder presentation problem.",
@@ -540,8 +540,8 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83C\uDFA4",
     relatedSkillSlug: "meeting-insights-analyzer",
     metaTitle: {
-      en: "The Communication Patterns Hiding in Your Meeting Recordings | Skillwire Blog",
-      it: "I pattern comunicativi nascosti nelle tue registrazioni meeting | Skillwire Blog",
+      en: "The Communication Patterns Hiding in Your Meeting Recordings",
+      it: "I pattern comunicativi nascosti nelle tue registrazioni meeting",
     },
     metaDescription: {
       en: "You transcribe meetings but never analyze them. Here is what a structured analysis of your transcripts reveals about your communication habits -- and how to track improvement over time.",

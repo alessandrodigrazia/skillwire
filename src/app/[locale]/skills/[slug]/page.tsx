@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSkillBySlug } from "@/lib/data/skills";
+import { buildSkillProductSchema } from "@/lib/structured-data";
 import SkillDetailClient from "./SkillDetailClient";
 
 type Params = { locale: string; slug: string };
@@ -27,6 +28,14 @@ export async function generateMetadata({
       description,
       type: "website",
       url,
+      images: [
+        {
+          url: `https://skillwire.ai/${locale}/skills/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${title} | Skillwire`,
+        },
+      ],
     },
     alternates: {
       canonical: url,
@@ -47,19 +56,16 @@ export default async function SkillDetailPage({
   const skill = getSkillBySlug(slug);
   if (!skill) notFound();
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
+  const productSchema = buildSkillProductSchema({
+    slug: skill.slug,
     name: skill.name,
     description: skill.metaDescription.en,
-    brand: { "@type": "Brand", name: "Skillwire" },
-    offers: {
-      "@type": "Offer",
-      price: skill.isFree ? 0 : skill.price,
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-    },
-  };
+    price: skill.price,
+    isFree: skill.isFree,
+    imageUrl: `https://skillwire.ai/en/skills/${skill.slug}/opengraph-image`,
+    averageRating: skill.averageRating,
+    reviewCount: skill.reviewCount,
+  });
 
   const faqSchema =
     skill.faq.length > 0
