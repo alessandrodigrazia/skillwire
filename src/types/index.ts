@@ -3,7 +3,8 @@ export type CategorySlug =
   | "career"
   | "content"
   | "automation"
-  | "devtools";
+  | "devtools"
+  | "productivity";
 
 export type BadgeType =
   | "best-seller"
