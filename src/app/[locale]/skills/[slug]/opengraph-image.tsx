@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getSkillBySlug } from "@/lib/data/skills";
 
-export const runtime = "edge";
 export const alt = "Skill product image";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -27,7 +26,6 @@ export default async function Image({
             backgroundColor: "#0A0A0B",
             color: "#F59E0B",
             fontSize: 64,
-            fontFamily: "monospace",
           }}
         >
           Skillwire
@@ -50,7 +48,6 @@ export default async function Image({
           justifyContent: "center",
           padding: "60px 80px",
           backgroundColor: "#0A0A0B",
-          fontFamily: "monospace",
         }}
       >
         <div
@@ -60,10 +57,9 @@ export default async function Image({
             marginBottom: 40,
             color: "#F59E0B",
             fontSize: 28,
-            opacity: 0.8,
           }}
         >
-          {">"} skillwire.ai
+          {"> skillwire.ai"}
         </div>
 
         <div
@@ -82,22 +78,22 @@ export default async function Image({
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 24,
             fontSize: 28,
           }}
         >
           <div
             style={{
               color: "#F59E0B",
-              backgroundColor: "rgba(245,158,11,0.15)",
+              backgroundColor: "#2D2006",
               padding: "8px 20px",
               borderRadius: 8,
+              marginRight: 24,
             }}
           >
             {skill.category}
           </div>
-          <div style={{ color: "#A1A1AA" }}>{priceLabel}</div>
-          <div style={{ color: "#A1A1AA" }}>{skill.filesCount} files</div>
+          <div style={{ color: "#A1A1AA", marginRight: 24 }}>{priceLabel}</div>
+          <div style={{ color: "#A1A1AA" }}>{`${skill.filesCount} files`}</div>
         </div>
 
         <div
