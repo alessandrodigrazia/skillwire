@@ -548,6 +548,32 @@ export const articles: BlogArticle[] = [
       it: "Trascrivi i meeting ma non li analizzi mai. Ecco cosa rivela un'analisi strutturata delle tue trascrizioni sui tuoi pattern comunicativi -- e come tracciare il miglioramento nel tempo.",
     },
   },
+  {
+    slug: "trigger-based-prospecting-outbound-strategy",
+    title: {
+      en: "Why Trigger-Based Prospecting Beats Cold Outbound Every Time",
+      it: "Perche il prospecting basato sui trigger batte il cold outbound ogni volta",
+    },
+    excerpt: {
+      en: "90% of cold emails get deleted. The 10% that get replies share one thing: they reference something that just happened to the recipient's business. Here is how to build an outbound system around trigger events instead of volume.",
+      it: "Il 90% delle cold email finisce nel cestino. Il 10% che riceve risposta ha una cosa in comune: fa riferimento a qualcosa che e appena successo nel business del destinatario. Ecco come costruire un sistema outbound attorno ai trigger event invece che sul volume.",
+    },
+    category: "insight",
+    tags: ["B2B-sales", "prospecting", "trigger-events", "outbound", "enterprise-sales"],
+    author: "Alessandro Di Grazia",
+    publishedAt: "2026-02-23",
+    readingTime: 7,
+    coverEmoji: "\uD83C\uDFAF",
+    relatedSkillSlug: "b2b-prospecting-engine",
+    metaTitle: {
+      en: "Trigger-Based Prospecting | Why Cold Outbound Fails",
+      it: "Prospecting Basato sui Trigger | Perche il Cold Outbound Fallisce",
+    },
+    metaDescription: {
+      en: "Cold emails fail because they have no context. Trigger-based prospecting anchors every message to a real business event. Here is how to build an outbound system that gets replies.",
+      it: "Le cold email falliscono perche mancano di contesto. Il prospecting basato sui trigger ancora ogni messaggio a un evento di business reale. Ecco come costruire un sistema outbound che riceve risposte.",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

@@ -42,12 +42,12 @@ export const bundles: BundleDetail[] = [
     name: "B2B Sales Pro System",
     icon: "target",
     tagline: {
-      en: "The complete B2B enterprise sales arsenal \u2014 from first call to signed contract.",
-      it: "L\u2019intero arsenale del venditore B2B enterprise \u2014 dalla prima call alla firma del contratto.",
+      en: "The complete B2B enterprise sales arsenal -- from first prospect to signed contract.",
+      it: "L'intero arsenale del venditore B2B enterprise -- dal primo prospect alla firma del contratto.",
     },
     description: {
-      en: "These 4 skills cover the entire B2B sales cycle. Research your prospect in depth (Deep Research Agent), prepare a structured pitch following a proven enterprise methodology (Sales Methodology Pro), stress-test your proposal before presenting it (Janus), and build C-level presentations that close deals (B2B Presentation Builder). Together they form a complete system \u2014 not isolated tools.",
-      it: "Queste 4 skill coprono l\u2019intero ciclo di vendita B2B. Ricerca approfondita sul prospect (Deep Research Agent), preparazione di un pitch strutturato con metodologia enterprise collaudata (Sales Methodology Pro), stress-test della proposta prima di presentarla (Janus), e creazione di presentazioni C-level che chiudono i deal (B2B Presentation Builder). Insieme formano un sistema completo \u2014 non strumenti isolati.",
+      en: "These 5 skills cover the entire B2B sales cycle from top to bottom. Find and prioritize the right accounts with trigger-based prospecting (B2B Prospecting Engine), research your prospect in depth (Deep Research Agent), prepare a structured pitch following a proven enterprise methodology (Sales Methodology Pro), stress-test your proposal before presenting it (Janus), and build C-level presentations that close deals (B2B Presentation Builder). Together they form a complete system -- not isolated tools.",
+      it: "Queste 5 skill coprono l'intero ciclo di vendita B2B dall'inizio alla fine. Trova e prioritizza gli account giusti con il prospecting basato sui trigger (B2B Prospecting Engine), ricerca approfondita sul prospect (Deep Research Agent), preparazione di un pitch strutturato con metodologia enterprise collaudata (Sales Methodology Pro), stress-test della proposta prima di presentarla (Janus), e creazione di presentazioni C-level che chiudono i deal (B2B Presentation Builder). Insieme formano un sistema completo -- non strumenti isolati.",
     },
     skillSummaries: [
       {
@@ -90,12 +90,22 @@ export const bundles: BundleDetail[] = [
           it: "Ricerca approfondita multi-fonte con citazioni e report strutturati.",
         },
       },
+      {
+        slug: "b2b-prospecting-engine",
+        name: "B2B Prospecting Engine",
+        icon: "target",
+        price: 59,
+        tagline: {
+          en: "Trigger-based prospecting with account scoring, buying committee mapping, and outcome-based outreach.",
+          it: "Prospecting basato sui trigger con scoring account, mappatura buying committee e outreach outcome-based.",
+        },
+      },
     ],
-    originalPrice: 306,
-    bundlePrice: 249,
-    savingsPercent: 19,
+    originalPrice: 365,
+    bundlePrice: 299,
+    savingsPercent: 18,
     badge: "flagship",
-    version: "1.0",
+    version: "1.1",
     changelog: [
       {
         version: "1.0",
@@ -104,6 +114,16 @@ export const bundles: BundleDetail[] = [
           {
             en: "Initial release with 4 complementary B2B sales skills.",
             it: "Rilascio iniziale con 4 skill complementari per vendita B2B.",
+          },
+        ],
+      },
+      {
+        version: "1.1",
+        date: "2026-02-23",
+        changes: [
+          {
+            en: "Added B2B Prospecting Engine for top-of-funnel coverage.",
+            it: "Aggiunto B2B Prospecting Engine per la copertura top-of-funnel.",
           },
         ],
       },
@@ -129,12 +149,12 @@ export const bundles: BundleDetail[] = [
     faq: [
       {
         question: {
-          en: "Do I need all 4 skills or can I buy them individually?",
-          it: "Ho bisogno di tutte e 4 le skill o posso comprarle singolarmente?",
+          en: "Do I need all 5 skills or can I buy them individually?",
+          it: "Ho bisogno di tutte e 5 le skill o posso comprarle singolarmente?",
         },
         answer: {
-          en: "Each skill works independently, but the bundle is designed as a complete system. The sales methodology feeds into the presentation builder, Janus validates your approach, and the research agent powers everything with data.",
-          it: "Ogni skill funziona in modo indipendente, ma il bundle \u00e8 progettato come un sistema completo. La metodologia di vendita alimenta il presentation builder, Janus valida il tuo approccio, e il research agent alimenta tutto con i dati.",
+          en: "Each skill works independently, but the bundle is designed as a complete system. The prospecting engine finds and scores accounts, the research agent digs deeper, the sales methodology structures your approach, Janus validates it, and the presentation builder turns it into a deck that closes.",
+          it: "Ogni skill funziona in modo indipendente, ma il bundle è progettato come un sistema completo. Il prospecting engine trova e classifica gli account, il research agent approfondisce, la metodologia di vendita struttura il tuo approccio, Janus lo valida e il presentation builder lo trasforma in un deck che chiude.",
         },
       },
       {
@@ -153,8 +173,8 @@ export const bundles: BundleDetail[] = [
       it: "B2B Sales Pro System | Toolkit Completo Vendita Enterprise",
     },
     metaDescription: {
-      en: "4 professional skills for B2B enterprise sales: methodology, presentations, critical analysis, and deep research. Save 19%.",
-      it: "4 skill professionali per vendita B2B enterprise: metodologia, presentazioni, analisi critica e ricerca approfondita. Risparmia il 19%.",
+      en: "5 professional skills for B2B enterprise sales: trigger-based prospecting, methodology, presentations, critical analysis, and deep research. Save 18%.",
+      it: "5 skill professionali per vendita B2B enterprise: prospecting basato sui trigger, metodologia, presentazioni, analisi critica e ricerca approfondita. Risparmia il 18%.",
     },
   hasTerminalVideo: true,
   },

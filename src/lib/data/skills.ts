@@ -120,6 +120,7 @@ const CATALOG_ORDER = [
   ...FEATURED_SLUGS,
   "content-pipeline-pro",
   "b2b-presentation-builder",
+  "b2b-prospecting-engine",
   "ask-to-andrew",
   "iterative-self-critique",
   "n8n-ai-workflow-expert",
@@ -2719,6 +2720,134 @@ export const skills: SkillDetail[] = [
     relatedSlugs: ["human-writer", "cv-guru", "memory-manager", "janus"],
     compatibleWith: "Claude Code + Desktop",
     prerequisites: [],
+    hasTerminalVideo: true,
+  },
+  {
+    slug: "b2b-prospecting-engine",
+    name: "B2B Prospecting Engine",
+    technicalName: "b2b-prospecting-engine",
+    tagline: {
+      en: "Stop sending cold emails into the void. Score your accounts, catch trigger events, and write outreach that references something real.",
+      it: "Basta inviare cold email nel vuoto. Classifica i tuoi account, intercetta i trigger event e scrivi outreach che fa riferimento a qualcosa di reale.",
+    },
+    category: "sales",
+    tags: ["prospecting", "trigger-events", "outreach", "B2B-sales", "lead-research"],
+    price: 59,
+    currency: "EUR",
+    isFree: false,
+    isBundleOnly: false,
+    badge: "new",
+    icon: "target",
+    filesCount: 12,
+    launchPhase: 1,
+    complexity: 4,
+    version: "1.0",
+    changelog: [
+      {
+        version: "1.0",
+        date: "2026-02-23",
+        changes: [
+          { en: "Initial release with 5 workflows, Python account scorer, and outcome-based outreach templates", it: "Rilascio iniziale con 5 workflow, scorer account Python e template outreach outcome-based" },
+        ],
+      },
+    ],
+    bundleSlugs: ["b2b-sales-pro"],
+    metaTitle: {
+      en: "B2B Prospecting Engine | Trigger-Based Outbound for Enterprise Sales",
+      it: "B2B Prospecting Engine | Outbound Basato sui Trigger per Vendita Enterprise",
+    },
+    metaDescription: {
+      en: "Score target accounts, detect trigger events, map buying committees, and generate outcome-based outreach sequences. 12 files, 5 orchestrated workflows for Claude Code.",
+      it: "Classifica account target, rileva trigger event, mappa buying committee e genera sequenze outreach outcome-based. 12 file, 5 workflow orchestrati per Claude Code.",
+    },
+    averageRating: 0,
+    reviewCount: 0,
+    problem: {
+      en: "You export a list of 200 accounts from your CRM. Then you open LinkedIn, Google News, and the company website for each one. Two hours later you have research notes on three accounts and zero emails sent. The other 197 sit in a spreadsheet untouched. When you do write an email, it starts with 'I noticed your company is growing' -- the same opening your prospect received from eight other vendors this week. No trigger event. No specific pain point. No reason to reply. Your pipeline stays thin not because you lack targets but because the research-to-outreach process takes too long and produces generic output. SDR teams spend 65% of their time on activities that generate zero pipeline. Most of that time goes into manual research that could be structured and automated.",
+      it: "Esporti una lista di 200 account dal CRM. Poi apri LinkedIn, Google News e il sito aziendale per ognuno. Due ore dopo hai appunti di ricerca su tre account e zero email inviate. Gli altri 197 restano in un foglio di calcolo intoccati. Quando scrivi un'email, inizia con 'Ho notato che la vostra azienda sta crescendo' -- la stessa apertura che il tuo prospect ha ricevuto da altri otto vendor questa settimana. Nessun trigger event. Nessun punto di dolore specifico. Nessun motivo per rispondere. La pipeline resta sottile non perché ti mancano i target, ma perché il processo dalla ricerca all'outreach richiede troppo tempo e produce output generico. I team SDR spendono il 65% del tempo in attività che generano zero pipeline. La maggior parte di quel tempo va in ricerca manuale che potrebbe essere strutturata e automatizzata.",
+    },
+    solution: {
+      en: "B2B Prospecting Engine is five orchestrated workflows that cover the entire top-of-funnel process. You start by importing your target list from CSV or Excel. A Python scoring engine evaluates each account on seven dimensions -- company size, industry fit, tech stack alignment, growth signals, geographic match, deal size potential, and competitive presence -- and assigns a Tier 1, 2, or 3 classification. Tier 1 accounts get a deep research pass that scans for trigger events: M&A activity, leadership changes, earnings reports, product launches, geographic expansion, funding rounds. The buying committee mapper identifies decision makers, champions, and blockers using MEDDPICC roles. Then the outreach generator builds a 3-step email sequence for each account. Every email opens with a verified trigger event, connects it to a business outcome the prospect cares about, and offers commercial teaching value instead of a product pitch. A parallel social selling planner creates LinkedIn touchpoints that complement the email sequence. The day planner workflow organizes your morning around the highest-priority accounts so you spend time where it counts.",
+      it: "B2B Prospecting Engine comprende cinque workflow orchestrati che coprono l'intero processo top-of-funnel. Inizi importando la lista target da CSV o Excel. Uno scoring engine Python valuta ogni account su sette dimensioni -- dimensione azienda, aderenza settore, allineamento tech stack, segnali di crescita, corrispondenza geografica, potenziale dimensione deal e presenza competitiva -- e assegna una classificazione Tier 1, 2 o 3. Gli account Tier 1 ricevono una ricerca approfondita che cerca trigger event: attività M&A, cambi di leadership, report sugli utili, lanci prodotto, espansione geografica, round di finanziamento. Il mapper del buying committee identifica decision maker, champion e blocker usando i ruoli MEDDPICC. Poi il generatore outreach costruisce una sequenza email 3-step per ogni account. Ogni email apre con un trigger event verificato, lo collega a un risultato di business che il prospect considera importante e offre valore di commercial teaching invece di un pitch prodotto. Un planner parallelo per il social selling crea touchpoint LinkedIn che completano la sequenza email. Il workflow day planner organizza la tua mattina attorno agli account a priorità più alta per investire il tempo dove conta.",
+    },
+    result: {
+      en: "The 200-account spreadsheet becomes a prioritized battle plan in ten minutes instead of two hours. Every Tier 1 account has a trigger event, a mapped buying committee, and a ready-to-send 3-step sequence before you open your inbox. The emails you send reference a specific event that happened in the last 30 days -- not a generic compliment. Your discovery calls arrive prepared with SPICED framework notes: Situation, Pain, Impact, Critical Event, Decision. The day planner tells you which three accounts deserve your attention today and what the next action is for each one. SDR teams that anchor outreach to trigger events see reply rates 3-4x higher than generic cold email. The difference is not better writing. It is better timing and better context.",
+      it: "Il foglio con 200 account diventa un battle plan prioritizzato in dieci minuti invece di due ore. Ogni account Tier 1 ha un trigger event, un buying committee mappato e una sequenza 3-step pronta da inviare prima che tu apra la posta. Le email che invii fanno riferimento a un evento specifico accaduto negli ultimi 30 giorni -- non un complimento generico. Le tue discovery call arrivano preparate con note nel framework SPICED: Situation, Pain, Impact, Critical Event, Decision. Il day planner ti dice su quali tre account concentrarti oggi e qual è la prossima azione per ciascuno. I team SDR che ancorano l'outreach ai trigger event registrano tassi di risposta 3-4 volte superiori rispetto alle cold email generiche. La differenza non è una scrittura migliore. È un timing migliore e un contesto migliore.",
+    },
+    whatsInside: [
+      { en: "Workflow orchestrator that coordinates account import, scoring, research, and outreach generation across the full pipeline", it: "Workflow orchestrator che coordina importazione account, scoring, ricerca e generazione outreach attraverso l'intera pipeline" },
+      { en: "Python scoring engine with 7-dimension evaluation and automatic Tier 1/2/3 classification from CSV or Excel input", it: "Scoring engine Python con valutazione a 7 dimensioni e classificazione automatica Tier 1/2/3 da input CSV o Excel" },
+      { en: "Batch research pipeline that runs deep research on multiple accounts and generates trigger event reports", it: "Pipeline di ricerca batch che esegue ricerca approfondita su più account e genera report sui trigger event" },
+      { en: "Buying committee mapper using MEDDPICC roles: Decision Maker, Economic Buyer, Champion, and Technical Evaluator", it: "Mapper del buying committee con ruoli MEDDPICC: Decision Maker, Economic Buyer, Champion e Technical Evaluator" },
+      { en: "3-step outcome-based email generator: trigger event hook, commercial teaching value, and clear call-to-action", it: "Generatore email outcome-based 3-step: hook da trigger event, valore di commercial teaching e call-to-action chiara" },
+      { en: "Social selling planner with LinkedIn touchpoint sequence that runs parallel to email outreach", it: "Planner social selling con sequenza touchpoint LinkedIn che corre parallela all'outreach email" },
+      { en: "Discovery call preparation with SPICED framework: Situation, Pain, Impact, Critical Event, Decision", it: "Preparazione discovery call con framework SPICED: Situation, Pain, Impact, Critical Event, Decision" },
+      { en: "Daily battle plan generator that prioritizes accounts by tier, trigger event freshness, and next action urgency", it: "Generatore daily battle plan che prioritizza gli account per tier, freschezza del trigger event e urgenza della prossima azione" },
+    ],
+    whoIsThisFor: [
+      { en: "SDR and BDR teams working enterprise accounts who spend too much time on manual research before sending the first email", it: "Team SDR e BDR su account enterprise che spendono troppo tempo in ricerca manuale prima di inviare la prima email" },
+      { en: "Sales managers who want their team to send fewer but better-targeted emails grounded in real trigger events", it: "Sales manager che vogliono che il team invii meno email ma più mirate, ancorate a trigger event reali" },
+      { en: "Key account managers responsible for expanding existing relationships who need to spot upsell triggers early", it: "Key account manager responsabili dell'espansione di relazioni esistenti che devono identificare trigger di upsell in anticipo" },
+      { en: "B2B consultants and independent sales professionals who run their own prospecting without a dedicated research team", it: "Consulenti B2B e professionisti di vendita indipendenti che gestiscono il proprio prospecting senza un team di ricerca dedicato" },
+    ],
+    notFor: {
+      en: "This skill is built for B2B prospecting with named accounts. If you sell B2C, run transactional e-commerce, or work with inbound-only funnels, the account scoring and buying committee mapping will not apply. You also need a target account list: this engine processes an existing list, it does not generate one from scratch.",
+      it: "Questa skill è costruita per il prospecting B2B con account nominativi. Se vendi B2C, gestisci e-commerce transazionale o lavori con funnel solo inbound, lo scoring account e il mapping del buying committee non si applicano. Serve anche una lista account target: questo engine processa una lista esistente, non ne genera una da zero.",
+    },
+    beforeAfter: [
+      {
+        before: { en: "Two hours of manual research per account: LinkedIn, Google News, company website, annual reports", it: "Due ore di ricerca manuale per account: LinkedIn, Google News, sito aziendale, bilanci" },
+        after: { en: "Ten minutes per account: automated scoring, trigger event detection, and buying committee mapping", it: "Dieci minuti per account: scoring automatico, rilevamento trigger event e mappatura buying committee" },
+      },
+      {
+        before: { en: "Generic cold emails that open with 'I noticed your company is growing' and get deleted", it: "Cold email generiche che aprono con 'Ho notato che la vostra azienda sta crescendo' e finiscono nel cestino" },
+        after: { en: "Trigger-based outreach that opens with a verified event from the last 30 days and offers commercial teaching value", it: "Outreach basato sui trigger che apre con un evento verificato degli ultimi 30 giorni e offre valore di commercial teaching" },
+      },
+      {
+        before: { en: "Walking into discovery calls with surface-level notes and no framework", it: "Entrare in discovery call con appunti superficiali e nessun framework" },
+        after: { en: "SPICED-prepared discovery with mapped buying committee, identified pain points, and a battle plan for each account", it: "Discovery preparata con SPICED, buying committee mappato, pain point identificati e un battle plan per ogni account" },
+      },
+      {
+        before: { en: "Starting each morning wondering which of 200 accounts to focus on today", it: "Iniziare ogni mattina chiedendosi su quale dei 200 account concentrarsi oggi" },
+        after: { en: "A daily battle plan that tells you which three accounts need attention and what the next action is for each", it: "Un daily battle plan che ti dice su quali tre account concentrarti e qual è la prossima azione per ciascuno" },
+      },
+    ],
+    faq: [
+      {
+        question: { en: "What input format does the scoring engine accept?", it: "Che formato di input accetta lo scoring engine?" },
+        answer: {
+          en: "CSV or Excel files with columns for company name, industry, employee count, and any additional data you have. The scorer adapts to available columns -- more data means more precise scoring, but even a basic company list produces useful tier assignments.",
+          it: "File CSV o Excel con colonne per nome azienda, settore, numero dipendenti e qualsiasi dato aggiuntivo disponibile. Lo scorer si adatta alle colonne disponibili -- più dati significano scoring più preciso, ma anche una lista di base produce assegnazioni di tier utili.",
+        },
+      },
+      {
+        question: { en: "Does this replace my CRM?", it: "Sostituisce il mio CRM?" },
+        answer: {
+          en: "No. This engine works alongside your CRM. You export your target list from the CRM, run it through the scoring and research pipeline, and use the output to prioritize your outreach. The battle plans and email sequences are designed to be executed through your existing sales tools.",
+          it: "No. Questo engine lavora insieme al tuo CRM. Esporti la lista target dal CRM, la passi attraverso la pipeline di scoring e ricerca, e usi l'output per prioritizzare il tuo outreach. I battle plan e le sequenze email sono progettati per essere eseguiti attraverso i tuoi strumenti di vendita esistenti.",
+        },
+      },
+      {
+        question: { en: "How is this different from AI-Powered B2B Sales Methodology?", it: "In cosa differisce da AI-Powered B2B Sales Methodology?" },
+        answer: {
+          en: "Sales Methodology covers mid and late funnel: qualification frameworks, proposal structuring, negotiation, and closing. The Prospecting Engine covers top-of-funnel: finding, scoring, researching, and approaching target accounts. They are complementary. Together they cover the full cycle.",
+          it: "Sales Methodology copre il mid e late funnel: framework di qualificazione, strutturazione proposte, negoziazione e closing. Il Prospecting Engine copre il top-of-funnel: trovare, classificare, ricercare e approcciare account target. Sono complementari. Insieme coprono l'intero ciclo.",
+        },
+      },
+      {
+        question: { en: "Does it work in Claude Desktop and claude.ai?", it: "Funziona in Claude Desktop e claude.ai?" },
+        answer: {
+          en: "The workflows and email templates work in Claude Desktop and claude.ai. The Python scoring engine requires Claude Code with terminal access. Deep Research for trigger event detection works best in Claude Code but is compatible with Claude Desktop when using the Deep Research tool.",
+          it: "I workflow e i template email funzionano in Claude Desktop e claude.ai. Lo scoring engine Python richiede Claude Code con accesso al terminale. La Deep Research per il rilevamento dei trigger event funziona al meglio in Claude Code ma è compatibile con Claude Desktop quando si usa il tool Deep Research.",
+        },
+      },
+    ],
+    relatedSlugs: ["ai-b2b-sales-methodology", "deep-research-agent", "human-writer", "b2b-presentation-builder"],
+    compatibleWith: "Claude Code + Desktop",
+    prerequisites: [
+      "Python 3.x + openpyxl (for account scoring)",
+      "Claude Desktop with Deep Research (recommended for Tier 1 accounts)",
+    ],
     hasTerminalVideo: true,
   },
 ];

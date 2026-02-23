@@ -27,6 +27,7 @@ export const WHOP_PLAN_MAP: Record<string, string> = {
   "nano-banana-guru": "plan_8fUkM9kpesAK2",
   "workspace-architect": "plan_CGUQAu3tBDug1",
   "meeting-insights-analyzer": "plan_Edg4WoLriiXJf",
+  "b2b-prospecting-engine": "plan_y8RlWUdKRNC0f",
   // Bundles
   "b2b-sales-pro": "plan_CZQCeLL1eGNKg",
   "career-navigator": "plan_9JaBuhfFbNKzy",

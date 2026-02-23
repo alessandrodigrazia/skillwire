@@ -21,6 +21,7 @@ export const DOWNLOADABLE_SLUGS = new Set([
   "content-pipeline-pro",
   "remotion-best-practices",
   "nano-banana-guru",
+  "b2b-prospecting-engine",
   // Bundles (ZIP names must match)
   "b2b-sales-pro",
   "career-navigator",
