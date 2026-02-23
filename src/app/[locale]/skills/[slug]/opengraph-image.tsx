@@ -55,11 +55,18 @@ export default async function Image({
             display: "flex",
             alignItems: "center",
             marginBottom: 40,
-            color: "#F59E0B",
             fontSize: 28,
           }}
         >
-          {"> skillwire.ai"}
+          <div style={{ color: "#F59E0B" }}>{">skillwire.ai"}</div>
+          <div
+            style={{
+              width: 3,
+              height: 28,
+              backgroundColor: "#F59E0B",
+              marginLeft: 2,
+            }}
+          />
         </div>
 
         <div
