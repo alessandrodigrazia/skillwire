@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { X, Trash2, ShoppingBag, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/lib/store/cart";
 import { motion, AnimatePresence } from "framer-motion";
 import { getIcon } from "@/lib/icon-map";
-import { CheckoutOverlay } from "./CheckoutOverlay";
 
 export function CartDrawer() {
   const t = useTranslations("cart");
@@ -24,8 +22,6 @@ export function CartDrawer() {
     setCheckingOut,
     setCheckoutError,
   } = useCartStore();
-
-  const [checkoutPlanId, setCheckoutPlanId] = useState<string | null>(null);
 
   async function handleCheckout() {
     setCheckoutError(null);
@@ -49,13 +45,8 @@ export function CartDrawer() {
         return;
       }
 
-      // Use embedded checkout if planId available, fallback to redirect
-      if (data.planId) {
-        setCheckoutPlanId(data.planId);
-        closeCart();
-      } else {
-        window.location.href = data.checkoutUrl;
-      }
+      // Redirect to Whop hosted checkout page
+      window.location.href = data.checkoutUrl;
     } catch {
       setCheckoutError(t("checkoutError"));
     } finally {
@@ -65,14 +56,6 @@ export function CartDrawer() {
 
   return (
     <>
-      {/* Embedded checkout overlay */}
-      {checkoutPlanId && (
-        <CheckoutOverlay
-          planId={checkoutPlanId}
-          onClose={() => setCheckoutPlanId(null)}
-        />
-      )}
-
     <AnimatePresence>
       {isOpen && (
         <>
