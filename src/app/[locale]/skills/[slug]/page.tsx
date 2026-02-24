@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSkillBySlug } from "@/lib/data/skills";
-import { buildSkillProductSchema } from "@/lib/structured-data";
+import {
+  buildSkillProductSchema,
+  fetchSkillReviews,
+} from "@/lib/structured-data";
 import SkillDetailClient from "./SkillDetailClient";
 
 type Params = { locale: string; slug: string };
@@ -56,6 +59,9 @@ export default async function SkillDetailPage({
   const skill = getSkillBySlug(slug);
   if (!skill) notFound();
 
+  const { reviews, averageRating, reviewCount } =
+    await fetchSkillReviews(skill.slug);
+
   const productSchema = buildSkillProductSchema({
     slug: skill.slug,
     name: skill.name,
@@ -63,8 +69,9 @@ export default async function SkillDetailPage({
     price: skill.price,
     isFree: skill.isFree,
     imageUrl: `https://skillwire.ai/en/skills/${skill.slug}/opengraph-image`,
-    averageRating: skill.averageRating,
-    reviewCount: skill.reviewCount,
+    averageRating: averageRating || skill.averageRating,
+    reviewCount: reviewCount || skill.reviewCount,
+    reviews,
   });
 
   const faqSchema =
