@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useLayoutEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { WhopCheckoutEmbed } from "@whop/checkout/react";
@@ -13,21 +13,22 @@ type CheckoutState = "loading" | "ready" | "disabled";
 
 interface CheckoutOverlayProps {
   planId: string;
+  sessionId?: string;
   onClose: () => void;
 }
 
 /**
- * Whop's checkout has a bug: the first iframe load creates auth cookies but
- * Basis Theory card tokenization fails (auth/tokens returns 401 before cookies
- * are established). A page reload fixes it because cookies from the first load
- * are already present.
+ * Whop SDK bug: WhopCheckoutEmbed constructs the iframe URL as either:
+ *   - planId only:    /embedded/checkout/plan_XXX/          (correct path, NO ?session=)
+ *   - sessionId only: /embedded/checkout/chk_XXX/?session=  (WRONG path, has ?session=)
  *
- * We simulate this by reloading the SAME iframe (not remounting — same DOM
- * element, same browsing context, same cookie jar) after the first load
- * completes. The user sees only a loading spinner until the reloaded checkout
- * is ready.
+ * Without ?session=, Basis Theory can't initialize (sessionKey missing) and
+ * card tokenization silently fails — the "Unisciti" button does nothing.
+ *
+ * Fix: render with planId (correct path), then inject ?session= via
+ * useLayoutEffect before the browser starts loading the iframe.
  */
-export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
+export function CheckoutOverlay({ planId, sessionId, onClose }: CheckoutOverlayProps) {
   const t = useTranslations("cart");
   const locale = useLocale();
   const router = useRouter();
@@ -35,42 +36,26 @@ export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [isReady, setIsReady] = useState(false);
-  const hasReloaded = useRef(false);
 
-  const reloadIframe = useCallback(() => {
-    const iframe = containerRef.current?.querySelector("iframe");
-    if (iframe instanceof HTMLIFrameElement && iframe.src) {
-      iframe.src = iframe.src;
+  // Inject ?session= into the iframe URL before the browser loads it.
+  // useLayoutEffect runs synchronously after DOM commit but before paint,
+  // so the browser only fetches the corrected URL.
+  useLayoutEffect(() => {
+    if (!sessionId || !containerRef.current) return;
+
+    const iframe = containerRef.current.querySelector("iframe");
+    if (iframe && iframe.src && !iframe.src.includes("session=")) {
+      const url = new URL(iframe.src);
+      url.searchParams.set("session", sessionId);
+      iframe.src = url.toString();
+    }
+  }, [sessionId]);
+
+  const handleStateChange = useCallback((state: CheckoutState) => {
+    if (state === "ready") {
+      setIsReady(true);
     }
   }, []);
-
-  // Fallback: reload after 4s even if onStateChange hasn't fired "ready"
-  useEffect(() => {
-    if (hasReloaded.current) return;
-    const timer = setTimeout(() => {
-      if (!hasReloaded.current) {
-        hasReloaded.current = true;
-        reloadIframe();
-      }
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, [reloadIframe]);
-
-  const handleStateChange = useCallback(
-    (state: CheckoutState) => {
-      if (!hasReloaded.current) {
-        // First load finished — reload the iframe to fix the auth bug
-        if (state === "ready" || state === "disabled") {
-          hasReloaded.current = true;
-          reloadIframe();
-        }
-      } else if (state === "ready") {
-        // Reloaded iframe is ready — show the checkout form
-        setIsReady(true);
-      }
-    },
-    [reloadIframe]
-  );
 
   const handleComplete = useCallback(
     (_planId: string) => {
@@ -120,7 +105,7 @@ export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
             ref={containerRef}
             className="relative min-h-[300px] flex-1 overflow-y-auto px-4 py-4 sm:px-6"
           >
-            {/* Loading overlay — covers iframe until reloaded checkout is ready */}
+            {/* Loading overlay */}
             {!isReady && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-bg">
                 <Loader2 size={28} className="animate-spin text-accent" />

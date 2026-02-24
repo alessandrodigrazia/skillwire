@@ -25,7 +25,10 @@ export function CartDrawer() {
     setCheckoutError,
   } = useCartStore();
 
-  const [checkoutPlanId, setCheckoutPlanId] = useState<string | null>(null);
+  const [checkoutSession, setCheckoutSession] = useState<{
+    planId: string;
+    sessionId: string;
+  } | null>(null);
 
   async function handleCheckout() {
     setCheckoutError(null);
@@ -49,9 +52,9 @@ export function CartDrawer() {
         return;
       }
 
-      // Open embedded checkout overlay with session warmup
-      if (data.planId) {
-        setCheckoutPlanId(data.planId);
+      // Open embedded checkout overlay with session context
+      if (data.planId && data.sessionId) {
+        setCheckoutSession({ planId: data.planId, sessionId: data.sessionId });
         closeCart();
       } else {
         window.location.href = data.checkoutUrl;
@@ -65,10 +68,11 @@ export function CartDrawer() {
 
   return (
     <>
-      {checkoutPlanId && (
+      {checkoutSession && (
         <CheckoutOverlay
-          planId={checkoutPlanId}
-          onClose={() => setCheckoutPlanId(null)}
+          planId={checkoutSession.planId}
+          sessionId={checkoutSession.sessionId}
+          onClose={() => setCheckoutSession(null)}
         />
       )}
 
