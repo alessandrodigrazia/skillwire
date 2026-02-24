@@ -6,11 +6,12 @@ import { getBundleBySlug } from "@/lib/data/bundles";
 
 /**
  * Whop webhook handler.
- * Listens for payment and membership events (V5 API format).
+ * Listens for payment and membership events (V1 + V5 compatible).
  *
  * Configure in Whop Dashboard > Developer > Webhooks:
  *   URL: https://skillwire.ai/api/webhook/whop
- *   Events: payment_succeeded, membership_went_valid
+ *   API version: V1
+ *   Events: All (handler filters relevant ones)
  */
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillwire.ai";
