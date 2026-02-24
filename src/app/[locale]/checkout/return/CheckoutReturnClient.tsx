@@ -12,14 +12,12 @@ type CheckoutState = "loading" | "ready" | "disabled";
 
 interface CheckoutReturnClientProps {
   stateId: string;
-  sessionId: string;
   planId: string;
   locale: string;
 }
 
 export function CheckoutReturnClient({
   stateId,
-  sessionId,
   planId,
   locale,
 }: CheckoutReturnClientProps) {
@@ -37,7 +35,7 @@ export function CheckoutReturnClient({
   }, []);
 
   const handleComplete = useCallback(
-    (_sessionId: string) => {
+    (_planId: string) => {
       clearCart();
       const slug = getSlugByPlanId(planId);
       const params = new URLSearchParams();
@@ -78,10 +76,9 @@ export function CheckoutReturnClient({
 
       <div className="w-full">
         <WhopCheckoutEmbed
-          sessionId={sessionId}
+          planId={planId}
           stateId={stateId}
           theme="dark"
-          themeOptions={{ accentColor: "amber" }}
           onStateChange={handleStateChange}
           onComplete={handleComplete}
           fallback={null}

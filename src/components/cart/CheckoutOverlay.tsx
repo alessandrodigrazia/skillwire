@@ -12,13 +12,11 @@ import { getSlugByPlanId } from "@/lib/whop";
 type CheckoutState = "loading" | "ready" | "disabled";
 
 interface CheckoutOverlayProps {
-  sessionId: string;
   planId: string;
   onClose: () => void;
 }
 
 export function CheckoutOverlay({
-  sessionId,
   planId,
   onClose,
 }: CheckoutOverlayProps) {
@@ -88,11 +86,10 @@ export function CheckoutOverlay({
 
             <WhopCheckoutEmbed
               planId={planId}
-              sessionId={sessionId}
               theme="dark"
               onStateChange={handleStateChange}
               onComplete={handleComplete}
-              returnUrl={`${process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai"}/${locale}/checkout/return?session_id=${sessionId}&plan_id=${planId}`}
+              returnUrl={`${process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai"}/${locale}/checkout/return?plan_id=${planId}`}
               fallback={null}
             />
           </div>

@@ -9,17 +9,16 @@ export default async function CheckoutReturnPage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const { locale } = await params;
-  const { state_id, session_id, plan_id } = await searchParams;
+  const { state_id, plan_id } = await searchParams;
 
-  if (!state_id || !session_id) {
+  if (!state_id || !plan_id) {
     redirect(`/${locale}/skills`);
   }
 
   return (
     <CheckoutReturnClient
       stateId={state_id}
-      sessionId={session_id}
-      planId={plan_id ?? ""}
+      planId={plan_id}
       locale={locale}
     />
   );
