@@ -54,7 +54,7 @@ export function CartDrawer() {
 
       // Use embedded checkout if session available, fallback to redirect
       if (data.sessionId) {
-        const planId = data.checkoutUrl?.match(/plan_[A-Za-z0-9]+/)?.[0] ?? "";
+        const planId = data.planId ?? "";
         setCheckoutSession({ sessionId: data.sessionId, planId });
         closeCart();
       } else {

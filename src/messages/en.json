@@ -128,7 +128,10 @@
     "checkingOut": "Processing...",
     "checkoutError": "Something went wrong. Please try again.",
     "notConfigured": "Checkout is not available yet. Coming soon!",
-    "loadingCheckout": "Loading secure checkout..."
+    "loadingCheckout": "Loading secure checkout...",
+    "completingPayment": "Completing your payment...",
+    "paymentError": "Payment could not be completed. Your card was not charged.",
+    "tryAgain": "Try again"
   },
   "thankYou": {
     "title": "Thank You!",

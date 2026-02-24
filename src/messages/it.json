@@ -133,7 +133,10 @@
     "checkingOut": "Elaborazione...",
     "checkoutError": "Qualcosa è andato storto. Riprova.",
     "notConfigured": "Il checkout non è ancora disponibile. Prossimamente!",
-    "loadingCheckout": "Caricamento pagamento sicuro..."
+    "loadingCheckout": "Caricamento pagamento sicuro...",
+    "completingPayment": "Completamento pagamento in corso...",
+    "paymentError": "Il pagamento non è andato a buon fine. La carta non è stata addebitata.",
+    "tryAgain": "Riprova"
   },
   "thankYou": {
     "title": "Grazie!",

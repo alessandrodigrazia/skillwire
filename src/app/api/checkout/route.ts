@@ -49,6 +49,7 @@ export async function POST(request: Request) {
             return NextResponse.json({
               checkoutUrl: data.purchase_url,
               sessionId: data.id,
+              planId,
             });
           }
         }
@@ -61,7 +62,7 @@ export async function POST(request: Request) {
 
     // Fallback: static checkout URL
     const checkoutUrl = getCheckoutUrl(planId, locale);
-    return NextResponse.json({ checkoutUrl });
+    return NextResponse.json({ checkoutUrl, planId });
   } catch (err) {
     console.error("[checkout]", err);
     return NextResponse.json(

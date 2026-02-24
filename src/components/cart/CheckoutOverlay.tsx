@@ -92,6 +92,7 @@ export function CheckoutOverlay({
               themeOptions={{ accentColor: "amber" }}
               onStateChange={handleStateChange}
               onComplete={handleComplete}
+              returnUrl={`${process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai"}/${locale}/checkout/return?session_id=${sessionId}&plan_id=${planId}`}
               fallback={null}
             />
           </div>
