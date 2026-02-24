@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { WhopCheckoutEmbed } from "@whop/checkout/react";
@@ -16,23 +16,54 @@ interface CheckoutOverlayProps {
   onClose: () => void;
 }
 
-export function CheckoutOverlay({
-  planId,
-  onClose,
-}: CheckoutOverlayProps) {
+/**
+ * Whop's checkout has a bug: the first iframe load creates the session cookies
+ * but card tokenization (Basis Theory) fails. A second load with cookies already
+ * set works correctly. We handle this by mounting the embed twice:
+ *
+ * Phase "warmup": hidden iframe establishes the Whop session (cookies)
+ * Phase "live":   visible iframe with working checkout
+ *
+ * The user only sees a loading spinner during warmup (~3s), then the working form.
+ */
+export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
   const t = useTranslations("cart");
   const locale = useLocale();
   const router = useRouter();
   const clearCart = useCartStore((s) => s.clearCart);
-  const [checkoutState, setCheckoutState] =
-    useState<CheckoutState>("loading");
 
-  const handleStateChange = useCallback((state: CheckoutState) => {
-    setCheckoutState(state);
-  }, []);
+  const [phase, setPhase] = useState<"warmup" | "live">("warmup");
+  const [isReady, setIsReady] = useState(false);
+  const warmupDone = useRef(false);
+
+  // Transition from warmup to live after the warmup iframe has loaded
+  useEffect(() => {
+    if (phase !== "warmup" || warmupDone.current) return;
+
+    const timer = setTimeout(() => {
+      warmupDone.current = true;
+      setPhase("live");
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [phase]);
+
+  const handleStateChange = useCallback(
+    (state: CheckoutState) => {
+      if (phase === "warmup" && state === "ready") {
+        // Warmup iframe is ready — session cookies established, switch to live
+        warmupDone.current = true;
+        setPhase("live");
+      }
+      if (phase === "live" && state === "ready") {
+        setIsReady(true);
+      }
+    },
+    [phase]
+  );
 
   const handleComplete = useCallback(
-    (_sessionId: string) => {
+    (_planId: string) => {
       clearCart();
       const slug = getSlugByPlanId(planId);
       const params = new URLSearchParams();
@@ -42,6 +73,8 @@ export function CheckoutOverlay({
     },
     [clearCart, planId, locale, router]
   );
+
+  const returnUrl = `${process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai"}/${locale}/checkout/return?plan_id=${planId}`;
 
   return (
     <AnimatePresence>
@@ -74,8 +107,8 @@ export function CheckoutOverlay({
 
           {/* Body — scrollable */}
           <div className="relative min-h-[300px] flex-1 overflow-y-auto px-4 py-4 sm:px-6">
-            {/* Loading overlay — shown until iframe is ready */}
-            {checkoutState === "loading" && (
+            {/* Loading overlay — visible during warmup + live loading */}
+            {!isReady && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-bg">
                 <Loader2 size={28} className="animate-spin text-accent" />
                 <p className="text-sm text-text-secondary">
@@ -85,11 +118,12 @@ export function CheckoutOverlay({
             )}
 
             <WhopCheckoutEmbed
+              key={phase}
               planId={planId}
               theme="dark"
               onStateChange={handleStateChange}
               onComplete={handleComplete}
-              returnUrl={`${process.env.NEXT_PUBLIC_APP_URL || "https://skillwire.ai"}/${locale}/checkout/return?plan_id=${planId}`}
+              returnUrl={returnUrl}
               fallback={null}
             />
           </div>
