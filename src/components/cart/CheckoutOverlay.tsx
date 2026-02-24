@@ -17,14 +17,15 @@ interface CheckoutOverlayProps {
 }
 
 /**
- * Whop's checkout has a bug: the first iframe load creates the session cookies
- * but card tokenization (Basis Theory) fails. A second load with cookies already
- * set works correctly. We handle this by mounting the embed twice:
+ * Whop's checkout has a bug: the first iframe load creates auth cookies but
+ * Basis Theory card tokenization fails (auth/tokens returns 401 before cookies
+ * are established). A page reload fixes it because cookies from the first load
+ * are already present.
  *
- * Phase "warmup": hidden iframe establishes the Whop session (cookies)
- * Phase "live":   visible iframe with working checkout
- *
- * The user only sees a loading spinner during warmup (~3s), then the working form.
+ * We simulate this by reloading the SAME iframe (not remounting — same DOM
+ * element, same browsing context, same cookie jar) after the first load
+ * completes. The user sees only a loading spinner until the reloaded checkout
+ * is ready.
  */
 export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
   const t = useTranslations("cart");
@@ -32,34 +33,43 @@ export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
   const router = useRouter();
   const clearCart = useCartStore((s) => s.clearCart);
 
-  const [phase, setPhase] = useState<"warmup" | "live">("warmup");
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isReady, setIsReady] = useState(false);
-  const warmupDone = useRef(false);
+  const hasReloaded = useRef(false);
 
-  // Transition from warmup to live after the warmup iframe has loaded
+  const reloadIframe = useCallback(() => {
+    const iframe = containerRef.current?.querySelector("iframe");
+    if (iframe instanceof HTMLIFrameElement && iframe.src) {
+      iframe.src = iframe.src;
+    }
+  }, []);
+
+  // Fallback: reload after 4s even if onStateChange hasn't fired "ready"
   useEffect(() => {
-    if (phase !== "warmup" || warmupDone.current) return;
-
+    if (hasReloaded.current) return;
     const timer = setTimeout(() => {
-      warmupDone.current = true;
-      setPhase("live");
-    }, 3000);
-
+      if (!hasReloaded.current) {
+        hasReloaded.current = true;
+        reloadIframe();
+      }
+    }, 4000);
     return () => clearTimeout(timer);
-  }, [phase]);
+  }, [reloadIframe]);
 
   const handleStateChange = useCallback(
     (state: CheckoutState) => {
-      if (phase === "warmup" && state === "ready") {
-        // Warmup iframe is ready — session cookies established, switch to live
-        warmupDone.current = true;
-        setPhase("live");
-      }
-      if (phase === "live" && state === "ready") {
+      if (!hasReloaded.current) {
+        // First load finished — reload the iframe to fix the auth bug
+        if (state === "ready" || state === "disabled") {
+          hasReloaded.current = true;
+          reloadIframe();
+        }
+      } else if (state === "ready") {
+        // Reloaded iframe is ready — show the checkout form
         setIsReady(true);
       }
     },
-    [phase]
+    [reloadIframe]
   );
 
   const handleComplete = useCallback(
@@ -106,8 +116,11 @@ export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
           </div>
 
           {/* Body — scrollable */}
-          <div className="relative min-h-[300px] flex-1 overflow-y-auto px-4 py-4 sm:px-6">
-            {/* Loading overlay — visible during warmup + live loading */}
+          <div
+            ref={containerRef}
+            className="relative min-h-[300px] flex-1 overflow-y-auto px-4 py-4 sm:px-6"
+          >
+            {/* Loading overlay — covers iframe until reloaded checkout is ready */}
             {!isReady && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-bg">
                 <Loader2 size={28} className="animate-spin text-accent" />
@@ -118,7 +131,6 @@ export function CheckoutOverlay({ planId, onClose }: CheckoutOverlayProps) {
             )}
 
             <WhopCheckoutEmbed
-              key={phase}
               planId={planId}
               theme="dark"
               onStateChange={handleStateChange}
