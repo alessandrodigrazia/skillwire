@@ -32,12 +32,12 @@ export const articles: BlogArticle[] = [
   {
     slug: "claude-code-skills-complete-guide",
     title: {
-      en: "Claude Code Skills: The Complete Guide",
-      it: "Le Skill di Claude Code: La Guida Completa",
+      en: "Claude Skills: The Complete Guide",
+      it: "Le Skill di Claude: La Guida Completa",
     },
     excerpt: {
-      en: "Everything you need to know about Claude Code skills \u2014 what they are, how they work, why they matter, and how to install them in 30 seconds.",
-      it: "Tutto quello che devi sapere sulle skill di Claude Code \u2014 cosa sono, come funzionano, perch\u00e9 contano, e come installarle in 30 secondi.",
+      en: "Everything you need to know about Claude skills \u2014 what they are, how they work, why they matter, and how to install them in 30 seconds.",
+      it: "Tutto quello che devi sapere sulle skill di Claude \u2014 cosa sono, come funzionano, perché contano, e come installarle in 30 secondi.",
     },
     category: "guide",
     tags: ["claude-code", "skills", "getting-started", "ai-tools"],
@@ -46,12 +46,12 @@ export const articles: BlogArticle[] = [
     readingTime: 6,
     coverEmoji: "\uD83D\uDCDA",
     metaTitle: {
-      en: "Claude Code Skills | The Complete Guide",
-      it: "Le Skill di Claude Code | La Guida Completa",
+      en: "Claude Skills | The Complete Guide",
+      it: "Le Skill di Claude | La Guida Completa",
     },
     metaDescription: {
-      en: "Learn what Claude Code skills are, how they transform your AI assistant into a domain expert, and how to install them in seconds.",
-      it: "Scopri cosa sono le skill di Claude Code, come trasformano il tuo assistente AI in un esperto di dominio, e come installarle in pochi secondi.",
+      en: "Learn what Claude skills are, how they transform your AI assistant into a domain expert, and how to install them in seconds.",
+      it: "Scopri cosa sono le skill di Claude, come trasformano il tuo assistente AI in un esperto di dominio, e come installarle in pochi secondi.",
     },
   },
   {
@@ -239,8 +239,8 @@ export const articles: BlogArticle[] = [
   {
     slug: "how-to-build-claude-code-skills-that-work",
     title: {
-      en: "How to Build Claude Code Skills That Actually Work",
-      it: "Come costruire skill per Claude Code che funzionano davvero",
+      en: "How to Build Claude Skills That Actually Work",
+      it: "Come costruire skill per Claude che funzionano davvero",
     },
     excerpt: {
       en: "Anthropic gives you the basics. Six steps, a SKILL.md template, done. But building a skill that works reliably in production requires answering questions the documentation doesn't cover.",
@@ -254,12 +254,12 @@ export const articles: BlogArticle[] = [
     coverEmoji: "\uD83D\uDD28",
     relatedSkillSlug: "skill-creator-guru",
     metaTitle: {
-      en: "How to Build Claude Code Skills That Work",
-      it: "Come costruire skill per Claude Code che funzionano",
+      en: "How to Build Claude Skills That Work",
+      it: "Come costruire skill per Claude che funzionano",
     },
     metaDescription: {
-      en: "Beyond Anthropic's basics: PRD methodology, token optimization, quality pillars, and anti-patterns for building production-grade Claude Code skills.",
-      it: "Oltre le basi di Anthropic: metodologia PRD, ottimizzazione token, pilastri di qualit\u00e0 e anti-pattern per costruire skill Claude Code pronte per la produzione.",
+      en: "Beyond Anthropic's basics: PRD methodology, token optimization, quality pillars, and anti-patterns for building production-grade Claude skills.",
+      it: "Oltre le basi di Anthropic: metodologia PRD, ottimizzazione token, pilastri di qualità e anti-pattern per costruire skill Claude pronte per la produzione.",
     },
   },
   {

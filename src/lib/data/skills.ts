@@ -434,8 +434,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["b2b-sales-pro", "linkedin-toolkit"],
     metaTitle: {
-      en: "Janus | Critical Analysis Sparring Partner for Claude Code",
-      it: "Janus | Sparring Partner di Analisi Critica per Claude Code",
+      en: "Janus | Critical Analysis Sparring Partner for Claude",
+      it: "Janus | Sparring Partner di Analisi Critica per Claude",
     },
     metaDescription: {
       en: "Find the holes in your business plan before investors do. 5 analysis dimensions, 10 specialized scenarios, severity scoring. Built for people who prefer truth over encouragement.",
@@ -461,7 +461,7 @@ export const skills: SkillDetail[] = [
       { en: "Three-level severity scoring: critical, medium, low", it: "Scoring di gravit\u00e0 a tre livelli: critico, medio, basso" },
       { en: "Auto-detection: Janus picks the right analytical lens from your input", it: "Auto-rilevamento: Janus sceglie la lente analitica giusta dal tuo input" },
       { en: "Proportionality protocol: solid ideas get lighter critique, weak ones get heavier", it: "Protocollo di proporzionalit\u00e0: le idee solide ricevono critica leggera, quelle deboli pesante" },
-      { en: "11 files, zero flattery, works entirely inside Claude Code", it: "11 file, zero adulazione, funziona interamente dentro Claude Code" },
+      { en: "11 files, zero flattery, works entirely inside Claude", it: "11 file, zero adulazione, funziona interamente dentro Claude" },
     ],
     whoIsThisFor: [
       { en: "The founder presenting to investors next week who needs someone to find the holes first", it: "Il founder che presenta agli investitori la settimana prossima e ha bisogno che qualcuno trovi le falle prima" },
@@ -802,12 +802,12 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["b2b-sales-pro"],
     metaTitle: {
-      en: "B2B Presentation Builder for Claude Code | Multi-Persona Decks",
-      it: "B2B Presentation Builder per Claude Code | Deck Multi-Persona",
+      en: "B2B Presentation Builder for Claude | Multi-Persona Decks",
+      it: "B2B Presentation Builder per Claude | Deck Multi-Persona",
     },
     metaDescription: {
-      en: "Turn Claude Code into a presentation strategist. 4 structural + 3 narrative frameworks, CFO/CIO/CEO targeting, 3-level QA. Stop building generic decks.",
-      it: "Trasforma Claude Code in uno stratega delle presentazioni. 4 framework strutturali + 3 narrativi, targeting CFO/CIO/CEO, QA a 3 livelli. Basta deck generici.",
+      en: "Turn Claude into a presentation strategist. 4 structural + 3 narrative frameworks, CFO/CIO/CEO targeting, 3-level QA. Stop building generic decks.",
+      it: "Trasforma Claude in uno stratega delle presentazioni. 4 framework strutturali + 3 narrativi, targeting CFO/CIO/CEO, QA a 3 livelli. Basta deck generici.",
     },
     averageRating: 0,
     reviewCount: 0,
@@ -870,8 +870,8 @@ export const skills: SkillDetail[] = [
       {
         question: { en: "Does it generate PowerPoint files directly?", it: "Genera direttamente file PowerPoint?" },
         answer: {
-          en: "It generates the complete content, structure, narrative, and speaker notes for every slide. For the actual PPTX file, pair it with Claude Code's built-in PPTX skill or with python-pptx. The skill tells you what to say on each slide. The PPTX tool handles the formatting.",
-          it: "Genera il contenuto completo, la struttura, la narrativa e le note del presentatore per ogni slide. Per il file PPTX vero e proprio, abbinalo alla skill PPTX integrata di Claude Code o a python-pptx. La skill ti dice cosa dire in ogni slide. Lo strumento PPTX gestisce la formattazione.",
+          en: "It generates the complete content, structure, narrative, and speaker notes for every slide. For the actual PPTX file, pair it with Claude's built-in PPTX skill or with python-pptx. The skill tells you what to say on each slide. The PPTX tool handles the formatting.",
+          it: "Genera il contenuto completo, la struttura, la narrativa e le note del presentatore per ogni slide. Per il file PPTX vero e proprio, abbinalo alla skill PPTX integrata di Claude o a python-pptx. La skill ti dice cosa dire in ogni slide. Lo strumento PPTX gestisce la formattazione.",
         },
       },
       {
@@ -890,7 +890,7 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ai-b2b-sales-methodology", "janus"],
-  compatibleWith: "Claude Code",
+  compatibleWith: "All Platforms",
   prerequisites: ["Python 3.x", "python-pptx (pip install python-pptx)"],
   hasTerminalVideo: true,
   },
@@ -1048,12 +1048,12 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["career-navigator"],
     metaTitle: {
-      en: "CV Guru for Claude Code | ATS Optimization + Interview Prep",
-      it: "CV Guru per Claude Code | Ottimizzazione ATS + Preparazione Colloqui",
+      en: "CV Guru for Claude | ATS Optimization + Interview Prep",
+      it: "CV Guru per Claude | Ottimizzazione ATS + Preparazione Colloqui",
     },
     metaDescription: {
-      en: "Turn Claude Code into a head hunter who rewrites your CV for each role. ATS scoring, job-fit analysis, STAR stories, DOCX output. 19 EUR, no subscription.",
-      it: "Trasforma Claude Code in un head hunter che riscrive il tuo CV per ogni ruolo. Scoring ATS, analisi job-fit, storie STAR, output DOCX. 19 EUR, nessun abbonamento.",
+      en: "Turn Claude into a head hunter who rewrites your CV for each role. ATS scoring, job-fit analysis, STAR stories, DOCX output. 19 EUR, no subscription.",
+      it: "Trasforma Claude in un head hunter che riscrive il tuo CV per ogni ruolo. Scoring ATS, analisi job-fit, storie STAR, output DOCX. 19 EUR, nessun abbonamento.",
     },
     averageRating: 0,
     reviewCount: 0,
@@ -1136,7 +1136,7 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["ask-to-vera", "human-writer"],
-  compatibleWith: "Claude Code",
+  compatibleWith: "All Platforms",
   prerequisites: ["Python 3.x", "python-docx (pip install python-docx)"],
   hasTerminalVideo: true,
   },
@@ -1171,8 +1171,8 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["n8n-power-pack"],
     metaTitle: {
-      en: "n8n Workflow Expert | 545 AI Patterns Inside Claude Code",
-      it: "n8n Workflow Expert | 545 Pattern AI Dentro Claude Code",
+      en: "n8n Workflow Expert | 545 AI Patterns Inside Claude",
+      it: "n8n Workflow Expert | 545 Pattern AI Dentro Claude",
     },
     metaDescription: {
       en: "100 files with every n8n node documented. 545 AI workflow patterns analyzed. Describe what you need, Claude builds the workflow. Available in the n8n Power Pack.",
@@ -1238,8 +1238,8 @@ export const skills: SkillDetail[] = [
       {
         question: { en: "How do the three n8n Power Pack skills work together?", it: "Come funzionano insieme le tre skill del n8n Power Pack?" },
         answer: {
-          en: "Workflow Expert is the brain: it understands n8n and builds workflows. Docs Live is the reference: it provides official documentation inside Claude Code. Repository is the library: 1,486 templates searchable by service and pattern. The Expert skill automatically routes to the other two when it needs docs or template inspiration.",
-          it: "Workflow Expert \u00e8 il cervello: capisce n8n e costruisce workflow. Docs Live \u00e8 la reference: fornisce documentazione ufficiale dentro Claude Code. Repository \u00e8 la libreria: 1.486 template ricercabili per servizio e pattern. La skill Expert si connette automaticamente alle altre due quando serve documentazione o ispirazione da template.",
+          en: "Workflow Expert is the brain: it understands n8n and builds workflows. Docs Live is the reference: it provides official documentation inside Claude. Repository is the library: 1,486 templates searchable by service and pattern. The Expert skill automatically routes to the other two when it needs docs or template inspiration.",
+          it: "Workflow Expert è il cervello: capisce n8n e costruisce workflow. Docs Live è la reference: fornisce documentazione ufficiale dentro Claude. Repository è la libreria: 1.486 template ricercabili per servizio e pattern. La skill Expert si connette automaticamente alle altre due quando serve documentazione o ispirazione da template.",
         },
       },
       {
@@ -1258,7 +1258,7 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["n8n-docs-live", "n8n-workflow-repository"],
-  compatibleWith: "Claude Code + Desktop",
+  compatibleWith: "All Platforms",
   prerequisites: ["n8n account", "n8n-mcp server (recommended, via npx)"],
   hasTerminalVideo: true,
   },
@@ -1267,8 +1267,8 @@ export const skills: SkillDetail[] = [
     name: "n8n Docs Live",
     technicalName: "n8n-docs-live",
     tagline: {
-      en: "Every n8n node documented inside Claude Code. No browser tabs, no context switching.",
-      it: "Ogni nodo n8n documentato dentro Claude Code. Niente tab del browser, niente context switching.",
+      en: "Every n8n node documented inside Claude. No browser tabs, no context switching.",
+      it: "Ogni nodo n8n documentato dentro Claude. Niente tab del browser, niente context switching.",
     },
     category: "automation",
     tags: ["n8n", "documentation", "reference", "offline"],
@@ -1293,22 +1293,22 @@ export const skills: SkillDetail[] = [
     ],
     bundleSlugs: ["n8n-power-pack"],
     metaTitle: {
-      en: "n8n Docs Live | Official n8n Documentation Inside Claude Code",
-      it: "n8n Docs Live | Documentazione Ufficiale n8n Dentro Claude Code",
+      en: "n8n Docs Live | Official n8n Documentation Inside Claude",
+      it: "n8n Docs Live | Documentazione Ufficiale n8n Dentro Claude",
     },
     metaDescription: {
-      en: "16 files with indexed n8n documentation. Core nodes, AI nodes, expressions, integrations. Searchable from Claude Code with live fallback for new content.",
-      it: "16 file con documentazione n8n indicizzata. Nodi core, nodi AI, espressioni, integrazioni. Ricercabile da Claude Code con fallback live per nuovi contenuti.",
+      en: "16 files with indexed n8n documentation. Core nodes, AI nodes, expressions, integrations. Searchable from Claude with live fallback for new content.",
+      it: "16 file con documentazione n8n indicizzata. Nodi core, nodi AI, espressioni, integrazioni. Ricercabile da Claude con fallback live per nuovi contenuti.",
     },
     averageRating: 0,
     reviewCount: 0,
     problem: {
-      en: "You're building an n8n workflow and need to check how the Switch node handles empty arrays. You open the browser, search n8n docs, click through two pages that aren't quite right, find the answer on a third page. By the time you switch back to Claude Code, you've lost the thread of what you were building. This happens five or six times per workflow. Each context switch costs two to three minutes and a piece of your working memory. The cognitive overhead of toggling between your editor and browser documentation adds up faster than the actual building time.",
-      it: "Stai costruendo un workflow n8n e devi controllare come il nodo Switch gestisce gli array vuoti. Apri il browser, cerchi nei docs n8n, clicchi su due pagine che non sono quelle giuste, trovi la risposta su una terza. Quando torni su Claude Code, hai perso il filo di quello che stavi costruendo. Succede cinque o sei volte per workflow. Ogni context switch costa due-tre minuti e un pezzo della tua memoria di lavoro. Il costo cognitivo del passare avanti e indietro tra editor e documentazione nel browser si accumula pi\u00f9 velocemente del tempo di costruzione vero e proprio.",
+      en: "You're building an n8n workflow and need to check how the Switch node handles empty arrays. You open the browser, search n8n docs, click through two pages that aren't quite right, find the answer on a third page. By the time you switch back to Claude, you've lost the thread of what you were building. This happens five or six times per workflow. Each context switch costs two to three minutes and a piece of your working memory. The cognitive overhead of toggling between your editor and browser documentation adds up faster than the actual building time.",
+      it: "Stai costruendo un workflow n8n e devi controllare come il nodo Switch gestisce gli array vuoti. Apri il browser, cerchi nei docs n8n, clicchi su due pagine che non sono quelle giuste, trovi la risposta su una terza. Quando torni su Claude, hai perso il filo di quello che stavi costruendo. Succede cinque o sei volte per workflow. Ogni context switch costa due-tre minuti e un pezzo della tua memoria di lavoro. Il costo cognitivo del passare avanti e indietro tra editor e documentazione nel browser si accumula più velocemente del tempo di costruzione vero e proprio.",
     },
     solution: {
-      en: "A local searchable index of official n8n documentation that lives inside Claude Code. 16 files covering core nodes (HTTP, Code, Function, Switch, Merge, IF), AI nodes (Agent, Chain, Tool, Memory, Embeddings), expression syntax, and built-in functions. Claude searches the local index first. When something isn't covered locally, a live fallback queries the official n8n docs in real time. You stay in your editor. The documentation comes to you.",
-      it: "Un indice locale ricercabile della documentazione n8n ufficiale che vive dentro Claude Code. 16 file che coprono nodi core (HTTP, Code, Function, Switch, Merge, IF), nodi AI (Agent, Chain, Tool, Memory, Embeddings), sintassi espressioni e funzioni built-in. Claude cerca prima nell'indice locale. Quando qualcosa non \u00e8 coperto localmente, un fallback live interroga i docs n8n ufficiali in tempo reale. Resti nel tuo editor. La documentazione viene da te.",
+      en: "A local searchable index of official n8n documentation that lives inside Claude. 16 files covering core nodes (HTTP, Code, Function, Switch, Merge, IF), AI nodes (Agent, Chain, Tool, Memory, Embeddings), expression syntax, and built-in functions. Claude searches the local index first. When something isn't covered locally, a live fallback queries the official n8n docs in real time. You stay in your editor. The documentation comes to you.",
+      it: "Un indice locale ricercabile della documentazione n8n ufficiale che vive dentro Claude. 16 file che coprono nodi core (HTTP, Code, Function, Switch, Merge, IF), nodi AI (Agent, Chain, Tool, Memory, Embeddings), sintassi espressioni e funzioni built-in. Claude cerca prima nell'indice locale. Quando qualcosa non è coperto localmente, un fallback live interroga i docs n8n ufficiali in tempo reale. Resti nel tuo editor. La documentazione viene da te.",
     },
     result: {
       en: "Zero browser tabs. You ask Claude about any n8n node and get the official documentation without leaving your editor. The five context switches per workflow become five instant answers. Works offline for everything in the local index.",
@@ -1338,7 +1338,7 @@ export const skills: SkillDetail[] = [
       },
       {
         before: { en: "Five to six context switches per workflow, each costing minutes and focus", it: "Cinque-sei context switch per workflow, ognuno costa minuti e concentrazione" },
-        after: { en: "Zero browser tabs. Documentation comes to you inside Claude Code", it: "Zero tab del browser. La documentazione viene da te dentro Claude Code" },
+        after: { en: "Zero browser tabs. Documentation comes to you inside Claude", it: "Zero tab del browser. La documentazione viene da te dentro Claude" },
       },
       {
         before: { en: "No quick reference for AI-specific nodes: Agent, Chain, Tool, Memory, Embeddings", it: "Nessuna reference rapida per i nodi AI: Agent, Chain, Tool, Memory, Embeddings" },
@@ -1360,8 +1360,8 @@ export const skills: SkillDetail[] = [
       {
         question: { en: "Does it replace the official n8n docs?", it: "Sostituisce i docs ufficiali n8n?" },
         answer: {
-          en: "It brings them inside Claude Code for faster access. The live fallback queries the official site when the local index doesn't have what you need. You get the same information without the context switch.",
-          it: "Li porta dentro Claude Code per accesso pi\u00f9 veloce. Il fallback live interroga il sito ufficiale quando l'indice locale non ha quello che ti serve. Ottieni le stesse informazioni senza il context switch.",
+          en: "It brings them inside Claude for faster access. The live fallback queries the official site when the local index doesn't have what you need. You get the same information without the context switch.",
+          it: "Li porta dentro Claude per accesso più veloce. Il fallback live interroga il sito ufficiale quando l'indice locale non ha quello che ti serve. Ottieni le stesse informazioni senza il context switch.",
         },
       },
       {
@@ -1380,7 +1380,7 @@ export const skills: SkillDetail[] = [
       },
     ],
     relatedSlugs: ["n8n-ai-workflow-expert", "n8n-workflow-repository"],
-  compatibleWith: "Claude Code + Desktop",
+  compatibleWith: "All Platforms",
   prerequisites: ["n8n account"],
   hasTerminalVideo: true,
   },
