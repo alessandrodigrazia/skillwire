@@ -21,8 +21,8 @@ export function FeaturedSkills() {
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
             {t("title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[42rem] text-lg text-text-secondary">
-            {t.rich("subtitle", { br: () => <br /> })}
+          <p className="mx-auto mt-4 max-w-[42rem] whitespace-pre-line text-lg text-text-secondary">
+            {t("subtitle")}
           </p>
         </div>
 

@@ -35,12 +35,12 @@ export function HeroSection() {
 
             {/* Title */}
             <motion.h1
-              className="mt-6 text-4xl font-bold leading-tight tracking-tight text-text-primary sm:text-5xl lg:text-[56px] lg:leading-[1.1]"
+              className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight tracking-tight text-text-primary sm:text-5xl lg:text-[56px] lg:leading-[1.1]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              {t.rich("title", { br: () => <br /> })}
+              {t("title")}
             </motion.h1>
 
             {/* Subtitle */}

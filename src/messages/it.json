@@ -13,7 +13,7 @@
   },
   "hero": {
     "badge": "Skill per Claude",
-    "title": "Claude \u00e8 brillante. <br/>Ma non conosce il tuo lavoro.",
+    "title": "Claude \u00e8 brillante.\nMa non conosce il tuo lavoro.",
     "subtitle": "Le skill insegnano a Claude il tuo mestiere: metodi, framework, anni di esperienza condensati in un sistema. Vendita B2B, coaching, automazione: installa una skill e Claude sa esattamente cosa fare.",
     "cta": "Esplora le Skill",
     "ctaSecondary": "Ottieni una skill gratis"
@@ -30,7 +30,7 @@
   "featuredSkills": {
     "eyebrow": "Skill in Evidenza",
     "title": "Inizia con le essenziali",
-    "subtitle": "Ogni skill \u00e8 un sistema completo: metodologie, framework, workflow. <br/>Installi una volta e funziona su ogni progetto.",
+    "subtitle": "Ogni skill \u00e8 un sistema completo: metodologie, framework, workflow.\nInstalli una volta e funziona su ogni progetto.",
     "viewAll": "Vedi tutte le skill"
   },
   "whatAreSkills": {
