@@ -40,7 +40,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              {t("title")}
+              {t.rich("title", { br: () => <br /> })}
             </motion.h1>
 
             {/* Subtitle */}

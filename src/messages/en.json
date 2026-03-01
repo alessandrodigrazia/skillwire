@@ -13,7 +13,7 @@
   },
   "hero": {
     "badge": "Skills for Claude",
-    "title": "Claude is brilliant. But it doesn't know your work.",
+    "title": "Claude is brilliant. <br/>But it doesn't know your work.",
     "subtitle": "Skills teach Claude your expertise: methods, frameworks, years of experience packed into one system. B2B sales, coaching, automation: install a skill and Claude knows exactly what to do.",
     "cta": "Browse Skills",
     "ctaSecondary": "Get a free skill"
@@ -25,7 +25,7 @@
   "featuredSkills": {
     "eyebrow": "Featured Skills",
     "title": "Start with the essentials",
-    "subtitle": "Each skill is a complete system: methodologies, frameworks, workflows. Install once and it works on every project.",
+    "subtitle": "Each skill is a complete system: methodologies, frameworks, workflows. <br/>Install once and it works on every project.",
     "viewAll": "View all skills"
   },
   "whatAreSkills": {

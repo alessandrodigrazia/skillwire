@@ -22,7 +22,7 @@ export function FeaturedSkills() {
             {t("title")}
           </h2>
           <p className="mx-auto mt-4 max-w-[42rem] text-lg text-text-secondary">
-            {t("subtitle")}
+            {t.rich("subtitle", { br: () => <br /> })}
           </p>
         </div>
 
