@@ -12,15 +12,11 @@
     "cart": "Cart"
   },
   "hero": {
-    "badge": "Built for Claude",
-    "title": "Wire your AI with professional skills",
-    "subtitle": "Production-ready skills for Claude, crafted by a practitioner, not a prompt factory. Buy once, use forever, get results from day one.",
+    "badge": "Skills for Claude",
+    "title": "Claude is brilliant. But it doesn't know your work.",
+    "subtitle": "Skills teach Claude your expertise: methods, frameworks, years of experience packed into one system. B2B sales, coaching, automation: install a skill and Claude knows exactly what to do.",
     "cta": "Browse Skills",
-    "ctaSecondary": "Get a free skill",
-    "terminalLine1": "$ claude skill install skillwire/b2b-sales",
-    "terminalLine2": "Installing B2B Sales System...",
-    "terminalLine3": "\u2713 35 files installed (3 frameworks, 12 workflows, 168 cases)",
-    "terminalLine4": "\u2713 Skill ready. Run: claude /qualify-lead"
+    "ctaSecondary": "Get a free skill"
   },
   "trustBar": {
     "label": "Compatible with",
@@ -29,7 +25,7 @@
   "featuredSkills": {
     "eyebrow": "Featured Skills",
     "title": "Start with the essentials",
-    "subtitle": "Built in the field, not in a lab. Each one is a complete system, not a prompt.",
+    "subtitle": "Each skill is a complete system: methodologies, frameworks, workflows. Install once and it works on every project.",
     "viewAll": "View all skills"
   },
   "whatAreSkills": {

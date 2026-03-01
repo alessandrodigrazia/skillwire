@@ -12,15 +12,11 @@
     "cart": "Carrello"
   },
   "hero": {
-    "badge": "Creato per Claude",
-    "title": "Potenzia la tua AI con skill professionali",
-    "subtitle": "Skill production-ready per Claude, create da un professionista, non da una fabbrica di prompt. Compra una volta, usa per sempre.",
+    "badge": "Skill per Claude",
+    "title": "Claude \u00e8 brillante. Ma non conosce il tuo lavoro.",
+    "subtitle": "Le skill insegnano a Claude il tuo mestiere: metodi, framework, anni di esperienza condensati in un sistema. Vendita B2B, coaching, automazione: installa una skill e Claude sa esattamente cosa fare.",
     "cta": "Esplora le Skill",
-    "ctaSecondary": "Ottieni una skill gratis",
-    "terminalLine1": "$ claude skill install skillwire/b2b-sales",
-    "terminalLine2": "Installazione B2B Sales System...",
-    "terminalLine3": "✓ 35 file installati (3 framework, 12 workflow, 168 casi)",
-    "terminalLine4": "✓ Skill pronta. Esegui: claude /qualify-lead"
+    "ctaSecondary": "Ottieni una skill gratis"
   },
   "trustBar": {
     "label": "Compatibile con",
@@ -34,7 +30,7 @@
   "featuredSkills": {
     "eyebrow": "Skill in Evidenza",
     "title": "Inizia con le essenziali",
-    "subtitle": "Skill progettate sul campo, non in laboratorio. Ognuna è un sistema completo, non un prompt.",
+    "subtitle": "Ogni skill \u00e8 un sistema completo: metodologie, framework, workflow. Installi una volta e funziona su ogni progetto.",
     "viewAll": "Vedi tutte le skill"
   },
   "whatAreSkills": {
