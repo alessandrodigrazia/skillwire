@@ -199,7 +199,7 @@ export const skills: SkillDetail[] = [
     reviewCount: 0,
     problem: {
       en: "Your child has to choose a high school. Or a university. The decision shapes the next five to ten years, and the information available is a mess. Free online tests say 'you're creative' and stop there. Open day events are marketing pitches. The school counselor has 400 students and fifteen minutes per family. Private orientation consultants charge 80-200 EUR per session. You end up choosing based on what friends' kids chose, which building looked nicer at the open day, or which option sounds most prestigious. None of these are good criteria.",
-      it: "Tuo figlio deve scegliere la scuola superiore. O l'universit\u00e0. La decisione condiziona i prossimi cinque-dieci anni, e le informazioni disponibili sono un caos. I test gratuiti online dicono 'sei creativo' e si fermano l\u00ec. Le giornate porte aperte sono pitch di marketing. Il consulente scolastico ha 400 studenti e quindici minuti per famiglia. I consulenti privati di orientamento chiedono 80-200 EUR a sessione. Si finisce per scegliere in base a cosa hanno scelto i figli degli amici, quale edificio era più bello all'open day, o quale opzione suona più prestigiosa. Nessuno di questi è un buon criterio.",
+      it: "Tuo figlio deve scegliere la scuola superiore. O l'universit\u00e0. La decisione condiziona i prossimi cinque-dieci anni, e le informazioni disponibili sono un caos. I test gratuiti online dicono 'sei creativo' e si fermano l\u00ec. Le giornate porte aperte sono pitch di marketing. Il consulente scolastico ha 400 studenti e quindici minuti per famiglia. I consulenti privati di orientamento chiedono 80-200 EUR a sessione. Si finisce per scegliere in base a cosa hanno scelto i figli degli amici, quale edificio era più bello all'open day, o quale opzione sembra più prestigiosa. Nessuno di questi è un buon criterio.",
     },
     solution: {
       en: "SchoolPath AI starts with what matters: who your child actually is. A 30-item RIASEC Holland assessment (the same framework used by career psychologists worldwide) maps their interests, aptitudes, and working style into six dimensions. Then the skill does what no generic test can: it maps those results onto the actual Italian education system. Two specialized branches handle two different decision points. The high school branch covers every option: liceo classico, scientifico, linguistico, artistico, delle scienze umane; istituti tecnici (economico, tecnologico); istituti professionali. The university branch maps faculties, ITS pathways, and direct workforce entry, with employment statistics from Almalaurea and Excelsior so families see real hiring rates, not just brochure promises. A 'Dream vs Reality' protocol handles cases where the student wants to become an astronaut or an influencer: it takes the aspiration seriously, shows the actual data, and finds realistic pathways that preserve the core interest.",
@@ -312,7 +312,7 @@ export const skills: SkillDetail[] = [
     bundleSlugs: ["career-navigator", "linkedin-toolkit"],
     metaTitle: {
       en: "HumanWriter | Make Every AI-Written Text Sound Human",
-      it: "HumanWriter | Fai Suonare Umano Ogni Testo Scritto con l'AI",
+      it: "HumanWriter | Rendi Naturale Ogni Testo Scritto con l'AI",
     },
     metaDescription: {
       en: "200+ AI patterns per language detected and corrected. 4 severity tiers, model-specific detection. The only bilingual IT/EN humanization tool for Claude.",
@@ -330,7 +330,7 @@ export const skills: SkillDetail[] = [
     },
     result: {
       en: "Your writing passes both human readers and automated detection tools. Manual editing drops from 30 minutes to 5. You write with AI and stop worrying about it. You publish knowing the text sounds like you, not like a language model. It works with equal precision in English and Italian because the pattern databases are separate, built specifically for each language.",
-      it: "I tuoi testi passano il giudizio dei lettori e i rilevatori automatici. L'editing manuale scende da 30 minuti a 5. Scrivi con l'AI senza pi\u00f9 pensarci. Pubblichi sapendo che il testo suona come te, non come un modello linguistico. Funziona con la stessa precisione in italiano e in inglese, perch\u00e9 i database sono separati e costruiti specificamente per ciascuna lingua.",
+      it: "I tuoi testi passano il giudizio dei lettori e i rilevatori automatici. L'editing manuale scende da 30 minuti a 5. Scrivi con l'AI senza pi\u00f9 pensarci. Pubblichi sapendo che il testo sembra scritto da te, non da un modello linguistico. Funziona con la stessa precisione in italiano e in inglese, perch\u00e9 i database sono separati e costruiti specificamente per ciascuna lingua.",
     },
     whatsInside: [
       { en: "200+ AI patterns per language with real frequency data (e.g. 'moreover' appears 8-10x more in AI text)", it: "200+ pattern AI per lingua con dati di frequenza reali (es. 'inoltre' compare 5-8 volte pi\u00f9 spesso nei testi AI)" },
@@ -343,7 +343,7 @@ export const skills: SkillDetail[] = [
     whoIsThisFor: [
       { en: "Professionals who publish on LinkedIn and need credibility, not suspicion", it: "Professionisti che pubblicano su LinkedIn e vogliono credibilit\u00e0, non sospetti" },
       { en: "Content creators and copywriters who draft with AI but sign with their name", it: "Content creator e copywriter che scrivono con l'AI ma firmano con il proprio nome" },
-      { en: "Bilingual professionals who need text that sounds native in both languages", it: "Chi lavora in due lingue e ha bisogno che il testo suoni nativo in entrambe" },
+      { en: "Bilingual professionals who need text that sounds native in both languages", it: "Chi lavora in due lingue e ha bisogno che il testo risulti naturale in entrambe" },
       { en: "Freelancers and consultants who can't afford to sound AI-generated", it: "Freelance e consulenti che non possono permettersi di sembrare 'generati dall'AI'" },
     ],
     notFor: {
@@ -353,7 +353,7 @@ export const skills: SkillDetail[] = [
     beforeAfter: [
       {
         before: { en: "Your colleagues spot the AI text and trust what you write a little less each time", it: "I tuoi colleghi riconoscono il testo AI e perdono fiducia in quello che scrivi" },
-        after: { en: "You publish content that sounds authentically yours. Nobody suspects AI.", it: "Pubblichi contenuti che suonano autenticamente tuoi. Nessuno sospetta l'AI." },
+        after: { en: "You publish content that sounds authentically yours. Nobody suspects AI.", it: "Pubblichi contenuti autenticamente tuoi. Nessuno sospetta l'AI." },
       },
       {
         before: { en: "You reread every draft for 30 minutes hunting for suspicious patterns by eye", it: "Rileggi ogni bozza per 30 minuti cercando a occhio i pattern sospetti" },
@@ -364,7 +364,7 @@ export const skills: SkillDetail[] = [
         after: { en: "200+ dedicated Italian patterns, including the VARIATIO principle no other tool knows", it: "200+ pattern italiani dedicati, incluso il principio VARIATIO che nessun altro tool conosce" },
       },
       {
-        before: { en: "You know the text 'sounds AI' but can't pinpoint exactly where or why", it: "Sai che il testo 'suona AI' ma non riesci a capire esattamente dove e perch\u00e9" },
+        before: { en: "You know the text 'sounds AI' but can't pinpoint exactly where or why", it: "Sai che il testo 'sa di AI' ma non riesci a capire esattamente dove e perché" },
         after: { en: "Probabilistic scoring: you see the reason behind every flag, with severity and frequency data", it: "Scoring probabilistico: vedi il perch\u00e9 di ogni segnalazione, con gravit\u00e0 e frequenza precisa" },
       },
     ],
@@ -732,7 +732,7 @@ export const skills: SkillDetail[] = [
         after: { en: "Structured negotiation playbook: BATNA, ZOPA, trading variables matrix, defined team roles", it: "Playbook negoziale strutturato: BATNA, ZOPA, matrice variabili di scambio, ruoli del team definiti" },
       },
       {
-        before: { en: "Generic discovery questions that sound like a checklist instead of a conversation", it: "Domande di discovery generiche che suonano come una checklist invece che una conversazione" },
+        before: { en: "Generic discovery questions that sound like a checklist instead of a conversation", it: "Domande di discovery generiche che sembrano una checklist invece che una conversazione" },
         after: { en: "SPICED questions designed to surface pain, impact, and critical events naturally", it: "Domande SPICED progettate per far emergere pain, impatto e critical event in modo naturale" },
       },
     ],
@@ -936,7 +936,7 @@ export const skills: SkillDetail[] = [
     reviewCount: 0,
     problem: {
       en: "You asked Claude to research a topic. Twenty minutes later, you have two thousand words of confident prose and not a single source. You can't send it to a client. You can't use it in a board deck. You can't even verify whether the numbers are real. The research sounds plausible, which makes it worse: if something is wrong, you won't catch it until someone else does.",
-      it: "Hai chiesto a Claude di fare una ricerca. Venti minuti dopo, hai duemila parole di prosa sicura di sé e nemmeno una fonte. Non puoi mandarlo a un cliente. Non puoi usarlo in un deck per il board. Non riesci neppure a verificare se i numeri sono reali. La ricerca suona plausibile, e questo la rende peggiore: se c'è un errore, non lo trovi tu. Lo trova qualcun altro.",
+      it: "Hai chiesto a Claude di fare una ricerca. Venti minuti dopo, hai duemila parole di prosa sicura di sé e nemmeno una fonte. Non puoi mandarlo a un cliente. Non puoi usarlo in un deck per il board. Non riesci neppure a verificare se i numeri sono reali. La ricerca sembra plausibile, e questo la rende peggiore: se c'è un errore, non lo trovi tu. Lo trova qualcun altro.",
     },
     solution: {
       en: "Deep Research Agent structures every investigation into seven distinct phases. Scope pins down what you actually need to know. Plan decomposes the question into parallel branches using Graph-of-Thoughts methodology (published at AAAI 2024 by ETH Zurich). Retrieve gathers sources with a strict hierarchy: primary documentation first, analyst reports second, journalism third. Triangulate cross-checks every major claim across independent sources and flags conflicts explicitly. Draft writes the report with inline citations on every factual statement. Critique runs a self-review pass for gaps, bias, and unsupported claims. Package delivers the final output: executive summary, full report, numbered bibliography.",
@@ -974,7 +974,7 @@ export const skills: SkillDetail[] = [
         after: { en: "The seven-phase pipeline delivers a structured report with executive summary in 10-30 minutes", it: "La pipeline a sette fasi consegna un report strutturato con executive summary in 10-30 minuti" },
       },
       {
-        before: { en: "Two sources say different things and the report picks whichever sounds better", it: "Due fonti dicono cose diverse e il report sceglie quella che suona meglio" },
+        before: { en: "Two sources say different things and the report picks whichever sounds better", it: "Due fonti dicono cose diverse e il report sceglie quella che sembra migliore" },
         after: { en: "The triangulation phase flags the conflict explicitly and presents both positions", it: "La fase di triangolazione segnala il conflitto esplicitamente e presenta entrambe le posizioni" },
       },
       {
@@ -1589,8 +1589,8 @@ export const skills: SkillDetail[] = [
         after: { en: "Service dependency graph validation catches circular dependencies at planning time", it: "La validazione del grafo di dipendenze dei servizi intercetta le dipendenze circolari in fase di planning" },
       },
       {
-        before: { en: "Trusting AI output because it reads well and sounds confident", it: "Fidarsi dell'output dell'AI perch\u00e9 si legge bene e suona sicuro" },
-        after: { en: "Structured critique that checks preconditions regardless of how convincing the plan sounds", it: "Critica strutturata che verifica le precondizioni indipendentemente da quanto il piano suoni convincente" },
+        before: { en: "Trusting AI output because it reads well and sounds confident", it: "Fidarsi dell'output dell'AI perch\u00e9 si legge bene e sembra sicuro di sé" },
+        after: { en: "Structured critique that checks preconditions regardless of how convincing the plan sounds", it: "Critica strutturata che verifica le precondizioni indipendentemente da quanto il piano sembri convincente" },
       },
     ],
     faq: [
@@ -2102,7 +2102,7 @@ export const skills: SkillDetail[] = [
         question: { en: "What happens when models disagree?", it: "Cosa succede quando i modelli sono in disaccordo?" },
         answer: {
           en: "The disagreement protocol surfaces the conflict explicitly: what each model claims, what evidence supports each position, and where the reasoning diverges. You make the final call with full visibility into why they disagree instead of guessing which one sounds more convincing.",
-          it: "Il protocollo di disaccordo fa emergere il conflitto esplicitamente: cosa afferma ogni modello, quali evidenze supportano ogni posizione, e dove il ragionamento diverge. Prendi la decisione finale con piena visibilit\u00e0 sul perch\u00e9 sono in disaccordo, invece di indovinare quale suona pi\u00f9 convincente.",
+          it: "Il protocollo di disaccordo fa emergere il conflitto esplicitamente: cosa afferma ogni modello, quali evidenze supportano ogni posizione, e dove il ragionamento diverge. Prendi la decisione finale con piena visibilit\u00e0 sul perch\u00e9 sono in disaccordo, invece di indovinare quale sembra più convincente.",
         },
       },
       {
@@ -2160,11 +2160,11 @@ export const skills: SkillDetail[] = [
     reviewCount: 0,
     problem: {
       en: "You find a great article at 7 AM. By the time you've read it, extracted the key insight, written a LinkedIn post in your voice, edited it twice, and added a hook that doesn't sound like everyone else's, it's 8 AM. One post. One hour. And if you're posting three times a week, that's three hours of your week spent turning other people's content into your own perspective. The alternative is worse: you skip the post entirely, and your LinkedIn goes quiet for a week.",
-      it: "Trovi un articolo interessante alle 7 di mattina. Lo leggi, estrai il punto chiave, scrivi un post LinkedIn con la tua voce, lo correggi due volte, aggiungi un hook che non suoni come quello di tutti gli altri. Sono le 8. Un post. Un'ora. Se pubblichi tre volte a settimana, sono tre ore spese a trasformare contenuti altrui nella tua prospettiva. L'alternativa? Salti il post. Il tuo LinkedIn resta fermo per una settimana.",
+      it: "Trovi un articolo interessante alle 7 di mattina. Lo leggi, estrai il punto chiave, scrivi un post LinkedIn con la tua voce, lo correggi due volte, aggiungi un hook diverso da quello di tutti gli altri. Sono le 8. Un post. Un'ora. Se pubblichi tre volte a settimana, sono tre ore spese a trasformare contenuti altrui nella tua prospettiva. L'alternativa? Salti il post. Il tuo LinkedIn resta fermo per una settimana.",
     },
     solution: {
       en: "Content Pipeline Pro replaces that blank screen with a seven-agent editorial team. You drop in a source (article, video, RSS feed), and the pipeline takes over. The Classifier reads the material and decides the format: news commentary, opinion piece, tutorial, or case study. Then one of four specialized Writers takes it from there, each trained for that specific format. The QA Director runs three validation passes. Strategic Echo checks that the result sounds like you, not like a generic AI. The whole chain runs inside Claude Code, start to finish.",
-      it: "Content Pipeline Pro sostituisce lo schermo vuoto con una redazione di sette agenti. Inserisci una fonte (articolo, video, feed RSS) e la pipeline prende il controllo. Il Classifier analizza il materiale e decide il formato: commento news, pezzo d'opinione, tutorial o case study. Poi uno dei quattro Writer specializzati sviluppa il testo, ognuno addestrato per quel formato specifico. Il QA Director esegue tre passaggi di validazione. Strategic Echo verifica che il risultato suoni come te, non come un AI generico. Tutta la catena gira dentro Claude Code, dall'inizio alla fine.",
+      it: "Content Pipeline Pro sostituisce lo schermo vuoto con una redazione di sette agenti. Inserisci una fonte (articolo, video, feed RSS) e la pipeline prende il controllo. Il Classifier analizza il materiale e decide il formato: commento news, pezzo d'opinione, tutorial o case study. Poi uno dei quattro Writer specializzati sviluppa il testo, ognuno addestrato per quel formato specifico. Il QA Director esegue tre passaggi di validazione. Strategic Echo verifica che il risultato abbia la tua voce, non quella di un AI generico. Tutta la catena gira dentro Claude Code, dall'inizio alla fine.",
     },
     result: {
       en: "What took 45-60 minutes now takes 10. Your voice stays consistent across every post because the editorial profile locks it in from the first session. News posts read differently from opinion pieces because different writers handle them. The QA layer catches the mistakes you'd notice two hours after publishing. Three posts a week, thirty minutes total instead of three hours.",
@@ -2194,7 +2194,7 @@ export const skills: SkillDetail[] = [
         after: { en: "Ten minutes: drop the source, review the output, publish", it: "Dieci minuti: inserisci la fonte, rivedi l'output, pubblica" },
       },
       {
-        before: { en: "Monday's post sounds professional, Wednesday's sounds casual, Friday's sounds like someone else", it: "Il post di luned\u00ec suona professionale, quello di mercoled\u00ec informale, quello di venerd\u00ec sembra scritto da un altro" },
+        before: { en: "Monday's post sounds professional, Wednesday's sounds casual, Friday's sounds like someone else", it: "Il post di lunedì sembra professionale, quello di mercoledì informale, quello di venerd\u00ec sembra scritto da un altro" },
         after: { en: "Strategic Echo locks your voice across every post, every format, every week", it: "Strategic Echo blocca la tua voce su ogni post, ogni formato, ogni settimana" },
       },
       {

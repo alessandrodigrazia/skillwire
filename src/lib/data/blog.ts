@@ -58,7 +58,7 @@ export const articles: BlogArticle[] = [
     slug: "how-to-make-ai-writing-sound-human",
     title: {
       en: "How to Make AI Writing Sound Human",
-      it: "Come far suonare umana la scrittura AI",
+      it: "Come rendere naturale la scrittura AI",
     },
     excerpt: {
       en: "AI text has patterns your eyes can't catch. Frequency data, structural habits, model-specific fingerprints. Here's a practical framework to find and fix them all.",
@@ -73,7 +73,7 @@ export const articles: BlogArticle[] = [
     relatedSkillSlug: "human-writer",
     metaTitle: {
       en: "How to Make AI Writing Sound Human",
-      it: "Come far suonare umana la scrittura AI",
+      it: "Come rendere naturale la scrittura AI",
     },
     metaDescription: {
       en: "AI writing has patterns your eyes miss. Learn the frequency data, structural tells, and model-specific signatures that give away AI text, plus how to fix them.",
@@ -140,7 +140,7 @@ export const articles: BlogArticle[] = [
     },
     excerpt: {
       en: "The bottleneck isn't writing speed. It's the gap between reading something worth sharing and turning it into a post that sounds like you. Here's how an editorial pipeline closes that gap.",
-      it: "Il collo di bottiglia non \u00e8 la velocit\u00e0 di scrittura. \u00c8 il divario tra leggere qualcosa che vale la pena condividere e trasformarlo in un post che suona come te. Ecco come una pipeline editoriale colma quel vuoto.",
+      it: "Il collo di bottiglia non \u00e8 la velocit\u00e0 di scrittura. \u00c8 il divario tra leggere qualcosa che vale la pena condividere e trasformarlo in un post che sembri scritto da te. Ecco come una pipeline editoriale colma quel vuoto.",
     },
     category: "insight",
     tags: ["linkedin", "content-pipeline", "editorial", "ai-agents", "thought-leadership"],

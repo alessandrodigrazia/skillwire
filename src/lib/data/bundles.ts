@@ -190,7 +190,7 @@ export const bundles: BundleDetail[] = [
     },
     description: {
       en: "These 4 skills cover the entire career journey \u2014 from understanding who you are (Vera Career Coach), to choosing the right path (SchoolPath AI), to presenting yourself effectively (CV Guru), to making sure your writing sounds like you, not a robot (HumanWriter). Whether you\u2019re a professional in transition or a parent guiding your child\u2019s future, this bundle gives you a complete career toolkit.",
-      it: "Queste 4 skill coprono l\u2019intero percorso di carriera \u2014 dal capire chi sei (Vera Career Coach), alla scelta del percorso giusto (SchoolPath AI), al presentarti in modo efficace (CV Guru), all\u2019assicurarti che i tuoi testi suonino come te, non come un robot (HumanWriter). Che tu sia un professionista in transizione o un genitore che guida il futuro del proprio figlio, questo bundle ti offre un toolkit completo per la carriera.",
+      it: "Queste 4 skill coprono l\u2019intero percorso di carriera \u2014 dal capire chi sei (Vera Career Coach), alla scelta del percorso giusto (SchoolPath AI), al presentarti in modo efficace (CV Guru), all\u2019assicurarti che i tuoi testi sembrino scritti da te, non da un robot (HumanWriter). Che tu sia un professionista in transizione o un genitore che guida il futuro del proprio figlio, questo bundle ti offre un toolkit completo per la carriera.",
     },
     skillSummaries: [
       {
@@ -230,7 +230,7 @@ export const bundles: BundleDetail[] = [
         price: 29,
         tagline: {
           en: "Transform AI-generated text into authentic, human-sounding writing.",
-          it: "Trasforma testi generati dall\u2019AI in scrittura autentica e dal suono umano.",
+          it: "Trasforma testi generati dall\u2019AI in scrittura autentica e dal tono naturale.",
         },
       },
     ],
@@ -569,7 +569,7 @@ export const bundles: BundleDetail[] = [
     },
     description: {
       en: "Build a LinkedIn content machine that sounds authentically you. Draft posts using a proven editorial framework (Content Pipeline Pro), humanize them so they pass any AI detector (HumanWriter), and stress-test your messaging before publishing (Janus). The result: consistent, high-quality LinkedIn content that builds your professional authority.",
-      it: "Costruisci una macchina per contenuti LinkedIn che suona autenticamente come te. Scrivi post usando un framework editoriale collaudato (Content Pipeline Pro), umanizzali in modo che passino qualsiasi AI detector (HumanWriter), e stress-testa il tuo messaggio prima di pubblicare (Janus). Il risultato: contenuti LinkedIn coerenti e di alta qualit\u00e0 che costruiscono la tua autorit\u00e0 professionale.",
+      it: "Costruisci una macchina per contenuti LinkedIn che ha autenticamente la tua voce. Scrivi post usando un framework editoriale collaudato (Content Pipeline Pro), umanizzali in modo che passino qualsiasi AI detector (HumanWriter), e stress-testa il tuo messaggio prima di pubblicare (Janus). Il risultato: contenuti LinkedIn coerenti e di alta qualit\u00e0 che costruiscono la tua autorit\u00e0 professionale.",
     },
     skillSummaries: [
       {
@@ -589,7 +589,7 @@ export const bundles: BundleDetail[] = [
         price: 29,
         tagline: {
           en: "Transform AI-generated text into authentic, human-sounding writing.",
-          it: "Trasforma testi generati dall\u2019AI in scrittura autentica e dal suono umano.",
+          it: "Trasforma testi generati dall\u2019AI in scrittura autentica e dal tono naturale.",
         },
       },
       {
@@ -642,7 +642,7 @@ export const bundles: BundleDetail[] = [
       {
         question: {
           en: "Will my posts still sound like me, not like AI?",
-          it: "I miei post suoneranno ancora come me, non come un AI?",
+          it: "I miei post sembreranno ancora scritti da me, non da un AI?",
         },
         answer: {
           en: "That\u2019s exactly the point. HumanWriter specializes in making AI-assisted content sound authentically human, and Janus reviews your drafts with a critical eye before you publish.",
