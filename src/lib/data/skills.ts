@@ -176,8 +176,15 @@ export const skills: SkillDetail[] = [
     filesCount: 14,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -299,8 +306,15 @@ export const skills: SkillDetail[] = [
     filesCount: 7,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -422,8 +436,15 @@ export const skills: SkillDetail[] = [
     filesCount: 11,
     launchPhase: 1,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -545,8 +566,15 @@ export const skills: SkillDetail[] = [
     filesCount: 35,
     launchPhase: 1,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -667,8 +695,15 @@ export const skills: SkillDetail[] = [
     filesCount: 49,
     launchPhase: 2,
     complexity: 5,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -790,8 +825,15 @@ export const skills: SkillDetail[] = [
     filesCount: 12,
     launchPhase: 2,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -913,8 +955,15 @@ export const skills: SkillDetail[] = [
     filesCount: 4,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1036,8 +1085,15 @@ export const skills: SkillDetail[] = [
     filesCount: 8,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1159,8 +1215,15 @@ export const skills: SkillDetail[] = [
     filesCount: 100,
     launchPhase: 2,
     complexity: 5,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1281,8 +1344,15 @@ export const skills: SkillDetail[] = [
     filesCount: 16,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1403,8 +1473,15 @@ export const skills: SkillDetail[] = [
     filesCount: 106,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1525,8 +1602,15 @@ export const skills: SkillDetail[] = [
     filesCount: 3,
     launchPhase: 1,
     complexity: 2,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1647,8 +1731,16 @@ export const skills: SkillDetail[] = [
     filesCount: 8,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+          { en: "Added Claude Search Optimization (CSO) best practice section for writing effective skill descriptions", it: "Aggiunta sezione best practice Claude Search Optimization (CSO) per scrivere descrizioni skill efficaci" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1764,8 +1856,15 @@ export const skills: SkillDetail[] = [
     filesCount: 4,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -1886,8 +1985,15 @@ export const skills: SkillDetail[] = [
     filesCount: 9,
     launchPhase: 1,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -2008,8 +2114,15 @@ export const skills: SkillDetail[] = [
     filesCount: 8,
     launchPhase: 1,
     complexity: 3,
-    version: "1.1",
+    version: "1.2",
     changelog: [
+      {
+        version: "1.2",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.1",
         date: "2026-02-20",
@@ -2137,8 +2250,15 @@ export const skills: SkillDetail[] = [
     filesCount: 22,
     launchPhase: 2,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -2260,8 +2380,15 @@ export const skills: SkillDetail[] = [
     filesCount: 46,
     launchPhase: 2,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -2382,8 +2509,15 @@ export const skills: SkillDetail[] = [
     filesCount: 4,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -2504,8 +2638,15 @@ export const skills: SkillDetail[] = [
     filesCount: 24,
     launchPhase: 1,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-21",
@@ -2629,8 +2770,15 @@ export const skills: SkillDetail[] = [
     filesCount: 5,
     launchPhase: 1,
     complexity: 3,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-22",
@@ -2750,8 +2898,15 @@ export const skills: SkillDetail[] = [
     filesCount: 12,
     launchPhase: 1,
     complexity: 4,
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          { en: "Improved skill description with Claude Search Optimization (CSO) pattern for better skill discovery and activation", it: "Migliorata la descrizione della skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione" },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-23",

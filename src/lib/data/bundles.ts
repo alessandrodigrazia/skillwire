@@ -105,15 +105,15 @@ export const bundles: BundleDetail[] = [
     bundlePrice: 229,
     savingsPercent: 17,
     badge: "flagship",
-    version: "1.1",
+    version: "1.2",
     changelog: [
       {
-        version: "1.0",
-        date: "2026-02-17",
+        version: "1.2",
+        date: "2026-03-04",
         changes: [
           {
-            en: "Initial release with 4 complementary B2B sales skills.",
-            it: "Rilascio iniziale con 4 skill complementari per vendita B2B.",
+            en: "Improved all skill descriptions with Claude Search Optimization (CSO) pattern for better skill discovery and activation",
+            it: "Migliorate tutte le descrizioni delle skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione",
           },
         ],
       },
@@ -124,6 +124,16 @@ export const bundles: BundleDetail[] = [
           {
             en: "Added B2B Prospecting Engine for top-of-funnel coverage.",
             it: "Aggiunto B2B Prospecting Engine per la copertura top-of-funnel.",
+          },
+        ],
+      },
+      {
+        version: "1.0",
+        date: "2026-02-17",
+        changes: [
+          {
+            en: "Initial release with 4 complementary B2B sales skills.",
+            it: "Rilascio iniziale con 4 skill complementari per vendita B2B.",
           },
         ],
       },
@@ -238,8 +248,18 @@ export const bundles: BundleDetail[] = [
     bundlePrice: 99,
     savingsPercent: 21,
     badge: "popular",
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          {
+            en: "Improved all skill descriptions with Claude Search Optimization (CSO) pattern for better skill discovery and activation",
+            it: "Migliorate tutte le descrizioni delle skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione",
+          },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -361,8 +381,18 @@ export const bundles: BundleDetail[] = [
     bundlePrice: 79,
     savingsPercent: 18,
     badge: "new",
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          {
+            en: "Improved all skill descriptions with Claude Search Optimization (CSO) pattern for better skill discovery and activation",
+            it: "Migliorate tutte le descrizioni delle skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione",
+          },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -494,8 +524,18 @@ export const bundles: BundleDetail[] = [
     bundlePrice: 59,
     savingsPercent: 21,
     badge: "best-seller",
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          {
+            en: "Improved all skill descriptions with Claude Search Optimization (CSO) pattern for better skill discovery and activation",
+            it: "Migliorate tutte le descrizioni delle skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione",
+          },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
@@ -607,8 +647,18 @@ export const bundles: BundleDetail[] = [
     bundlePrice: 69,
     savingsPercent: 21,
     badge: "premium",
-    version: "1.0",
+    version: "1.1",
     changelog: [
+      {
+        version: "1.1",
+        date: "2026-03-04",
+        changes: [
+          {
+            en: "Improved all skill descriptions with Claude Search Optimization (CSO) pattern for better skill discovery and activation",
+            it: "Migliorate tutte le descrizioni delle skill con pattern Claude Search Optimization (CSO) per una migliore scoperta e attivazione",
+          },
+        ],
+      },
       {
         version: "1.0",
         date: "2026-02-17",
