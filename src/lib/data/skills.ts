@@ -1728,11 +1728,20 @@ export const skills: SkillDetail[] = [
     isBundleOnly: false,
     badge: "lead-magnet",
     icon: "hammer",
-    filesCount: 8,
+    filesCount: 22,
     launchPhase: 1,
     complexity: 3,
-    version: "1.1",
+    version: "1.2",
     changelog: [
+      {
+        version: "1.2",
+        date: "2026-03-06",
+        changes: [
+          { en: "Added skill testing framework with automated eval agents (analyzer, comparator, grader)", it: "Aggiunto framework di test skill con agenti eval automatizzati (analyzer, comparator, grader)" },
+          { en: "Added description optimization loop with blind A/B comparison and benchmarking", it: "Aggiunto loop di ottimizzazione descrizioni con confronto cieco A/B e benchmarking" },
+          { en: "Added interactive eval viewer for reviewing test results in HTML format", it: "Aggiunto viewer interattivo eval per revisione risultati test in formato HTML" },
+        ],
+      },
       {
         version: "1.1",
         date: "2026-03-04",
